@@ -1,0 +1,261 @@
+--- drug ln(S): 有效 26713 (剔除缺损 453) | train 2490 / test 24223
+   [train] featurize 2000/2490
+   [test] featurize 2000/24223
+   [test] featurize 4000/24223
+   [test] featurize 6000/24223
+   [test] featurize 8000/24223
+   [test] featurize 10000/24223
+   [test] featurize 12000/24223
+   [test] featurize 14000/24223
+   [test] featurize 16000/24223
+   [test] featurize 18000/24223
+   [test] featurize 20000/24223
+   [test] featurize 22000/24223
+   [test] featurize 24000/24223
+   [xgb] seed 0: R = 0.6707
+   [xgb] seed 1: R = 0.6791
+   [xgb] seed 2: R = 0.6831
+   [xgb] seed 3: R = 0.6919
+   [xgb] seed 4: R = 0.7139
+   [xgb] seed 5: R = 0.7142
+   [xgb] seed 6: R = 0.7184
+   [xgb] seed 7: R = 0.7049
+   [xgb] seed 8: R = 0.6756
+   [xgb] seed 9: R = 0.7128
+   >> drug ln(S): R = 0.6965 ± 0.0174 | MAE = 0.5499 ± 0.0128
+--- SPE ln(k): 有效 11067 (剔除缺损 283) | train 8944 / test 2123
+   [train] featurize 2000/8944
+   [train] featurize 4000/8944
+   [train] featurize 6000/8944
+   [train] featurize 8000/8944
+   [test] featurize 2000/2123
+   [xgb] seed 0: R = 0.6982
+   [xgb] seed 1: R = 0.7229
+   [xgb] seed 2: R = 0.7157
+   [xgb] seed 3: R = 0.7199
+   [xgb] seed 4: R = 0.7226
+   [xgb] seed 5: R = 0.7050
+   [xgb] seed 6: R = 0.7177
+   [xgb] seed 7: R = 0.6994
+   [xgb] seed 8: R = 0.7110
+   [xgb] seed 9: R = 0.7127
+   >> SPE ln(k): R = 0.7125 ± 0.0086 | MAE = 1.0522 ± 0.0387
+--- IlT ln(k): 有效 40904 (剔除缺损 0) | train 24688 / test 16216
+   [train] featurize 2000/24688
+   [train] featurize 4000/24688
+   [train] featurize 6000/24688
+   [train] featurize 8000/24688
+   [train] featurize 10000/24688
+   [train] featurize 12000/24688
+   [train] featurize 14000/24688
+   [train] featurize 16000/24688
+   [train] featurize 18000/24688
+   [train] featurize 20000/24688
+   [train] featurize 22000/24688
+   [train] featurize 24000/24688
+   [test] featurize 2000/16216
+   [test] featurize 4000/16216
+   [test] featurize 6000/16216
+   [test] featurize 8000/16216
+   [test] featurize 10000/16216
+   [test] featurize 12000/16216
+   [test] featurize 14000/16216
+   [test] featurize 16000/16216
+   [xgb] seed 0: R = 0.6998
+   [xgb] seed 1: R = 0.6938
+   [xgb] seed 2: R = 0.7340
+   [xgb] seed 3: R = 0.7085
+   [xgb] seed 4: R = 0.7317
+   [xgb] seed 5: R = 0.7108
+   [xgb] seed 6: R = 0.7159
+   [xgb] seed 7: R = 0.7167
+   [xgb] seed 8: R = 0.6861
+   [xgb] seed 9: R = 0.6812
+   >> IlT ln(k): R = 0.7079 ± 0.0169 | MAE = 1.6612 ± 0.0348
+--- IlT ln(eta): 有效 75992 (剔除缺损 0) | train 59685 / test 16307
+   [train] featurize 2000/59685
+   [train] featurize 4000/59685
+   [train] featurize 6000/59685
+   [train] featurize 8000/59685
+   [train] featurize 10000/59685
+   [train] featurize 12000/59685
+   [train] featurize 14000/59685
+   [train] featurize 16000/59685
+   [train] featurize 18000/59685
+   [train] featurize 20000/59685
+   [train] featurize 22000/59685
+   [train] featurize 24000/59685
+   [train] featurize 26000/59685
+   [train] featurize 28000/59685
+   [train] featurize 30000/59685
+   [train] featurize 32000/59685
+   [train] featurize 34000/59685
+   [train] featurize 36000/59685
+   [train] featurize 38000/59685
+   [train] featurize 40000/59685
+   [train] featurize 42000/59685
+   [train] featurize 44000/59685
+   [train] featurize 46000/59685
+   [train] featurize 48000/59685
+   [train] featurize 50000/59685
+   [train] featurize 52000/59685
+   [train] featurize 54000/59685
+   [train] featurize 56000/59685
+   [train] featurize 58000/59685
+   [test] featurize 2000/16307
+   [test] featurize 4000/16307
+   [test] featurize 6000/16307
+   [test] featurize 8000/16307
+   [test] featurize 10000/16307
+   [test] featurize 12000/16307
+   [test] featurize 14000/16307
+   [test] featurize 16000/16307
+   [xgb] seed 0: R = 0.7408
+   [xgb] seed 1: R = 0.7602
+   [xgb] seed 2: R = 0.7487
+   [xgb] seed 3: R = 0.6977
+   [xgb] seed 4: R = 0.7275
+   [xgb] seed 5: R = 0.7328
+   [xgb] seed 6: R = 0.7458
+   [xgb] seed 7: R = 0.7602
+   [xgb] seed 8: R = 0.7256
+   [xgb] seed 9: R = 0.7447
+   >> IlT ln(eta): R = 0.7384 ± 0.0177 | MAE = 0.5390 ± 0.0203
+--- NIST-full ln(eta): 有效 239200 (剔除缺损 0) | train 29563 / test 209637
+   [train] featurize 2000/29563
+   [train] featurize 4000/29563
+   [train] featurize 6000/29563
+   [train] featurize 8000/29563
+   [train] featurize 10000/29563
+   [train] featurize 12000/29563
+   [train] featurize 14000/29563
+   [train] featurize 16000/29563
+   [train] featurize 18000/29563
+   [train] featurize 20000/29563
+   [train] featurize 22000/29563
+   [train] featurize 24000/29563
+   [train] featurize 26000/29563
+   [train] featurize 28000/29563
+   [test] featurize 2000/209637
+   [test] featurize 4000/209637
+   [test] featurize 6000/209637
+   [test] featurize 8000/209637
+   [test] featurize 10000/209637
+   [test] featurize 12000/209637
+   [test] featurize 14000/209637
+   [test] featurize 16000/209637
+   [test] featurize 18000/209637
+   [test] featurize 20000/209637
+   [test] featurize 22000/209637
+   [test] featurize 24000/209637
+   [test] featurize 26000/209637
+   [test] featurize 28000/209637
+   [test] featurize 30000/209637
+   [test] featurize 32000/209637
+   [test] featurize 34000/209637
+   [test] featurize 36000/209637
+   [test] featurize 38000/209637
+   [test] featurize 40000/209637
+   [test] featurize 42000/209637
+   [test] featurize 44000/209637
+   [test] featurize 46000/209637
+   [test] featurize 48000/209637
+   [test] featurize 50000/209637
+   [test] featurize 52000/209637
+   [test] featurize 54000/209637
+   [test] featurize 56000/209637
+   [test] featurize 58000/209637
+   [test] featurize 60000/209637
+   [test] featurize 62000/209637
+   [test] featurize 64000/209637
+   [test] featurize 66000/209637
+   [test] featurize 68000/209637
+   [test] featurize 70000/209637
+   [test] featurize 72000/209637
+   [test] featurize 74000/209637
+   [test] featurize 76000/209637
+   [test] featurize 78000/209637
+   [test] featurize 80000/209637
+   [test] featurize 82000/209637
+   [test] featurize 84000/209637
+   [test] featurize 86000/209637
+   [test] featurize 88000/209637
+   [test] featurize 90000/209637
+   [test] featurize 92000/209637
+   [test] featurize 94000/209637
+   [test] featurize 96000/209637
+   [test] featurize 98000/209637
+   [test] featurize 100000/209637
+   [test] featurize 102000/209637
+   [test] featurize 104000/209637
+   [test] featurize 106000/209637
+   [test] featurize 108000/209637
+   [test] featurize 110000/209637
+   [test] featurize 112000/209637
+   [test] featurize 114000/209637
+   [test] featurize 116000/209637
+   [test] featurize 118000/209637
+   [test] featurize 120000/209637
+   [test] featurize 122000/209637
+   [test] featurize 124000/209637
+   [test] featurize 126000/209637
+   [test] featurize 128000/209637
+   [test] featurize 130000/209637
+   [test] featurize 132000/209637
+   [test] featurize 134000/209637
+   [test] featurize 136000/209637
+   [test] featurize 138000/209637
+   [test] featurize 140000/209637
+   [test] featurize 142000/209637
+   [test] featurize 144000/209637
+   [test] featurize 146000/209637
+   [test] featurize 148000/209637
+   [test] featurize 150000/209637
+   [test] featurize 152000/209637
+   [test] featurize 154000/209637
+   [test] featurize 156000/209637
+   [test] featurize 158000/209637
+   [test] featurize 160000/209637
+   [test] featurize 162000/209637
+   [test] featurize 164000/209637
+   [test] featurize 166000/209637
+   [test] featurize 168000/209637
+   [test] featurize 170000/209637
+   [test] featurize 172000/209637
+   [test] featurize 174000/209637
+   [test] featurize 176000/209637
+   [test] featurize 178000/209637
+   [test] featurize 180000/209637
+   [test] featurize 182000/209637
+   [test] featurize 184000/209637
+   [test] featurize 186000/209637
+   [test] featurize 188000/209637
+   [test] featurize 190000/209637
+   [test] featurize 192000/209637
+   [test] featurize 194000/209637
+   [test] featurize 196000/209637
+   [test] featurize 198000/209637
+   [test] featurize 200000/209637
+   [test] featurize 202000/209637
+   [test] featurize 204000/209637
+   [test] featurize 206000/209637
+   [test] featurize 208000/209637
+   [xgb] seed 0: R = 0.8414
+   [xgb] seed 1: R = 0.8354
+   [xgb] seed 2: R = 0.8383
+   [xgb] seed 3: R = 0.8306
+   [xgb] seed 4: R = 0.8393
+   [xgb] seed 5: R = 0.8288
+   [xgb] seed 6: R = 0.8346
+   [xgb] seed 7: R = 0.8355
+   [xgb] seed 8: R = 0.8336
+   [xgb] seed 9: R = 0.8340
+   >> NIST-full ln(eta): R = 0.8352 ± 0.0036 | MAE = 0.6118 ± 0.0106
+
+===== 五任务 RDKit2D+XGBoost 外推汇总 =====
+drug ln(S)           R = 0.6965 ± 0.0174 | MAE = 0.5499 ± 0.0128
+SPE ln(k)            R = 0.7125 ± 0.0086 | MAE = 1.0522 ± 0.0387
+IlT ln(k)            R = 0.7079 ± 0.0169 | MAE = 1.6612 ± 0.0348
+IlT ln(eta)          R = 0.7384 ± 0.0177 | MAE = 0.5390 ± 0.0203
+NIST-full ln(eta)    R = 0.8352 ± 0.0036 | MAE = 0.6118 ± 0.0106
+saved <repro>/scripts\tasks5_rdkit_xgb_results.csv

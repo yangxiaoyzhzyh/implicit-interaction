@@ -1,0 +1,11 @@
+=== hmix e1 start 18:44:54 ===
+[data] 30061 条有效（剔除缺损 0）
+[task] dHmix (Enthalpy of mixing) | route e1 | train K<=2 3580 | val K=4 6122
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  [e1 seed 42] ep   0 | loss 0.9546 | val R 0.3267 | best 0.3267@0 | no-improve 0 | 4s
+  [e1 seed 42] ep  10 | loss 0.1619 | val R 0.6987 | best 0.7318@1 | no-improve 9 | 25s
+  [e1 seed 42] ep  20 | loss 0.1061 | val R 0.6983 | best 0.7318@1 | no-improve 19 | 46s
+  >> val 连续 20 epoch 未提升 → 停于 ep21，回载 best-val ep1
+>> [dHmix/e1] seed 42 best ep1 | K=3: R 0.6747 MAE 0.5721 (n=10720) | K=4: R 0.7318 MAE 0.5062 (n=6122) | K=5: R 0.7104 MAE 0.4754 (n=9639)
+  [e1 seed 43] ep   0 | loss 0.9489 | val R 0.4969 | best 0.4969@0 | no-improve 0 | 2s

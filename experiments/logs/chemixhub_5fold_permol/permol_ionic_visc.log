@@ -1,0 +1,835 @@
+
+########## task=ionic_visc | conds=['Temperature, K', 'Pressure, kPa', 'Frequency, MHz'] | data=<server>/chemixhub/datasets/ionic-liquids/processed_data ##########
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+[processed_IlThermoData.csv] Viscosity 样本: 75,992
+有效样本: 75,992 (跳过 0)
+
+===== Fold 0: train 53,193 / val 7,600 / test 15,199 =====
+  ep   0 | train 0.2876 | val R 0.9126 MAE 0.4982 | best 0.9126@0 *
+  ep   1 | train 0.1318 | val R 0.9452 MAE 0.3158 | best 0.9452@1 *
+  ep   2 | train 0.1001 | val R 0.9534 MAE 0.3499 | best 0.9534@2 *
+  ep   3 | train 0.0844 | val R 0.9589 MAE 0.2773 | best 0.9589@3 *
+  ep   4 | train 0.0776 | val R 0.9624 MAE 0.2421 | best 0.9624@4 *
+  ep   5 | train 0.0731 | val R 0.9635 MAE 0.2319 | best 0.9635@5 *
+  ep   6 | train 0.0689 | val R 0.9652 MAE 0.2324 | best 0.9652@6 *
+  ep   7 | train 0.0660 | val R 0.9671 MAE 0.2099 | best 0.9671@7 *
+  ep   8 | train 0.0642 | val R 0.9682 MAE 0.2034 | best 0.9682@8 *
+  ep   9 | train 0.0628 | val R 0.9685 MAE 0.1945 | best 0.9685@9 *
+  ep  10 | train 0.0598 | val R 0.9686 MAE 0.2052 | best 0.9686@10 *
+  ep  11 | train 0.0598 | val R 0.9700 MAE 0.1962 | best 0.9700@11 *
+  ep  12 | train 0.0577 | val R 0.9709 MAE 0.1892 | best 0.9709@12 *
+  ep  13 | train 0.0568 | val R 0.9712 MAE 0.2073 | best 0.9712@13 *
+  ep  14 | train 0.0565 | val R 0.9707 MAE 0.1815 | best 0.9712@13
+  ep  15 | train 0.0552 | val R 0.9722 MAE 0.1867 | best 0.9722@15 *
+  ep  16 | train 0.0537 | val R 0.9722 MAE 0.1976 | best 0.9722@15
+  ep  17 | train 0.0533 | val R 0.9724 MAE 0.2098 | best 0.9724@17 *
+  ep  18 | train 0.0523 | val R 0.9725 MAE 0.2077 | best 0.9725@18 *
+  ep  19 | train 0.0523 | val R 0.9735 MAE 0.1846 | best 0.9735@19 *
+  ep  20 | train 0.0516 | val R 0.9738 MAE 0.1663 | best 0.9738@20 *
+  ep  21 | train 0.0506 | val R 0.9742 MAE 0.1837 | best 0.9742@21 *
+  ep  22 | train 0.0499 | val R 0.9743 MAE 0.1762 | best 0.9743@22 *
+  ep  23 | train 0.0494 | val R 0.9740 MAE 0.1976 | best 0.9743@22
+  ep  24 | train 0.0483 | val R 0.9751 MAE 0.1536 | best 0.9751@24 *
+  ep  25 | train 0.0487 | val R 0.9755 MAE 0.1662 | best 0.9755@25 *
+  ep  26 | train 0.0482 | val R 0.9761 MAE 0.1493 | best 0.9761@26 *
+  ep  27 | train 0.0474 | val R 0.9762 MAE 0.1642 | best 0.9762@27 *
+  ep  28 | train 0.0470 | val R 0.9756 MAE 0.1568 | best 0.9762@27
+  ep  29 | train 0.0465 | val R 0.9761 MAE 0.1669 | best 0.9762@27
+  ep  30 | train 0.0461 | val R 0.9766 MAE 0.1502 | best 0.9766@30 *
+  ep  31 | train 0.0461 | val R 0.9767 MAE 0.1739 | best 0.9767@31 *
+  ep  32 | train 0.0453 | val R 0.9763 MAE 0.1830 | best 0.9767@31
+  ep  33 | train 0.0449 | val R 0.9767 MAE 0.1718 | best 0.9767@31
+  ep  34 | train 0.0447 | val R 0.9775 MAE 0.1633 | best 0.9775@34 *
+  ep  35 | train 0.0440 | val R 0.9772 MAE 0.1590 | best 0.9775@34
+  ep  36 | train 0.0441 | val R 0.9778 MAE 0.1409 | best 0.9778@36 *
+  ep  37 | train 0.0441 | val R 0.9787 MAE 0.1621 | best 0.9787@37 *
+  ep  38 | train 0.0430 | val R 0.9777 MAE 0.1436 | best 0.9787@37
+  ep  39 | train 0.0427 | val R 0.9789 MAE 0.1704 | best 0.9789@39 *
+  ep  40 | train 0.0425 | val R 0.9791 MAE 0.1631 | best 0.9791@40 *
+  ep  41 | train 0.0425 | val R 0.9789 MAE 0.1451 | best 0.9791@40
+  ep  42 | train 0.0421 | val R 0.9793 MAE 0.1752 | best 0.9793@42 *
+  ep  43 | train 0.0421 | val R 0.9783 MAE 0.1486 | best 0.9793@42
+  ep  44 | train 0.0413 | val R 0.9790 MAE 0.1541 | best 0.9793@42
+  ep  45 | train 0.0414 | val R 0.9786 MAE 0.1542 | best 0.9793@42
+  ep  46 | train 0.0411 | val R 0.9780 MAE 0.1400 | best 0.9793@42
+  ep  47 | train 0.0406 | val R 0.9781 MAE 0.1721 | best 0.9793@42
+  ep  48 | train 0.0407 | val R 0.9795 MAE 0.1288 | best 0.9795@48 *
+  ep  49 | train 0.0402 | val R 0.9782 MAE 0.1459 | best 0.9795@48
+  ep  50 | train 0.0399 | val R 0.9794 MAE 0.1319 | best 0.9795@48
+  ep  51 | train 0.0398 | val R 0.9782 MAE 0.1293 | best 0.9795@48
+  ep  52 | train 0.0396 | val R 0.9788 MAE 0.1298 | best 0.9795@48
+  ep  53 | train 0.0395 | val R 0.9769 MAE 0.1856 | best 0.9795@48
+  ep  54 | train 0.0398 | val R 0.9767 MAE 0.1633 | best 0.9795@48
+  ep  55 | train 0.0395 | val R 0.9780 MAE 0.1365 | best 0.9795@48
+  ep  56 | train 0.0388 | val R 0.9769 MAE 0.1479 | best 0.9795@48
+  ep  57 | train 0.0391 | val R 0.9789 MAE 0.1602 | best 0.9795@48
+  ep  58 | train 0.0388 | val R 0.9773 MAE 0.1559 | best 0.9795@48
+  ep  59 | train 0.0388 | val R 0.9760 MAE 0.1501 | best 0.9795@48
+  ep  60 | train 0.0385 | val R 0.9794 MAE 0.1414 | best 0.9795@48
+  ep  61 | train 0.0381 | val R 0.9760 MAE 0.1554 | best 0.9795@48
+  ep  62 | train 0.0378 | val R 0.9798 MAE 0.1419 | best 0.9798@62 *
+  ep  63 | train 0.0379 | val R 0.9757 MAE 0.1511 | best 0.9798@62
+  ep  64 | train 0.0380 | val R 0.9802 MAE 0.1332 | best 0.9802@64 *
+  ep  65 | train 0.0378 | val R 0.9777 MAE 0.1399 | best 0.9802@64
+  ep  66 | train 0.0384 | val R 0.9761 MAE 0.1735 | best 0.9802@64
+  ep  67 | train 0.0377 | val R 0.9781 MAE 0.1435 | best 0.9802@64
+  ep  68 | train 0.0374 | val R 0.9780 MAE 0.1252 | best 0.9802@64
+  ep  69 | train 0.0374 | val R 0.9784 MAE 0.1250 | best 0.9802@64
+  ep  70 | train 0.0372 | val R 0.9749 MAE 0.1269 | best 0.9802@64
+  ep  71 | train 0.0373 | val R 0.9787 MAE 0.1472 | best 0.9802@64
+  ep  72 | train 0.0373 | val R 0.9799 MAE 0.1276 | best 0.9802@64
+  ep  73 | train 0.0372 | val R 0.9759 MAE 0.1426 | best 0.9802@64
+  ep  74 | train 0.0366 | val R 0.9724 MAE 0.1318 | best 0.9802@64
+  ep  75 | train 0.0372 | val R 0.9771 MAE 0.1335 | best 0.9802@64
+  ep  76 | train 0.0367 | val R 0.9779 MAE 0.1468 | best 0.9802@64
+  ep  77 | train 0.0368 | val R 0.9775 MAE 0.1279 | best 0.9802@64
+  ep  78 | train 0.0363 | val R 0.9797 MAE 0.1355 | best 0.9802@64
+  ep  79 | train 0.0365 | val R 0.9794 MAE 0.1484 | best 0.9802@64
+  ep  80 | train 0.0363 | val R 0.9790 MAE 0.1360 | best 0.9802@64
+  ep  81 | train 0.0359 | val R 0.9806 MAE 0.1250 | best 0.9806@81 *
+  ep  82 | train 0.0364 | val R 0.9808 MAE 0.1369 | best 0.9808@82 *
+  ep  83 | train 0.0362 | val R 0.9789 MAE 0.1493 | best 0.9808@82
+  ep  84 | train 0.0356 | val R 0.9786 MAE 0.1232 | best 0.9808@82
+  ep  85 | train 0.0358 | val R 0.9771 MAE 0.1552 | best 0.9808@82
+  ep  86 | train 0.0360 | val R 0.9807 MAE 0.1327 | best 0.9808@82
+  ep  87 | train 0.0356 | val R 0.9772 MAE 0.1528 | best 0.9808@82
+  ep  88 | train 0.0360 | val R 0.9728 MAE 0.1357 | best 0.9808@82
+  ep  89 | train 0.0357 | val R 0.9790 MAE 0.1305 | best 0.9808@82
+  ep  90 | train 0.0354 | val R 0.9788 MAE 0.1322 | best 0.9808@82
+  ep  91 | train 0.0355 | val R 0.9766 MAE 0.1258 | best 0.9808@82
+  ep  92 | train 0.0353 | val R 0.9810 MAE 0.1332 | best 0.9810@92 *
+  ep  93 | train 0.0356 | val R 0.9800 MAE 0.1339 | best 0.9810@92
+  ep  94 | train 0.0351 | val R 0.9796 MAE 0.1289 | best 0.9810@92
+  ep  95 | train 0.0351 | val R 0.9805 MAE 0.1257 | best 0.9810@92
+  ep  96 | train 0.0353 | val R 0.9811 MAE 0.1227 | best 0.9811@96 *
+  ep  97 | train 0.0351 | val R 0.9776 MAE 0.1301 | best 0.9811@96
+  ep  98 | train 0.0351 | val R 0.9759 MAE 0.1411 | best 0.9811@96
+  ep  99 | train 0.0349 | val R 0.9797 MAE 0.1378 | best 0.9811@96
+  ep 100 | train 0.0346 | val R 0.9796 MAE 0.1283 | best 0.9811@96
+  ep 101 | train 0.0349 | val R 0.9811 MAE 0.1365 | best 0.9811@101 *
+  ep 102 | train 0.0349 | val R 0.9809 MAE 0.1172 | best 0.9811@101
+  ep 103 | train 0.0347 | val R 0.9804 MAE 0.1328 | best 0.9811@101
+  ep 104 | train 0.0348 | val R 0.9790 MAE 0.1127 | best 0.9811@101
+  ep 105 | train 0.0342 | val R 0.9747 MAE 0.1209 | best 0.9811@101
+  ep 106 | train 0.0346 | val R 0.9805 MAE 0.1330 | best 0.9811@101
+  ep 107 | train 0.0346 | val R 0.9798 MAE 0.1344 | best 0.9811@101
+  ep 108 | train 0.0342 | val R 0.9757 MAE 0.1114 | best 0.9811@101
+  ep 109 | train 0.0344 | val R 0.9811 MAE 0.1199 | best 0.9811@109 *
+  ep 110 | train 0.0343 | val R 0.9778 MAE 0.1273 | best 0.9811@109
+  ep 111 | train 0.0344 | val R 0.9810 MAE 0.1369 | best 0.9811@109
+  ep 112 | train 0.0344 | val R 0.9804 MAE 0.1260 | best 0.9811@109
+  ep 113 | train 0.0341 | val R 0.9808 MAE 0.1299 | best 0.9811@109
+  ep 114 | train 0.0345 | val R 0.9809 MAE 0.1168 | best 0.9811@109
+  ep 115 | train 0.0342 | val R 0.9810 MAE 0.1275 | best 0.9811@109
+  ep 116 | train 0.0343 | val R 0.9812 MAE 0.1182 | best 0.9812@116 *
+  ep 117 | train 0.0337 | val R 0.9789 MAE 0.1286 | best 0.9812@116
+  ep 118 | train 0.0338 | val R 0.9811 MAE 0.1140 | best 0.9812@116
+  ep 119 | train 0.0340 | val R 0.9804 MAE 0.1352 | best 0.9812@116
+  ep 120 | train 0.0339 | val R 0.9780 MAE 0.1236 | best 0.9812@116
+  ep 121 | train 0.0340 | val R 0.9811 MAE 0.1259 | best 0.9812@116
+  ep 122 | train 0.0337 | val R 0.9790 MAE 0.1219 | best 0.9812@116
+  ep 123 | train 0.0335 | val R 0.9801 MAE 0.1494 | best 0.9812@116
+  ep 124 | train 0.0338 | val R 0.9806 MAE 0.1273 | best 0.9812@116
+  ep 125 | train 0.0335 | val R 0.9794 MAE 0.1210 | best 0.9812@116
+  ep 126 | train 0.0338 | val R 0.9814 MAE 0.1157 | best 0.9814@126 *
+  ep 127 | train 0.0335 | val R 0.9813 MAE 0.1461 | best 0.9814@126
+  ep 128 | train 0.0334 | val R 0.9807 MAE 0.1182 | best 0.9814@126
+  ep 129 | train 0.0336 | val R 0.9813 MAE 0.1279 | best 0.9814@126
+  ep 130 | train 0.0334 | val R 0.9800 MAE 0.1516 | best 0.9814@126
+  ep 131 | train 0.0333 | val R 0.9811 MAE 0.1302 | best 0.9814@126
+  ep 132 | train 0.0333 | val R 0.9802 MAE 0.1148 | best 0.9814@126
+  ep 133 | train 0.0336 | val R 0.9784 MAE 0.1167 | best 0.9814@126
+  ep 134 | train 0.0334 | val R 0.9813 MAE 0.1175 | best 0.9814@126
+  ep 135 | train 0.0332 | val R 0.9809 MAE 0.1295 | best 0.9814@126
+  ep 136 | train 0.0334 | val R 0.9810 MAE 0.1231 | best 0.9814@126
+  ep 137 | train 0.0332 | val R 0.9813 MAE 0.1138 | best 0.9814@126
+  ep 138 | train 0.0332 | val R 0.9819 MAE 0.1185 | best 0.9819@138 *
+  ep 139 | train 0.0331 | val R 0.9804 MAE 0.1238 | best 0.9819@138
+  ep 140 | train 0.0333 | val R 0.9815 MAE 0.1209 | best 0.9819@138
+  ep 141 | train 0.0333 | val R 0.9796 MAE 0.1152 | best 0.9819@138
+  ep 142 | train 0.0331 | val R 0.9808 MAE 0.1176 | best 0.9819@138
+  ep 143 | train 0.0328 | val R 0.9798 MAE 0.1322 | best 0.9819@138
+  ep 144 | train 0.0329 | val R 0.9807 MAE 0.1252 | best 0.9819@138
+  ep 145 | train 0.0328 | val R 0.9799 MAE 0.1240 | best 0.9819@138
+  ep 146 | train 0.0328 | val R 0.9798 MAE 0.1162 | best 0.9819@138
+  ep 147 | train 0.0327 | val R 0.9785 MAE 0.1204 | best 0.9819@138
+  ep 148 | train 0.0326 | val R 0.9809 MAE 0.1166 | best 0.9819@138
+  ep 149 | train 0.0327 | val R 0.9801 MAE 0.1175 | best 0.9819@138
+  ep 150 | train 0.0324 | val R 0.9800 MAE 0.1202 | best 0.9819@138
+  ep 151 | train 0.0324 | val R 0.9790 MAE 0.1189 | best 0.9819@138
+  ep 152 | train 0.0326 | val R 0.9799 MAE 0.1179 | best 0.9819@138
+  ep 153 | train 0.0323 | val R 0.9807 MAE 0.1204 | best 0.9819@138
+  ep 154 | train 0.0327 | val R 0.9813 MAE 0.1142 | best 0.9819@138
+  ep 155 | train 0.0324 | val R 0.9807 MAE 0.1131 | best 0.9819@138
+  ep 156 | train 0.0328 | val R 0.9813 MAE 0.1210 | best 0.9819@138
+  ep 157 | train 0.0327 | val R 0.9808 MAE 0.1186 | best 0.9819@138
+  ep 158 | train 0.0324 | val R 0.9808 MAE 0.1166 | best 0.9819@138
+  early stop @ep158 (no val-R improvement for 20)
+>> Fold 0: best ep 138 | val R 0.9819 | test R 0.9873 MAE 0.1131
+
+===== Fold 1: train 53,193 / val 7,600 / test 15,199 =====
+  ep   0 | train 0.2835 | val R 0.9227 MAE 0.4636 | best 0.9227@0 *
+  ep   1 | train 0.1275 | val R 0.9465 MAE 0.3267 | best 0.9465@1 *
+  ep   2 | train 0.0994 | val R 0.9555 MAE 0.2662 | best 0.9555@2 *
+  ep   3 | train 0.0839 | val R 0.9610 MAE 0.2531 | best 0.9610@3 *
+  ep   4 | train 0.0764 | val R 0.9627 MAE 0.2365 | best 0.9627@4 *
+  ep   5 | train 0.0721 | val R 0.9658 MAE 0.2297 | best 0.9658@5 *
+  ep   6 | train 0.0676 | val R 0.9665 MAE 0.3014 | best 0.9665@6 *
+  ep   7 | train 0.0647 | val R 0.9690 MAE 0.2478 | best 0.9690@7 *
+  ep   8 | train 0.0622 | val R 0.9707 MAE 0.2003 | best 0.9707@8 *
+  ep   9 | train 0.0608 | val R 0.9709 MAE 0.2128 | best 0.9709@9 *
+  ep  10 | train 0.0593 | val R 0.9721 MAE 0.1950 | best 0.9721@10 *
+  ep  11 | train 0.0567 | val R 0.9710 MAE 0.2450 | best 0.9721@10
+  ep  12 | train 0.0559 | val R 0.9742 MAE 0.1766 | best 0.9742@12 *
+  ep  13 | train 0.0553 | val R 0.9728 MAE 0.1976 | best 0.9742@12
+  ep  14 | train 0.0534 | val R 0.9743 MAE 0.1877 | best 0.9743@14 *
+  ep  15 | train 0.0528 | val R 0.9752 MAE 0.1784 | best 0.9752@15 *
+  ep  16 | train 0.0517 | val R 0.9758 MAE 0.1725 | best 0.9758@16 *
+  ep  17 | train 0.0512 | val R 0.9739 MAE 0.2123 | best 0.9758@16
+  ep  18 | train 0.0501 | val R 0.9753 MAE 0.2021 | best 0.9758@16
+  ep  19 | train 0.0502 | val R 0.9761 MAE 0.1769 | best 0.9761@19 *
+  ep  20 | train 0.0489 | val R 0.9769 MAE 0.1590 | best 0.9769@20 *
+  ep  21 | train 0.0475 | val R 0.9767 MAE 0.1639 | best 0.9769@20
+  ep  22 | train 0.0478 | val R 0.9771 MAE 0.1666 | best 0.9771@22 *
+  ep  23 | train 0.0470 | val R 0.9774 MAE 0.1638 | best 0.9774@23 *
+  ep  24 | train 0.0464 | val R 0.9775 MAE 0.1618 | best 0.9775@24 *
+  ep  25 | train 0.0462 | val R 0.9776 MAE 0.1546 | best 0.9776@25 *
+  ep  26 | train 0.0454 | val R 0.9765 MAE 0.1913 | best 0.9776@25
+  ep  27 | train 0.0448 | val R 0.9784 MAE 0.1653 | best 0.9784@27 *
+  ep  28 | train 0.0454 | val R 0.9784 MAE 0.1588 | best 0.9784@27
+  ep  29 | train 0.0442 | val R 0.9777 MAE 0.1545 | best 0.9784@27
+  ep  30 | train 0.0452 | val R 0.9790 MAE 0.1747 | best 0.9790@30 *
+  ep  31 | train 0.0448 | val R 0.9778 MAE 0.1593 | best 0.9790@30
+  ep  32 | train 0.0454 | val R 0.9789 MAE 0.1393 | best 0.9790@30
+  ep  33 | train 0.0433 | val R 0.9790 MAE 0.1362 | best 0.9790@30
+  ep  34 | train 0.0430 | val R 0.9787 MAE 0.1457 | best 0.9790@30
+  ep  35 | train 0.0427 | val R 0.9791 MAE 0.1465 | best 0.9791@35 *
+  ep  36 | train 0.0420 | val R 0.9797 MAE 0.1441 | best 0.9797@36 *
+  ep  37 | train 0.0426 | val R 0.9791 MAE 0.1646 | best 0.9797@36
+  ep  38 | train 0.0419 | val R 0.9789 MAE 0.1416 | best 0.9797@36
+  ep  39 | train 0.0422 | val R 0.9787 MAE 0.1377 | best 0.9797@36
+  ep  40 | train 0.0419 | val R 0.9798 MAE 0.1511 | best 0.9798@40 *
+  ep  41 | train 0.0423 | val R 0.9794 MAE 0.1559 | best 0.9798@40
+  ep  42 | train 0.0412 | val R 0.9793 MAE 0.1579 | best 0.9798@40
+  ep  43 | train 0.0411 | val R 0.9789 MAE 0.1826 | best 0.9798@40
+  ep  44 | train 0.0408 | val R 0.9798 MAE 0.1451 | best 0.9798@40
+  ep  45 | train 0.0408 | val R 0.9783 MAE 0.1501 | best 0.9798@40
+  ep  46 | train 0.0404 | val R 0.9801 MAE 0.1358 | best 0.9801@46 *
+  ep  47 | train 0.0398 | val R 0.9802 MAE 0.1410 | best 0.9802@47 *
+  ep  48 | train 0.0407 | val R 0.9798 MAE 0.1465 | best 0.9802@47
+  ep  49 | train 0.0400 | val R 0.9798 MAE 0.1644 | best 0.9802@47
+  ep  50 | train 0.0402 | val R 0.9803 MAE 0.1404 | best 0.9803@50 *
+  ep  51 | train 0.0398 | val R 0.9802 MAE 0.1513 | best 0.9803@50
+  ep  52 | train 0.0391 | val R 0.9804 MAE 0.1450 | best 0.9804@52 *
+  ep  53 | train 0.0393 | val R 0.9803 MAE 0.1565 | best 0.9804@52
+  ep  54 | train 0.0395 | val R 0.9800 MAE 0.1385 | best 0.9804@52
+  ep  55 | train 0.0387 | val R 0.9796 MAE 0.1346 | best 0.9804@52
+  ep  56 | train 0.0400 | val R 0.9806 MAE 0.1247 | best 0.9806@56 *
+  ep  57 | train 0.0394 | val R 0.9807 MAE 0.1390 | best 0.9807@57 *
+  ep  58 | train 0.0384 | val R 0.9804 MAE 0.1356 | best 0.9807@57
+  ep  59 | train 0.0380 | val R 0.9806 MAE 0.1314 | best 0.9807@57
+  ep  60 | train 0.0380 | val R 0.9809 MAE 0.1340 | best 0.9809@60 *
+  ep  61 | train 0.0378 | val R 0.9798 MAE 0.1303 | best 0.9809@60
+  ep  62 | train 0.0381 | val R 0.9810 MAE 0.1371 | best 0.9810@62 *
+  ep  63 | train 0.0386 | val R 0.9802 MAE 0.1406 | best 0.9810@62
+  ep  64 | train 0.0385 | val R 0.9809 MAE 0.1422 | best 0.9810@62
+  ep  65 | train 0.0376 | val R 0.9808 MAE 0.1224 | best 0.9810@62
+  ep  66 | train 0.0375 | val R 0.9807 MAE 0.1367 | best 0.9810@62
+  ep  67 | train 0.0376 | val R 0.9808 MAE 0.1357 | best 0.9810@62
+  ep  68 | train 0.0372 | val R 0.9810 MAE 0.1389 | best 0.9810@68 *
+  ep  69 | train 0.0379 | val R 0.9810 MAE 0.1467 | best 0.9810@68
+  ep  70 | train 0.0374 | val R 0.9810 MAE 0.1335 | best 0.9810@70 *
+  ep  71 | train 0.0371 | val R 0.9803 MAE 0.1435 | best 0.9810@70
+  ep  72 | train 0.0370 | val R 0.9797 MAE 0.1623 | best 0.9810@70
+  ep  73 | train 0.0373 | val R 0.9750 MAE 0.2212 | best 0.9810@70
+  ep  74 | train 0.0364 | val R 0.9812 MAE 0.1236 | best 0.9812@74 *
+  ep  75 | train 0.0366 | val R 0.9808 MAE 0.1419 | best 0.9812@74
+  ep  76 | train 0.0362 | val R 0.9808 MAE 0.1196 | best 0.9812@74
+  ep  77 | train 0.0367 | val R 0.9809 MAE 0.1318 | best 0.9812@74
+  ep  78 | train 0.0363 | val R 0.9813 MAE 0.1517 | best 0.9813@78 *
+  ep  79 | train 0.0366 | val R 0.9812 MAE 0.1303 | best 0.9813@78
+  ep  80 | train 0.0367 | val R 0.9813 MAE 0.1173 | best 0.9813@80 *
+  ep  81 | train 0.0363 | val R 0.9799 MAE 0.1498 | best 0.9813@80
+  ep  82 | train 0.0364 | val R 0.9810 MAE 0.1281 | best 0.9813@80
+  ep  83 | train 0.0359 | val R 0.9815 MAE 0.1370 | best 0.9815@83 *
+  ep  84 | train 0.0360 | val R 0.9812 MAE 0.1241 | best 0.9815@83
+  ep  85 | train 0.0358 | val R 0.9810 MAE 0.1227 | best 0.9815@83
+  ep  86 | train 0.0354 | val R 0.9808 MAE 0.1310 | best 0.9815@83
+  ep  87 | train 0.0357 | val R 0.9811 MAE 0.1208 | best 0.9815@83
+  ep  88 | train 0.0356 | val R 0.9811 MAE 0.1219 | best 0.9815@83
+  ep  89 | train 0.0358 | val R 0.9810 MAE 0.1487 | best 0.9815@83
+  ep  90 | train 0.0356 | val R 0.9811 MAE 0.1437 | best 0.9815@83
+  ep  91 | train 0.0355 | val R 0.9808 MAE 0.1345 | best 0.9815@83
+  ep  92 | train 0.0354 | val R 0.9816 MAE 0.1244 | best 0.9816@92 *
+  ep  93 | train 0.0355 | val R 0.9810 MAE 0.1290 | best 0.9816@92
+  ep  94 | train 0.0355 | val R 0.9814 MAE 0.1152 | best 0.9816@92
+  ep  95 | train 0.0351 | val R 0.9817 MAE 0.1251 | best 0.9817@95 *
+  ep  96 | train 0.0353 | val R 0.9813 MAE 0.1390 | best 0.9817@95
+  ep  97 | train 0.0351 | val R 0.9816 MAE 0.1368 | best 0.9817@95
+  ep  98 | train 0.0349 | val R 0.9815 MAE 0.1307 | best 0.9817@95
+  ep  99 | train 0.0348 | val R 0.9812 MAE 0.1373 | best 0.9817@95
+  ep 100 | train 0.0349 | val R 0.9815 MAE 0.1199 | best 0.9817@95
+  ep 101 | train 0.0345 | val R 0.9815 MAE 0.1258 | best 0.9817@95
+  ep 102 | train 0.0348 | val R 0.9816 MAE 0.1409 | best 0.9817@95
+  ep 103 | train 0.0349 | val R 0.9816 MAE 0.1201 | best 0.9817@95
+  ep 104 | train 0.0348 | val R 0.9818 MAE 0.1237 | best 0.9818@104 *
+  ep 105 | train 0.0350 | val R 0.9817 MAE 0.1272 | best 0.9818@104
+  ep 106 | train 0.0348 | val R 0.9819 MAE 0.1269 | best 0.9819@106 *
+  ep 107 | train 0.0344 | val R 0.9816 MAE 0.1502 | best 0.9819@106
+  ep 108 | train 0.0342 | val R 0.9818 MAE 0.1304 | best 0.9819@106
+  ep 109 | train 0.0342 | val R 0.9818 MAE 0.1259 | best 0.9819@106
+  ep 110 | train 0.0340 | val R 0.9818 MAE 0.1239 | best 0.9819@106
+  ep 111 | train 0.0341 | val R 0.9818 MAE 0.1175 | best 0.9819@106
+  ep 112 | train 0.0341 | val R 0.9820 MAE 0.1214 | best 0.9820@112 *
+  ep 113 | train 0.0341 | val R 0.9819 MAE 0.1252 | best 0.9820@112
+  ep 114 | train 0.0339 | val R 0.9819 MAE 0.1129 | best 0.9820@112
+  ep 115 | train 0.0341 | val R 0.9820 MAE 0.1293 | best 0.9820@115 *
+  ep 116 | train 0.0342 | val R 0.9818 MAE 0.1194 | best 0.9820@115
+  ep 117 | train 0.0335 | val R 0.9818 MAE 0.1162 | best 0.9820@115
+  ep 118 | train 0.0336 | val R 0.9815 MAE 0.1260 | best 0.9820@115
+  ep 119 | train 0.0338 | val R 0.9818 MAE 0.1356 | best 0.9820@115
+  ep 120 | train 0.0337 | val R 0.9817 MAE 0.1234 | best 0.9820@115
+  ep 121 | train 0.0335 | val R 0.9820 MAE 0.1389 | best 0.9820@115
+  ep 122 | train 0.0334 | val R 0.9819 MAE 0.1337 | best 0.9820@115
+  ep 123 | train 0.0335 | val R 0.9819 MAE 0.1147 | best 0.9820@115
+  ep 124 | train 0.0337 | val R 0.9821 MAE 0.1249 | best 0.9821@124 *
+  ep 125 | train 0.0333 | val R 0.9820 MAE 0.1326 | best 0.9821@124
+  ep 126 | train 0.0339 | val R 0.9818 MAE 0.1283 | best 0.9821@124
+  ep 127 | train 0.0334 | val R 0.9819 MAE 0.1141 | best 0.9821@124
+  ep 128 | train 0.0333 | val R 0.9819 MAE 0.1271 | best 0.9821@124
+  ep 129 | train 0.0334 | val R 0.9817 MAE 0.1211 | best 0.9821@124
+  ep 130 | train 0.0332 | val R 0.9821 MAE 0.1159 | best 0.9821@130 *
+  ep 131 | train 0.0335 | val R 0.9821 MAE 0.1198 | best 0.9821@130
+  ep 132 | train 0.0330 | val R 0.9822 MAE 0.1282 | best 0.9822@132 *
+  ep 133 | train 0.0333 | val R 0.9821 MAE 0.1288 | best 0.9822@132
+  ep 134 | train 0.0331 | val R 0.9817 MAE 0.1205 | best 0.9822@132
+  ep 135 | train 0.0332 | val R 0.9821 MAE 0.1180 | best 0.9822@132
+  ep 136 | train 0.0326 | val R 0.9818 MAE 0.1229 | best 0.9822@132
+  ep 137 | train 0.0330 | val R 0.9820 MAE 0.1179 | best 0.9822@132
+  ep 138 | train 0.0333 | val R 0.9821 MAE 0.1225 | best 0.9822@132
+  ep 139 | train 0.0329 | val R 0.9822 MAE 0.1270 | best 0.9822@132
+  ep 140 | train 0.0332 | val R 0.9823 MAE 0.1304 | best 0.9823@140 *
+  ep 141 | train 0.0330 | val R 0.9823 MAE 0.1267 | best 0.9823@141 *
+  ep 142 | train 0.0326 | val R 0.9822 MAE 0.1159 | best 0.9823@141
+  ep 143 | train 0.0330 | val R 0.9821 MAE 0.1124 | best 0.9823@141
+  ep 144 | train 0.0326 | val R 0.9820 MAE 0.1247 | best 0.9823@141
+  ep 145 | train 0.0329 | val R 0.9822 MAE 0.1207 | best 0.9823@141
+  ep 146 | train 0.0328 | val R 0.9822 MAE 0.1227 | best 0.9823@141
+  ep 147 | train 0.0327 | val R 0.9824 MAE 0.1256 | best 0.9824@147 *
+  ep 148 | train 0.0327 | val R 0.9823 MAE 0.1182 | best 0.9824@147
+  ep 149 | train 0.0331 | val R 0.9821 MAE 0.1118 | best 0.9824@147
+  ep 150 | train 0.0328 | val R 0.9821 MAE 0.1161 | best 0.9824@147
+  ep 151 | train 0.0330 | val R 0.9821 MAE 0.1193 | best 0.9824@147
+  ep 152 | train 0.0325 | val R 0.9822 MAE 0.1179 | best 0.9824@147
+  ep 153 | train 0.0325 | val R 0.9825 MAE 0.1219 | best 0.9825@153 *
+  ep 154 | train 0.0325 | val R 0.9824 MAE 0.1119 | best 0.9825@153
+  ep 155 | train 0.0325 | val R 0.9825 MAE 0.1177 | best 0.9825@153
+  ep 156 | train 0.0321 | val R 0.9825 MAE 0.1214 | best 0.9825@153
+  ep 157 | train 0.0325 | val R 0.9823 MAE 0.1197 | best 0.9825@153
+  ep 158 | train 0.0323 | val R 0.9824 MAE 0.1209 | best 0.9825@153
+  ep 159 | train 0.0321 | val R 0.9826 MAE 0.1268 | best 0.9826@159 *
+  ep 160 | train 0.0322 | val R 0.9828 MAE 0.1242 | best 0.9828@160 *
+  ep 161 | train 0.0321 | val R 0.9822 MAE 0.1129 | best 0.9828@160
+  ep 162 | train 0.0323 | val R 0.9825 MAE 0.1158 | best 0.9828@160
+  ep 163 | train 0.0323 | val R 0.9825 MAE 0.1181 | best 0.9828@160
+  ep 164 | train 0.0326 | val R 0.9824 MAE 0.1234 | best 0.9828@160
+  ep 165 | train 0.0322 | val R 0.9824 MAE 0.1156 | best 0.9828@160
+  ep 166 | train 0.0321 | val R 0.9825 MAE 0.1199 | best 0.9828@160
+  ep 167 | train 0.0320 | val R 0.9828 MAE 0.1201 | best 0.9828@167 *
+  ep 168 | train 0.0320 | val R 0.9827 MAE 0.1332 | best 0.9828@167
+  ep 169 | train 0.0320 | val R 0.9826 MAE 0.1181 | best 0.9828@167
+  ep 170 | train 0.0321 | val R 0.9826 MAE 0.1153 | best 0.9828@167
+  ep 171 | train 0.0319 | val R 0.9826 MAE 0.1209 | best 0.9828@167
+  ep 172 | train 0.0321 | val R 0.9826 MAE 0.1222 | best 0.9828@167
+  ep 173 | train 0.0321 | val R 0.9825 MAE 0.1169 | best 0.9828@167
+  ep 174 | train 0.0320 | val R 0.9826 MAE 0.1189 | best 0.9828@167
+  ep 175 | train 0.0322 | val R 0.9826 MAE 0.1191 | best 0.9828@167
+  ep 176 | train 0.0317 | val R 0.9827 MAE 0.1211 | best 0.9828@167
+  ep 177 | train 0.0320 | val R 0.9826 MAE 0.1178 | best 0.9828@167
+  ep 178 | train 0.0318 | val R 0.9825 MAE 0.1168 | best 0.9828@167
+  ep 179 | train 0.0320 | val R 0.9826 MAE 0.1174 | best 0.9828@167
+  ep 180 | train 0.0318 | val R 0.9825 MAE 0.1154 | best 0.9828@167
+  ep 181 | train 0.0320 | val R 0.9827 MAE 0.1206 | best 0.9828@167
+  ep 182 | train 0.0319 | val R 0.9826 MAE 0.1152 | best 0.9828@167
+  ep 183 | train 0.0318 | val R 0.9826 MAE 0.1148 | best 0.9828@167
+  ep 184 | train 0.0321 | val R 0.9827 MAE 0.1176 | best 0.9828@167
+  ep 185 | train 0.0319 | val R 0.9827 MAE 0.1191 | best 0.9828@167
+  ep 186 | train 0.0319 | val R 0.9826 MAE 0.1155 | best 0.9828@167
+  ep 187 | train 0.0317 | val R 0.9827 MAE 0.1174 | best 0.9828@167
+  early stop @ep187 (no val-R improvement for 20)
+>> Fold 1: best ep 167 | val R 0.9828 | test R 0.9859 MAE 0.1167
+
+===== Fold 2: train 53,194 / val 7,600 / test 15,198 =====
+  ep   0 | train 0.2859 | val R 0.9205 MAE 0.4696 | best 0.9205@0 *
+  ep   1 | train 0.1354 | val R 0.9500 MAE 0.3351 | best 0.9500@1 *
+  ep   2 | train 0.1014 | val R 0.9594 MAE 0.2675 | best 0.9594@2 *
+  ep   3 | train 0.0862 | val R 0.9636 MAE 0.2596 | best 0.9636@3 *
+  ep   4 | train 0.0778 | val R 0.9662 MAE 0.2813 | best 0.9662@4 *
+  ep   5 | train 0.0730 | val R 0.9685 MAE 0.2358 | best 0.9685@5 *
+  ep   6 | train 0.0693 | val R 0.9695 MAE 0.2478 | best 0.9695@6 *
+  ep   7 | train 0.0653 | val R 0.9711 MAE 0.2029 | best 0.9711@7 *
+  ep   8 | train 0.0633 | val R 0.9708 MAE 0.2098 | best 0.9711@7
+  ep   9 | train 0.0608 | val R 0.9729 MAE 0.2177 | best 0.9729@9 *
+  ep  10 | train 0.0591 | val R 0.9731 MAE 0.1833 | best 0.9731@10 *
+  ep  11 | train 0.0577 | val R 0.9737 MAE 0.1777 | best 0.9737@11 *
+  ep  12 | train 0.0552 | val R 0.9726 MAE 0.2090 | best 0.9737@11
+  ep  13 | train 0.0550 | val R 0.9744 MAE 0.1756 | best 0.9744@13 *
+  ep  14 | train 0.0527 | val R 0.9752 MAE 0.1760 | best 0.9752@14 *
+  ep  15 | train 0.0521 | val R 0.9754 MAE 0.1792 | best 0.9754@15 *
+  ep  16 | train 0.0509 | val R 0.9759 MAE 0.1661 | best 0.9759@16 *
+  ep  17 | train 0.0505 | val R 0.9760 MAE 0.1636 | best 0.9760@17 *
+  ep  18 | train 0.0497 | val R 0.9764 MAE 0.1694 | best 0.9764@18 *
+  ep  19 | train 0.0485 | val R 0.9767 MAE 0.1743 | best 0.9767@19 *
+  ep  20 | train 0.0475 | val R 0.9749 MAE 0.2028 | best 0.9767@19
+  ep  21 | train 0.0475 | val R 0.9761 MAE 0.1810 | best 0.9767@19
+  ep  22 | train 0.0468 | val R 0.9771 MAE 0.1589 | best 0.9771@22 *
+  ep  23 | train 0.0458 | val R 0.9771 MAE 0.1727 | best 0.9771@23 *
+  ep  24 | train 0.0453 | val R 0.9772 MAE 0.1576 | best 0.9772@24 *
+  ep  25 | train 0.0458 | val R 0.9774 MAE 0.1597 | best 0.9774@25 *
+  ep  26 | train 0.0440 | val R 0.9774 MAE 0.1553 | best 0.9774@26 *
+  ep  27 | train 0.0440 | val R 0.9775 MAE 0.1528 | best 0.9775@27 *
+  ep  28 | train 0.0433 | val R 0.9777 MAE 0.1430 | best 0.9777@28 *
+  ep  29 | train 0.0423 | val R 0.9773 MAE 0.1639 | best 0.9777@28
+  ep  30 | train 0.0431 | val R 0.9780 MAE 0.1457 | best 0.9780@30 *
+  ep  31 | train 0.0421 | val R 0.9773 MAE 0.1600 | best 0.9780@30
+  ep  32 | train 0.0413 | val R 0.9778 MAE 0.1559 | best 0.9780@30
+  ep  33 | train 0.0422 | val R 0.9774 MAE 0.1699 | best 0.9780@30
+  ep  34 | train 0.0415 | val R 0.9779 MAE 0.1429 | best 0.9780@30
+  ep  35 | train 0.0414 | val R 0.9776 MAE 0.1744 | best 0.9780@30
+  ep  36 | train 0.0405 | val R 0.9785 MAE 0.1469 | best 0.9785@36 *
+  ep  37 | train 0.0416 | val R 0.9780 MAE 0.1452 | best 0.9785@36
+  ep  38 | train 0.0408 | val R 0.9781 MAE 0.1397 | best 0.9785@36
+  ep  39 | train 0.0409 | val R 0.9787 MAE 0.1417 | best 0.9787@39 *
+  ep  40 | train 0.0398 | val R 0.9790 MAE 0.1369 | best 0.9790@40 *
+  ep  41 | train 0.0393 | val R 0.9789 MAE 0.1410 | best 0.9790@40
+  ep  42 | train 0.0394 | val R 0.9789 MAE 0.1483 | best 0.9790@40
+  ep  43 | train 0.0395 | val R 0.9770 MAE 0.1778 | best 0.9790@40
+  ep  44 | train 0.0403 | val R 0.9783 MAE 0.1740 | best 0.9790@40
+  ep  45 | train 0.0387 | val R 0.9783 MAE 0.1603 | best 0.9790@40
+  ep  46 | train 0.0379 | val R 0.9792 MAE 0.1587 | best 0.9792@46 *
+  ep  47 | train 0.0383 | val R 0.9788 MAE 0.1796 | best 0.9792@46
+  ep  48 | train 0.0382 | val R 0.9788 MAE 0.1404 | best 0.9792@46
+  ep  49 | train 0.0386 | val R 0.9794 MAE 0.1343 | best 0.9794@49 *
+  ep  50 | train 0.0371 | val R 0.9793 MAE 0.1481 | best 0.9794@49
+  ep  51 | train 0.0372 | val R 0.9777 MAE 0.1448 | best 0.9794@49
+  ep  52 | train 0.0375 | val R 0.9793 MAE 0.1362 | best 0.9794@49
+  ep  53 | train 0.0371 | val R 0.9792 MAE 0.1301 | best 0.9794@49
+  ep  54 | train 0.0383 | val R 0.9787 MAE 0.1478 | best 0.9794@49
+  ep  55 | train 0.0375 | val R 0.9795 MAE 0.1427 | best 0.9795@55 *
+  ep  56 | train 0.0369 | val R 0.9798 MAE 0.1364 | best 0.9798@56 *
+  ep  57 | train 0.0361 | val R 0.9798 MAE 0.1524 | best 0.9798@56
+  ep  58 | train 0.0367 | val R 0.9793 MAE 0.1362 | best 0.9798@56
+  ep  59 | train 0.0357 | val R 0.9800 MAE 0.1522 | best 0.9800@59 *
+  ep  60 | train 0.0355 | val R 0.9800 MAE 0.1366 | best 0.9800@59
+  ep  61 | train 0.0352 | val R 0.9795 MAE 0.1631 | best 0.9800@59
+  ep  62 | train 0.0367 | val R 0.9799 MAE 0.1216 | best 0.9800@59
+  ep  63 | train 0.0364 | val R 0.9799 MAE 0.1491 | best 0.9800@59
+  ep  64 | train 0.0357 | val R 0.9798 MAE 0.1306 | best 0.9800@59
+  ep  65 | train 0.0356 | val R 0.9799 MAE 0.1357 | best 0.9800@59
+  ep  66 | train 0.0353 | val R 0.9798 MAE 0.1356 | best 0.9800@59
+  ep  67 | train 0.0354 | val R 0.9795 MAE 0.1481 | best 0.9800@59
+  ep  68 | train 0.0350 | val R 0.9804 MAE 0.1289 | best 0.9804@68 *
+  ep  69 | train 0.0345 | val R 0.9801 MAE 0.1328 | best 0.9804@68
+  ep  70 | train 0.0351 | val R 0.9800 MAE 0.1327 | best 0.9804@68
+  ep  71 | train 0.0352 | val R 0.9803 MAE 0.1391 | best 0.9804@68
+  ep  72 | train 0.0351 | val R 0.9804 MAE 0.1355 | best 0.9804@72 *
+  ep  73 | train 0.0344 | val R 0.9804 MAE 0.1211 | best 0.9804@73 *
+  ep  74 | train 0.0341 | val R 0.9801 MAE 0.1310 | best 0.9804@73
+  ep  75 | train 0.0338 | val R 0.9802 MAE 0.1381 | best 0.9804@73
+  ep  76 | train 0.0345 | val R 0.9807 MAE 0.1489 | best 0.9807@76 *
+  ep  77 | train 0.0344 | val R 0.9797 MAE 0.1331 | best 0.9807@76
+  ep  78 | train 0.0341 | val R 0.9799 MAE 0.1345 | best 0.9807@76
+  ep  79 | train 0.0338 | val R 0.9801 MAE 0.1329 | best 0.9807@76
+  ep  80 | train 0.0340 | val R 0.9808 MAE 0.1345 | best 0.9808@80 *
+  ep  81 | train 0.0340 | val R 0.9801 MAE 0.1720 | best 0.9808@80
+  ep  82 | train 0.0336 | val R 0.9803 MAE 0.1371 | best 0.9808@80
+  ep  83 | train 0.0337 | val R 0.9804 MAE 0.1302 | best 0.9808@80
+  ep  84 | train 0.0336 | val R 0.9804 MAE 0.1445 | best 0.9808@80
+  ep  85 | train 0.0332 | val R 0.9808 MAE 0.1293 | best 0.9808@85 *
+  ep  86 | train 0.0333 | val R 0.9804 MAE 0.1275 | best 0.9808@85
+  ep  87 | train 0.0331 | val R 0.9805 MAE 0.1314 | best 0.9808@85
+  ep  88 | train 0.0332 | val R 0.9810 MAE 0.1145 | best 0.9810@88 *
+  ep  89 | train 0.0331 | val R 0.9809 MAE 0.1288 | best 0.9810@88
+  ep  90 | train 0.0330 | val R 0.9808 MAE 0.1285 | best 0.9810@88
+  ep  91 | train 0.0329 | val R 0.9802 MAE 0.1315 | best 0.9810@88
+  ep  92 | train 0.0333 | val R 0.9806 MAE 0.1222 | best 0.9810@88
+  ep  93 | train 0.0335 | val R 0.9810 MAE 0.1370 | best 0.9810@88
+  ep  94 | train 0.0328 | val R 0.9804 MAE 0.1385 | best 0.9810@88
+  ep  95 | train 0.0330 | val R 0.9809 MAE 0.1152 | best 0.9810@88
+  ep  96 | train 0.0326 | val R 0.9810 MAE 0.1255 | best 0.9810@88
+  ep  97 | train 0.0326 | val R 0.9812 MAE 0.1294 | best 0.9812@97 *
+  ep  98 | train 0.0324 | val R 0.9810 MAE 0.1314 | best 0.9812@97
+  ep  99 | train 0.0330 | val R 0.9814 MAE 0.1324 | best 0.9814@99 *
+  ep 100 | train 0.0328 | val R 0.9816 MAE 0.1277 | best 0.9816@100 *
+  ep 101 | train 0.0324 | val R 0.9811 MAE 0.1442 | best 0.9816@100
+  ep 102 | train 0.0322 | val R 0.9815 MAE 0.1157 | best 0.9816@100
+  ep 103 | train 0.0323 | val R 0.9814 MAE 0.1294 | best 0.9816@100
+  ep 104 | train 0.0321 | val R 0.9810 MAE 0.1207 | best 0.9816@100
+  ep 105 | train 0.0319 | val R 0.9816 MAE 0.1365 | best 0.9816@105 *
+  ep 106 | train 0.0322 | val R 0.9816 MAE 0.1230 | best 0.9816@106 *
+  ep 107 | train 0.0320 | val R 0.9818 MAE 0.1282 | best 0.9818@107 *
+  ep 108 | train 0.0320 | val R 0.9813 MAE 0.1211 | best 0.9818@107
+  ep 109 | train 0.0320 | val R 0.9810 MAE 0.1319 | best 0.9818@107
+  ep 110 | train 0.0323 | val R 0.9813 MAE 0.1265 | best 0.9818@107
+  ep 111 | train 0.0321 | val R 0.9817 MAE 0.1368 | best 0.9818@107
+  ep 112 | train 0.0317 | val R 0.9818 MAE 0.1264 | best 0.9818@112 *
+  ep 113 | train 0.0321 | val R 0.9819 MAE 0.1254 | best 0.9819@113 *
+  ep 114 | train 0.0316 | val R 0.9821 MAE 0.1353 | best 0.9821@114 *
+  ep 115 | train 0.0319 | val R 0.9816 MAE 0.1250 | best 0.9821@114
+  ep 116 | train 0.0320 | val R 0.9816 MAE 0.1228 | best 0.9821@114
+  ep 117 | train 0.0316 | val R 0.9818 MAE 0.1191 | best 0.9821@114
+  ep 118 | train 0.0317 | val R 0.9816 MAE 0.1195 | best 0.9821@114
+  ep 119 | train 0.0315 | val R 0.9821 MAE 0.1350 | best 0.9821@119 *
+  ep 120 | train 0.0318 | val R 0.9817 MAE 0.1186 | best 0.9821@119
+  ep 121 | train 0.0313 | val R 0.9815 MAE 0.1246 | best 0.9821@119
+  ep 122 | train 0.0310 | val R 0.9819 MAE 0.1247 | best 0.9821@119
+  ep 123 | train 0.0312 | val R 0.9819 MAE 0.1280 | best 0.9821@119
+  ep 124 | train 0.0312 | val R 0.9819 MAE 0.1195 | best 0.9821@119
+  ep 125 | train 0.0314 | val R 0.9818 MAE 0.1139 | best 0.9821@119
+  ep 126 | train 0.0312 | val R 0.9810 MAE 0.1278 | best 0.9821@119
+  ep 127 | train 0.0311 | val R 0.9819 MAE 0.1367 | best 0.9821@119
+  ep 128 | train 0.0312 | val R 0.9823 MAE 0.1222 | best 0.9823@128 *
+  ep 129 | train 0.0313 | val R 0.9824 MAE 0.1275 | best 0.9824@129 *
+  ep 130 | train 0.0311 | val R 0.9825 MAE 0.1160 | best 0.9825@130 *
+  ep 131 | train 0.0309 | val R 0.9824 MAE 0.1171 | best 0.9825@130
+  ep 132 | train 0.0306 | val R 0.9824 MAE 0.1238 | best 0.9825@130
+  ep 133 | train 0.0308 | val R 0.9819 MAE 0.1156 | best 0.9825@130
+  ep 134 | train 0.0311 | val R 0.9826 MAE 0.1150 | best 0.9826@134 *
+  ep 135 | train 0.0311 | val R 0.9826 MAE 0.1167 | best 0.9826@135 *
+  ep 136 | train 0.0308 | val R 0.9824 MAE 0.1271 | best 0.9826@135
+  ep 137 | train 0.0309 | val R 0.9822 MAE 0.1141 | best 0.9826@135
+  ep 138 | train 0.0306 | val R 0.9827 MAE 0.1145 | best 0.9827@138 *
+  ep 139 | train 0.0306 | val R 0.9827 MAE 0.1155 | best 0.9827@138
+  ep 140 | train 0.0306 | val R 0.9828 MAE 0.1272 | best 0.9828@140 *
+  ep 141 | train 0.0307 | val R 0.9828 MAE 0.1227 | best 0.9828@140
+  ep 142 | train 0.0308 | val R 0.9822 MAE 0.1193 | best 0.9828@140
+  ep 143 | train 0.0305 | val R 0.9828 MAE 0.1242 | best 0.9828@143 *
+  ep 144 | train 0.0306 | val R 0.9826 MAE 0.1180 | best 0.9828@143
+  ep 145 | train 0.0307 | val R 0.9827 MAE 0.1239 | best 0.9828@143
+  ep 146 | train 0.0305 | val R 0.9827 MAE 0.1248 | best 0.9828@143
+  ep 147 | train 0.0304 | val R 0.9822 MAE 0.1140 | best 0.9828@143
+  ep 148 | train 0.0305 | val R 0.9827 MAE 0.1206 | best 0.9828@143
+  ep 149 | train 0.0303 | val R 0.9826 MAE 0.1165 | best 0.9828@143
+  ep 150 | train 0.0304 | val R 0.9822 MAE 0.1189 | best 0.9828@143
+  ep 151 | train 0.0302 | val R 0.9830 MAE 0.1333 | best 0.9830@151 *
+  ep 152 | train 0.0302 | val R 0.9830 MAE 0.1272 | best 0.9830@152 *
+  ep 153 | train 0.0299 | val R 0.9832 MAE 0.1206 | best 0.9832@153 *
+  ep 154 | train 0.0305 | val R 0.9827 MAE 0.1164 | best 0.9832@153
+  ep 155 | train 0.0302 | val R 0.9828 MAE 0.1168 | best 0.9832@153
+  ep 156 | train 0.0301 | val R 0.9830 MAE 0.1280 | best 0.9832@153
+  ep 157 | train 0.0301 | val R 0.9829 MAE 0.1217 | best 0.9832@153
+  ep 158 | train 0.0303 | val R 0.9828 MAE 0.1191 | best 0.9832@153
+  ep 159 | train 0.0302 | val R 0.9826 MAE 0.1128 | best 0.9832@153
+  ep 160 | train 0.0301 | val R 0.9827 MAE 0.1149 | best 0.9832@153
+  ep 161 | train 0.0302 | val R 0.9827 MAE 0.1141 | best 0.9832@153
+  ep 162 | train 0.0303 | val R 0.9828 MAE 0.1206 | best 0.9832@153
+  ep 163 | train 0.0301 | val R 0.9832 MAE 0.1222 | best 0.9832@153
+  ep 164 | train 0.0300 | val R 0.9830 MAE 0.1176 | best 0.9832@153
+  ep 165 | train 0.0299 | val R 0.9831 MAE 0.1147 | best 0.9832@153
+  ep 166 | train 0.0299 | val R 0.9828 MAE 0.1170 | best 0.9832@153
+  ep 167 | train 0.0298 | val R 0.9831 MAE 0.1129 | best 0.9832@153
+  ep 168 | train 0.0301 | val R 0.9830 MAE 0.1122 | best 0.9832@153
+  ep 169 | train 0.0299 | val R 0.9832 MAE 0.1185 | best 0.9832@169 *
+  ep 170 | train 0.0300 | val R 0.9830 MAE 0.1148 | best 0.9832@169
+  ep 171 | train 0.0301 | val R 0.9832 MAE 0.1193 | best 0.9832@171 *
+  ep 172 | train 0.0297 | val R 0.9831 MAE 0.1142 | best 0.9832@171
+  ep 173 | train 0.0300 | val R 0.9833 MAE 0.1174 | best 0.9833@173 *
+  ep 174 | train 0.0298 | val R 0.9832 MAE 0.1144 | best 0.9833@173
+  ep 175 | train 0.0299 | val R 0.9834 MAE 0.1173 | best 0.9834@175 *
+  ep 176 | train 0.0298 | val R 0.9833 MAE 0.1184 | best 0.9834@175
+  ep 177 | train 0.0296 | val R 0.9835 MAE 0.1227 | best 0.9835@177 *
+  ep 178 | train 0.0297 | val R 0.9831 MAE 0.1130 | best 0.9835@177
+  ep 179 | train 0.0297 | val R 0.9833 MAE 0.1142 | best 0.9835@177
+  ep 180 | train 0.0300 | val R 0.9832 MAE 0.1152 | best 0.9835@177
+  ep 181 | train 0.0297 | val R 0.9833 MAE 0.1174 | best 0.9835@177
+  ep 182 | train 0.0297 | val R 0.9833 MAE 0.1160 | best 0.9835@177
+  ep 183 | train 0.0296 | val R 0.9834 MAE 0.1165 | best 0.9835@177
+  ep 184 | train 0.0291 | val R 0.9833 MAE 0.1157 | best 0.9835@177
+  ep 185 | train 0.0294 | val R 0.9835 MAE 0.1156 | best 0.9835@177
+  ep 186 | train 0.0296 | val R 0.9833 MAE 0.1128 | best 0.9835@177
+  ep 187 | train 0.0295 | val R 0.9834 MAE 0.1157 | best 0.9835@177
+  ep 188 | train 0.0298 | val R 0.9833 MAE 0.1147 | best 0.9835@177
+  ep 189 | train 0.0298 | val R 0.9833 MAE 0.1144 | best 0.9835@177
+  ep 190 | train 0.0294 | val R 0.9833 MAE 0.1137 | best 0.9835@177
+  ep 191 | train 0.0299 | val R 0.9833 MAE 0.1151 | best 0.9835@177
+  ep 192 | train 0.0298 | val R 0.9833 MAE 0.1156 | best 0.9835@177
+  ep 193 | train 0.0299 | val R 0.9834 MAE 0.1152 | best 0.9835@177
+  ep 194 | train 0.0295 | val R 0.9834 MAE 0.1156 | best 0.9835@177
+  ep 195 | train 0.0295 | val R 0.9834 MAE 0.1160 | best 0.9835@177
+  ep 196 | train 0.0293 | val R 0.9834 MAE 0.1161 | best 0.9835@177
+  ep 197 | train 0.0294 | val R 0.9834 MAE 0.1155 | best 0.9835@177
+  early stop @ep197 (no val-R improvement for 20)
+>> Fold 2: best ep 177 | val R 0.9835 | test R 0.9820 MAE 0.1265
+
+===== Fold 3: train 53,194 / val 7,600 / test 15,198 =====
+  ep   0 | train 0.2981 | val R 0.9218 MAE 0.4614 | best 0.9218@0 *
+  ep   1 | train 0.1380 | val R 0.9528 MAE 0.3132 | best 0.9528@1 *
+  ep   2 | train 0.1044 | val R 0.9590 MAE 0.3241 | best 0.9590@2 *
+  ep   3 | train 0.0886 | val R 0.9630 MAE 0.3039 | best 0.9630@3 *
+  ep   4 | train 0.0793 | val R 0.9674 MAE 0.2433 | best 0.9674@4 *
+  ep   5 | train 0.0742 | val R 0.9695 MAE 0.2363 | best 0.9695@5 *
+  ep   6 | train 0.0710 | val R 0.9708 MAE 0.2016 | best 0.9708@6 *
+  ep   7 | train 0.0678 | val R 0.9718 MAE 0.2184 | best 0.9718@7 *
+  ep   8 | train 0.0640 | val R 0.9719 MAE 0.2503 | best 0.9719@8 *
+  ep   9 | train 0.0630 | val R 0.9727 MAE 0.2104 | best 0.9727@9 *
+  ep  10 | train 0.0609 | val R 0.9734 MAE 0.1884 | best 0.9734@10 *
+  ep  11 | train 0.0592 | val R 0.9735 MAE 0.2051 | best 0.9735@11 *
+  ep  12 | train 0.0573 | val R 0.9743 MAE 0.1907 | best 0.9743@12 *
+  ep  13 | train 0.0562 | val R 0.9746 MAE 0.1880 | best 0.9746@13 *
+  ep  14 | train 0.0546 | val R 0.9756 MAE 0.1670 | best 0.9756@14 *
+  ep  15 | train 0.0541 | val R 0.9758 MAE 0.1675 | best 0.9758@15 *
+  ep  16 | train 0.0527 | val R 0.9757 MAE 0.1723 | best 0.9758@15
+  ep  17 | train 0.0523 | val R 0.9763 MAE 0.1642 | best 0.9763@17 *
+  ep  18 | train 0.0507 | val R 0.9769 MAE 0.1632 | best 0.9769@18 *
+  ep  19 | train 0.0508 | val R 0.9770 MAE 0.1687 | best 0.9770@19 *
+  ep  20 | train 0.0500 | val R 0.9774 MAE 0.1672 | best 0.9774@20 *
+  ep  21 | train 0.0484 | val R 0.9775 MAE 0.1650 | best 0.9775@21 *
+  ep  22 | train 0.0475 | val R 0.9773 MAE 0.1648 | best 0.9775@21
+  ep  23 | train 0.0470 | val R 0.9775 MAE 0.1613 | best 0.9775@21
+  ep  24 | train 0.0469 | val R 0.9771 MAE 0.1621 | best 0.9775@21
+  ep  25 | train 0.0460 | val R 0.9775 MAE 0.1799 | best 0.9775@21
+  ep  26 | train 0.0459 | val R 0.9780 MAE 0.1650 | best 0.9780@26 *
+  ep  27 | train 0.0465 | val R 0.9783 MAE 0.1484 | best 0.9783@27 *
+  ep  28 | train 0.0460 | val R 0.9783 MAE 0.1651 | best 0.9783@28 *
+  ep  29 | train 0.0440 | val R 0.9787 MAE 0.1504 | best 0.9787@29 *
+  ep  30 | train 0.0439 | val R 0.9786 MAE 0.1395 | best 0.9787@29
+  ep  31 | train 0.0434 | val R 0.9780 MAE 0.1638 | best 0.9787@29
+  ep  32 | train 0.0433 | val R 0.9786 MAE 0.1570 | best 0.9787@29
+  ep  33 | train 0.0453 | val R 0.9777 MAE 0.1523 | best 0.9787@29
+  ep  34 | train 0.0440 | val R 0.9788 MAE 0.1397 | best 0.9788@34 *
+  ep  35 | train 0.0424 | val R 0.9785 MAE 0.1550 | best 0.9788@34
+  ep  36 | train 0.0421 | val R 0.9786 MAE 0.1583 | best 0.9788@34
+  ep  37 | train 0.0424 | val R 0.9784 MAE 0.1624 | best 0.9788@34
+  ep  38 | train 0.0430 | val R 0.9787 MAE 0.1441 | best 0.9788@34
+  ep  39 | train 0.0412 | val R 0.9780 MAE 0.2027 | best 0.9788@34
+  ep  40 | train 0.0417 | val R 0.9793 MAE 0.1376 | best 0.9793@40 *
+  ep  41 | train 0.0417 | val R 0.9781 MAE 0.1735 | best 0.9793@40
+  ep  42 | train 0.0407 | val R 0.9798 MAE 0.1480 | best 0.9798@42 *
+  ep  43 | train 0.0401 | val R 0.9792 MAE 0.1509 | best 0.9798@42
+  ep  44 | train 0.0401 | val R 0.9797 MAE 0.1500 | best 0.9798@42
+  ep  45 | train 0.0414 | val R 0.9792 MAE 0.1432 | best 0.9798@42
+  ep  46 | train 0.0395 | val R 0.9799 MAE 0.1414 | best 0.9799@46 *
+  ep  47 | train 0.0406 | val R 0.9794 MAE 0.1401 | best 0.9799@46
+  ep  48 | train 0.0413 | val R 0.9795 MAE 0.1355 | best 0.9799@46
+  ep  49 | train 0.0394 | val R 0.9796 MAE 0.1503 | best 0.9799@46
+  ep  50 | train 0.0392 | val R 0.9798 MAE 0.1651 | best 0.9799@46
+  ep  51 | train 0.0396 | val R 0.9796 MAE 0.1469 | best 0.9799@46
+  ep  52 | train 0.0389 | val R 0.9796 MAE 0.1432 | best 0.9799@46
+  ep  53 | train 0.0389 | val R 0.9799 MAE 0.1376 | best 0.9799@53 *
+  ep  54 | train 0.0389 | val R 0.9801 MAE 0.1295 | best 0.9801@54 *
+  ep  55 | train 0.0385 | val R 0.9799 MAE 0.1496 | best 0.9801@54
+  ep  56 | train 0.0384 | val R 0.9805 MAE 0.1412 | best 0.9805@56 *
+  ep  57 | train 0.0382 | val R 0.9793 MAE 0.1652 | best 0.9805@56
+  ep  58 | train 0.0389 | val R 0.9800 MAE 0.1291 | best 0.9805@56
+  ep  59 | train 0.0379 | val R 0.9801 MAE 0.1243 | best 0.9805@56
+  ep  60 | train 0.0375 | val R 0.9799 MAE 0.1431 | best 0.9805@56
+  ep  61 | train 0.0382 | val R 0.9801 MAE 0.1411 | best 0.9805@56
+  ep  62 | train 0.0371 | val R 0.9801 MAE 0.1455 | best 0.9805@56
+  ep  63 | train 0.0373 | val R 0.9801 MAE 0.1296 | best 0.9805@56
+  ep  64 | train 0.0368 | val R 0.9800 MAE 0.1532 | best 0.9805@56
+  ep  65 | train 0.0371 | val R 0.9803 MAE 0.1561 | best 0.9805@56
+  ep  66 | train 0.0371 | val R 0.9801 MAE 0.1363 | best 0.9805@56
+  ep  67 | train 0.0367 | val R 0.9802 MAE 0.1589 | best 0.9805@56
+  ep  68 | train 0.0365 | val R 0.9800 MAE 0.1514 | best 0.9805@56
+  ep  69 | train 0.0376 | val R 0.9802 MAE 0.1369 | best 0.9805@56
+  ep  70 | train 0.0379 | val R 0.9800 MAE 0.1330 | best 0.9805@56
+  ep  71 | train 0.0362 | val R 0.9804 MAE 0.1335 | best 0.9805@56
+  ep  72 | train 0.0359 | val R 0.9800 MAE 0.1287 | best 0.9805@56
+  ep  73 | train 0.0361 | val R 0.9803 MAE 0.1341 | best 0.9805@56
+  ep  74 | train 0.0356 | val R 0.9804 MAE 0.1284 | best 0.9805@56
+  ep  75 | train 0.0357 | val R 0.9803 MAE 0.1324 | best 0.9805@56
+  ep  76 | train 0.0359 | val R 0.9803 MAE 0.1414 | best 0.9805@56
+  early stop @ep76 (no val-R improvement for 20)
+>> Fold 3: best ep 56 | val R 0.9805 | test R 0.9823 MAE 0.1375
+
+===== Fold 4: train 53,194 / val 7,600 / test 15,198 =====
+  ep   0 | train 0.2845 | val R 0.9125 MAE 0.4725 | best 0.9125@0 *
+  ep   1 | train 0.1316 | val R 0.9437 MAE 0.3365 | best 0.9437@1 *
+  ep   2 | train 0.1004 | val R 0.9531 MAE 0.2884 | best 0.9531@2 *
+  ep   3 | train 0.0859 | val R 0.9584 MAE 0.2654 | best 0.9584@3 *
+  ep   4 | train 0.0784 | val R 0.9606 MAE 0.2624 | best 0.9606@4 *
+  ep   5 | train 0.0732 | val R 0.9628 MAE 0.2262 | best 0.9628@5 *
+  ep   6 | train 0.0690 | val R 0.9646 MAE 0.2467 | best 0.9646@6 *
+  ep   7 | train 0.0660 | val R 0.9671 MAE 0.2190 | best 0.9671@7 *
+  ep   8 | train 0.0632 | val R 0.9670 MAE 0.2105 | best 0.9671@7
+  ep   9 | train 0.0616 | val R 0.9694 MAE 0.2080 | best 0.9694@9 *
+  ep  10 | train 0.0585 | val R 0.9691 MAE 0.2057 | best 0.9694@9
+  ep  11 | train 0.0573 | val R 0.9707 MAE 0.2360 | best 0.9707@11 *
+  ep  12 | train 0.0553 | val R 0.9723 MAE 0.2101 | best 0.9723@12 *
+  ep  13 | train 0.0539 | val R 0.9714 MAE 0.2077 | best 0.9723@12
+  ep  14 | train 0.0535 | val R 0.9732 MAE 0.1948 | best 0.9732@14 *
+  ep  15 | train 0.0519 | val R 0.9730 MAE 0.1826 | best 0.9732@14
+  ep  16 | train 0.0514 | val R 0.9717 MAE 0.2196 | best 0.9732@14
+  ep  17 | train 0.0500 | val R 0.9742 MAE 0.1950 | best 0.9742@17 *
+  ep  18 | train 0.0490 | val R 0.9754 MAE 0.1628 | best 0.9754@18 *
+  ep  19 | train 0.0483 | val R 0.9751 MAE 0.1897 | best 0.9754@18
+  ep  20 | train 0.0478 | val R 0.9747 MAE 0.1719 | best 0.9754@18
+  ep  21 | train 0.0481 | val R 0.9757 MAE 0.1693 | best 0.9757@21 *
+  ep  22 | train 0.0468 | val R 0.9767 MAE 0.1640 | best 0.9767@22 *
+  ep  23 | train 0.0459 | val R 0.9767 MAE 0.1621 | best 0.9767@23 *
+  ep  24 | train 0.0457 | val R 0.9769 MAE 0.1556 | best 0.9769@24 *
+  ep  25 | train 0.0450 | val R 0.9780 MAE 0.1553 | best 0.9780@25 *
+  ep  26 | train 0.0448 | val R 0.9754 MAE 0.1960 | best 0.9780@25
+  ep  27 | train 0.0446 | val R 0.9782 MAE 0.1539 | best 0.9782@27 *
+  ep  28 | train 0.0433 | val R 0.9782 MAE 0.1434 | best 0.9782@28 *
+  ep  29 | train 0.0436 | val R 0.9788 MAE 0.1424 | best 0.9788@29 *
+  ep  30 | train 0.0429 | val R 0.9790 MAE 0.1384 | best 0.9790@30 *
+  ep  31 | train 0.0429 | val R 0.9778 MAE 0.1854 | best 0.9790@30
+  ep  32 | train 0.0423 | val R 0.9784 MAE 0.1539 | best 0.9790@30
+  ep  33 | train 0.0418 | val R 0.9788 MAE 0.1509 | best 0.9790@30
+  ep  34 | train 0.0412 | val R 0.9793 MAE 0.1419 | best 0.9793@34 *
+  ep  35 | train 0.0415 | val R 0.9796 MAE 0.1484 | best 0.9796@35 *
+  ep  36 | train 0.0408 | val R 0.9795 MAE 0.1466 | best 0.9796@35
+  ep  37 | train 0.0405 | val R 0.9790 MAE 0.1713 | best 0.9796@35
+  ep  38 | train 0.0404 | val R 0.9786 MAE 0.1484 | best 0.9796@35
+  ep  39 | train 0.0401 | val R 0.9798 MAE 0.1675 | best 0.9798@39 *
+  ep  40 | train 0.0395 | val R 0.9801 MAE 0.1552 | best 0.9801@40 *
+  ep  41 | train 0.0396 | val R 0.9806 MAE 0.1319 | best 0.9806@41 *
+  ep  42 | train 0.0391 | val R 0.9803 MAE 0.1491 | best 0.9806@41
+  ep  43 | train 0.0388 | val R 0.9804 MAE 0.1439 | best 0.9806@41
+  ep  44 | train 0.0389 | val R 0.9809 MAE 0.1434 | best 0.9809@44 *
+  ep  45 | train 0.0386 | val R 0.9803 MAE 0.1566 | best 0.9809@44
+  ep  46 | train 0.0382 | val R 0.9802 MAE 0.1314 | best 0.9809@44
+  ep  47 | train 0.0380 | val R 0.9812 MAE 0.1366 | best 0.9812@47 *
+  ep  48 | train 0.0383 | val R 0.9787 MAE 0.1663 | best 0.9812@47
+  ep  49 | train 0.0381 | val R 0.9811 MAE 0.1384 | best 0.9812@47
+  ep  50 | train 0.0368 | val R 0.9811 MAE 0.1479 | best 0.9812@47
+  ep  51 | train 0.0372 | val R 0.9810 MAE 0.1683 | best 0.9812@47
+  ep  52 | train 0.0371 | val R 0.9812 MAE 0.1289 | best 0.9812@47
+  ep  53 | train 0.0368 | val R 0.9816 MAE 0.1406 | best 0.9816@53 *
+  ep  54 | train 0.0363 | val R 0.9812 MAE 0.1472 | best 0.9816@53
+  ep  55 | train 0.0364 | val R 0.9812 MAE 0.1440 | best 0.9816@53
+  ep  56 | train 0.0367 | val R 0.9818 MAE 0.1385 | best 0.9818@56 *
+  ep  57 | train 0.0362 | val R 0.9819 MAE 0.1289 | best 0.9819@57 *
+  ep  58 | train 0.0359 | val R 0.9818 MAE 0.1240 | best 0.9819@57
+  ep  59 | train 0.0369 | val R 0.9817 MAE 0.1448 | best 0.9819@57
+  ep  60 | train 0.0356 | val R 0.9812 MAE 0.1294 | best 0.9819@57
+  ep  61 | train 0.0352 | val R 0.9815 MAE 0.1383 | best 0.9819@57
+  ep  62 | train 0.0357 | val R 0.9819 MAE 0.1232 | best 0.9819@62 *
+  ep  63 | train 0.0352 | val R 0.9817 MAE 0.1317 | best 0.9819@62
+  ep  64 | train 0.0346 | val R 0.9820 MAE 0.1362 | best 0.9820@64 *
+  ep  65 | train 0.0352 | val R 0.9819 MAE 0.1413 | best 0.9820@64
+  ep  66 | train 0.0351 | val R 0.9819 MAE 0.1209 | best 0.9820@64
+  ep  67 | train 0.0356 | val R 0.9819 MAE 0.1335 | best 0.9820@64
+  ep  68 | train 0.0351 | val R 0.9818 MAE 0.1335 | best 0.9820@64
+  ep  69 | train 0.0341 | val R 0.9819 MAE 0.1244 | best 0.9820@64
+  ep  70 | train 0.0347 | val R 0.9815 MAE 0.1417 | best 0.9820@64
+  ep  71 | train 0.0347 | val R 0.9816 MAE 0.1218 | best 0.9820@64
+  ep  72 | train 0.0344 | val R 0.9822 MAE 0.1284 | best 0.9822@72 *
+  ep  73 | train 0.0341 | val R 0.9822 MAE 0.1269 | best 0.9822@73 *
+  ep  74 | train 0.0340 | val R 0.9814 MAE 0.1279 | best 0.9822@73
+  ep  75 | train 0.0339 | val R 0.9817 MAE 0.1411 | best 0.9822@73
+  ep  76 | train 0.0341 | val R 0.9804 MAE 0.1366 | best 0.9822@73
+  ep  77 | train 0.0340 | val R 0.9821 MAE 0.1401 | best 0.9822@73
+  ep  78 | train 0.0339 | val R 0.9827 MAE 0.1133 | best 0.9827@78 *
+  ep  79 | train 0.0337 | val R 0.9824 MAE 0.1239 | best 0.9827@78
+  ep  80 | train 0.0350 | val R 0.9822 MAE 0.1257 | best 0.9827@78
+  ep  81 | train 0.0335 | val R 0.9820 MAE 0.1362 | best 0.9827@78
+  ep  82 | train 0.0332 | val R 0.9822 MAE 0.1245 | best 0.9827@78
+  ep  83 | train 0.0331 | val R 0.9822 MAE 0.1286 | best 0.9827@78
+  ep  84 | train 0.0335 | val R 0.9823 MAE 0.1209 | best 0.9827@78
+  ep  85 | train 0.0333 | val R 0.9820 MAE 0.1402 | best 0.9827@78
+  ep  86 | train 0.0329 | val R 0.9824 MAE 0.1245 | best 0.9827@78
+  ep  87 | train 0.0332 | val R 0.9824 MAE 0.1223 | best 0.9827@78
+  ep  88 | train 0.0332 | val R 0.9827 MAE 0.1221 | best 0.9827@88 *
+  ep  89 | train 0.0327 | val R 0.9824 MAE 0.1434 | best 0.9827@88
+  ep  90 | train 0.0330 | val R 0.9821 MAE 0.1462 | best 0.9827@88
+  ep  91 | train 0.0328 | val R 0.9826 MAE 0.1345 | best 0.9827@88
+  ep  92 | train 0.0328 | val R 0.9826 MAE 0.1194 | best 0.9827@88
+  ep  93 | train 0.0325 | val R 0.9827 MAE 0.1254 | best 0.9827@88
+  ep  94 | train 0.0326 | val R 0.9823 MAE 0.1283 | best 0.9827@88
+  ep  95 | train 0.0323 | val R 0.9830 MAE 0.1249 | best 0.9830@95 *
+  ep  96 | train 0.0328 | val R 0.9822 MAE 0.1275 | best 0.9830@95
+  ep  97 | train 0.0323 | val R 0.9824 MAE 0.1615 | best 0.9830@95
+  ep  98 | train 0.0327 | val R 0.9822 MAE 0.1203 | best 0.9830@95
+  ep  99 | train 0.0323 | val R 0.9825 MAE 0.1301 | best 0.9830@95
+  ep 100 | train 0.0322 | val R 0.9823 MAE 0.1359 | best 0.9830@95
+  ep 101 | train 0.0326 | val R 0.9826 MAE 0.1415 | best 0.9830@95
+  ep 102 | train 0.0323 | val R 0.9823 MAE 0.1452 | best 0.9830@95
+  ep 103 | train 0.0322 | val R 0.9828 MAE 0.1148 | best 0.9830@95
+  ep 104 | train 0.0321 | val R 0.9828 MAE 0.1121 | best 0.9830@95
+  ep 105 | train 0.0323 | val R 0.9826 MAE 0.1194 | best 0.9830@95
+  ep 106 | train 0.0320 | val R 0.9830 MAE 0.1095 | best 0.9830@106 *
+  ep 107 | train 0.0318 | val R 0.9827 MAE 0.1743 | best 0.9830@106
+  ep 108 | train 0.0320 | val R 0.9825 MAE 0.1241 | best 0.9830@106
+  ep 109 | train 0.0320 | val R 0.9828 MAE 0.1292 | best 0.9830@106
+  ep 110 | train 0.0321 | val R 0.9827 MAE 0.1277 | best 0.9830@106
+  ep 111 | train 0.0317 | val R 0.9827 MAE 0.1323 | best 0.9830@106
+  ep 112 | train 0.0315 | val R 0.9827 MAE 0.1322 | best 0.9830@106
+  ep 113 | train 0.0315 | val R 0.9825 MAE 0.1266 | best 0.9830@106
+  ep 114 | train 0.0316 | val R 0.9829 MAE 0.1205 | best 0.9830@106
+  ep 115 | train 0.0316 | val R 0.9826 MAE 0.1135 | best 0.9830@106
+  ep 116 | train 0.0316 | val R 0.9825 MAE 0.1140 | best 0.9830@106
+  ep 117 | train 0.0314 | val R 0.9830 MAE 0.1192 | best 0.9830@106
+  ep 118 | train 0.0313 | val R 0.9827 MAE 0.1258 | best 0.9830@106
+  ep 119 | train 0.0316 | val R 0.9827 MAE 0.1351 | best 0.9830@106
+  ep 120 | train 0.0313 | val R 0.9829 MAE 0.1326 | best 0.9830@106
+  ep 121 | train 0.0312 | val R 0.9832 MAE 0.1172 | best 0.9832@121 *
+  ep 122 | train 0.0314 | val R 0.9830 MAE 0.1220 | best 0.9832@121
+  ep 123 | train 0.0313 | val R 0.9831 MAE 0.1239 | best 0.9832@121
+  ep 124 | train 0.0311 | val R 0.9831 MAE 0.1207 | best 0.9832@121
+  ep 125 | train 0.0311 | val R 0.9833 MAE 0.1225 | best 0.9833@125 *
+  ep 126 | train 0.0310 | val R 0.9829 MAE 0.1190 | best 0.9833@125
+  ep 127 | train 0.0312 | val R 0.9830 MAE 0.1138 | best 0.9833@125
+  ep 128 | train 0.0316 | val R 0.9833 MAE 0.1282 | best 0.9833@125
+  ep 129 | train 0.0312 | val R 0.9829 MAE 0.1440 | best 0.9833@125
+  ep 130 | train 0.0310 | val R 0.9831 MAE 0.1229 | best 0.9833@125
+  ep 131 | train 0.0310 | val R 0.9831 MAE 0.1306 | best 0.9833@125
+  ep 132 | train 0.0310 | val R 0.9830 MAE 0.1384 | best 0.9833@125
+  ep 133 | train 0.0310 | val R 0.9832 MAE 0.1241 | best 0.9833@125
+  ep 134 | train 0.0309 | val R 0.9832 MAE 0.1184 | best 0.9833@125
+  ep 135 | train 0.0309 | val R 0.9833 MAE 0.1211 | best 0.9833@135 *
+  ep 136 | train 0.0310 | val R 0.9833 MAE 0.1156 | best 0.9833@136 *
+  ep 137 | train 0.0308 | val R 0.9832 MAE 0.1323 | best 0.9833@136
+  ep 138 | train 0.0307 | val R 0.9830 MAE 0.1281 | best 0.9833@136
+  ep 139 | train 0.0309 | val R 0.9830 MAE 0.1232 | best 0.9833@136
+  ep 140 | train 0.0307 | val R 0.9832 MAE 0.1164 | best 0.9833@136
+  ep 141 | train 0.0306 | val R 0.9829 MAE 0.1136 | best 0.9833@136
+  ep 142 | train 0.0305 | val R 0.9833 MAE 0.1191 | best 0.9833@142 *
+  ep 143 | train 0.0305 | val R 0.9830 MAE 0.1216 | best 0.9833@142
+  ep 144 | train 0.0308 | val R 0.9833 MAE 0.1211 | best 0.9833@142
+  ep 145 | train 0.0305 | val R 0.9831 MAE 0.1304 | best 0.9833@142
+  ep 146 | train 0.0304 | val R 0.9833 MAE 0.1069 | best 0.9833@142
+  ep 147 | train 0.0307 | val R 0.9833 MAE 0.1344 | best 0.9833@147 *
+  ep 148 | train 0.0304 | val R 0.9831 MAE 0.1143 | best 0.9833@147
+  ep 149 | train 0.0305 | val R 0.9833 MAE 0.1128 | best 0.9833@147
+  ep 150 | train 0.0307 | val R 0.9832 MAE 0.1340 | best 0.9833@147
+  ep 151 | train 0.0304 | val R 0.9834 MAE 0.1252 | best 0.9834@151 *
+  ep 152 | train 0.0304 | val R 0.9833 MAE 0.1203 | best 0.9834@151
+  ep 153 | train 0.0303 | val R 0.9835 MAE 0.1159 | best 0.9835@153 *
+  ep 154 | train 0.0304 | val R 0.9835 MAE 0.1125 | best 0.9835@154 *
+  ep 155 | train 0.0304 | val R 0.9834 MAE 0.1177 | best 0.9835@154
+  ep 156 | train 0.0301 | val R 0.9834 MAE 0.1175 | best 0.9835@154
+  ep 157 | train 0.0304 | val R 0.9835 MAE 0.1261 | best 0.9835@157 *
+  ep 158 | train 0.0303 | val R 0.9833 MAE 0.1210 | best 0.9835@157
+  ep 159 | train 0.0301 | val R 0.9835 MAE 0.1155 | best 0.9835@157
+  ep 160 | train 0.0302 | val R 0.9834 MAE 0.1186 | best 0.9835@157
+  ep 161 | train 0.0302 | val R 0.9833 MAE 0.1234 | best 0.9835@157
+  ep 162 | train 0.0301 | val R 0.9834 MAE 0.1174 | best 0.9835@157
+  ep 163 | train 0.0304 | val R 0.9835 MAE 0.1209 | best 0.9835@157
+  ep 164 | train 0.0304 | val R 0.9834 MAE 0.1313 | best 0.9835@157
+  ep 165 | train 0.0301 | val R 0.9834 MAE 0.1162 | best 0.9835@157
+  ep 166 | train 0.0299 | val R 0.9833 MAE 0.1159 | best 0.9835@157
+  ep 167 | train 0.0301 | val R 0.9834 MAE 0.1226 | best 0.9835@157
+  ep 168 | train 0.0299 | val R 0.9833 MAE 0.1211 | best 0.9835@157
+  ep 169 | train 0.0302 | val R 0.9833 MAE 0.1185 | best 0.9835@157
+  ep 170 | train 0.0301 | val R 0.9835 MAE 0.1176 | best 0.9835@157
+  ep 171 | train 0.0300 | val R 0.9835 MAE 0.1182 | best 0.9835@157
+  ep 172 | train 0.0300 | val R 0.9834 MAE 0.1213 | best 0.9835@157
+  ep 173 | train 0.0301 | val R 0.9834 MAE 0.1252 | best 0.9835@157
+  ep 174 | train 0.0301 | val R 0.9833 MAE 0.1259 | best 0.9835@157
+  ep 175 | train 0.0299 | val R 0.9834 MAE 0.1194 | best 0.9835@157
+  ep 176 | train 0.0301 | val R 0.9834 MAE 0.1194 | best 0.9835@157
+  ep 177 | train 0.0299 | val R 0.9834 MAE 0.1174 | best 0.9835@157
+  early stop @ep177 (no val-R improvement for 20)
+>> Fold 4: best ep 157 | val R 0.9835 | test R 0.9793 MAE 0.1273
+
+===== ionic_visc 5-fold 汇总（permol/wmean）=====
+  Fold 0: R=0.9873  MAE=0.1131  (best ep 138)
+  Fold 1: R=0.9859  MAE=0.1167  (best ep 167)
+  Fold 2: R=0.9820  MAE=0.1265  (best ep 177)
+  Fold 3: R=0.9823  MAE=0.1375  (best ep 56)
+  Fold 4: R=0.9793  MAE=0.1273  (best ep 157)
+  平均: R=0.9834 ± 0.0029 | MAE=0.1242 ± 0.0086
+结果已追加: <server>/chemixhub_permol_results.csv

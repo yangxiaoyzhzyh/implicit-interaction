@@ -1,0 +1,6 @@
+tag,feat,variant,combine,head,seed,epochs,bsz,lr,dim,layers,heads,gin_layers,gin_hidden,dropout,params,best_val,best_ep,test_auc,n_classes,seconds
+smoke,permol,full,wmean,mlp,42,2,64,0.0003,256,2,4,3,64,0.1,1247181,0.5231,1,0.5336,55,2
+smoke,permol,full,wmean,mlp,42,2,64,0.0003,256,2,4,3,64,0.1,1247181,0.523,1,0.5336,55,2
+s42,permol,full,wmean,mlp,42,200,64,0.0003,256,2,4,3,64,0.1,1247181,0.999,49,0.7181,74,3175
+s42_ck,permol,full,wmean,mlp,42,200,64,0.0003,256,2,4,3,64,0.1,1247181,0.9991,145,0.7368,74,3377
+kneetest,42,knee,5,0.1,2,5,40,64,0.0003,256,2,4,3,64,0.1,1247181,0.5967,12,12,0.5541,55,6

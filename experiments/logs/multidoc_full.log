@@ -1,0 +1,39 @@
+20NG: train 11314 / test 7532，类别 20
+取样后 train 11314 / test 7532 篇（每类 ≤0）
+BGE-M3 编码（LM Studio，text-embedding-bge-m3，截断 512 字符）...
+    embed 0/11314
+    embed 1280/11314
+    embed 2560/11314
+    embed 3840/11314
+    embed 5120/11314
+    embed 6400/11314
+    embed 7680/11314
+    embed 8960/11314
+    embed 10240/11314
+  train done (11314, 1024)，用时 2236s
+    embed 0/7532
+    embed 1280/7532
+    embed 2560/7532
+    embed 3840/7532
+    embed 5120/7532
+    embed 6400/7532
+  test done (7532, 1024)，总用时 3623s
+缓存 → C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v2\results\multidoc_emb_20ng.npz
+嵌入 train (11314, 1024) / test (7532, 1024)
+训练集合样本 8000（k∈{1,2}）
+  v(p) params = 399124
+  v(w) params = 461012
+  加性基准 params = 20500
+  加性基准     seed42:  k=5 acc=0.900  k=10 acc=0.937  k=20 acc=0.968
+  加性基准     seed43:  k=5 acc=0.902  k=10 acc=0.938  k=20 acc=0.970
+  v(p)     seed42:  k=5 acc=0.812  k=10 acc=0.873  k=20 acc=0.908
+  v(p)     seed43:  k=5 acc=0.825  k=10 acc=0.887  k=20 acc=0.930
+  v(w)     seed42:  k=5 acc=0.760  k=10 acc=0.823  k=20 acc=0.903
+  v(w)     seed43:  k=5 acc=0.727  k=10 acc=0.778  k=20 acc=0.875
+
+=== 汇总（跨 seed 均值）===
+   k        加性基准      v(p)      v(w)       gap
+   5       0.901     0.818     0.743     0.075
+  10       0.938     0.880     0.801     0.079
+  20       0.969     0.919     0.889     0.030
+saved C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v2\results\multidoc_set_results.csv

@@ -1,0 +1,233 @@
+Device: CPU, torch 2.12.1+cu130
+Enthalpy of mixing 样本: 30,061
+有效样本: 30,061
+
+===== Fold 0: train 21,041 / val 3,007 / test 6,013 =====
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  ep  0 | train 0.7530 | val R 0.6986 MAE 0.4702
+  ep  1 | train 0.4694 | val R 0.7855 MAE 0.4068
+  ep  2 | train 0.3149 | val R 0.8743 MAE 0.3108
+  ep  3 | train 0.1884 | val R 0.9007 MAE 0.2758
+  ep  4 | train 0.1464 | val R 0.9157 MAE 0.2553
+  ep  5 | train 0.1211 | val R 0.9240 MAE 0.2494
+  ep  6 | train 0.1033 | val R 0.9288 MAE 0.2395
+  ep  7 | train 0.0930 | val R 0.9346 MAE 0.2338
+  ep  8 | train 0.0867 | val R 0.9387 MAE 0.2109
+  ep  9 | train 0.0791 | val R 0.9365 MAE 0.2223
+  ep 10 | train 0.0784 | val R 0.9414 MAE 0.2036
+  ep 11 | train 0.0708 | val R 0.9438 MAE 0.1958
+  ep 12 | train 0.0671 | val R 0.9454 MAE 0.1948
+  ep 13 | train 0.0674 | val R 0.9466 MAE 0.1963
+  ep 14 | train 0.0631 | val R 0.9479 MAE 0.1946
+  ep 15 | train 0.0606 | val R 0.9494 MAE 0.1909
+  ep 16 | train 0.0595 | val R 0.9478 MAE 0.2139
+  ep 17 | train 0.0596 | val R 0.9481 MAE 0.1899
+  ep 18 | train 0.0554 | val R 0.9503 MAE 0.1902
+  ep 19 | train 0.0560 | val R 0.9510 MAE 0.1844
+  ep 20 | train 0.0536 | val R 0.9511 MAE 0.1817
+  ep 21 | train 0.0515 | val R 0.9516 MAE 0.1848
+  ep 22 | train 0.0500 | val R 0.9510 MAE 0.1846
+  ep 23 | train 0.0495 | val R 0.9505 MAE 0.1946
+  ep 24 | train 0.0504 | val R 0.9522 MAE 0.1789
+  ep 25 | train 0.0479 | val R 0.9522 MAE 0.1809
+  ep 26 | train 0.0474 | val R 0.9526 MAE 0.1830
+  ep 27 | train 0.0467 | val R 0.9529 MAE 0.1793
+  ep 28 | train 0.0459 | val R 0.9522 MAE 0.1822
+  ep 29 | train 0.0450 | val R 0.9532 MAE 0.1782
+  ep 30 | train 0.0450 | val R 0.9533 MAE 0.1800
+  ep 31 | train 0.0436 | val R 0.9535 MAE 0.1761
+  ep 32 | train 0.0445 | val R 0.9535 MAE 0.1768
+  ep 33 | train 0.0432 | val R 0.9534 MAE 0.1763
+  ep 34 | train 0.0430 | val R 0.9534 MAE 0.1776
+  ep 35 | train 0.0427 | val R 0.9538 MAE 0.1767
+  ep 36 | train 0.0431 | val R 0.9537 MAE 0.1768
+  ep 37 | train 0.0429 | val R 0.9538 MAE 0.1761
+  ep 38 | train 0.0427 | val R 0.9538 MAE 0.1774
+  ep 39 | train 0.0423 | val R 0.9535 MAE 0.1757
+>> Fold 0: best ep 35 (val R 0.9538) | test R 0.9731 MAE 0.1684 kJ/mol
+[进度] 1/5 折完成
+
+===== Fold 1: train 21,042 / val 3,007 / test 6,012 =====
+  ep  0 | train 0.7157 | val R 0.6717 MAE 0.4823
+  ep  1 | train 0.4179 | val R 0.8024 MAE 0.3803
+  ep  2 | train 0.2649 | val R 0.8800 MAE 0.3346
+  ep  3 | train 0.1768 | val R 0.9157 MAE 0.2752
+  ep  4 | train 0.1443 | val R 0.9330 MAE 0.2511
+  ep  5 | train 0.1295 | val R 0.9425 MAE 0.2351
+  ep  6 | train 0.1076 | val R 0.9482 MAE 0.2407
+  ep  7 | train 0.0987 | val R 0.9516 MAE 0.2164
+  ep  8 | train 0.0891 | val R 0.9559 MAE 0.2120
+  ep  9 | train 0.0879 | val R 0.9544 MAE 0.2139
+  ep 10 | train 0.0843 | val R 0.9606 MAE 0.1959
+  ep 11 | train 0.0742 | val R 0.9629 MAE 0.1932
+  ep 12 | train 0.0761 | val R 0.9599 MAE 0.2059
+  ep 13 | train 0.0703 | val R 0.9623 MAE 0.2054
+  ep 14 | train 0.0689 | val R 0.9655 MAE 0.1874
+  ep 15 | train 0.0660 | val R 0.9661 MAE 0.1847
+  ep 16 | train 0.0628 | val R 0.9668 MAE 0.1846
+  ep 17 | train 0.0616 | val R 0.9673 MAE 0.1847
+  ep 18 | train 0.0602 | val R 0.9685 MAE 0.1969
+  ep 19 | train 0.0586 | val R 0.9679 MAE 0.1851
+  ep 20 | train 0.0556 | val R 0.9692 MAE 0.1794
+  ep 21 | train 0.0559 | val R 0.9697 MAE 0.1774
+  ep 22 | train 0.0544 | val R 0.9698 MAE 0.1767
+  ep 23 | train 0.0534 | val R 0.9698 MAE 0.1749
+  ep 24 | train 0.0520 | val R 0.9700 MAE 0.1780
+  ep 25 | train 0.0501 | val R 0.9713 MAE 0.1711
+  ep 26 | train 0.0501 | val R 0.9711 MAE 0.1735
+  ep 27 | train 0.0494 | val R 0.9715 MAE 0.1724
+  ep 28 | train 0.0484 | val R 0.9724 MAE 0.1727
+  ep 29 | train 0.0476 | val R 0.9723 MAE 0.1703
+  ep 30 | train 0.0470 | val R 0.9724 MAE 0.1687
+  ep 31 | train 0.0468 | val R 0.9723 MAE 0.1694
+  ep 32 | train 0.0459 | val R 0.9722 MAE 0.1709
+  ep 33 | train 0.0462 | val R 0.9727 MAE 0.1682
+  ep 34 | train 0.0452 | val R 0.9728 MAE 0.1684
+  ep 35 | train 0.0458 | val R 0.9728 MAE 0.1680
+  ep 36 | train 0.0454 | val R 0.9727 MAE 0.1691
+  ep 37 | train 0.0453 | val R 0.9728 MAE 0.1689
+  ep 38 | train 0.0448 | val R 0.9728 MAE 0.1683
+  ep 39 | train 0.0444 | val R 0.9729 MAE 0.1679
+>> Fold 1: best ep 39 (val R 0.9729) | test R 0.9738 MAE 0.1686 kJ/mol
+[进度] 2/5 折完成
+
+===== Fold 2: train 21,042 / val 3,007 / test 6,012 =====
+  ep  0 | train 0.7508 | val R 0.6742 MAE 0.5008
+  ep  1 | train 0.4306 | val R 0.7897 MAE 0.4012
+  ep  2 | train 0.2993 | val R 0.8590 MAE 0.3406
+  ep  3 | train 0.2259 | val R 0.8906 MAE 0.3171
+  ep  4 | train 0.1788 | val R 0.9174 MAE 0.2667
+  ep  5 | train 0.1512 | val R 0.9315 MAE 0.2488
+  ep  6 | train 0.1298 | val R 0.9440 MAE 0.2293
+  ep  7 | train 0.1136 | val R 0.9480 MAE 0.2206
+  ep  8 | train 0.1018 | val R 0.9537 MAE 0.2132
+  ep  9 | train 0.0937 | val R 0.9568 MAE 0.2114
+  ep 10 | train 0.0871 | val R 0.9575 MAE 0.2103
+  ep 11 | train 0.0840 | val R 0.9586 MAE 0.2091
+  ep 12 | train 0.0797 | val R 0.9594 MAE 0.2098
+  ep 13 | train 0.0756 | val R 0.9645 MAE 0.1867
+  ep 14 | train 0.0715 | val R 0.9654 MAE 0.1893
+  ep 15 | train 0.0693 | val R 0.9655 MAE 0.1881
+  ep 16 | train 0.0661 | val R 0.9639 MAE 0.1915
+  ep 17 | train 0.0637 | val R 0.9661 MAE 0.1937
+  ep 18 | train 0.0630 | val R 0.9688 MAE 0.1782
+  ep 19 | train 0.0613 | val R 0.9669 MAE 0.1842
+  ep 20 | train 0.0589 | val R 0.9695 MAE 0.1774
+  ep 21 | train 0.0592 | val R 0.9682 MAE 0.1802
+  ep 22 | train 0.0563 | val R 0.9680 MAE 0.1775
+  ep 23 | train 0.0566 | val R 0.9692 MAE 0.1791
+  ep 24 | train 0.0554 | val R 0.9689 MAE 0.1870
+  ep 25 | train 0.0540 | val R 0.9704 MAE 0.1759
+  ep 26 | train 0.0526 | val R 0.9706 MAE 0.1746
+  ep 27 | train 0.0524 | val R 0.9707 MAE 0.1750
+  ep 28 | train 0.0521 | val R 0.9706 MAE 0.1738
+  ep 29 | train 0.0504 | val R 0.9715 MAE 0.1710
+  ep 30 | train 0.0503 | val R 0.9712 MAE 0.1720
+  ep 31 | train 0.0497 | val R 0.9709 MAE 0.1721
+  ep 32 | train 0.0498 | val R 0.9716 MAE 0.1707
+  ep 33 | train 0.0497 | val R 0.9715 MAE 0.1714
+  ep 34 | train 0.0492 | val R 0.9713 MAE 0.1718
+  ep 35 | train 0.0482 | val R 0.9712 MAE 0.1733
+  ep 36 | train 0.0481 | val R 0.9715 MAE 0.1716
+  ep 37 | train 0.0476 | val R 0.9717 MAE 0.1716
+  ep 38 | train 0.0473 | val R 0.9717 MAE 0.1711
+  ep 39 | train 0.0475 | val R 0.9716 MAE 0.1717
+>> Fold 2: best ep 38 (val R 0.9717) | test R 0.9714 MAE 0.1695 kJ/mol
+[进度] 3/5 折完成
+
+===== Fold 3: train 21,042 / val 3,007 / test 6,012 =====
+  ep  0 | train 0.7102 | val R 0.6968 MAE 0.4829
+  ep  1 | train 0.4354 | val R 0.7930 MAE 0.4075
+  ep  2 | train 0.3030 | val R 0.8743 MAE 0.3272
+  ep  3 | train 0.1970 | val R 0.9137 MAE 0.2802
+  ep  4 | train 0.1632 | val R 0.9263 MAE 0.2591
+  ep  5 | train 0.1312 | val R 0.9370 MAE 0.2439
+  ep  6 | train 0.1194 | val R 0.9449 MAE 0.2273
+  ep  7 | train 0.1051 | val R 0.9500 MAE 0.2347
+  ep  8 | train 0.1007 | val R 0.9529 MAE 0.2262
+  ep  9 | train 0.0912 | val R 0.9570 MAE 0.2202
+  ep 10 | train 0.0857 | val R 0.9598 MAE 0.2033
+  ep 11 | train 0.0841 | val R 0.9602 MAE 0.2018
+  ep 12 | train 0.0792 | val R 0.9613 MAE 0.2171
+  ep 13 | train 0.0781 | val R 0.9643 MAE 0.1856
+  ep 14 | train 0.0752 | val R 0.9644 MAE 0.1861
+  ep 15 | train 0.0714 | val R 0.9671 MAE 0.1808
+  ep 16 | train 0.0690 | val R 0.9645 MAE 0.1918
+  ep 17 | train 0.0667 | val R 0.9680 MAE 0.1800
+  ep 18 | train 0.0648 | val R 0.9691 MAE 0.1781
+  ep 19 | train 0.0622 | val R 0.9685 MAE 0.1839
+  ep 20 | train 0.0611 | val R 0.9695 MAE 0.1753
+  ep 21 | train 0.0600 | val R 0.9703 MAE 0.1739
+  ep 22 | train 0.0585 | val R 0.9699 MAE 0.1757
+  ep 23 | train 0.0572 | val R 0.9710 MAE 0.1712
+  ep 24 | train 0.0568 | val R 0.9715 MAE 0.1705
+  ep 25 | train 0.0550 | val R 0.9709 MAE 0.1716
+  ep 26 | train 0.0551 | val R 0.9716 MAE 0.1732
+  ep 27 | train 0.0525 | val R 0.9717 MAE 0.1709
+  ep 28 | train 0.0520 | val R 0.9722 MAE 0.1693
+  ep 29 | train 0.0522 | val R 0.9728 MAE 0.1693
+  ep 30 | train 0.0510 | val R 0.9726 MAE 0.1708
+  ep 31 | train 0.0502 | val R 0.9721 MAE 0.1724
+  ep 32 | train 0.0501 | val R 0.9730 MAE 0.1673
+  ep 33 | train 0.0495 | val R 0.9727 MAE 0.1704
+  ep 34 | train 0.0501 | val R 0.9730 MAE 0.1686
+  ep 35 | train 0.0490 | val R 0.9729 MAE 0.1675
+  ep 36 | train 0.0491 | val R 0.9731 MAE 0.1665
+  ep 37 | train 0.0486 | val R 0.9731 MAE 0.1664
+  ep 38 | train 0.0479 | val R 0.9732 MAE 0.1664
+  ep 39 | train 0.0484 | val R 0.9731 MAE 0.1670
+>> Fold 3: best ep 38 (val R 0.9732) | test R 0.9741 MAE 0.1687 kJ/mol
+[进度] 4/5 折完成
+
+===== Fold 4: train 21,042 / val 3,007 / test 6,012 =====
+  ep  0 | train 0.6986 | val R 0.6732 MAE 0.5084
+  ep  1 | train 0.4336 | val R 0.8171 MAE 0.3917
+  ep  2 | train 0.2509 | val R 0.9013 MAE 0.3001
+  ep  3 | train 0.1683 | val R 0.9259 MAE 0.2657
+  ep  4 | train 0.1406 | val R 0.9318 MAE 0.2551
+  ep  5 | train 0.1170 | val R 0.9435 MAE 0.2436
+  ep  6 | train 0.1075 | val R 0.9491 MAE 0.2231
+  ep  7 | train 0.0975 | val R 0.9528 MAE 0.2230
+  ep  8 | train 0.0890 | val R 0.9568 MAE 0.2109
+  ep  9 | train 0.0816 | val R 0.9587 MAE 0.2073
+  ep 10 | train 0.0731 | val R 0.9615 MAE 0.2015
+  ep 11 | train 0.0707 | val R 0.9614 MAE 0.1986
+  ep 12 | train 0.0704 | val R 0.9634 MAE 0.1940
+  ep 13 | train 0.0653 | val R 0.9659 MAE 0.2003
+  ep 14 | train 0.0625 | val R 0.9666 MAE 0.1859
+  ep 15 | train 0.0619 | val R 0.9680 MAE 0.1824
+  ep 16 | train 0.0583 | val R 0.9672 MAE 0.1831
+  ep 17 | train 0.0578 | val R 0.9687 MAE 0.1841
+  ep 18 | train 0.0565 | val R 0.9690 MAE 0.1815
+  ep 19 | train 0.0546 | val R 0.9696 MAE 0.1857
+  ep 20 | train 0.0543 | val R 0.9698 MAE 0.1876
+  ep 21 | train 0.0525 | val R 0.9700 MAE 0.1821
+  ep 22 | train 0.0528 | val R 0.9706 MAE 0.1822
+  ep 23 | train 0.0502 | val R 0.9706 MAE 0.1789
+  ep 24 | train 0.0505 | val R 0.9714 MAE 0.1747
+  ep 25 | train 0.0484 | val R 0.9715 MAE 0.1760
+  ep 26 | train 0.0478 | val R 0.9720 MAE 0.1716
+  ep 27 | train 0.0473 | val R 0.9721 MAE 0.1717
+  ep 28 | train 0.0463 | val R 0.9720 MAE 0.1704
+  ep 29 | train 0.0463 | val R 0.9721 MAE 0.1732
+  ep 30 | train 0.0454 | val R 0.9729 MAE 0.1706
+  ep 31 | train 0.0451 | val R 0.9726 MAE 0.1705
+  ep 32 | train 0.0440 | val R 0.9730 MAE 0.1696
+  ep 33 | train 0.0439 | val R 0.9731 MAE 0.1690
+  ep 34 | train 0.0442 | val R 0.9733 MAE 0.1691
+  ep 35 | train 0.0427 | val R 0.9730 MAE 0.1698
+  ep 36 | train 0.0434 | val R 0.9732 MAE 0.1687
+  ep 37 | train 0.0430 | val R 0.9731 MAE 0.1685
+  ep 38 | train 0.0428 | val R 0.9730 MAE 0.1698
+  ep 39 | train 0.0425 | val R 0.9733 MAE 0.1694
+>> Fold 4: best ep 39 (val R 0.9733) | test R 0.9671 MAE 0.1697 kJ/mol
+[进度] 5/5 折完成
+
+===== 5-fold CV 汇总 =====
+  Fold 0: R=0.9731  MAE=0.1684 kJ/mol
+  Fold 1: R=0.9738  MAE=0.1686 kJ/mol
+  Fold 2: R=0.9714  MAE=0.1695 kJ/mol
+  Fold 3: R=0.9741  MAE=0.1687 kJ/mol
+  Fold 4: R=0.9671  MAE=0.1697 kJ/mol
+  平均: R=0.9719 ± 0.0026 | MAE=0.1690 ± 0.0005 kJ/mol

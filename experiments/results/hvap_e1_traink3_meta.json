@@ -1,0 +1,25 @@
+{
+  "tag": "hvap_e1_traink3",
+  "route": "e1",
+  "train_max_k": 3,
+  "val_k": 4,
+  "test_k": 5,
+  "mf_as_feature": false,
+  "epochs": 200,
+  "early_stop": "val",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "n_train": 14300,
+  "n_val": 6122,
+  "n_test": 9639,
+  "y_mean": 12.156214581570678,
+  "y_std": 3.1444636030035884,
+  "test_R_mean": 0.9986417201479614,
+  "test_R_std": 0.00022314421733314564,
+  "test_MAE_mean": 0.15785445449214405,
+  "test_MAE_std": 0.012789209367713767,
+  "data_csv": "<data-root>/processed_MiscibleSolventData.csv"
+}

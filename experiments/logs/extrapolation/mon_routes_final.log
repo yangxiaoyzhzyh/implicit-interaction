@@ -1,0 +1,26 @@
+Device: cuda
+MON 样本 684 | protocol final | train(K<=2) 386 | test(K>=3) 298
+分子图 416/416 成功
+--- route e2 [final]: train 386 (fit 386) | test 298 | test 新分子 87 | unseen 样本 63/298
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+    >> route e2 seed 42: 200 ep | test all R 0.9408 MAE 3.3678
+       seen   n= 235 R 0.9436 MAE 3.6505
+       unseen n=  63 R 0.9068 MAE 2.3135
+    >> route e2 seed 43: 200 ep | test all R 0.9482 MAE 3.0515
+       seen   n= 235 R 0.9534 MAE 3.0667
+       unseen n=  63 R 0.8652 MAE 2.9950
+    >> route e2 seed 44: 200 ep | test all R 0.9608 MAE 3.7312
+       seen   n= 235 R 0.9663 MAE 4.0058
+       unseen n=  63 R 0.8996 MAE 2.7067
+--- route e1 [final]: train 386 (fit 386) | test 298 | test 新分子 87 | unseen 样本 63/298
+    >> route e1 seed 42: 200 ep | test all R 0.8846 MAE 3.8599
+       seen   n= 235 R 0.9216 MAE 3.2828
+       unseen n=  63 R 0.5926 MAE 6.0125
+    >> route e1 seed 43: 200 ep | test all R 0.7964 MAE 8.4143
+       seen   n= 235 R 0.9019 MAE 8.8474
+       unseen n=  63 R 0.1432 MAE 6.7987
+    >> route e1 seed 44: 200 ep | test all R 0.8208 MAE 5.8273
+       seen   n= 235 R 0.8425 MAE 5.7326
+       unseen n=  63 R 0.3744 MAE 6.1802
+saved mon_routes_final_results.csv

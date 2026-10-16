@@ -1,0 +1,104 @@
+[data] 30061 条有效（剔除缺损 0）
+[data] K 分布: {2: 3580, 3: 10720, 4: 6122, 5: 9639}
+[split] train(K<=3) 14300 | val(K=4) 6122 | test(K=5) 9639
+[split] val 化合物 ⊆ train ? True (独有 0)
+[split] test 化合物 ⊆ train ? True (独有 0)
+[y] train mean=12.1562 std=3.1445
+[baseline] 常数(预测 train 均值) 在 val: MAE=1.7825 | y mean=11.2705 std=1.9259
+[baseline] 常数(预测 train 均值) 在 test: MAE=1.6740 | y mean=10.9688 std=1.5405
+[graph] 化合物 81/81 成功
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  [hvap_e1_traink3] seed 42 ep   0 | loss 0.4358 | val R 0.9551 MAE 0.4872 | best 0.9551@0 | no-improve 0 | 7s
+  [hvap_e1_traink3] seed 42 ep   5 | loss 0.0209 | val R 0.9957 MAE 0.1697 | best 0.9957@5 | no-improve 0 | 39s
+  [hvap_e1_traink3] seed 42 ep  10 | loss 0.0145 | val R 0.9973 MAE 0.2188 | best 0.9973@10 | no-improve 0 | 71s
+  [hvap_e1_traink3] seed 42 ep  15 | loss 0.0114 | val R 0.9971 MAE 0.1160 | best 0.9973@10 | no-improve 5 | 103s
+  [hvap_e1_traink3] seed 42 ep  20 | loss 0.0107 | val R 0.9977 MAE 0.1691 | best 0.9977@17 | no-improve 3 | 135s
+  [hvap_e1_traink3] seed 42 ep  25 | loss 0.0081 | val R 0.9973 MAE 0.1260 | best 0.9978@24 | no-improve 1 | 167s
+  [hvap_e1_traink3] seed 42 ep  30 | loss 0.0073 | val R 0.9977 MAE 0.1108 | best 0.9980@28 | no-improve 2 | 199s
+  [hvap_e1_traink3] seed 42 ep  35 | loss 0.0076 | val R 0.9974 MAE 0.1343 | best 0.9980@28 | no-improve 7 | 230s
+  [hvap_e1_traink3] seed 42 ep  40 | loss 0.0053 | val R 0.9977 MAE 0.2104 | best 0.9981@37 | no-improve 3 | 262s
+  [hvap_e1_traink3] seed 42 ep  45 | loss 0.0050 | val R 0.9983 MAE 0.1753 | best 0.9984@43 | no-improve 2 | 293s
+  [hvap_e1_traink3] seed 42 ep  50 | loss 0.0047 | val R 0.9983 MAE 0.1231 | best 0.9984@43 | no-improve 7 | 324s
+  [hvap_e1_traink3] seed 42 ep  55 | loss 0.0046 | val R 0.9977 MAE 0.1378 | best 0.9985@52 | no-improve 3 | 356s
+  [hvap_e1_traink3] seed 42 ep  60 | loss 0.0044 | val R 0.9981 MAE 0.1554 | best 0.9985@52 | no-improve 8 | 386s
+  [hvap_e1_traink3] seed 42 ep  65 | loss 0.0035 | val R 0.9989 MAE 0.1345 | best 0.9989@65 | no-improve 0 | 417s
+  [hvap_e1_traink3] seed 42 ep  70 | loss 0.0033 | val R 0.9984 MAE 0.2246 | best 0.9989@65 | no-improve 5 | 449s
+  [hvap_e1_traink3] seed 42 ep  75 | loss 0.0034 | val R 0.9985 MAE 0.1834 | best 0.9989@65 | no-improve 10 | 481s
+  [hvap_e1_traink3] seed 42 ep  80 | loss 0.0032 | val R 0.9979 MAE 0.1643 | best 0.9989@78 | no-improve 2 | 513s
+  [hvap_e1_traink3] seed 42 ep  85 | loss 0.0032 | val R 0.9986 MAE 0.1305 | best 0.9989@78 | no-improve 7 | 545s
+  [hvap_e1_traink3] seed 42 ep  90 | loss 0.0027 | val R 0.9989 MAE 0.1510 | best 0.9989@78 | no-improve 12 | 576s
+  [hvap_e1_traink3] seed 42 ep  95 | loss 0.0026 | val R 0.9990 MAE 0.1790 | best 0.9990@95 | no-improve 0 | 607s
+  [hvap_e1_traink3] seed 42 ep 100 | loss 0.0024 | val R 0.9987 MAE 0.1883 | best 0.9990@95 | no-improve 5 | 638s
+  [hvap_e1_traink3] seed 42 ep 105 | loss 0.0025 | val R 0.9984 MAE 0.1861 | best 0.9990@95 | no-improve 10 | 670s
+  [hvap_e1_traink3] seed 42 ep 110 | loss 0.0022 | val R 0.9987 MAE 0.1971 | best 0.9990@107 | no-improve 3 | 701s
+  [hvap_e1_traink3] seed 42 ep 115 | loss 0.0021 | val R 0.9990 MAE 0.1615 | best 0.9990@111 | no-improve 4 | 731s
+  [hvap_e1_traink3] seed 42 ep 120 | loss 0.0022 | val R 0.9991 MAE 0.1690 | best 0.9991@116 | no-improve 4 | 762s
+  [hvap_e1_traink3] seed 42 ep 125 | loss 0.0019 | val R 0.9991 MAE 0.1780 | best 0.9991@125 | no-improve 0 | 794s
+  [hvap_e1_traink3] seed 42 ep 130 | loss 0.0018 | val R 0.9991 MAE 0.1500 | best 0.9991@130 | no-improve 0 | 825s
+  [hvap_e1_traink3] seed 42 ep 135 | loss 0.0018 | val R 0.9989 MAE 0.1769 | best 0.9991@133 | no-improve 2 | 856s
+  [hvap_e1_traink3] seed 42 ep 140 | loss 0.0016 | val R 0.9990 MAE 0.1676 | best 0.9991@133 | no-improve 7 | 887s
+  [hvap_e1_traink3] seed 42 ep 145 | loss 0.0016 | val R 0.9991 MAE 0.1770 | best 0.9991@133 | no-improve 12 | 918s
+  [hvap_e1_traink3] seed 42 ep 150 | loss 0.0015 | val R 0.9990 MAE 0.1811 | best 0.9991@149 | no-improve 1 | 948s
+  [hvap_e1_traink3] seed 42 ep 155 | loss 0.0015 | val R 0.9991 MAE 0.1850 | best 0.9991@151 | no-improve 4 | 980s
+  [hvap_e1_traink3] seed 42 ep 160 | loss 0.0015 | val R 0.9992 MAE 0.1684 | best 0.9992@160 | no-improve 0 | 1011s
+  [hvap_e1_traink3] seed 42 ep 165 | loss 0.0015 | val R 0.9991 MAE 0.1767 | best 0.9992@160 | no-improve 5 | 1042s
+  [hvap_e1_traink3] seed 42 ep 170 | loss 0.0015 | val R 0.9991 MAE 0.1823 | best 0.9992@160 | no-improve 10 | 1074s
+  [hvap_e1_traink3] seed 42 ep 175 | loss 0.0014 | val R 0.9992 MAE 0.1720 | best 0.9992@160 | no-improve 15 | 1105s
+  >> val 连续 20 epoch 未提升 → 停于 ep180，回载 best-val ep160
+>> [hvap_e1_traink3] seed 42: best ep160 (stop@180) | val(K=4) R 0.9992 MAE 0.1684 | TEST(K=5) R 0.9988 MAE 0.1683 | 1142s
+  [hvap_e1_traink3] seed 43 ep   0 | loss 0.4842 | val R 0.9454 MAE 0.7669 | best 0.9454@0 | no-improve 0 | 6s
+  [hvap_e1_traink3] seed 43 ep   5 | loss 0.0245 | val R 0.9880 MAE 0.2646 | best 0.9914@4 | no-improve 1 | 38s
+  [hvap_e1_traink3] seed 43 ep  10 | loss 0.0172 | val R 0.9950 MAE 0.1613 | best 0.9950@10 | no-improve 0 | 70s
+  [hvap_e1_traink3] seed 43 ep  15 | loss 0.0112 | val R 0.9962 MAE 0.1557 | best 0.9964@14 | no-improve 1 | 101s
+  [hvap_e1_traink3] seed 43 ep  20 | loss 0.0105 | val R 0.9972 MAE 0.1573 | best 0.9977@17 | no-improve 3 | 133s
+  [hvap_e1_traink3] seed 43 ep  25 | loss 0.0088 | val R 0.9979 MAE 0.1281 | best 0.9979@25 | no-improve 0 | 165s
+  [hvap_e1_traink3] seed 43 ep  30 | loss 0.0075 | val R 0.9975 MAE 0.1204 | best 0.9981@27 | no-improve 3 | 193s
+  [hvap_e1_traink3] seed 43 ep  35 | loss 0.0067 | val R 0.9979 MAE 0.1153 | best 0.9981@27 | no-improve 8 | 222s
+  [hvap_e1_traink3] seed 43 ep  40 | loss 0.0063 | val R 0.9977 MAE 0.1302 | best 0.9981@27 | no-improve 13 | 253s
+  [hvap_e1_traink3] seed 43 ep  45 | loss 0.0060 | val R 0.9979 MAE 0.1753 | best 0.9982@41 | no-improve 4 | 282s
+  [hvap_e1_traink3] seed 43 ep  50 | loss 0.0054 | val R 0.9984 MAE 0.1462 | best 0.9984@50 | no-improve 0 | 309s
+  [hvap_e1_traink3] seed 43 ep  55 | loss 0.0043 | val R 0.9984 MAE 0.1255 | best 0.9984@55 | no-improve 0 | 340s
+  [hvap_e1_traink3] seed 43 ep  60 | loss 0.0037 | val R 0.9981 MAE 0.1201 | best 0.9986@58 | no-improve 2 | 372s
+  [hvap_e1_traink3] seed 43 ep  65 | loss 0.0041 | val R 0.9976 MAE 0.1491 | best 0.9987@63 | no-improve 2 | 403s
+  [hvap_e1_traink3] seed 43 ep  70 | loss 0.0035 | val R 0.9988 MAE 0.1413 | best 0.9988@70 | no-improve 0 | 435s
+  [hvap_e1_traink3] seed 43 ep  75 | loss 0.0033 | val R 0.9982 MAE 0.1259 | best 0.9988@70 | no-improve 5 | 466s
+  [hvap_e1_traink3] seed 43 ep  80 | loss 0.0031 | val R 0.9987 MAE 0.1553 | best 0.9988@70 | no-improve 10 | 498s
+  [hvap_e1_traink3] seed 43 ep  85 | loss 0.0030 | val R 0.9985 MAE 0.1352 | best 0.9988@70 | no-improve 15 | 529s
+  [hvap_e1_traink3] seed 43 ep  90 | loss 0.0030 | val R 0.9986 MAE 0.1523 | best 0.9989@87 | no-improve 3 | 560s
+  [hvap_e1_traink3] seed 43 ep  95 | loss 0.0028 | val R 0.9986 MAE 0.1263 | best 0.9989@87 | no-improve 8 | 590s
+  [hvap_e1_traink3] seed 43 ep 100 | loss 0.0026 | val R 0.9989 MAE 0.1461 | best 0.9989@87 | no-improve 13 | 622s
+  [hvap_e1_traink3] seed 43 ep 105 | loss 0.0026 | val R 0.9990 MAE 0.1483 | best 0.9990@104 | no-improve 1 | 653s
+  [hvap_e1_traink3] seed 43 ep 110 | loss 0.0022 | val R 0.9987 MAE 0.1617 | best 0.9990@104 | no-improve 6 | 684s
+  [hvap_e1_traink3] seed 43 ep 115 | loss 0.0022 | val R 0.9990 MAE 0.1404 | best 0.9990@104 | no-improve 11 | 716s
+  [hvap_e1_traink3] seed 43 ep 120 | loss 0.0022 | val R 0.9990 MAE 0.1808 | best 0.9991@118 | no-improve 2 | 747s
+  [hvap_e1_traink3] seed 43 ep 125 | loss 0.0020 | val R 0.9987 MAE 0.1659 | best 0.9991@118 | no-improve 7 | 778s
+  [hvap_e1_traink3] seed 43 ep 130 | loss 0.0019 | val R 0.9990 MAE 0.1761 | best 0.9991@118 | no-improve 12 | 810s
+  [hvap_e1_traink3] seed 43 ep 135 | loss 0.0018 | val R 0.9991 MAE 0.1567 | best 0.9991@118 | no-improve 17 | 841s
+  >> val 连续 20 epoch 未提升 → 停于 ep138，回载 best-val ep118
+>> [hvap_e1_traink3] seed 43: best ep118 (stop@138) | val(K=4) R 0.9991 MAE 0.1419 | TEST(K=5) R 0.9987 MAE 0.1398 | 865s
+  [hvap_e1_traink3] seed 44 ep   0 | loss 0.5491 | val R 0.9489 MAE 0.5629 | best 0.9489@0 | no-improve 0 | 6s
+  [hvap_e1_traink3] seed 44 ep   5 | loss 0.0242 | val R 0.9931 MAE 0.1929 | best 0.9931@5 | no-improve 0 | 36s
+  [hvap_e1_traink3] seed 44 ep  10 | loss 0.0137 | val R 0.9965 MAE 0.1949 | best 0.9965@10 | no-improve 0 | 67s
+  [hvap_e1_traink3] seed 44 ep  15 | loss 0.0137 | val R 0.9955 MAE 0.1432 | best 0.9965@10 | no-improve 5 | 99s
+  [hvap_e1_traink3] seed 44 ep  20 | loss 0.0104 | val R 0.9972 MAE 0.1516 | best 0.9975@19 | no-improve 1 | 130s
+  [hvap_e1_traink3] seed 44 ep  25 | loss 0.0082 | val R 0.9978 MAE 0.1116 | best 0.9980@24 | no-improve 1 | 162s
+  [hvap_e1_traink3] seed 44 ep  30 | loss 0.0067 | val R 0.9983 MAE 0.1089 | best 0.9984@29 | no-improve 1 | 194s
+  [hvap_e1_traink3] seed 44 ep  35 | loss 0.0069 | val R 0.9977 MAE 0.1651 | best 0.9984@29 | no-improve 6 | 225s
+  [hvap_e1_traink3] seed 44 ep  40 | loss 0.0053 | val R 0.9979 MAE 0.1019 | best 0.9984@29 | no-improve 11 | 256s
+  [hvap_e1_traink3] seed 44 ep  45 | loss 0.0068 | val R 0.9985 MAE 0.1595 | best 0.9985@45 | no-improve 0 | 288s
+  [hvap_e1_traink3] seed 44 ep  50 | loss 0.0057 | val R 0.9976 MAE 0.1356 | best 0.9985@45 | no-improve 5 | 319s
+  [hvap_e1_traink3] seed 44 ep  55 | loss 0.0044 | val R 0.9983 MAE 0.0912 | best 0.9986@52 | no-improve 3 | 350s
+  [hvap_e1_traink3] seed 44 ep  60 | loss 0.0042 | val R 0.9984 MAE 0.1270 | best 0.9986@52 | no-improve 8 | 382s
+  [hvap_e1_traink3] seed 44 ep  65 | loss 0.0039 | val R 0.9987 MAE 0.1106 | best 0.9987@65 | no-improve 0 | 414s
+  [hvap_e1_traink3] seed 44 ep  70 | loss 0.0040 | val R 0.9986 MAE 0.0939 | best 0.9987@65 | no-improve 5 | 445s
+  [hvap_e1_traink3] seed 44 ep  75 | loss 0.0033 | val R 0.9988 MAE 0.1485 | best 0.9988@75 | no-improve 0 | 477s
+  [hvap_e1_traink3] seed 44 ep  80 | loss 0.0031 | val R 0.9985 MAE 0.1095 | best 0.9988@75 | no-improve 5 | 508s
+  [hvap_e1_traink3] seed 44 ep  85 | loss 0.0030 | val R 0.9983 MAE 0.1520 | best 0.9988@75 | no-improve 10 | 539s
+  [hvap_e1_traink3] seed 44 ep  90 | loss 0.0029 | val R 0.9986 MAE 0.1403 | best 0.9988@75 | no-improve 15 | 570s
+  >> val 连续 20 epoch 未提升 → 停于 ep95，回载 best-val ep75
+>> [hvap_e1_traink3] seed 44: best ep75 (stop@95) | val(K=4) R 0.9988 MAE 0.1485 | TEST(K=5) R 0.9983 MAE 0.1655 | 607s
+
+===== hvap_e1_traink3 =====
+TEST(K=5) R = 0.9986 ± 0.0002 | MAE = 0.1579 ± 0.0128 (n=3)
+saved <server>/hmix_kext/results/hvap_e1_traink3.csv
