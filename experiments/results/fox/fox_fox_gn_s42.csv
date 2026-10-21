@@ -1,0 +1,4 @@
+task,seed,R,MAE
+ilteta,42,0.5391,0.5317
+ilteta,mean,0.5391,0.5317
+ilteta,std,0.0000,0.0000

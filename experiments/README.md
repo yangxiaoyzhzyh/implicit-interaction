@@ -60,6 +60,7 @@ not routes — they are listed under Baselines.
 | 14 | Portfolio volatility (finance) | S5 | `scripts/crossdomain/run_portfolio_vol.py` | `results/portfolio_vol_results.csv` (price data are downloaded by the script and not redistributed) | `logs/portfolio_vol.log` |
 | 15 | Multi-document reasoning | S5 | `scripts/crossdomain/run_multidoc_set.py` | `results/multidoc_set_results.csv`, `results/multidoc_set_homo_results.csv`, `results/multidoc_emb_20ng.npz` | `logs/multidoc_full.log` |
 | 16 | Figure 1 / Table 1 summary tables | Figure 1, Table 1 | `scripts/analysis/summarize_fig1.py`, `scripts/analysis/list_k_span.py` | — | — |
+| 17 | Formula prior vs free readout on IlT η (Fox + VFT, with and without a pairwise term) | S7.4 | `scripts/per_molecule/run_fox.py` | `scripts/per_molecule/fox_{std,fox,fox_gn}_s*.csv` | — |
 
 ## Environment
 
@@ -127,7 +128,26 @@ python scripts/per_molecule/run_spe_vim_groups.py --data-base <data-root> \
 python scripts/per_molecule/run_nist_ladder.py --route e2 --drop-top-k 2 --seed 42
 ```
 
-**3. Baselines**
+**3. Formula prior on IlT η (verification of §S7.4)**
+
+```bash
+# three arms, identical encoder and split; train ≤ 2 → test ≥ 3
+python scripts/per_molecule/run_fox.py --data-base <data-root> --tasks ilteta \
+    --model std    --enc-dim 256 --gn-dim 16 --epochs 200 --seeds 42
+python scripts/per_molecule/run_fox.py --data-base <data-root> --tasks ilteta \
+    --model fox    --enc-dim 256 --gn-dim 16 --epochs 200 --seeds 42
+python scripts/per_molecule/run_fox.py --data-base <data-root> --tasks ilteta \
+    --model fox_gn --enc-dim 256 --gn-dim 16 --epochs 200 --seeds 42
+```
+
+`std` is the free readout of v(im); `fox` puts the Fox equation with VFT parameters into the
+aggregation ($\ln\eta=\sum_i w_i[a_i+b_i/(T-c_i)]$, three scalars per component); `fox_gn` adds
+an explicit pairwise term $\sum_{i<j} w_i w_j\,(u_i\cdot u_j)$ on top, with $u$ of dimension
+`--gn-dim`. All three share the same encoder (GIN×3 + transformer, width `--enc-dim`); only the
+final projection differs. Training stops by the Knee rule on a validation set of 1000 held-out
+training mixtures, and the best-validation checkpoint within [0, knee] is reloaded before test.
+
+**4. Baselines**
 
 ```bash
 python scripts/baselines/run_5tasks_rdkit_xgb.py --data-base <data-root> --seeds 42 43 44
@@ -135,7 +155,7 @@ python scripts/per_molecule/run_linear_additive.py --out results/
 python scripts/baselines/run_xgb_coverage.py            # coverage sweep (S2 table)
 ```
 
-**4. Dataset audits**
+**5. Dataset audits**
 
 ```bash
 python scripts/analysis/spe_coverage_by_trainmax.py     # coverage by train_max ∈ {2,3}
@@ -157,6 +177,8 @@ python scripts/analysis/summarize_perk.py               # per-K table from resul
 | `results/spe_e*_pred.csv` | per-sample predictions (`sample_idx, K, omega, pred, true`) |
 | `results/linear_additive_results.csv` | linear additive baseline |
 | `results/analysis/*.out` | dataset-audit outputs |
+| `results/fox/fox_{std,fox,fox_gn}_s42.csv` | IlT η, formula-prior arms (single seed, Knee stop): R / MAE |
+| `logs/fox/{std,fox,fox_gn}_s42.log` | training logs for the same three arms (knee epoch, best epoch, validation R) |
 
 ## Conventions
 
