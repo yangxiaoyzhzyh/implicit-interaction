@@ -1,0 +1,9 @@
+task,desc,desc_R,enc,enc_R,diff
+mon,maccs/sum,0.1424,sum,0.2521,0.1098
+density,rdkit2d/sum,0.9753,sum,0.9781,0.0028
+heat_vap,rdkit2d/sum,0.9637,sum,0.9588,-0.0049
+he,rdkit2d/mean,0.6873,mean,0.6623,-0.025
+logv,rdkit2d/attn,0.8519,sum,0.8928,0.0409
+nist_logv,rdkit2d/sum,0.9327,sum,0.9404,0.0077
+ionic_cond,maccs/attn,0.8028,mean,0.8418,0.039
+ionic_visc,maccs/sum,0.9133,sum,0.9403,0.027

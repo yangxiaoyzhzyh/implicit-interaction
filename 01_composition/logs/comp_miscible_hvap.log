@@ -1,0 +1,174 @@
+  读划分文件 miscible_hvap_composition.npz: train 3133 / val 447 / test 26481
+tag=miscible_hvap task=miscible_hvap model=vim | train 3133 / test 26481 | feat 44 | cuda
+  fit 3580 / val 0
+  seed 42 ep   0 loss 0.8044 val R (no-val)
+  seed 42 ep  10 loss 0.0181 val R (no-val)
+  seed 42 ep  20 loss 0.0108 val R (no-val)
+  seed 42 ep  30 loss 0.0074 val R (no-val)
+  seed 42 ep  40 loss 0.0078 val R (no-val)
+  seed 42 ep  50 loss 0.0059 val R (no-val)
+  seed 42 ep  60 loss 0.0054 val R (no-val)
+  seed 42 ep  70 loss 0.0044 val R (no-val)
+  seed 42 ep  80 loss 0.0049 val R (no-val)
+  seed 42 ep  90 loss 0.0038 val R (no-val)
+  seed 42 ep 100 loss 0.0036 val R (no-val)
+  seed 42 ep 110 loss 0.0033 val R (no-val)
+  seed 42 ep 120 loss 0.0032 val R (no-val)
+  seed 42 ep 130 loss 0.0031 val R (no-val)
+  seed 42 ep 140 loss 0.0032 val R (no-val)
+  seed 42 ep 150 loss 0.0030 val R (no-val)
+  seed 42 ep 160 loss 0.0027 val R (no-val)
+  seed 42 ep 170 loss 0.0027 val R (no-val)
+  seed 42 ep 180 loss 0.0024 val R (no-val)
+  seed 42 ep 190 loss 0.0026 val R (no-val)
+  seed 42 ep 199 loss 0.0023 val R (no-val)
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  >> seed 42 knee None best ep (final) | val R (no-val) | test R +0.9983 R2 +0.9964 MAE 0.0995
+     pred mean +11.389 vs true +11.407
+     wrote miscible_hvap_vim_composition.csv
+       K=3 (n=10720) R +0.9989
+       K=4 (n=6122) R +0.9978
+       K=5 (n=9639) R +0.9965
+  seed 43 ep   0 loss 0.8205 val R (no-val)
+  seed 43 ep  10 loss 0.0199 val R (no-val)
+  seed 43 ep  20 loss 0.0137 val R (no-val)
+  seed 43 ep  30 loss 0.0081 val R (no-val)
+  seed 43 ep  40 loss 0.0076 val R (no-val)
+  seed 43 ep  50 loss 0.0062 val R (no-val)
+  seed 43 ep  60 loss 0.0053 val R (no-val)
+  seed 43 ep  70 loss 0.0045 val R (no-val)
+  seed 43 ep  80 loss 0.0049 val R (no-val)
+  seed 43 ep  90 loss 0.0043 val R (no-val)
+  seed 43 ep 100 loss 0.0041 val R (no-val)
+  seed 43 ep 110 loss 0.0034 val R (no-val)
+  seed 43 ep 120 loss 0.0034 val R (no-val)
+  seed 43 ep 130 loss 0.0031 val R (no-val)
+  seed 43 ep 140 loss 0.0032 val R (no-val)
+  seed 43 ep 150 loss 0.0028 val R (no-val)
+  seed 43 ep 160 loss 0.0027 val R (no-val)
+  seed 43 ep 170 loss 0.0027 val R (no-val)
+  seed 43 ep 180 loss 0.0028 val R (no-val)
+  seed 43 ep 190 loss 0.0027 val R (no-val)
+  seed 43 ep 199 loss 0.0026 val R (no-val)
+  >> seed 43 knee None best ep (final) | val R (no-val) | test R +0.9978 R2 +0.9952 MAE 0.1177
+     pred mean +11.403 vs true +11.407
+     wrote miscible_hvap_vim_composition.csv
+       K=3 (n=10720) R +0.9987
+       K=4 (n=6122) R +0.9971
+       K=5 (n=9639) R +0.9955
+  seed 44 ep   0 loss 0.8242 val R (no-val)
+  seed 44 ep  10 loss 0.0200 val R (no-val)
+  seed 44 ep  20 loss 0.0132 val R (no-val)
+  seed 44 ep  30 loss 0.0087 val R (no-val)
+  seed 44 ep  40 loss 0.0075 val R (no-val)
+  seed 44 ep  50 loss 0.0058 val R (no-val)
+  seed 44 ep  60 loss 0.0059 val R (no-val)
+  seed 44 ep  70 loss 0.0047 val R (no-val)
+  seed 44 ep  80 loss 0.0041 val R (no-val)
+  seed 44 ep  90 loss 0.0044 val R (no-val)
+  seed 44 ep 100 loss 0.0037 val R (no-val)
+  seed 44 ep 110 loss 0.0036 val R (no-val)
+  seed 44 ep 120 loss 0.0033 val R (no-val)
+  seed 44 ep 130 loss 0.0030 val R (no-val)
+  seed 44 ep 140 loss 0.0028 val R (no-val)
+  seed 44 ep 150 loss 0.0028 val R (no-val)
+  seed 44 ep 160 loss 0.0026 val R (no-val)
+  seed 44 ep 170 loss 0.0028 val R (no-val)
+  seed 44 ep 180 loss 0.0025 val R (no-val)
+  seed 44 ep 190 loss 0.0026 val R (no-val)
+  seed 44 ep 199 loss 0.0026 val R (no-val)
+  >> seed 44 knee None best ep (final) | val R (no-val) | test R +0.9983 R2 +0.9964 MAE 0.0986
+     pred mean +11.387 vs true +11.407
+     wrote miscible_hvap_vim_composition.csv
+       K=3 (n=10720) R +0.9989
+       K=4 (n=6122) R +0.9977
+       K=5 (n=9639) R +0.9966
+总用时 322s
+  读划分文件 miscible_hvap_composition.npz: train 3133 / val 447 / test 26481
+tag=miscible_hvap task=miscible_hvap model=vex | train 3133 / test 26481 | feat 44 | cuda
+  fit 3580 / val 0
+  seed 42 ep   0 loss 0.6685 val R (no-val)
+  seed 42 ep  10 loss 0.0265 val R (no-val)
+  seed 42 ep  20 loss 0.0211 val R (no-val)
+  seed 42 ep  30 loss 0.0206 val R (no-val)
+  seed 42 ep  40 loss 0.0161 val R (no-val)
+  seed 42 ep  50 loss 0.0103 val R (no-val)
+  seed 42 ep  60 loss 0.0098 val R (no-val)
+  seed 42 ep  70 loss 0.0092 val R (no-val)
+  seed 42 ep  80 loss 0.0088 val R (no-val)
+  seed 42 ep  90 loss 0.0068 val R (no-val)
+  seed 42 ep 100 loss 0.0063 val R (no-val)
+  seed 42 ep 110 loss 0.0060 val R (no-val)
+  seed 42 ep 120 loss 0.0056 val R (no-val)
+  seed 42 ep 130 loss 0.0051 val R (no-val)
+  seed 42 ep 140 loss 0.0059 val R (no-val)
+  seed 42 ep 150 loss 0.0052 val R (no-val)
+  seed 42 ep 160 loss 0.0049 val R (no-val)
+  seed 42 ep 170 loss 0.0047 val R (no-val)
+  seed 42 ep 180 loss 0.0045 val R (no-val)
+  seed 42 ep 190 loss 0.0042 val R (no-val)
+  seed 42 ep 199 loss 0.0041 val R (no-val)
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  >> seed 42 knee None best ep (final) | val R (no-val) | test R +0.9786 R2 +0.9524 MAE 0.3492
+     pred mean +11.245 vs true +11.407
+     wrote miscible_hvap_vex_composition.csv
+       K=3 (n=10720) R +0.9881
+       K=4 (n=6122) R +0.9652
+       K=5 (n=9639) R +0.9514
+  seed 43 ep   0 loss 0.6546 val R (no-val)
+  seed 43 ep  10 loss 0.0322 val R (no-val)
+  seed 43 ep  20 loss 0.0174 val R (no-val)
+  seed 43 ep  30 loss 0.0131 val R (no-val)
+  seed 43 ep  40 loss 0.0139 val R (no-val)
+  seed 43 ep  50 loss 0.0109 val R (no-val)
+  seed 43 ep  60 loss 0.0085 val R (no-val)
+  seed 43 ep  70 loss 0.0082 val R (no-val)
+  seed 43 ep  80 loss 0.0077 val R (no-val)
+  seed 43 ep  90 loss 0.0066 val R (no-val)
+  seed 43 ep 100 loss 0.0070 val R (no-val)
+  seed 43 ep 110 loss 0.0056 val R (no-val)
+  seed 43 ep 120 loss 0.0053 val R (no-val)
+  seed 43 ep 130 loss 0.0054 val R (no-val)
+  seed 43 ep 140 loss 0.0048 val R (no-val)
+  seed 43 ep 150 loss 0.0049 val R (no-val)
+  seed 43 ep 160 loss 0.0044 val R (no-val)
+  seed 43 ep 170 loss 0.0046 val R (no-val)
+  seed 43 ep 180 loss 0.0044 val R (no-val)
+  seed 43 ep 190 loss 0.0045 val R (no-val)
+  seed 43 ep 199 loss 0.0042 val R (no-val)
+  >> seed 43 knee None best ep (final) | val R (no-val) | test R +0.9778 R2 +0.9536 MAE 0.3422
+     pred mean +11.295 vs true +11.407
+     wrote miscible_hvap_vex_composition.csv
+       K=3 (n=10720) R +0.9874
+       K=4 (n=6122) R +0.9640
+       K=5 (n=9639) R +0.9506
+  seed 44 ep   0 loss 0.5812 val R (no-val)
+  seed 44 ep  10 loss 0.0285 val R (no-val)
+  seed 44 ep  20 loss 0.0210 val R (no-val)
+  seed 44 ep  30 loss 0.0175 val R (no-val)
+  seed 44 ep  40 loss 0.0157 val R (no-val)
+  seed 44 ep  50 loss 0.0126 val R (no-val)
+  seed 44 ep  60 loss 0.0111 val R (no-val)
+  seed 44 ep  70 loss 0.0086 val R (no-val)
+  seed 44 ep  80 loss 0.0086 val R (no-val)
+  seed 44 ep  90 loss 0.0070 val R (no-val)
+  seed 44 ep 100 loss 0.0065 val R (no-val)
+  seed 44 ep 110 loss 0.0063 val R (no-val)
+  seed 44 ep 120 loss 0.0057 val R (no-val)
+  seed 44 ep 130 loss 0.0052 val R (no-val)
+  seed 44 ep 140 loss 0.0054 val R (no-val)
+  seed 44 ep 150 loss 0.0048 val R (no-val)
+  seed 44 ep 160 loss 0.0045 val R (no-val)
+  seed 44 ep 170 loss 0.0047 val R (no-val)
+  seed 44 ep 180 loss 0.0045 val R (no-val)
+  seed 44 ep 190 loss 0.0042 val R (no-val)
+  seed 44 ep 199 loss 0.0044 val R (no-val)
+  >> seed 44 knee None best ep (final) | val R (no-val) | test R +0.9818 R2 +0.9561 MAE 0.3425
+     pred mean +11.207 vs true +11.407
+     wrote miscible_hvap_vex_composition.csv
+       K=3 (n=10720) R +0.9891
+       K=4 (n=6122) R +0.9708
+       K=5 (n=9639) R +0.9628
+总用时 378s

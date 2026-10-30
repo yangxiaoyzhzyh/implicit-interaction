@@ -1,0 +1,6 @@
+  seed 42: R = 0.4665
+  seed 43: R = 0.4784
+  seed 44: R = 0.4830
+drug | drug_composition.npz | xgb | train 2490 / test 24223 | R = 0.4760 ± 0.0069
+写出 /root/repro_v2/01_composition/runs/xgb_drug_composition.csv
+

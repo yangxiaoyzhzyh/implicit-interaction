@@ -1,0 +1,3 @@
+iltk | iltk_composition.npz | frozen | train 24688 / test 16216 | R = 0.6873 ± 0.1072  (0.7608; 0.7653; 0.5358)
+写出 /root/repro_v2/01_composition/runs/frozen_iltk_composition.csv
+

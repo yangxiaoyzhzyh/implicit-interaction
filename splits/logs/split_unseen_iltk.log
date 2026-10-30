@@ -1,0 +1,11 @@
+调用切割生成器: C:\Users\yangx\AppData\Local\Python\pythoncore-3.14-64\python.exe C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\common\carved_split.py --data-base C:\Users\yangx\v3-mixture-token\literature\CheMixHub\datasets --sets iltk:iltk
+==========================================================================
+iltk (task=iltk) | 40904 条, 479 分子, K 2–3
+  seed 254 | train 6060 / test 7564 | K 偏差 0.031 | 保留 33.3%
+     K=2   train  5436 (89.7%)  test  6551 (86.6%)
+     K=3   train   624 (10.3%)  test  1013 (13.4%)
+  saved iltk_split.npz
+
+iltk | 分子二分切割（train/test 无共享分子，val 取自 train 内部） | train 5460 / val 600 / test 7564
+写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\iltk_unseen.npz
+

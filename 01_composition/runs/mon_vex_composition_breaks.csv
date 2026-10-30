@@ -1,0 +1,6 @@
+task,model,split,seed,group_type,group,n,R,MAE
+mon,vex,composition,42,Kbin,K=3,162,0.9187,6.1413
+mon,vex,composition,42,Kbin,K=4,65,0.9081,6.7379
+mon,vex,composition,42,Kbin,K=5-10,8,0.4375,4.8472
+mon,vex,composition,42,Kbin,K=11-40,49,0.3912,4.9133
+mon,vex,composition,42,Kbin,K>=41,14,0.4481,9.8048

@@ -1,0 +1,2 @@
+task,split,train_n,test_n,mean,sd,per_seed,n_desc,n_estimators
+miscible_hvap,composition,3580,26481,0.9163,0.0008,0.9169;0.9169;0.9152,217,800

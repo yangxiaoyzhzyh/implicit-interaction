@@ -1,0 +1,2 @@
+task,split,train_n,test_n,R,alpha
+miscible_density,composition,3580,26481,0.9889,1e-02

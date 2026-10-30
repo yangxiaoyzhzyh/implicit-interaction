@@ -1,0 +1,9 @@
+[   15s] spe              rc=0  spe | spe_composition.npz | xgb | train 8944 / test 2406 | R = 0.8127 ± 0.0035
+[   16s] drug             rc=0  drug | drug_composition.npz | xgb | train 2490 / test 24223 | R = 0.4760 ± 0.0069
+[   28s] iltk             rc=0  iltk | iltk_composition.npz | xgb | train 24688 / test 16216 | R = 0.5370 ± 0.0124
+[   16s] miscible         rc=0  miscible | miscible_composition.npz | xgb | train 3580 / test 26481 | R = 0.7258 ± 0.0041
+[   42s] ilteta           rc=0  ilteta | ilteta_composition.npz | xgb | train 59685 / test 16307 | R = 0.8055 ± 0.0039
+[   16s] miscible_hvap    rc=0  miscible_hvap | miscible_hvap_composition.npz | xgb | train 3580 / test 26481 | R = 0.9163 ± 0.0008
+[   53s] nist             rc=0  nist | nist_composition.npz | xgb | train 29563 / test 209637 | R = 0.5340 ± 0.0118
+[   16s] miscible_density rc=0  miscible_density | miscible_density_composition.npz | xgb | train 3580 / test 26481 | R = 0.9269 ± 0.0015
+全部完成 1.2 分钟

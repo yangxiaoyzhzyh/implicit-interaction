@@ -1,0 +1,6 @@
+  seed 42: R = 0.7312
+  seed 43: R = 0.7250
+  seed 44: R = 0.7213
+miscible | miscible_composition.npz | xgb | train 3580 / test 26481 | R = 0.7258 ± 0.0041
+写出 /root/repro_v2/01_composition/runs/xgb_miscible_composition.csv
+

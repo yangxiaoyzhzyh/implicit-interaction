@@ -1,0 +1,10 @@
+调用切割生成器: C:\Users\yangx\AppData\Local\Python\pythoncore-3.14-64\python.exe C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\common\carved_split.py --data-base C:\Users\yangx\v3-mixture-token\literature\CheMixHub\datasets --sets nist:nist
+==========================================================================
+nist (task=nist) | 239200 条, 1644 分子, K 1–2
+  seed 299 | train 68408 / test 68277 | K 偏差 0.019 | 保留 57.1%
+     K=1   train 15446 (22.6%)  test 14117 (20.7%)
+     K=2   train 52962 (77.4%)  test 54160 (79.3%)
+  saved nist_split.npz
+
+nist | 分子二分切割（train/test 无共享分子，val 取自 train 内部） | train 67808 / val 600 / test 68277
+写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\nist_unseen.npz

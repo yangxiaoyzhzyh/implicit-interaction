@@ -1,0 +1,11 @@
+调用切割生成器: C:\Users\yangx\AppData\Local\Python\pythoncore-3.14-64\python.exe C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\common\carved_split.py --data-base C:\Users\yangx\v3-mixture-token\literature\CheMixHub\datasets --sets drug:drug
+==========================================================================
+drug (task=drug) | 26713 条, 169 分子, K 2–3
+  seed 320 | train 5038 / test 3652 | K 偏差 0.023 | 保留 32.5%
+     K=2   train   679 (13.5%)  test   575 (15.7%)
+     K=3   train  4359 (86.5%)  test  3077 (84.3%)
+  saved drug_split.npz
+
+drug | 分子二分切割（train/test 无共享分子，val 取自 train 内部） | train 4438 / val 600 / test 3652
+写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\drug_unseen.npz
+

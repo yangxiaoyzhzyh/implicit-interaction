@@ -1,0 +1,4 @@
+task,model,split,seed,group_type,group,n,R,MAE
+miscible_hvap,vex,composition,42,K,K=3,10720,0.9880,0.3199
+miscible_hvap,vex,composition,42,K,K=4,6122,0.9662,0.3895
+miscible_hvap,vex,composition,42,K,K=5,9639,0.9541,0.3712

@@ -1,0 +1,4 @@
+task,model,split,seed,group_type,group,n,R,MAE
+miscible_hvap,vim,composition,42,K,K=3,10720,0.9989,0.1020
+miscible_hvap,vim,composition,42,K,K=4,6122,0.9977,0.1053
+miscible_hvap,vim,composition,42,K,K=5,9639,0.9965,0.1035

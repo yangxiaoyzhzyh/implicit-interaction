@@ -1,0 +1,10 @@
+task,name,plain_lstsq,ridge_1e-2,delta
+miscible_density,density,0.9889,0.9889,+0.0000
+miscible_hvap,dHvap,0.9802,0.9802,+0.0000
+miscible,dHmix,0.7595,0.7549,-0.0046
+mon,MON,0.9051,0.9184,+0.0133
+nist,NIST eta,0.8779,0.8779,+0.0000
+drug,drug lnS,0.5765,0.5793,+0.0028
+ilteta,IlT eta,0.0073,0.8178,+0.8105
+iltk,IlT k,-0.1327,0.7372,+0.8699
+spe,SPE k,0.6265,0.6182,-0.0083

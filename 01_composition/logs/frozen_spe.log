@@ -1,0 +1,9 @@
+spe | spe_composition.npz | frozen | train 8944 / test 2406 | R = 0.6857 ± 0.0571  (0.7212; 0.6051; 0.7308)
+写出 /root/repro_v2/01_composition/runs/frozen_spe_composition.csv
+
+/root/repro_v2/scripts/frozen.py:70: RuntimeWarning: overflow encountered in cast
+  V = {c: np.array(cache[str(c)], dtype=np.float32)
+/root/miniconda3/lib/python3.12/site-packages/numpy/_core/_methods.py:188: RuntimeWarning: invalid value encountered in subtract
+  x = um.subtract(arr, arrmean, out=...)
+/root/repro_v2/scripts/frozen.py:179: RuntimeWarning: invalid value encountered in subtract
+  Z = np.nan_to_num((Z - mu) / sd, nan=0.0, posinf=0.0, neginf=0.0)

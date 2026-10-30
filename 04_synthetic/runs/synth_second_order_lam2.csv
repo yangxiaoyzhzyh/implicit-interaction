@@ -1,0 +1,17 @@
+family,lambda,K,model,R2,n_seeds
+add_pair,2.0,3,v(im),0.9389,3
+add_pair,2.0,3,v(im)+agg2,0.9769,3
+add_pair,2.0,3,v(im)+norm2,0.9722,3
+add_pair,2.0,3,v(ex),0.8853,3
+add_pair,2.0,5,v(im),0.9049,3
+add_pair,2.0,5,v(im)+agg2,0.8936,3
+add_pair,2.0,5,v(im)+norm2,0.9142,3
+add_pair,2.0,5,v(ex),0.6037,3
+add_pair,2.0,10,v(im),0.8210,3
+add_pair,2.0,10,v(im)+agg2,0.5314,3
+add_pair,2.0,10,v(im)+norm2,0.6956,3
+add_pair,2.0,10,v(ex),-0.1572,3
+add_pair,2.0,20,v(im),0.5850,3
+add_pair,2.0,20,v(im)+agg2,-0.3894,3
+add_pair,2.0,20,v(im)+norm2,0.2063,3
+add_pair,2.0,20,v(ex),-1.5766,3

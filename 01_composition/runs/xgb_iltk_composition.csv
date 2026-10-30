@@ -1,0 +1,2 @@
+task,split,train_n,test_n,mean,sd,per_seed,n_desc,n_estimators
+iltk,composition,24688,16216,0.5370,0.0124,0.5466;0.5194;0.5450,217,800

@@ -1,0 +1,13 @@
+探针分子 3540
+编码器 8 个: density,he,heat_vap,ionic_cond,ionic_visc,logv,mon,nist_logv
+  density      (3540, 256)  12s
+  he           (3540, 256)  24s
+  heat_vap     (3540, 256)  36s
+  ionic_cond   (3540, 256)  47s
+  ionic_visc   (3540, 256)  58s
+  logv         (3540, 256)  71s
+  mon          (3540, 256)  82s
+  nist_logv    (3540, 256)  93s
+  ecfp4        (3540, 2048)  103s
+
+saved C:\Users\yangx\v3-mixture-token\odor_mixture\out\encoder_cache.npz (26.2 MB)

@@ -1,0 +1,11 @@
+device=cpu | families=['add_hidden'] | lambdas=[0.0] | seeds=[42, 43, 44] | epochs=300 | train_ks=(1, 2)
+参数量：v(im)=30241 | v(ex)=30145
+
+=== add_hidden  λ=0.0 ===
+   K    v(im) R²    v(ex) R²       gap
+   3       1.000       0.984     0.016
+   5       1.000       0.934     0.065
+  10       1.000       0.854     0.145
+  20       0.999       0.798     0.202
+
+saved ../runs/synth_add_hidden.csv | 总用时 155s

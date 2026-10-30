@@ -1,0 +1,186 @@
+  读划分文件 iltk_composition.npz: train 24088 / val 600 / test 16216
+tag=iltk task=iltk model=vim | train 24088 / test 16216 | feat 44 | cuda
+  fit 24088 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  seed 42 ep   0 loss 0.7140 val R +0.6342
+  seed 42 ep  10 loss 0.3556 val R +0.8104
+  seed 42 ep  20 loss 0.2957 val R +0.8485
+  seed 42 ep  30 loss 0.2682 val R +0.8660
+  seed 42 ep  40 loss 0.2474 val R +0.8712
+  seed 42 ep  50 loss 0.2350 val R +0.8629
+  seed 42 ep  60 loss 0.2250 val R +0.8821
+  seed 42 ep  70 loss 0.2162 val R +0.8857
+  seed 42 ep  80 loss 0.2109 val R +0.8930
+  读划分文件 iltk_composition.npz: train 24088 / val 600 / test 16216
+  读划分文件 iltk_composition.npz: train 24088 / val 600 / test 16216
+tag=iltk task=iltk model=vex | train 24088 / test 16216 | feat 44 | cuda
+  fit 24688 / val 0
+tag=iltk task=iltk model=vim | train 24088 / test 16216 | feat 44 | cuda
+  fit 24688 / val 0
+  读划分文件 iltk_composition.npz: train 24088 / val 600 / test 16216
+tag=iltk task=iltk model=vex | train 24088 / test 16216 | feat 44 | cuda
+  fit 24688 / val 0
+  seed 42 ep   0 loss 0.5621 val R (no-val)
+  读划分文件 iltk_composition.npz: train 24088 / val 600 / test 16216
+tag=iltk task=iltk model=vim | train 24088 / test 16216 | feat 44 | cuda
+  fit 24688 / val 0
+  seed 42 ep   0 loss 0.7149 val R (no-val)
+  seed 42 ep  10 loss 0.3509 val R (no-val)
+  seed 42 ep  20 loss 0.2917 val R (no-val)
+  seed 42 ep  30 loss 0.2609 val R (no-val)
+  seed 42 ep  40 loss 0.2510 val R (no-val)
+  seed 42 ep  50 loss 0.2320 val R (no-val)
+  seed 42 ep  60 loss 0.2265 val R (no-val)
+  seed 42 ep  70 loss 0.2128 val R (no-val)
+  seed 42 ep  80 loss 0.2086 val R (no-val)
+  seed 42 ep  90 loss 0.2027 val R (no-val)
+  seed 42 ep 100 loss 0.1942 val R (no-val)
+  seed 42 ep 110 loss 0.1946 val R (no-val)
+  seed 42 ep 120 loss 0.1890 val R (no-val)
+  seed 42 ep 130 loss 0.1800 val R (no-val)
+  seed 42 ep 140 loss 0.1819 val R (no-val)
+  seed 42 ep 150 loss 0.1754 val R (no-val)
+  seed 42 ep 160 loss 0.1770 val R (no-val)
+  seed 42 ep 170 loss 0.1755 val R (no-val)
+  seed 42 ep 180 loss 0.1736 val R (no-val)
+  seed 42 ep 190 loss 0.1737 val R (no-val)
+  seed 42 ep 199 loss 0.1723 val R (no-val)
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  >> seed 42 knee None best ep (final) | val R (no-val) | test R +0.7152 R2 +0.4442 MAE 1.6369
+     pred mean -1.969 vs true -2.768
+     wrote iltk_vim_composition.csv
+       K=3 (n=16216) R +0.7152
+  seed 43 ep   0 loss 0.7180 val R (no-val)
+  seed 43 ep  10 loss 0.3553 val R (no-val)
+  seed 43 ep  20 loss 0.2950 val R (no-val)
+  seed 43 ep  30 loss 0.2659 val R (no-val)
+  seed 43 ep  40 loss 0.2528 val R (no-val)
+  seed 43 ep  50 loss 0.2331 val R (no-val)
+  seed 43 ep  60 loss 0.2244 val R (no-val)
+  seed 43 ep  70 loss 0.2123 val R (no-val)
+  seed 43 ep  80 loss 0.2071 val R (no-val)
+  seed 43 ep  90 loss 0.1996 val R (no-val)
+  seed 43 ep 100 loss 0.1937 val R (no-val)
+  seed 43 ep 110 loss 0.1889 val R (no-val)
+  seed 43 ep 120 loss 0.1851 val R (no-val)
+  seed 43 ep 130 loss 0.1796 val R (no-val)
+  seed 43 ep 140 loss 0.1739 val R (no-val)
+  seed 43 ep 150 loss 0.1733 val R (no-val)
+  seed 43 ep 160 loss 0.1718 val R (no-val)
+  seed 43 ep 170 loss 0.1698 val R (no-val)
+  seed 43 ep 180 loss 0.1674 val R (no-val)
+  seed 43 ep 190 loss 0.1673 val R (no-val)
+  seed 43 ep 199 loss 0.1668 val R (no-val)
+  >> seed 43 knee None best ep (final) | val R (no-val) | test R +0.7537 R2 +0.5342 MAE 1.4793
+     pred mean -2.204 vs true -2.768
+     wrote iltk_vim_composition.csv
+       K=3 (n=16216) R +0.7537
+  seed 44 ep   0 loss 0.7198 val R (no-val)
+  seed 44 ep  10 loss 0.3598 val R (no-val)
+  seed 44 ep  20 loss 0.3055 val R (no-val)
+  seed 44 ep  30 loss 0.2671 val R (no-val)
+  seed 44 ep  40 loss 0.2529 val R (no-val)
+  seed 44 ep  50 loss 0.2373 val R (no-val)
+  seed 44 ep  60 loss 0.2268 val R (no-val)
+  seed 44 ep  70 loss 0.2207 val R (no-val)
+  seed 44 ep  80 loss 0.2114 val R (no-val)
+  seed 44 ep  90 loss 0.2050 val R (no-val)
+  seed 44 ep 100 loss 0.1977 val R (no-val)
+  seed 44 ep 110 loss 0.1929 val R (no-val)
+  seed 44 ep 120 loss 0.1897 val R (no-val)
+  seed 44 ep 130 loss 0.1826 val R (no-val)
+  seed 44 ep 140 loss 0.1817 val R (no-val)
+  seed 44 ep 150 loss 0.1778 val R (no-val)
+  seed 44 ep 160 loss 0.1764 val R (no-val)
+  seed 44 ep 170 loss 0.1748 val R (no-val)
+  seed 44 ep 180 loss 0.1749 val R (no-val)
+  seed 44 ep 190 loss 0.1738 val R (no-val)
+  seed 44 ep 199 loss 0.1722 val R (no-val)
+  >> seed 44 knee None best ep (final) | val R (no-val) | test R +0.7255 R2 +0.4257 MAE 1.6869
+     pred mean -1.792 vs true -2.768
+     wrote iltk_vim_composition.csv
+       K=3 (n=16216) R +0.7255
+总用时 5460s
+  读划分文件 iltk_composition.npz: train 24088 / val 600 / test 16216
+tag=iltk task=iltk model=vex | train 24088 / test 16216 | feat 44 | cuda
+  fit 24688 / val 0
+  seed 42 ep   0 loss 0.5621 val R (no-val)
+  seed 42 ep  10 loss 0.1051 val R (no-val)
+  seed 42 ep  20 loss 0.0841 val R (no-val)
+  seed 42 ep  30 loss 0.0736 val R (no-val)
+  seed 42 ep  40 loss 0.0674 val R (no-val)
+  seed 42 ep  50 loss 0.0649 val R (no-val)
+  seed 42 ep  60 loss 0.0596 val R (no-val)
+  seed 42 ep  70 loss 0.0524 val R (no-val)
+  seed 42 ep  80 loss 0.0516 val R (no-val)
+  seed 42 ep  90 loss 0.0472 val R (no-val)
+  seed 42 ep 100 loss 0.0484 val R (no-val)
+  seed 42 ep 110 loss 0.0445 val R (no-val)
+  seed 42 ep 120 loss 0.0416 val R (no-val)
+  seed 42 ep 130 loss 0.0386 val R (no-val)
+  seed 42 ep 140 loss 0.0389 val R (no-val)
+  seed 42 ep 150 loss 0.0365 val R (no-val)
+  seed 42 ep 160 loss 0.0359 val R (no-val)
+  seed 42 ep 170 loss 0.0352 val R (no-val)
+  seed 42 ep 180 loss 0.0346 val R (no-val)
+  seed 42 ep 190 loss 0.0336 val R (no-val)
+  seed 42 ep 199 loss 0.0328 val R (no-val)
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  >> seed 42 knee None best ep (final) | val R (no-val) | test R +0.8620 R2 +0.7298 MAE 1.0265
+     pred mean -2.417 vs true -2.768
+     wrote iltk_vex_composition.csv
+       K=3 (n=16216) R +0.8620
+  seed 43 ep   0 loss 0.5357 val R (no-val)
+  seed 43 ep  10 loss 0.1045 val R (no-val)
+  seed 43 ep  20 loss 0.0834 val R (no-val)
+  seed 43 ep  30 loss 0.0726 val R (no-val)
+  seed 43 ep  40 loss 0.0654 val R (no-val)
+  seed 43 ep  50 loss 0.0575 val R (no-val)
+  seed 43 ep  60 loss 0.0577 val R (no-val)
+  seed 43 ep  70 loss 0.0511 val R (no-val)
+  seed 43 ep  80 loss 0.0507 val R (no-val)
+  seed 43 ep  90 loss 0.0498 val R (no-val)
+  seed 43 ep 100 loss 0.0438 val R (no-val)
+  seed 43 ep 110 loss 0.0423 val R (no-val)
+  seed 43 ep 120 loss 0.0397 val R (no-val)
+  seed 43 ep 130 loss 0.0392 val R (no-val)
+  seed 43 ep 140 loss 0.0377 val R (no-val)
+  seed 43 ep 150 loss 0.0368 val R (no-val)
+  seed 43 ep 160 loss 0.0352 val R (no-val)
+  seed 43 ep 170 loss 0.0344 val R (no-val)
+  seed 43 ep 180 loss 0.0339 val R (no-val)
+  seed 43 ep 190 loss 0.0334 val R (no-val)
+  seed 43 ep 199 loss 0.0338 val R (no-val)
+  >> seed 43 knee None best ep (final) | val R (no-val) | test R +0.7638 R2 +0.5020 MAE 1.6381
+     pred mean -1.913 vs true -2.768
+     wrote iltk_vex_composition.csv
+       K=3 (n=16216) R +0.7638
+  seed 44 ep   0 loss 0.5640 val R (no-val)
+  seed 44 ep  10 loss 0.1043 val R (no-val)
+  seed 44 ep  20 loss 0.0849 val R (no-val)
+  seed 44 ep  30 loss 0.0734 val R (no-val)
+  seed 44 ep  40 loss 0.0652 val R (no-val)
+  seed 44 ep  50 loss 0.0598 val R (no-val)
+  seed 44 ep  60 loss 0.0558 val R (no-val)
+  seed 44 ep  70 loss 0.0540 val R (no-val)
+  seed 44 ep  80 loss 0.0476 val R (no-val)
+  seed 44 ep  90 loss 0.0482 val R (no-val)
+  seed 44 ep 100 loss 0.0435 val R (no-val)
+  seed 44 ep 110 loss 0.0429 val R (no-val)
+  seed 44 ep 120 loss 0.0414 val R (no-val)
+  seed 44 ep 130 loss 0.0384 val R (no-val)
+  seed 44 ep 140 loss 0.0380 val R (no-val)
+  seed 44 ep 150 loss 0.0359 val R (no-val)
+  seed 44 ep 160 loss 0.0356 val R (no-val)
+  seed 44 ep 170 loss 0.0353 val R (no-val)
+  seed 44 ep 180 loss 0.0336 val R (no-val)
+  seed 44 ep 190 loss 0.0342 val R (no-val)
+  seed 44 ep 199 loss 0.0333 val R (no-val)
+  >> seed 44 knee None best ep (final) | val R (no-val) | test R +0.8617 R2 +0.7194 MAE 1.1038
+     pred mean -2.380 vs true -2.768
+     wrote iltk_vex_composition.csv
+       K=3 (n=16216) R +0.8617
+总用时 6449s

@@ -1,0 +1,6 @@
+  seed 42: R = 0.5496
+  seed 43: R = 0.5210
+  seed 44: R = 0.5314
+nist | nist_composition.npz | xgb | train 29563 / test 209637 | R = 0.5340 ± 0.0118
+写出 /root/repro_v2/01_composition/runs/xgb_nist_composition.csv
+

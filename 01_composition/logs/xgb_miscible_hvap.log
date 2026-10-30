@@ -1,0 +1,6 @@
+  seed 42: R = 0.9169
+  seed 43: R = 0.9169
+  seed 44: R = 0.9152
+miscible_hvap | miscible_hvap_composition.npz | xgb | train 3580 / test 26481 | R = 0.9163 ± 0.0008
+写出 /root/repro_v2/01_composition/runs/xgb_miscible_hvap_composition.csv
+

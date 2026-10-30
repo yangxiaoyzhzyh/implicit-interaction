@@ -1,0 +1,9 @@
+miscible | miscible_composition.npz | frozen | train 3580 / test 26481 | R = 0.8215 ± 0.0054  (0.8159; 0.8288; 0.8198)
+写出 /root/repro_v2/01_composition/runs/frozen_miscible_composition.csv
+
+/root/repro_v2/scripts/frozen.py:70: RuntimeWarning: overflow encountered in cast
+  V = {c: np.array(cache[str(c)], dtype=np.float32)
+/root/miniconda3/lib/python3.12/site-packages/numpy/_core/_methods.py:188: RuntimeWarning: invalid value encountered in subtract
+  x = um.subtract(arr, arrmean, out=...)
+/root/repro_v2/scripts/frozen.py:179: RuntimeWarning: invalid value encountered in subtract
+  Z = np.nan_to_num((Z - mu) / sd, nan=0.0, posinf=0.0, neginf=0.0)

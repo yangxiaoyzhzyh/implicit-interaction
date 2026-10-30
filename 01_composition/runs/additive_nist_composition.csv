@@ -1,0 +1,2 @@
+task,split,train_n,test_n,R,alpha
+nist,composition,29563,209637,0.8779,1e-02

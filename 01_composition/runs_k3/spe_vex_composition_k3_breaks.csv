@@ -1,0 +1,16 @@
+task,model,split,seed,group_type,group,n,R,MAE
+spe,vex,composition_k3,42,K,K=4,501,0.8835,0.2139
+spe,vex,composition_k3,42,K,K=5,178,0.9619,0.1537
+spe,vex,composition_k3,42,Kbin,K=5-10,178,0.9619,0.1537
+spe,vex,composition_k3,42,subset,seen,629,0.9265,0.1558
+spe,vex,composition_k3,42,subset,unseen,50,0.8342,0.7303
+spe,vex,composition_k3,43,K,K=4,501,0.8494,0.2273
+spe,vex,composition_k3,43,K,K=5,178,0.9346,0.2642
+spe,vex,composition_k3,43,Kbin,K=5-10,178,0.9346,0.2642
+spe,vex,composition_k3,43,subset,seen,629,0.9169,0.1911
+spe,vex,composition_k3,43,subset,unseen,50,0.7549,0.8142
+spe,vex,composition_k3,44,K,K=4,501,0.8622,0.2176
+spe,vex,composition_k3,44,K,K=5,178,0.9618,0.1682
+spe,vex,composition_k3,44,Kbin,K=5-10,178,0.9618,0.1682
+spe,vex,composition_k3,44,subset,seen,629,0.9356,0.1583
+spe,vex,composition_k3,44,subset,unseen,50,0.7711,0.7888

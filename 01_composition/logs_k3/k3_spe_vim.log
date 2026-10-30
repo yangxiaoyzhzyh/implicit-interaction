@@ -1,0 +1,102 @@
+  读划分文件 spe_composition_k3.npz: train 10671 / val 0 / test 679
+tag=spe task=spe model=vim | train 10671 / test 679 | feat 44 | cuda
+  fit 10671 / val 0
+  seed 42 ep   0 loss 0.7429 val R (no-val)
+  seed 42 ep  10 loss 0.1697 val R (no-val)
+  seed 42 ep  20 loss 0.1348 val R (no-val)
+  seed 42 ep  30 loss 0.1135 val R (no-val)
+  seed 42 ep  40 loss 0.1057 val R (no-val)
+  seed 42 ep  50 loss 0.0929 val R (no-val)
+  seed 42 ep  60 loss 0.0870 val R (no-val)
+  seed 42 ep  70 loss 0.0823 val R (no-val)
+  seed 42 ep  80 loss 0.0791 val R (no-val)
+  seed 42 ep  90 loss 0.0754 val R (no-val)
+  seed 42 ep 100 loss 0.0725 val R (no-val)
+  seed 42 ep 110 loss 0.0687 val R (no-val)
+  seed 42 ep 120 loss 0.0683 val R (no-val)
+  seed 42 ep 130 loss 0.0661 val R (no-val)
+  seed 42 ep 140 loss 0.0642 val R (no-val)
+  seed 42 ep 150 loss 0.0633 val R (no-val)
+  seed 42 ep 160 loss 0.0619 val R (no-val)
+  seed 42 ep 170 loss 0.0612 val R (no-val)
+  seed 42 ep 180 loss 0.0606 val R (no-val)
+  seed 42 ep 190 loss 0.0606 val R (no-val)
+  seed 42 ep 199 loss 0.0600 val R (no-val)
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  >> seed 42 knee None best ep (final) | val R (no-val) | test R +0.9287 R2 +0.8331 MAE 0.1594
+     pred mean -2.492 vs true -2.541
+       K=4       n=  501  R +0.9213  MAE 0.1752
+       K=5       n=  178  R +0.9453  MAE 0.1151
+       K=5-10    n=  178  R +0.9453  MAE 0.1151
+       seen      n=  629  R +0.9680  MAE 0.1247
+       unseen    n=   50  R +0.7612  MAE 0.5966
+     wrote spe_vim_composition_k3.csv
+     wrote spe_vim_composition_k3_preds.csv
+       K=4 (n= 501) R +0.9213
+       K=5 (n= 178) R +0.9453
+  seed 43 ep   0 loss 0.7562 val R (no-val)
+  seed 43 ep  10 loss 0.1729 val R (no-val)
+  seed 43 ep  20 loss 0.1319 val R (no-val)
+  seed 43 ep  30 loss 0.1146 val R (no-val)
+  seed 43 ep  40 loss 0.1032 val R (no-val)
+  seed 43 ep  50 loss 0.0932 val R (no-val)
+  seed 43 ep  60 loss 0.0867 val R (no-val)
+  seed 43 ep  70 loss 0.0848 val R (no-val)
+  seed 43 ep  80 loss 0.0797 val R (no-val)
+  seed 43 ep  90 loss 0.0768 val R (no-val)
+  seed 43 ep 100 loss 0.0728 val R (no-val)
+  seed 43 ep 110 loss 0.0706 val R (no-val)
+  seed 43 ep 120 loss 0.0684 val R (no-val)
+  seed 43 ep 130 loss 0.0685 val R (no-val)
+  seed 43 ep 140 loss 0.0656 val R (no-val)
+  seed 43 ep 150 loss 0.0652 val R (no-val)
+  seed 43 ep 160 loss 0.0644 val R (no-val)
+  seed 43 ep 170 loss 0.0628 val R (no-val)
+  seed 43 ep 180 loss 0.0625 val R (no-val)
+  seed 43 ep 190 loss 0.0628 val R (no-val)
+  seed 43 ep 199 loss 0.0620 val R (no-val)
+  >> seed 43 knee None best ep (final) | val R (no-val) | test R +0.9184 R2 +0.8241 MAE 0.1608
+     pred mean -2.487 vs true -2.541
+       K=4       n=  501  R +0.9099  MAE 0.1756
+       K=5       n=  178  R +0.9383  MAE 0.1192
+       K=5-10    n=  178  R +0.9383  MAE 0.1192
+       seen      n=  629  R +0.9524  MAE 0.1265
+       unseen    n=   50  R +0.7874  MAE 0.5923
+     wrote spe_vim_composition_k3.csv
+     wrote spe_vim_composition_k3_preds.csv
+       K=4 (n= 501) R +0.9099
+       K=5 (n= 178) R +0.9383
+  seed 44 ep   0 loss 0.7481 val R (no-val)
+  seed 44 ep  10 loss 0.1747 val R (no-val)
+  seed 44 ep  20 loss 0.1347 val R (no-val)
+  seed 44 ep  30 loss 0.1156 val R (no-val)
+  seed 44 ep  40 loss 0.1039 val R (no-val)
+  seed 44 ep  50 loss 0.0943 val R (no-val)
+  seed 44 ep  60 loss 0.0863 val R (no-val)
+  seed 44 ep  70 loss 0.0833 val R (no-val)
+  seed 44 ep  80 loss 0.0802 val R (no-val)
+  seed 44 ep  90 loss 0.0764 val R (no-val)
+  seed 44 ep 100 loss 0.0733 val R (no-val)
+  seed 44 ep 110 loss 0.0708 val R (no-val)
+  seed 44 ep 120 loss 0.0698 val R (no-val)
+  seed 44 ep 130 loss 0.0680 val R (no-val)
+  seed 44 ep 140 loss 0.0667 val R (no-val)
+  seed 44 ep 150 loss 0.0644 val R (no-val)
+  seed 44 ep 160 loss 0.0635 val R (no-val)
+  seed 44 ep 170 loss 0.0623 val R (no-val)
+  seed 44 ep 180 loss 0.0619 val R (no-val)
+  seed 44 ep 190 loss 0.0618 val R (no-val)
+  seed 44 ep 199 loss 0.0619 val R (no-val)
+  >> seed 44 knee None best ep (final) | val R (no-val) | test R +0.8854 R2 +0.7614 MAE 0.1778
+     pred mean -2.472 vs true -2.541
+       K=4       n=  501  R +0.8706  MAE 0.2006
+       K=5       n=  178  R +0.9452  MAE 0.1137
+       K=5-10    n=  178  R +0.9452  MAE 0.1137
+       seen      n=  629  R +0.9601  MAE 0.1233
+       unseen    n=   50  R +0.7606  MAE 0.8637
+     wrote spe_vim_composition_k3.csv
+     wrote spe_vim_composition_k3_preds.csv
+       K=4 (n= 501) R +0.8706
+       K=5 (n= 178) R +0.9452
+总用时 9017s

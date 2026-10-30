@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+spe,vim,composition_k3,42,,final,,0.9287,0.8331,0.1594,10671,679
+spe,vim,composition_k3,43,,final,,0.9184,0.8241,0.1608,10671,679
+spe,vim,composition_k3,44,,final,,0.8854,0.7614,0.1778,10671,679

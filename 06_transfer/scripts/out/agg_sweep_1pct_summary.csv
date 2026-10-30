@@ -1,0 +1,9 @@
+task,rdkit_agg,rdkit_R,enc_agg,enc_R,diff
+mon,sum,0.3492,sum,0.3623,0.0131
+density,sum,0.9855,sum,0.9787,-0.0069
+heat_vap,sum,0.9729,sum,0.9663,-0.0065
+he,mean,0.7352,mean,0.677,-0.0582
+logv,sum,0.8059,sum,0.8953,0.0893
+nist_logv,attn,0.9113,sum,0.9407,0.0293
+ionic_cond,concat,0.7301,attn,0.8374,0.1072
+ionic_visc,sum,0.5277,sum,0.9395,0.4118

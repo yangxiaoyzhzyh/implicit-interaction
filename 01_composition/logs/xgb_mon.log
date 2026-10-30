@@ -1,0 +1,5 @@
+  seed 42: R = 0.8075
+  seed 43: R = 0.7991
+  seed 44: R = 0.7833
+mon | mon_composition.npz | xgb | train 386 / test 298 | R = 0.7966 ± 0.0100
+写出 01_composition/runs/xgb_mon_composition.csv

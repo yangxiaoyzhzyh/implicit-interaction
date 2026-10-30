@@ -1,0 +1,2 @@
+task,split,train_n,test_n,mean,sd,per_seed,n_desc
+nist,composition,29563,209637,0.7453,0.0049,0.7386;0.7503;0.7469,217

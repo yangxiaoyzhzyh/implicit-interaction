@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+drug,vex,unseen,42,11,11,0.9206,0.1259,-0.3090,0.8633,4438,3652
+drug,vex,unseen,43,12,12,0.9231,0.1521,-0.2335,0.8395,4438,3652
+drug,vex,unseen,44,13,12,0.9229,0.1065,-0.4422,0.8801,4438,3652

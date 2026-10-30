@@ -1,0 +1,7 @@
+ilteta | ilteta_composition.npz | frozen | train 59685 / test 16307 | R = 0.8133 ± 0.0039  (0.8182; 0.8129; 0.8087)
+写出 /root/repro_v2/01_composition/runs/frozen_ilteta_composition.csv
+
+/root/repro_v2/scripts/frozen.py:70: RuntimeWarning: overflow encountered in cast
+  V = {c: np.array(cache[str(c)], dtype=np.float32)
+/root/repro_v2/scripts/frozen.py:93: RuntimeWarning: invalid value encountered in multiply
+  Z[i] += w * V[c]

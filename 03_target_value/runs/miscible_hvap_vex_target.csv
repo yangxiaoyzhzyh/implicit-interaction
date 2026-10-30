@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+miscible_hvap,vex,target,42,17,14,0.9927,0.9143,0.3716,2.81,,
+miscible_hvap,vex,target,43,11,8,0.988,0.9194,0.3991,2.7771,,
+miscible_hvap,vex,target,44,20,16,0.9928,0.9199,0.3948,2.7698,,

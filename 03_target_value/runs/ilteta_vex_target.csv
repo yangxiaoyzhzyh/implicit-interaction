@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+ilteta,vex,target,42,24,22,0.9903,0.932,0.7466,1.3134,,
+ilteta,vex,target,43,22,20,0.9902,0.9311,0.7241,1.3945,,
+ilteta,vex,target,44,17,15,0.9863,0.9294,0.7094,1.3986,,

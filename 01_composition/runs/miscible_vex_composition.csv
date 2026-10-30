@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+miscible,vex,composition,42,,final,,0.8858,0.7356,0.3419,3580,26481
+miscible,vex,composition,43,,final,,0.8596,0.7316,0.3305,3580,26481
+miscible,vex,composition,44,,final,,0.8770,0.6854,0.3621,3580,26481

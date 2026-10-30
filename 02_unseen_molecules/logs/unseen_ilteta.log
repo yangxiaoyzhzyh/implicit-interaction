@@ -1,0 +1,59 @@
+  读划分文件 ilteta_unseen.npz: train 15587 / val 600 / test 15443
+tag=ilteta task=ilteta model=vim | train 15587 / test 15443 | feat 44 | cuda
+  fit 15587 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  seed 42 ep   0 loss 0.4098 val R +0.9062
+  seed 42 ep  10 loss 0.0234 val R +0.9932
+  seed 42 ep  20 loss 0.0156 val R +0.9955
+  >> seed 42 knee 20 best ep 17 | val R +0.9956 | test R +0.7654 R2 +0.4557 MAE 1.0188
+     pred mean -3.679 vs true -4.385
+     wrote ilteta_vim_unseen.csv
+       K=2 (n=14442) R +0.7761
+       K=3 (n=1001) R +0.5852
+  seed 43 ep   0 loss 0.4068 val R +0.9094
+  seed 43 ep  10 loss 0.0226 val R +0.9931
+  seed 43 ep  20 loss 0.0147 val R +0.9956
+  >> seed 43 knee 23 best ep 21 | val R +0.9960 | test R +0.3170 R2 -0.8090 MAE 1.8430
+     pred mean -2.788 vs true -4.385
+     wrote ilteta_vim_unseen.csv
+       K=2 (n=14442) R +0.3604
+       K=3 (n=1001) R +0.0342
+  seed 44 ep   0 loss 0.4393 val R +0.9083
+  seed 44 ep  10 loss 0.0241 val R +0.9936
+  seed 44 ep  20 loss 0.0149 val R +0.9956
+  >> seed 44 knee 23 best ep 23 | val R +0.9963 | test R +0.5686 R2 -0.0828 MAE 1.4577
+     pred mean -3.185 vs true -4.385
+     wrote ilteta_vim_unseen.csv
+       K=2 (n=14442) R +0.5942
+       K=3 (n=1001) R +0.3841
+总用时 429s
+  读划分文件 ilteta_unseen.npz: train 15587 / val 600 / test 15443
+tag=ilteta task=ilteta model=vex | train 15587 / test 15443 | feat 44 | cuda
+  fit 15587 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  seed 42 ep   0 loss 0.5391 val R +0.8958
+  seed 42 ep  10 loss 0.0301 val R +0.9924
+  seed 42 ep  20 loss 0.0179 val R +0.9940
+  seed 42 ep  30 loss 0.0135 val R +0.9965
+  >> seed 42 knee 32 best ep 29 | val R +0.9965 | test R +0.6913 R2 +0.2876 MAE 1.1676
+     pred mean -3.539 vs true -4.385
+     wrote ilteta_vex_unseen.csv
+       K=2 (n=14442) R +0.7101
+       K=3 (n=1001) R +0.3594
+  seed 43 ep   0 loss 0.5409 val R +0.8989
+  seed 43 ep  10 loss 0.0288 val R +0.9921
+  >> seed 43 knee 18 best ep 16 | val R +0.9942 | test R +0.5795 R2 +0.0260 MAE 1.3708
+     pred mean -3.354 vs true -4.385
+     wrote ilteta_vex_unseen.csv
+       K=2 (n=14442) R +0.6034
+       K=3 (n=1001) R +0.1354
+  seed 44 ep   0 loss 0.5800 val R +0.8970
+  seed 44 ep  10 loss 0.0298 val R +0.9916
+  >> seed 44 knee 14 best ep 10 | val R +0.9916 | test R +0.5983 R2 +0.1764 MAE 1.2110
+     pred mean -3.570 vs true -4.385
+     wrote ilteta_vex_unseen.csv
+       K=2 (n=14442) R +0.6274
+       K=3 (n=1001) R +0.1303
+总用时 546s

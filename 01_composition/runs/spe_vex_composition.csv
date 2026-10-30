@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+spe,vex,composition,42,,final,,0.8458,0.1515,0.8601,8944,2406
+spe,vex,composition,43,,final,,0.6825,-0.5723,1.2650,8944,2406
+spe,vex,composition,44,,final,,0.7409,-0.1801,0.9553,8944,2406

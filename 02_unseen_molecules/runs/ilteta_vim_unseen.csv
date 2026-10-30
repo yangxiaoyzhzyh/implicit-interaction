@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+ilteta,vim,unseen,42,20,17,0.9956,0.7654,0.4557,1.0188,15587,15443
+ilteta,vim,unseen,43,23,21,0.9960,0.3170,-0.8090,1.8430,15587,15443
+ilteta,vim,unseen,44,23,23,0.9963,0.5686,-0.0828,1.4577,15587,15443

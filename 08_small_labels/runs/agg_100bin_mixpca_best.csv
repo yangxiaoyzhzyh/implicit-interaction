@@ -1,0 +1,9 @@
+task,desc,desc_R,enc,enc_R,diff
+mon,ecfp4/sum/mlp,0.5865,sum/mlp,0.5429,-0.0435
+density,rdkit2d/sum/mlp,0.9709,sum/mlp,0.9726,0.0018
+heat_vap,rdkit2d/sum/mlp,0.9606,sum/mlp,0.9722,0.0116
+he,rdkit2d/mean/mlp,0.5572,sum/mlp,0.5665,0.0094
+logv,rdkit2d/sum/xgb,0.7547,sum/mlp,0.8703,0.1155
+nist_logv,rdkit2d/sum/xgb,0.7279,sum/mlp,0.8317,0.1038
+ionic_cond,ecfp4/sum/xgb,0.6305,sum/xgb,0.5969,-0.0336
+ionic_visc,maccs/sum/mlp,0.83,sum/mlp,0.8643,0.0342

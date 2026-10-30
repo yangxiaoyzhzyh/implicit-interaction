@@ -1,0 +1,43 @@
+  读划分文件 mon_composition.npz: train 322 / val 64 / test 298
+tag=mon task=mon model=vim | train 322 / test 298 | feat 44 | cuda
+  fit 386 / val 0
+  seed 42 ep   0 loss 0.9425 val R (no-val)
+  seed 42 ep  10 loss 0.4655 val R (no-val)
+  seed 42 ep  20 loss 0.3198 val R (no-val)
+  seed 42 ep  30 loss 0.2719 val R (no-val)
+  seed 42 ep  40 loss 0.2574 val R (no-val)
+  seed 42 ep  50 loss 0.1913 val R (no-val)
+  seed 42 ep  60 loss 0.1504 val R (no-val)
+  seed 42 ep  70 loss 0.1835 val R (no-val)
+  seed 42 ep  80 loss 0.1457 val R (no-val)
+  seed 42 ep  90 loss 0.1134 val R (no-val)
+  seed 42 ep 100 loss 0.1090 val R (no-val)
+  seed 42 ep 110 loss 0.1094 val R (no-val)
+  seed 42 ep 120 loss 0.0787 val R (no-val)
+  seed 42 ep 130 loss 0.1029 val R (no-val)
+  seed 42 ep 140 loss 0.0900 val R (no-val)
+  seed 42 ep 150 loss 0.0886 val R (no-val)
+  seed 42 ep 160 loss 0.0893 val R (no-val)
+  seed 42 ep 170 loss 0.0857 val R (no-val)
+  seed 42 ep 180 loss 0.0700 val R (no-val)
+  seed 42 ep 190 loss 0.0870 val R (no-val)
+  seed 42 ep 199 loss 0.0901 val R (no-val)
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  >> seed 42 knee None best ep (final) | val R (no-val) | test R +0.9080 R2 +0.4528 MAE 5.4954
+     pred mean +76.454 vs true +81.634
+       K=3       n=  162  R +0.9318  MAE 5.1168
+       K=4       n=   65  R +0.8898  MAE 7.1443
+       K=25      n=   19  R -0.1990  MAE 5.6255
+       K=5-10    n=    8  R +0.9320  MAE 1.9783
+       K=11-40   n=   49  R +0.7765  MAE 5.7634
+       K>=41     n=   14  R +0.8726  MAE 3.2924
+       seen      n=  235  R +0.9156  MAE 5.5708
+       unseen    n=   63  R +0.7849  MAE 5.2143
+     wrote mon_vim_composition.csv
+     wrote mon_vim_composition_preds.csv
+     wrote mon_vim_composition_s42.pt
+       K=3 (n= 162) R +0.9318
+       K=4 (n=  65) R +0.8898
+       K=25 (n=  19) R -0.1990
+总用时 15s

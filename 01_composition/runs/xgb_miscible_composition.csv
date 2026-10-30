@@ -1,0 +1,2 @@
+task,split,train_n,test_n,mean,sd,per_seed,n_desc,n_estimators
+miscible,composition,3580,26481,0.7258,0.0041,0.7312;0.7250;0.7213,217,800

@@ -1,0 +1,11 @@
+调用切割生成器: C:\Users\yangx\AppData\Local\Python\pythoncore-3.14-64\python.exe C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\common\carved_split.py --data-base C:\Users\yangx\v3-mixture-token\literature\CheMixHub\datasets --sets ilteta:ilteta
+==========================================================================
+ilteta (task=ilteta) | 75992 条, 699 分子, K 2–3
+  seed 76 | train 16187 / test 15443 | K 偏差 0.021 | 保留 41.6%
+     K=2   train 14802 (91.4%)  test 14442 (93.5%)
+     K=3   train  1385 (8.6%)  test  1001 (6.5%)
+  saved ilteta_split.npz
+
+ilteta | 分子二分切割（train/test 无共享分子，val 取自 train 内部） | train 15587 / val 600 / test 15443
+写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\ilteta_unseen.npz
+

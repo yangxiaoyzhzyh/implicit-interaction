@@ -1,0 +1,13 @@
+探针分子 3540
+编码器 8 个: density,he,heat_vap,ionic_cond,ionic_visc,logv,mon,nist_logv
+  density      (3540, 256)  4s
+  he           (3540, 256)  7s
+  heat_vap     (3540, 256)  11s
+  ionic_cond   (3540, 256)  14s
+  ionic_visc   (3540, 256)  18s
+  logv         (3540, 256)  22s
+  mon          (3540, 256)  25s
+  nist_logv    (3540, 256)  29s
+  ecfp4        (3540, 2048)  32s
+
+saved C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\06_transfer\scripts\out\encoder_cache.npz (26.2 MB)

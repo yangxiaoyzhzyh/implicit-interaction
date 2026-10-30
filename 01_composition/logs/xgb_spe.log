@@ -1,0 +1,6 @@
+  seed 42: R = 0.8152
+  seed 43: R = 0.8078
+  seed 44: R = 0.8152
+spe | spe_composition.npz | xgb | train 8944 / test 2406 | R = 0.8127 ± 0.0035
+写出 /root/repro_v2/01_composition/runs/xgb_spe_composition.csv
+

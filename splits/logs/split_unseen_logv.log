@@ -1,0 +1,11 @@
+调用切割生成器: C:\Users\yangx\AppData\Local\Python\pythoncore-3.14-64\python.exe C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\common\carved_split.py --data-base C:\Users\yangx\v3-mixture-token\literature\CheMixHub\datasets --sets logv:logv
+==========================================================================
+logv (task=logv) | 34374 条, 1628 分子, K 1–2
+  seed 369 | train 9459 / test 9461 | K 偏差 0.001 | 保留 55.0%
+     K=1   train  1460 (15.4%)  test  1450 (15.3%)
+     K=2   train  7999 (84.6%)  test  8011 (84.7%)
+  saved logv_split.npz
+
+logv | 分子二分切割（train/test 无共享分子，val 取自 train 内部） | train 8859 / val 600 / test 9461
+写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\logv_unseen.npz
+

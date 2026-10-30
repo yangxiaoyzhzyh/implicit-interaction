@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+miscible,vim,composition,42,,final,,0.9319,0.8544,0.2480,3580,26481
+miscible,vim,composition,43,,final,,0.9317,0.8571,0.2453,3580,26481
+miscible,vim,composition,44,,final,,0.9243,0.8334,0.2615,3580,26481

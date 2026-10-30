@@ -1,0 +1,54 @@
+  读划分文件 drug_unseen.npz: train 4438 / val 600 / test 3652
+tag=drug task=drug model=vim | train 4438 / test 3652 | feat 44 | cuda
+  fit 4438 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  seed 42 ep   0 loss 0.9134 val R +0.5568
+  seed 42 ep  10 loss 0.1383 val R +0.9173
+  >> seed 42 knee 13 best ep 12 | val R +0.9221 | test R +0.1530 R2 -0.2000 MAE 0.8687
+     pred mean +0.341 vs true +0.504
+     wrote drug_vim_unseen.csv
+       K=2 (n= 575) R +0.3357
+       K=3 (n=3077) R +0.0870
+  seed 43 ep   0 loss 0.8877 val R +0.6145
+  seed 43 ep  10 loss 0.1326 val R +0.9203
+  >> seed 43 knee 14 best ep 14 | val R +0.9255 | test R +0.2862 R2 -0.0873 MAE 0.7824
+     pred mean +0.342 vs true +0.504
+     wrote drug_vim_unseen.csv
+       K=2 (n= 575) R +0.3282
+       K=3 (n=3077) R +0.2463
+  seed 44 ep   0 loss 0.8653 val R +0.5330
+  seed 44 ep  10 loss 0.1405 val R +0.9144
+  >> seed 44 knee 11 best ep 11 | val R +0.9158 | test R +0.3932 R2 +0.0326 MAE 0.7329
+     pred mean +0.230 vs true +0.504
+     wrote drug_vim_unseen.csv
+       K=2 (n= 575) R +0.3357
+       K=3 (n=3077) R +0.4020
+总用时 136s
+  读划分文件 drug_unseen.npz: train 4438 / val 600 / test 3652
+tag=drug task=drug model=vex | train 4438 / test 3652 | feat 44 | cuda
+  fit 4438 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  seed 42 ep   0 loss 0.8456 val R +0.5431
+  seed 42 ep  10 loss 0.1332 val R +0.9191
+  >> seed 42 knee 11 best ep 11 | val R +0.9206 | test R +0.1259 R2 -0.3090 MAE 0.8633
+     pred mean +0.250 vs true +0.504
+     wrote drug_vex_unseen.csv
+       K=2 (n= 575) R +0.2295
+       K=3 (n=3077) R +0.0676
+  seed 43 ep   0 loss 0.8442 val R +0.6010
+  seed 43 ep  10 loss 0.1326 val R +0.9220
+  >> seed 43 knee 12 best ep 12 | val R +0.9231 | test R +0.1521 R2 -0.2335 MAE 0.8395
+     pred mean +0.475 vs true +0.504
+     wrote drug_vex_unseen.csv
+       K=2 (n= 575) R +0.3343
+       K=3 (n=3077) R +0.0284
+  seed 44 ep   0 loss 0.7592 val R +0.5584
+  seed 44 ep  10 loss 0.1415 val R +0.9165
+  >> seed 44 knee 13 best ep 12 | val R +0.9229 | test R +0.1065 R2 -0.4422 MAE 0.8801
+     pred mean +0.783 vs true +0.504
+     wrote drug_vex_unseen.csv
+       K=2 (n= 575) R +0.2253
+       K=3 (n=3077) R +0.0431
+总用时 173s

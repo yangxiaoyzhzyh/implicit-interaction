@@ -1,0 +1,8 @@
+=== drug | vim | 13:44:20 ===
+=== spe | vim | 13:44:20 ===
+=== drug | vex | 13:46:41 ===
+=== drug | done | 13:49:41 ===
+=== iltk | vim | 13:49:41 ===
+run_unseen.sh: line 32:  4623 Done                    printf '%s\n' drug spe iltk ilteta logv nist
+      4624 Killed                  | xargs -P 2 -I{} bash -c 'run_one {}'
+UNSEEN_DONE Mon Oct 26 13:52:18 CST 2026

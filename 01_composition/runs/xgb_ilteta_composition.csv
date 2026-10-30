@@ -1,0 +1,2 @@
+task,split,train_n,test_n,mean,sd,per_seed,n_desc,n_estimators
+ilteta,composition,59685,16307,0.8055,0.0039,0.8004;0.8099;0.8062,217,800

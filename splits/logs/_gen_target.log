@@ -1,0 +1,8 @@
+drug                38.3s rc=0 drug | y 在 [-0.424, 1.007] 训练 / <-1.240 或 >1.477 测试 | train 12758 / val 600 / test 5342 | 写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\drug_target.npz
+spe                  9.5s rc=0 spe | y 在 [-5.932, -3.168] 训练 / <-7.393 或 >-2.325 测试 | train 5074 / val 600 / test 2270 | 写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\spe_target.npz
+iltk                51.8s rc=0 iltk | y 在 [-3.442, 0.299] 训练 / <-5.133 或 >1.134 测试 | train 19857 / val 600 / test 8180 | 写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\iltk_target.npz
+ilteta              50.9s rc=0 ilteta | y 在 [-6.509, -3.275] 训练 / <-7.138 或 >-2.017 测试 | train 37414 / val 600 / test 15185 | 写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\ilteta_target.npz
+nist               154.5s rc=0 nist | y 在 [-7.187, -5.612] 训练 / <-7.562 或 >-3.809 测试 | train 119062 / val 600 / test 47772 | 写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\nist_target.npz
+miscible            28.3s rc=0 miscible | y 在 [-0.099, 0.855] 训练 / <-0.861 或 >1.227 测试 | train 14431 / val 600 / test 6012 | 写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\miscible_target.npz
+miscible_hvap       27.3s rc=0 miscible_hvap | y 在 [9.904, 12.681] 训练 / <9.066 或 >14.730 测试 | train 14431 / val 600 / test 6012 | 写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\miscible_hvap_target.npz
+miscible_density    30.0s rc=0 miscible_density | y 在 [0.876, 1.000] 训练 / <0.835 或 >1.069 测试 | train 14431 / val 600 / test 6012 | 写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\miscible_density_target.npz

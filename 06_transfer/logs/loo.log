@@ -1,0 +1,30 @@
+编码器 8 个: density,he,heat_vap,ionic_cond,ionic_visc,logv,mon,nist_logv
+探针分子并集 3540
+
+=== 读缓存 encoder_cache.npz ===
+  编码器 density,he,heat_vap,ionic_cond,ionic_visc,logv,mon,nist_logv
+  通用基线 rdkit2d (3540, 217)
+  通用基线 maccs (3540, 167)
+
+=== Leave-one-task-out ===
+目标             own others  ECFP4  RDKit  MACCS    o+e      样本
+--------------------------------------------------------------------
+mon          0.955  0.870  0.103  0.779  0.752  0.156     684
+density      0.992  0.992  0.992  0.992  0.992  0.992   30061
+heat_vap     0.983  0.983  0.981  0.983  0.979  0.983   30061
+he           0.739  0.739  0.735  0.739  0.730  0.739   30061
+logv         0.932  0.927  0.638  0.725  0.864  0.919   34374
+nist_logv    0.947  0.916  0.714  0.917  0.908  0.901  239200
+ionic_cond   0.705  0.703  0.639  0.705  0.703  0.707   40904
+ionic_visc   0.932  0.925  0.822  0.917  0.914  0.883   75992
+
+=== 汇总（均值）===
+  own       0.898
+  others    0.882
+  ecfp      0.703
+  rdkit2d   0.844
+  maccs     0.855
+  both      0.785
+  own - others = 0.016
+
+saved out/leave_one_out.json

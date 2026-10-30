@@ -1,0 +1,83 @@
+  读划分文件 iltk_unseen.npz: train 5460 / val 600 / test 7564
+tag=iltk task=iltk model=vim | train 5460 / test 7564 | feat 44 | cuda
+  fit 5460 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  seed 42 ep   0 loss 0.6769 val R +0.8213
+  seed 42 ep  10 loss 0.1097 val R +0.9543
+  >> seed 42 knee 18 best ep 16 | val R +0.9607 | test R +0.5525 R2 -0.5109 MAE 2.0101
+     pred mean -2.730 vs true -1.066
+     wrote iltk_vim_unseen.csv
+       K=2 (n=6551) R +0.5100
+       K=3 (n=1013) R +0.2255
+  seed 43 ep   0 loss 0.6166 val R +0.8539
+  seed 43 ep  10 loss 0.1162 val R +0.9477
+  >> seed 43 knee 17 best ep 17 | val R +0.9572 | test R +0.5434 R2 -0.3564 MAE 1.8695
+     pred mean -2.253 vs true -1.066
+     wrote iltk_vim_unseen.csv
+       K=2 (n=6551) R +0.5057
+       K=3 (n=1013) R +0.1367
+  seed 44 ep   0 loss 0.6403 val R +0.8323
+  seed 44 ep  10 loss 0.1174 val R +0.9519
+  seed 44 ep  20 loss 0.0856 val R +0.9639
+  读划分文件 iltk_unseen.npz: train 5460 / val 600 / test 7564
+tag=iltk task=iltk model=vim | train 5460 / test 7564 | feat 44 | cuda
+  fit 5460 / val 600
+  >> seed 44 knee 22 best ep 20 | val R +0.9639 | test R +0.5126 R2 +0.2548 MAE 1.3679
+     pred mean -0.973 vs true -1.066
+     wrote iltk_vim_unseen.csv
+       K=2 (n=6551) R +0.5147
+       K=3 (n=1013) R -0.0174
+总用时 190s
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  seed 42 ep   0 loss 0.6769 val R +0.8213
+  seed 42 ep  10 loss 0.1099 val R +0.9544
+  >> seed 42 knee 18 best ep 16 | val R +0.9608 | test R +0.5530 R2 -0.4041 MAE 1.9296
+     pred mean -2.640 vs true -1.066
+     wrote iltk_vim_unseen.csv
+       K=2 (n=6551) R +0.5108
+       K=3 (n=1013) R +0.2316
+  seed 43 ep   0 loss 0.6166 val R +0.8539
+  seed 43 ep  10 loss 0.1157 val R +0.9481
+  >> seed 43 knee 17 best ep 17 | val R +0.9580 | test R +0.5420 R2 -0.3571 MAE 1.8732
+     pred mean -2.251 vs true -1.066
+     wrote iltk_vim_unseen.csv
+       K=2 (n=6551) R +0.5039
+       K=3 (n=1013) R +0.1318
+  seed 44 ep   0 loss 0.6403 val R +0.8323
+  seed 44 ep  10 loss 0.1174 val R +0.9518
+  seed 44 ep  20 loss 0.0847 val R +0.9638
+  >> seed 44 knee 22 best ep 20 | val R +0.9638 | test R +0.5259 R2 +0.2692 MAE 1.3563
+     pred mean -1.025 vs true -1.066
+     wrote iltk_vim_unseen.csv
+       K=2 (n=6551) R +0.5229
+       K=3 (n=1013) R +0.0086
+总用时 218s
+  读划分文件 iltk_unseen.npz: train 5460 / val 600 / test 7564
+tag=iltk task=iltk model=vex | train 5460 / test 7564 | feat 44 | cuda
+  fit 5460 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  seed 42 ep   0 loss 0.5876 val R +0.8828
+  seed 42 ep  10 loss 0.0451 val R +0.9574
+  >> seed 42 knee 16 best ep 10 | val R +0.9574 | test R +0.1168 R2 -0.3029 MAE 1.5477
+     pred mean -0.525 vs true -1.066
+     wrote iltk_vex_unseen.csv
+       K=2 (n=6551) R -0.0767
+       K=3 (n=1013) R +0.0501
+  seed 43 ep   0 loss 0.4012 val R +0.9024
+  seed 43 ep  10 loss 0.0450 val R +0.9641
+  >> seed 43 knee 16 best ep 12 | val R +0.9663 | test R +0.5859 R2 -0.1526 MAE 1.7432
+     pred mean -2.410 vs true -1.066
+     wrote iltk_vex_unseen.csv
+       K=2 (n=6551) R +0.5638
+       K=3 (n=1013) R +0.1616
+  seed 44 ep   0 loss 0.5729 val R +0.8949
+  seed 44 ep  10 loss 0.0429 val R +0.9509
+  >> seed 44 knee 17 best ep 15 | val R +0.9612 | test R +0.5031 R2 +0.2422 MAE 1.3288
+     pred mean -1.269 vs true -1.066
+     wrote iltk_vex_unseen.csv
+       K=2 (n=6551) R +0.4554
+       K=3 (n=1013) R -0.0881
+总用时 203s

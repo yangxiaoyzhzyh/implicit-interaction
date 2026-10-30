@@ -1,0 +1,2 @@
+task,split,train_n,test_n,R,alpha
+mon,composition,322,298,0.9184,1e-02

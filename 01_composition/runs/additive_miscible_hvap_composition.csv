@@ -1,0 +1,2 @@
+task,split,train_n,test_n,R,alpha
+miscible_hvap,composition,3133,26481,0.9802,1e-02

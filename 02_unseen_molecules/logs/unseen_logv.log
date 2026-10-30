@@ -1,0 +1,56 @@
+  读划分文件 logv_unseen.npz: train 8859 / val 600 / test 9461
+tag=logv task=logv model=vim | train 8859 / test 9461 | feat 44 | cuda
+  fit 8859 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  seed 42 ep   0 loss 0.6512 val R +0.8046
+  seed 42 ep  10 loss 0.0486 val R +0.9777
+  >> seed 42 knee 19 best ep 17 | val R +0.9823 | test R +0.8791 R2 +0.7674 MAE 0.1151
+     pred mean +0.059 vs true +0.077
+     wrote logv_vim_unseen.csv
+       K=1 (n=1450) R +0.9073
+       K=2 (n=8011) R +0.8695
+  seed 43 ep   0 loss 0.7288 val R +0.7492
+  seed 43 ep  10 loss 0.0518 val R +0.9751
+  >> seed 43 knee 16 best ep 14 | val R +0.9799 | test R +0.8883 R2 +0.7851 MAE 0.1110
+     pred mean +0.062 vs true +0.077
+     wrote logv_vim_unseen.csv
+       K=1 (n=1450) R +0.9098
+       K=2 (n=8011) R +0.8810
+  seed 44 ep   0 loss 0.6358 val R +0.8230
+  seed 44 ep  10 loss 0.0492 val R +0.9745
+  >> seed 44 knee 18 best ep 16 | val R +0.9780 | test R +0.8577 R2 +0.7254 MAE 0.1228
+     pred mean +0.039 vs true +0.077
+     wrote logv_vim_unseen.csv
+       K=1 (n=1450) R +0.8944
+       K=2 (n=8011) R +0.8454
+总用时 193s
+  读划分文件 logv_unseen.npz: train 8859 / val 600 / test 9461
+tag=logv task=logv model=vex | train 8859 / test 9461 | feat 44 | cuda
+  fit 8859 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  seed 42 ep   0 loss 0.5502 val R +0.8065
+  seed 42 ep  10 loss 0.0523 val R +0.9770
+  seed 42 ep  20 loss 0.0370 val R +0.9836
+  >> seed 42 knee 26 best ep 24 | val R +0.9863 | test R +0.8690 R2 +0.7363 MAE 0.1197
+     pred mean +0.027 vs true +0.077
+     wrote logv_vex_unseen.csv
+       K=1 (n=1450) R +0.9091
+       K=2 (n=8011) R +0.8549
+  seed 43 ep   0 loss 0.6631 val R +0.7773
+  seed 43 ep  10 loss 0.0528 val R +0.9787
+  >> seed 43 knee 18 best ep 18 | val R +0.9835 | test R +0.8754 R2 +0.7617 MAE 0.1278
+     pred mean +0.096 vs true +0.077
+     wrote logv_vex_unseen.csv
+       K=1 (n=1450) R +0.9069
+       K=2 (n=8011) R +0.8645
+  seed 44 ep   0 loss 0.5186 val R +0.8277
+  seed 44 ep  10 loss 0.0495 val R +0.9764
+  seed 44 ep  20 loss 0.0325 val R +0.9803
+  >> seed 44 knee 24 best ep 21 | val R +0.9826 | test R +0.8496 R2 +0.7119 MAE 0.1259
+     pred mean +0.043 vs true +0.077
+     wrote logv_vex_unseen.csv
+       K=1 (n=1450) R +0.8925
+       K=2 (n=8011) R +0.8349
+总用时 337s

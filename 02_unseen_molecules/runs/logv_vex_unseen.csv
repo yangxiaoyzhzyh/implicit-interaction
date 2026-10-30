@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+logv,vex,unseen,42,26,24,0.9863,0.8690,0.7363,0.1197,8859,9461
+logv,vex,unseen,43,18,18,0.9835,0.8754,0.7617,0.1278,8859,9461
+logv,vex,unseen,44,24,21,0.9826,0.8496,0.7119,0.1259,8859,9461

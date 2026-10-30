@@ -1,0 +1,13 @@
+调用切割生成器: C:\Users\yangx\AppData\Local\Python\pythoncore-3.14-64\python.exe C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\common\carved_split.py --data-base C:\Users\yangx\v3-mixture-token\literature\CheMixHub\datasets --sets spe:spe
+==========================================================================
+spe (task=spe) | 11350 条, 268 分子, K 1–5
+  seed 42 | train 3433 / test 2651 | K 偏差 0.007 | 保留 53.6%
+     K=1   train   264 (7.7%)  test   222 (8.4%)
+     K=2   train  2700 (78.6%)  test  2091 (78.9%)
+     K=3   train   429 (12.5%)  test   322 (12.1%)
+     K=4   train    40 (1.2%)  test    16 (0.6%)
+  saved spe_split.npz
+
+spe | 分子二分切割（train/test 无共享分子，val 取自 train 内部） | train 3004 / val 429 / test 2651
+写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\spe_unseen.npz
+

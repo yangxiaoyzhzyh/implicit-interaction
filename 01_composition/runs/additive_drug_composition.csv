@@ -1,0 +1,2 @@
+task,split,train_n,test_n,R,alpha
+drug,composition,2490,24223,0.5793,1e-02

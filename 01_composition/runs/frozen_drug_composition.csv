@@ -1,0 +1,2 @@
+task,split,train_n,test_n,mean,sd,per_seed,n_desc
+drug,composition,2490,24223,0.5719,0.0106,0.5619;0.5866;0.5672,217

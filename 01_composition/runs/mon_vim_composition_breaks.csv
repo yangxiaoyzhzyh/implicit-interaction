@@ -1,0 +1,6 @@
+task,model,split,seed,group_type,group,n,R,MAE
+mon,vim,composition,42,Kbin,K=3,162,0.9318,5.1168
+mon,vim,composition,42,Kbin,K=4,65,0.8898,7.1443
+mon,vim,composition,42,Kbin,K=5-10,8,0.9320,1.9783
+mon,vim,composition,42,Kbin,K=11-40,49,0.7765,5.7634
+mon,vim,composition,42,Kbin,K>=41,14,0.8726,3.2924

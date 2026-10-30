@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+ilteta,vex,composition,42,,final,,0.8095,0.6324,0.4504,59685,16307
+ilteta,vex,composition,43,,final,,0.8192,0.6533,0.4196,59685,16307
+ilteta,vex,composition,44,,final,,0.8034,0.6215,0.4578,59685,16307

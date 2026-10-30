@@ -1,0 +1,3 @@
+ilteta | K<=2 训练 / K>2 测试 | train 59085 / val 600 / test 16307
+写出 C:\Users\yangx\v3-mixture-token\atomformer_paper\paper_v3\repro_v2\splits\ilteta_composition.npz
+

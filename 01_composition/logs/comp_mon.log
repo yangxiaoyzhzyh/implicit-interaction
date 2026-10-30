@@ -1,0 +1,174 @@
+  读划分文件 mon_composition.npz: train 322 / val 64 / test 298
+tag=mon task=mon model=vim | train 322 / test 298 | feat 44 | cuda
+  fit 386 / val 0
+  seed 42 ep   0 loss 0.9418 val R (no-val)
+  seed 42 ep  10 loss 0.4667 val R (no-val)
+  seed 42 ep  20 loss 0.3145 val R (no-val)
+  seed 42 ep  30 loss 0.2623 val R (no-val)
+  seed 42 ep  40 loss 0.2560 val R (no-val)
+  seed 42 ep  50 loss 0.1928 val R (no-val)
+  seed 42 ep  60 loss 0.1551 val R (no-val)
+  seed 42 ep  70 loss 0.1631 val R (no-val)
+  seed 42 ep  80 loss 0.1326 val R (no-val)
+  seed 42 ep  90 loss 0.0975 val R (no-val)
+  seed 42 ep 100 loss 0.1050 val R (no-val)
+  seed 42 ep 110 loss 0.1095 val R (no-val)
+  seed 42 ep 120 loss 0.0757 val R (no-val)
+  seed 42 ep 130 loss 0.1075 val R (no-val)
+  seed 42 ep 140 loss 0.0895 val R (no-val)
+  seed 42 ep 150 loss 0.0956 val R (no-val)
+  seed 42 ep 160 loss 0.0805 val R (no-val)
+  seed 42 ep 170 loss 0.0815 val R (no-val)
+  seed 42 ep 180 loss 0.0761 val R (no-val)
+  seed 42 ep 190 loss 0.0890 val R (no-val)
+  seed 42 ep 199 loss 0.0921 val R (no-val)
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  >> seed 42 knee None best ep (final) | val R (no-val) | test R +0.9144 R2 +0.4342 MAE 5.9489
+     pred mean +75.848 vs true +81.634
+     wrote mon_vim_composition.csv
+       K=3 (n= 162) R +0.9282
+       K=4 (n=  65) R +0.9126
+       K=25 (n=  19) R -0.1435
+  seed 43 ep   0 loss 0.9395 val R (no-val)
+  seed 43 ep  10 loss 0.3941 val R (no-val)
+  seed 43 ep  20 loss 0.3085 val R (no-val)
+  seed 43 ep  30 loss 0.2216 val R (no-val)
+  seed 43 ep  40 loss 0.2142 val R (no-val)
+  seed 43 ep  50 loss 0.2093 val R (no-val)
+  seed 43 ep  60 loss 0.1487 val R (no-val)
+  seed 43 ep  70 loss 0.1527 val R (no-val)
+  seed 43 ep  80 loss 0.1290 val R (no-val)
+  seed 43 ep  90 loss 0.1403 val R (no-val)
+  seed 43 ep 100 loss 0.1394 val R (no-val)
+  seed 43 ep 110 loss 0.1484 val R (no-val)
+  seed 43 ep 120 loss 0.1103 val R (no-val)
+  seed 43 ep 130 loss 0.1032 val R (no-val)
+  seed 43 ep 140 loss 0.0941 val R (no-val)
+  seed 43 ep 150 loss 0.1088 val R (no-val)
+  seed 43 ep 160 loss 0.1091 val R (no-val)
+  seed 43 ep 170 loss 0.0948 val R (no-val)
+  seed 43 ep 180 loss 0.0954 val R (no-val)
+  seed 43 ep 190 loss 0.0930 val R (no-val)
+  seed 43 ep 199 loss 0.1054 val R (no-val)
+  >> seed 43 knee None best ep (final) | val R (no-val) | test R +0.9318 R2 +0.8168 MAE 3.1476
+     pred mean +79.990 vs true +81.634
+     wrote mon_vim_composition.csv
+       K=3 (n= 162) R +0.9322
+       K=4 (n=  65) R +0.9558
+       K=25 (n=  19) R -0.1540
+  seed 44 ep   0 loss 0.9430 val R (no-val)
+  seed 44 ep  10 loss 0.4436 val R (no-val)
+  seed 44 ep  20 loss 0.3309 val R (no-val)
+  seed 44 ep  30 loss 0.2853 val R (no-val)
+  seed 44 ep  40 loss 0.2236 val R (no-val)
+  seed 44 ep  50 loss 0.2008 val R (no-val)
+  seed 44 ep  60 loss 0.2076 val R (no-val)
+  seed 44 ep  70 loss 0.1565 val R (no-val)
+  seed 44 ep  80 loss 0.1280 val R (no-val)
+  seed 44 ep  90 loss 0.1409 val R (no-val)
+  seed 44 ep 100 loss 0.1596 val R (no-val)
+  seed 44 ep 110 loss 0.1472 val R (no-val)
+  seed 44 ep 120 loss 0.1257 val R (no-val)
+  seed 44 ep 130 loss 0.1021 val R (no-val)
+  seed 44 ep 140 loss 0.1180 val R (no-val)
+  seed 44 ep 150 loss 0.1049 val R (no-val)
+  seed 44 ep 160 loss 0.1023 val R (no-val)
+  seed 44 ep 170 loss 0.1040 val R (no-val)
+  seed 44 ep 180 loss 0.1361 val R (no-val)
+  seed 44 ep 190 loss 0.1030 val R (no-val)
+  seed 44 ep 199 loss 0.0969 val R (no-val)
+  >> seed 44 knee None best ep (final) | val R (no-val) | test R +0.9193 R2 +0.6095 MAE 5.0968
+     pred mean +77.050 vs true +81.634
+     wrote mon_vim_composition.csv
+       K=3 (n= 162) R +0.9369
+       K=4 (n=  65) R +0.9563
+       K=25 (n=  19) R -0.2068
+总用时 39s
+  读划分文件 mon_composition.npz: train 322 / val 64 / test 298
+tag=mon task=mon model=vex | train 322 / test 298 | feat 44 | cuda
+  fit 386 / val 0
+  seed 42 ep   0 loss 0.9257 val R (no-val)
+  seed 42 ep  10 loss 0.3728 val R (no-val)
+  seed 42 ep  20 loss 0.4365 val R (no-val)
+  seed 42 ep  30 loss 0.2953 val R (no-val)
+  seed 42 ep  40 loss 0.3308 val R (no-val)
+  seed 42 ep  50 loss 0.1815 val R (no-val)
+  seed 42 ep  60 loss 0.1761 val R (no-val)
+  seed 42 ep  70 loss 0.1879 val R (no-val)
+  seed 42 ep  80 loss 0.1697 val R (no-val)
+  seed 42 ep  90 loss 0.1174 val R (no-val)
+  seed 42 ep 100 loss 0.1272 val R (no-val)
+  seed 42 ep 110 loss 0.1809 val R (no-val)
+  seed 42 ep 120 loss 0.1314 val R (no-val)
+  seed 42 ep 130 loss 0.1308 val R (no-val)
+  seed 42 ep 140 loss 0.1120 val R (no-val)
+  seed 42 ep 150 loss 0.1034 val R (no-val)
+  seed 42 ep 160 loss 0.0990 val R (no-val)
+  seed 42 ep 170 loss 0.1087 val R (no-val)
+  seed 42 ep 180 loss 0.0869 val R (no-val)
+  seed 42 ep 190 loss 0.1128 val R (no-val)
+  seed 42 ep 199 loss 0.1176 val R (no-val)
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  >> seed 42 knee None best ep (final) | val R (no-val) | test R +0.8742 R2 +0.4533 MAE 6.2710
+     pred mean +76.233 vs true +81.634
+     wrote mon_vex_composition.csv
+       K=3 (n= 162) R +0.9127
+       K=4 (n=  65) R +0.9097
+       K=25 (n=  19) R -0.4497
+  seed 43 ep   0 loss 0.9491 val R (no-val)
+  seed 43 ep  10 loss 0.4032 val R (no-val)
+  seed 43 ep  20 loss 0.3220 val R (no-val)
+  seed 43 ep  30 loss 0.2944 val R (no-val)
+  seed 43 ep  40 loss 0.2729 val R (no-val)
+  seed 43 ep  50 loss 0.2845 val R (no-val)
+  seed 43 ep  60 loss 0.1825 val R (no-val)
+  seed 43 ep  70 loss 0.2332 val R (no-val)
+  seed 43 ep  80 loss 0.1844 val R (no-val)
+  seed 43 ep  90 loss 0.1519 val R (no-val)
+  seed 43 ep 100 loss 0.1419 val R (no-val)
+  seed 43 ep 110 loss 0.2621 val R (no-val)
+  seed 43 ep 120 loss 0.1468 val R (no-val)
+  seed 43 ep 130 loss 0.1243 val R (no-val)
+  seed 43 ep 140 loss 0.1157 val R (no-val)
+  seed 43 ep 150 loss 0.1240 val R (no-val)
+  seed 43 ep 160 loss 0.1325 val R (no-val)
+  seed 43 ep 170 loss 0.1186 val R (no-val)
+  seed 43 ep 180 loss 0.1094 val R (no-val)
+  seed 43 ep 190 loss 0.1114 val R (no-val)
+  seed 43 ep 199 loss 0.1124 val R (no-val)
+  >> seed 43 knee None best ep (final) | val R (no-val) | test R +0.8688 R2 +0.2619 MAE 7.2784
+     pred mean +74.816 vs true +81.634
+     wrote mon_vex_composition.csv
+       K=3 (n= 162) R +0.9108
+       K=4 (n=  65) R +0.8329
+       K=25 (n=  19) R -0.4096
+  seed 44 ep   0 loss 0.9619 val R (no-val)
+  seed 44 ep  10 loss 0.4399 val R (no-val)
+  seed 44 ep  20 loss 0.3866 val R (no-val)
+  seed 44 ep  30 loss 0.3099 val R (no-val)
+  seed 44 ep  40 loss 0.3124 val R (no-val)
+  seed 44 ep  50 loss 0.2298 val R (no-val)
+  seed 44 ep  60 loss 0.2417 val R (no-val)
+  seed 44 ep  70 loss 0.1940 val R (no-val)
+  seed 44 ep  80 loss 0.1527 val R (no-val)
+  seed 44 ep  90 loss 0.1674 val R (no-val)
+  seed 44 ep 100 loss 0.2056 val R (no-val)
+  seed 44 ep 110 loss 0.1545 val R (no-val)
+  seed 44 ep 120 loss 0.1415 val R (no-val)
+  seed 44 ep 130 loss 0.1234 val R (no-val)
+  seed 44 ep 140 loss 0.1295 val R (no-val)
+  seed 44 ep 150 loss 0.1079 val R (no-val)
+  seed 44 ep 160 loss 0.1144 val R (no-val)
+  seed 44 ep 170 loss 0.1263 val R (no-val)
+  seed 44 ep 180 loss 0.1574 val R (no-val)
+  seed 44 ep 190 loss 0.1194 val R (no-val)
+  seed 44 ep 199 loss 0.1053 val R (no-val)
+  >> seed 44 knee None best ep (final) | val R (no-val) | test R +0.7774 R2 -0.0027 MAE 8.3020
+     pred mean +74.055 vs true +81.634
+     wrote mon_vex_composition.csv
+       K=3 (n= 162) R +0.8712
+       K=4 (n=  65) R +0.7851
+       K=25 (n=  19) R -0.6009
+总用时 51s

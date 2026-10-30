@@ -1,0 +1,2 @@
+task,split,train_n,test_n,R,alpha
+spe,composition,8944,2406,0.6182,1e-02

@@ -1,0 +1,6 @@
+  seed 42: R = 0.8004
+  seed 43: R = 0.8099
+  seed 44: R = 0.8062
+ilteta | ilteta_composition.npz | xgb | train 59685 / test 16307 | R = 0.8055 ± 0.0039
+写出 /root/repro_v2/01_composition/runs/xgb_ilteta_composition.csv
+

@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+ilteta,vim,composition,42,,final,,0.8435,0.7100,0.3151,59685,16307
+ilteta,vim,composition,43,,final,,0.8441,0.7105,0.3122,59685,16307
+ilteta,vim,composition,44,,final,,0.8451,0.7119,0.3137,59685,16307

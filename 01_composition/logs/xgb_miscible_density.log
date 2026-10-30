@@ -1,0 +1,6 @@
+  seed 42: R = 0.9265
+  seed 43: R = 0.9254
+  seed 44: R = 0.9289
+miscible_density | miscible_density_composition.npz | xgb | train 3580 / test 26481 | R = 0.9269 ± 0.0015
+写出 /root/repro_v2/01_composition/runs/xgb_miscible_density_composition.csv
+

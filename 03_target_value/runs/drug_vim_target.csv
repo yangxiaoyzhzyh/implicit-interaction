@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+drug,vim,target,42,11,11,0.7296,0.7929,0.2715,1.4391,,
+drug,vim,target,43,13,13,0.7343,0.7662,0.2814,1.4345,,
+drug,vim,target,44,14,13,0.7373,0.7515,0.2213,1.4805,,

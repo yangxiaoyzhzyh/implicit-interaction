@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+drug,vex,composition,42,,final,,0.6123,-0.1749,0.8149,2490,24223
+drug,vex,composition,43,,final,,0.5613,-0.7299,1.0090,2490,24223
+drug,vex,composition,44,,final,,0.5692,0.2250,0.6638,2490,24223

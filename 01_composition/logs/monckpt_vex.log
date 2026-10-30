@@ -1,0 +1,43 @@
+  读划分文件 mon_composition.npz: train 322 / val 64 / test 298
+tag=mon task=mon model=vex | train 322 / test 298 | feat 44 | cuda
+  fit 386 / val 0
+  seed 42 ep   0 loss 0.9256 val R (no-val)
+  seed 42 ep  10 loss 0.3749 val R (no-val)
+  seed 42 ep  20 loss 0.4316 val R (no-val)
+  seed 42 ep  30 loss 0.2877 val R (no-val)
+  seed 42 ep  40 loss 0.2981 val R (no-val)
+  seed 42 ep  50 loss 0.1832 val R (no-val)
+  seed 42 ep  60 loss 0.1746 val R (no-val)
+  seed 42 ep  70 loss 0.2285 val R (no-val)
+  seed 42 ep  80 loss 0.1687 val R (no-val)
+  seed 42 ep  90 loss 0.1239 val R (no-val)
+  seed 42 ep 100 loss 0.1163 val R (no-val)
+  seed 42 ep 110 loss 0.1877 val R (no-val)
+  seed 42 ep 120 loss 0.1098 val R (no-val)
+  seed 42 ep 130 loss 0.1209 val R (no-val)
+  seed 42 ep 140 loss 0.1093 val R (no-val)
+  seed 42 ep 150 loss 0.1127 val R (no-val)
+  seed 42 ep 160 loss 0.1163 val R (no-val)
+  seed 42 ep 170 loss 0.1181 val R (no-val)
+  seed 42 ep 180 loss 0.0940 val R (no-val)
+  seed 42 ep 190 loss 0.1076 val R (no-val)
+  seed 42 ep 199 loss 0.1187 val R (no-val)
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  >> seed 42 knee None best ep (final) | val R (no-val) | test R +0.8769 R2 +0.4471 MAE 6.2069
+     pred mean +76.139 vs true +81.634
+       K=3       n=  162  R +0.9187  MAE 6.1413
+       K=4       n=   65  R +0.9081  MAE 6.7379
+       K=25      n=   19  R -0.3899  MAE 2.1951
+       K=5-10    n=    8  R +0.4375  MAE 4.8472
+       K=11-40   n=   49  R +0.3912  MAE 4.9133
+       K>=41     n=   14  R +0.4481  MAE 9.8048
+       seen      n=  235  R +0.9158  MAE 6.2622
+       unseen    n=   63  R +0.1448  MAE 6.0003
+     wrote mon_vex_composition.csv
+     wrote mon_vex_composition_preds.csv
+     wrote mon_vex_composition_s42.pt
+       K=3 (n= 162) R +0.9187
+       K=4 (n=  65) R +0.9081
+       K=25 (n=  19) R -0.3899
+总用时 20s

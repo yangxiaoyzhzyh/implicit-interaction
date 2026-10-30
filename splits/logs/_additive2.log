@@ -1,0 +1,10 @@
+[   24s] spe | spe_composition.npz | 组分 268 + 条件 1 | train 8944 / test 2406 | R = 0.6265
+[   70s] drug | drug_composition.npz | 组分 169 + 条件 1 | train 2490 / test 24223 | R = 0.5765
+[  102s] iltk | iltk_composition.npz | 组分 479 + 条件 3 | train 24688 / test 16216 | R = -0.1327
+[  105s] miscible | miscible_composition.npz | 组分 81 + 条件 0 | train 3580 / test 26481 | R = 0.7595
+[    5s] mon | mon_composition.npz | 组分 416 + 条件 0 | train 386 / test 298 | R = 0.9051
+[  100s] miscible_hvap | miscible_hvap_composition.npz | 组分 81 + 条件 0 | train 3580 / test 26481 | R = 0.9802
+[   89s] miscible_density | miscible_density_composition.npz | 组分 81 + 条件 0 | train 3580 / test 26481 | R = 0.9889
+[  167s] ilteta | ilteta_composition.npz | 组分 699 + 条件 3 | train 59685 / test 16307 | R = 0.0073
+[  760s] nist | nist_composition.npz | 组分 1644 + 条件 2 | train 29563 / test 209637 | R = 0.8779
+全部完成 760s

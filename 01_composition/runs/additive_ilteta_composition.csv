@@ -1,0 +1,2 @@
+task,split,train_n,test_n,R,alpha
+ilteta,composition,59685,16307,0.8178,1e-02

@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+iltk,vim,target,42,22,20,0.8368,0.583,0.2237,3.6432,,
+iltk,vim,target,43,15,13,0.824,0.5793,0.2161,3.7127,,
+iltk,vim,target,44,23,23,0.8353,0.5327,0.1957,3.6657,,

@@ -1,0 +1,4 @@
+task,model,split,seed,group_type,group,n,R,MAE
+miscible,vex,composition,42,K,K=3,10720,0.8923,0.3249
+miscible,vex,composition,42,K,K=4,6122,0.8326,0.3911
+miscible,vex,composition,42,K,K=5,9639,0.7983,0.3621

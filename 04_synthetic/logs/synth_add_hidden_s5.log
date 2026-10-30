@@ -1,0 +1,2 @@
+device=cpu | families=['add_hidden'] | lambdas=[0.0] | seeds=[42, 43, 44] | epochs=300 | train_ks=(1, 2)
+参数量：v(im)=30241 | v(ex)=30145

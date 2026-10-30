@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+spe,vim,target,42,31,31,0.8195,0.9318,0.5024,2.0832,,
+spe,vim,target,43,22,21,0.8001,0.9338,0.4724,2.2031,,
+spe,vim,target,44,30,29,0.8136,0.9214,0.4849,2.1382,,

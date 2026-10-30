@@ -1,0 +1,6 @@
+  seed 42: R = 0.5466
+  seed 43: R = 0.5194
+  seed 44: R = 0.5450
+iltk | iltk_composition.npz | xgb | train 24688 / test 16216 | R = 0.5370 ± 0.0124
+写出 /root/repro_v2/01_composition/runs/xgb_iltk_composition.csv
+

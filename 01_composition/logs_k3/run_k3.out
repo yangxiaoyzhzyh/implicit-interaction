@@ -1,0 +1,5 @@
+python = /root/miniconda3/bin/python | seeds = 42 43 44 | started Tue Oct 27 21:48:40 CST 2026
+spe vim rc=0 Wed Oct 28 00:19:04 CST 2026
+spe vex rc=0 Wed Oct 28 02:54:13 CST 2026
+=== 结果 ===
+results copied to /autodl-fs/data/repro_v2_k3 ; shutting down

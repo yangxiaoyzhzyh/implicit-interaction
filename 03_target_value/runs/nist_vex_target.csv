@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+nist,vex,target,42,18,17,0.9764,0.9271,0.2719,1.8681,,
+nist,vex,target,43,17,15,0.9751,0.9234,0.2374,1.9236,,
+nist,vex,target,44,23,21,0.9809,0.9246,0.2544,1.8999,,

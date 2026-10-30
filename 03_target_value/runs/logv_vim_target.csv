@@ -1,0 +1,4 @@
+task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
+logv,vim,target,42,16,16,0.9527,0.9153,0.4336,0.4311,,
+logv,vim,target,43,17,17,0.9548,0.9256,0.4908,0.4047,,
+logv,vim,target,44,12,12,0.9508,0.9075,0.4271,0.4302,,

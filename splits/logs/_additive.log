@@ -1,0 +1,3 @@
+drug             rc=0 drug | drug_composition.npz | 组分 169 + 条件 1 | train 2490 / test 24223 | R = 0.5765
+spe              rc=0 spe | spe_composition.npz | 组分 268 + 条件 1 | train 8944 / test 2406 | R = 0.6265
+iltk             rc=0 iltk | iltk_composition.npz | 组分 479 + 条件 3 | train 24688 / test 16216 | R = -0.1327
