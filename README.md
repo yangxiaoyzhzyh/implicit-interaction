@@ -14,9 +14,10 @@ A many-body system is a group of components combined at some composition, whose 
 belongs to the group rather than to any component alone. Chemical mixtures are its canonical
 instance. Two ways of modelling them are compared:
 
-- **v(ex)** — *explicit interaction*: the per-component representations are consumed by
-  attention, or all atoms of a mixture are placed in one graph, so a module sees several
-  components at once.
+- **v(ex)** — *explicit interaction*: the per-component representations are consumed by a
+  transformer over the components and a CLS token is read out, so a module sees several
+  components at once. A cheaper variant, **v(ex)-simple** (`09_vex_simple/`), instead puts
+  all atoms of a mixture into one graph and pools them by a masked mean.
 - **v(im)** — *implicit interaction*: each component is encoded on its own, the vectors are
   combined by a weighted sum fixed in advance, and a small readout consumes the sum; no
   operation ever sees two components at once.
