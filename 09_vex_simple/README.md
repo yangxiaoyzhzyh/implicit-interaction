@@ -12,8 +12,7 @@
 09_vex_simple/
 ├── vsimple.py                        复现脚本（自包含，44 维特征）
 ├── results/
-│   ├── vsimple_composition_44d.csv   Table S1 的现行数据（9 任务 × 3 seeds）
-│   └── vsimple_composition_legacy.csv 早期 31 维版本（留档，不再使用）
+│   └── vsimple_composition_44d.csv   Table S1 的现行数据（9 任务 × 3 seeds）
 ├── runs/                             逐任务逐 seed 原始输出（27 个）
 │   └── <task>_s<seed>.csv            task, seed, test_R, test_R2, MAE, n_train, n_test
 └── logs/                             逐任务逐 seed 训练日志（27 个）
@@ -76,7 +75,6 @@ python vsimple.py --data-base /path/to/chemidata \
 | 文件 | 覆盖 | 说明 |
 |---|---|---|
 | **`results/vsimple_composition_44d.csv`** | **9 个任务 × 3 seeds** | **Table S1 的现行数据**（44 维词表，与 `01_composition` 同一份划分） |
-| `results/vsimple_composition_legacy.csv` | 5 个任务 × 3 seeds | 早期 31 维词表的原始文件，仅作留档，不再用于正文 |
 
 现行结果（Pearson $R$，三个 seed 的均值 ± 标准差）：
 
@@ -93,17 +91,15 @@ python vsimple.py --data-base /path/to/chemidata \
 | IlT κ | 0.762 ± 0.012 | 0.732 | **0.829** |
 
 九项中 v(ex)-simple 有八项低于 v(im)（−0.013 到 −0.184），仅 IlT κ 高出 0.030；
-相对 v(ex) 则有五项明显更低，drug 与 density 略高（+0.027 / +0.011，均在 v(ex)
-的折间/种子散度内）。
+相对 v(ex) 则有六项明显更低，三项更高：drug +0.027、IlT η +0.020、density +0.011。
+其中 drug 与 density 落在 v(ex) 的种子散度内，**IlT η 超出**（v(ex) 三个种子 0.803–0.819，
+本轮 0.831 ± 0.010），因此正文写作“comparable or slightly better on the rest”。
 
 ## 与当前流水线的差异（引用时必须注明）
 
 - 本目录**不调用** `common/engine.py`，模型、训练循环、数据装配各自独立；
   与 `01_composition` 只共享**划分文件**（npz）与原始数据。
 - 模型构造顺序与初始化 RNG 流和 `engine.py` 不同，同一 seed 不保证逐位复现。
-- `vsimple_composition_legacy.csv` 用的是 31 维词表（8 元素、度上限 5），
-  与现行 44 维不同；两者在 drug 上差 0.011（0.619 vs 0.608），属同一量级，
-  但**不要混用**。
 
 ## 复现命令（服务器上实际使用的）
 

@@ -1,6 +1,6 @@
 """run_portfolio_vol.py — 组合波动率（金融）跨领域复现
 
-实验 14 — Portfolio volatility（补材 S5，表 S13）
+实验 14 — Portfolio volatility（补材 S8）
 路线 两条（v(im) 与 v(ex)）
 产出 results/portfolio_vol_results.csv；logs/portfolio_vol.log、.err
 价格数据由脚本下载，不随仓库分发

@@ -1,6 +1,6 @@
 """run_multidoc_set.py — 多文档推理（20 Newsgroups）跨领域复现
 
-实验 15 — Multi-document reasoning（补材 S5，表 S14/S15）
+实验 15 — Multi-document reasoning（补材 S9、S10）
 路线 两条（v(im) 与 v(ex)）
 产出 results/multidoc_set_results.csv、multidoc_set_homo_results.csv、multidoc_emb_20ng.npz；logs/multidoc_full.log
 

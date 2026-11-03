@@ -51,10 +51,10 @@ Each extrapolation directory has the same layers: `summary.csv` (the normalised 
 table into `results/`. Directories are numbered contiguously, and each maps to one table or
 supplementary section.
 
-Two further analyses are **not** part of this archive because the manuscript does not use
-them: a synthetic scan over the strength of a nonlinear term, and a water-removal study of the
-ionic-liquid conductivity task. The second is the source of the solvent-fraction statistics
-quoted in the IlT κ discussion.
+The dataset statistics quoted in the text — solvent fractions for IlT κ and molar-mass
+fractions for SPE κ — are reproduced independently by
+`01_composition/scripts/split_statistics.py`, which writes
+`01_composition/runs/split_statistics.csv` from the same split files used by the models.
 
 ## Reproducing a table
 
