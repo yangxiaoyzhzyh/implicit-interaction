@@ -36,10 +36,10 @@
 
 权重里含 `state_dict` 与配置，可直接被下游读出复用——这是「编码器当资产」的实际含义。
 
-> **特征维度**：`encoder.py` 与 `train_task_permol.py` 现已改用正文的 44 维原子特征词表
-> （`pad_from=45`）。归档的 `ckpt/*.pt` 与 `out/encoder_cache.npz` 由早期的 31 维版本训练
-> 与缓存，宽度分别为 32 与 45，**与新默认不兼容**；用 `train_all_permol.py` +
-> `cache_encoders.py` 重跑一次即可得到 44 维版本。
+> **特征维度**：本目录（编码器训练与缓存）**保持 31 维原子特征**（`pad_from=32`），
+> 因为归档的 `ckpt/*.pt` 与 `out/encoder_cache.npz` 就是这一版本，08 直接依赖它们。
+> 正文所述的 44 维词表用于化学任务主流水线（`common/engine.py`，`pad_from=45`）；
+> 两套编码器互不混用。
 
 ## 被谁使用
 

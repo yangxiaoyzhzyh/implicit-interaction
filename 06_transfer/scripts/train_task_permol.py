@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""train_task_permol.py — CheMixHub 官方 5-fold 随机 CV，v(im) 路线（44 维原子特征）
+"""train_task_permol.py — CheMixHub 官方 5-fold 随机 CV，v(im) 路线（31 维原子特征）
 
 实验 1 — CheMixHub 8 tasks, official 5-fold（补材 S1 表 S2 的 in-distribution anchors）
 路线 v(im)
@@ -7,10 +7,10 @@
 配套 whole_mixture/train_task.py（v(ex) 臂）
 
 与 whole-mixture 基线 train_task.py 严格可比：同数据、同 split（kfold_split_*.safetensors）、
-同 44 维化学原子特征、同训练协议（bsz 128 / lr 1e-4 / warmup 3 / cosine / wd 1e-6）、
+同 31 维化学原子特征、同训练协议（bsz 128 / lr 1e-4 / warmup 3 / cosine / wd 1e-6）、
 同评估协议（val Pearson R 选 best，报 test R / MAE）。模型超参与服务器在跑的
 Hmix 外推 run_hmix_kext.py（v(im) = per-molecule）严格一致：
-dim 256 / nhead 4 / TFM 2 层 ff 512 / GIN×3(64) / pad_from 45（44 维 + 常数 1 占位列）/
+dim 256 / nhead 4 / TFM 2 层 ff 512 / GIN×3(64) / pad_from 32（31 维 + 常数 1 占位列）/
 head Linear256→256→256→1（仅含条件列的任务首层输入多 n_cond 维）。
 
 架构以逐分子路线正身（原 train_tgsc_permol_31dim.py 的 PerMolModel，该脚本已归档）为准，不采用
@@ -18,7 +18,7 @@ whole-mixture 的任何结构部件：
   whole-mixture：全体原子一张图 → TFM 跨分子自注意力 → 全体原子 masked-mean → MLP
   per-molecule ：每分子单独成序列 → TFM 仅分子内自注意力 → 分子内 masked-mean
                  → 分子向量 v_i → 按摩尔分数凸组合 z = Σ x_i·v_i → MLP（+图级条件 concat）
-摩尔分数不作原子特征（保持 44 维），只作组合权重 —— 逐分子路线的定义。
+摩尔分数不作原子特征（保持 31 维），只作组合权重 —— 逐分子路线的定义。
 
 用法:
     python train_task_permol.py --task he --root $ROOT
@@ -54,7 +54,7 @@ CHEMIX_ROOT = os.path.abspath(os.path.join(
     os.path.dirname(os.path.abspath(__file__)), '..', 'literature',
     'CheMixHub', 'datasets'))
 
-TARGET_ELEMENTS = [3, 5, 6, 7, 8, 9, 11, 12, 13, 15, 16, 17, 19, 20, 30, 33, 35, 53]
+TARGET_ELEMENTS = [6, 7, 8, 9, 16, 17, 35, 53]
 CHIRAL_TAGS = [Chem.ChiralType.CHI_TETRAHEDRAL_CW,
                Chem.ChiralType.CHI_TETRAHEDRAL_CCW]
 
@@ -126,8 +126,8 @@ class PerMolModel(nn.Module):
                  variant='full', combine='wmean', n_cond=0):
         super().__init__()
         self.variant, self.combine, self.n_cond = variant, combine, n_cond
-        # pad_from=45：44 维化学特征 + 常数 1 占位列（与 run_hmix_kext.py 的 Encoder 对齐）
-        self.pad = nn.ZeroPad2d((0, 64 - 45, 0, 0))
+        # pad_from=32：31 维化学特征 + 常数 1 占位列（与 run_hmix_kext.py 的 Encoder 对齐）
+        self.pad = nn.ZeroPad2d((0, 64 - 32, 0, 0))
         self.convs = nn.ModuleList([GINConv(64) for _ in range(3)])
         self.proj = nn.Linear(64, dim)
         if variant != 'gin_only':
@@ -187,7 +187,7 @@ _gc = {}
 
 
 def mol_to_graph(smi):
-    """44 维原子特征：元素18+手性2+度9+氢5+杂化5+芳香1+电荷3+成环1（无摩尔分数）。"""
+    """31 维原子特征：元素8+手性1+度6+氢5+杂化5+芳香1+电荷3+成环1（无摩尔分数）。"""
     mol = Chem.MolFromSmiles(smi)
     if mol is None:
         return None
@@ -198,8 +198,8 @@ def mol_to_graph(smi):
     for a in mol.GetAtoms():
         f = [1 if a.GetAtomicNum() == x else 0 for x in TARGET_ELEMENTS]
         f += [1 if a.GetChiralTag() == x else 0 for x in CHIRAL_TAGS]
-        deg = min(a.GetDegree(), 8)
-        f += [1.0 if deg == i else 0.0 for i in range(9)]
+        deg = min(a.GetDegree(), 5)
+        f += [1.0 if deg == i else 0.0 for i in range(6)]
         h = min(a.GetTotalNumHs(), 4)
         f += [1.0 if h == i else 0.0 for i in range(5)]
         f += [1.0 if a.GetHybridization() == hyb else 0.0
@@ -209,7 +209,7 @@ def mol_to_graph(smi):
         f += [1.0 if fc < 0 else 0.0, 1.0 if fc == 0 else 0.0,
               1.0 if fc > 0 else 0.0]
         f += [1.0 if a.IsInRing() else 0.0]
-        nf.append(f[:44])
+        nf.append(f[:31])
     ei = []
     for b in mol.GetBonds():
         i, j = b.GetBeginAtomIdx(), b.GetEndAtomIdx()
@@ -221,7 +221,7 @@ def mol_to_graph(smi):
 
 
 def build_sample(cmp_ids, mol_fracs, cmp_smiles):
-    """混合物 = 各分子独立子图拼接：44 维原子特征 + mol_id + 原子级摩尔分数 amf。
+    """混合物 = 各分子独立子图拼接：31 维原子特征 + mol_id + 原子级摩尔分数 amf。
 
     edge_index 只含分子内共价键（逐分子路线定义）；amf 供组合权重用。
     """
@@ -236,8 +236,8 @@ def build_sample(cmp_ids, mol_fracs, cmp_smiles):
         g = _gc[smi]
         if g is None:
             return None
-        x = torch.tensor(g['x']).float()[:, :44]
-        # 第 45 维常数 1 占位（信息上仍是 44 维化学特征；与 run_hmix_kext 的
+        x = torch.tensor(g['x']).float()[:, :31]
+        # 第 32 维常数 1 占位（信息上仍是 31 维化学特征；与 run_hmix_kext 的
         # build_mol_graphs mf_as_feature=False 完全一致）
         x = torch.cat([x, torch.ones(x.size(0), 1)], dim=1)
         n = x.size(0)
