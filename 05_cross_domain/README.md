@@ -39,8 +39,8 @@
 |---|---|
 | `scripts/run_multidoc_set.py` | 文档集合：`--task set/homo`，冻结 BGE-M3 + 可训练塑形模块 |
 | `scripts/run_portfolio_vol.py` | 组合波动率：K 个资产 + 给定权重 → 已实现波动率 |
-| `runs/multidoc_set_results.csv` | 主导主题标签（`set`），acc 随 k 上升 |
-| `runs/multidoc_set_homo_results.csv` | 同质判定标签（`homo`），k∈{5,20,60}，acc 随 k 下降 |
+| `runs/multidoc_set_results.csv` | 主导主题标签（`set`），k∈{5,10,20}，两条路线 v(p)/v(w) |
+| `runs/multidoc_set_homo_results.csv` | 同质判定标签（`homo`），k∈{5,20,60}，两条路线 v(p)/v(w) |
 | `runs/portfolio_vol_results.csv` | 3 折 × 2 seed × K∈{5,10} 的 R²，含 v(p)/v(w) |
 | `logs/multidoc_full.log`、`logs/portfolio_vol.log` | 运行日志 |
 
