@@ -250,7 +250,7 @@ def main():
                         pred = run_xgb(Zs, Zv, Zt, d['y'][sub], d['y'][va],
                                        rep)
                     rs.append(np.corrcoef(pred, d['y'][te])[0, 1])
-                row[kind] = dict(R=float(np.mean(rs)), sd=float(np.std(rs)))
+                row[kind] = dict(R=float(np.mean(rs)), sd=float(np.std(rs, ddof=1)))
                 line += '%10.3f' % np.mean(rs)
             print(line, flush=True)
             RES[t][feat] = row

@@ -49,6 +49,10 @@ def norm(path):
                         [float(r['R'])]))
         return out
 
+    # 其余文件（additive_ridge_vs_plain、split_statistics 等）不属于任何臂
+    if 'test_R' not in cols:
+        return []
+
     # vim/vex：每 seed 一行，含 model / test_R
     groups = {}
     for r in rows:
@@ -85,7 +89,7 @@ def main():
                 key=lambda kv: (kv[0][0],
                                 MODEL_ORDER.get(kv[0][1], 9))):
             mu = st.mean(vals)
-            sd = st.pstdev(vals) if len(vals) > 1 else 0.0
+            sd = st.stdev(vals) if len(vals) > 1 else 0.0
             w.writerow([task, model, split, len(vals),
                         '%.4f' % mu, '%.4f' % sd,
                         ';'.join('%.4f' % v for v in vals),

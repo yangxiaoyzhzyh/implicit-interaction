@@ -81,7 +81,8 @@
 ## 已知瑕疵
 
 2. **基线列是引用值**：来自 CheMixHub 官方 Table 2（MAE）与 Table 8（Pearson ρ），
-   不是本仓库重跑；`runs/baselines.csv` 记录了每个任务对应的最强方法名。
+   不是本仓库重跑；`runs/baselines.csv` 记录了每个任务对应的最强方法名，以及
+v(ex)-simple 的五折均值（`atomformer_rho`）与**样本标准差**（`atomformer_sd`，ddof=1）。
 3. **两套 v(ex) 并存**：`runs/vex_5fold.csv` 是旧 AtomFormer（40 轮固定）的历史结果，
    `runs/vex_5fold_current.csv` 是本次按 v(im) 协议重跑的结果。**正文与补材用的是后者**；
    前者对应补材 Table S3 的 v(ex)-simple 列。

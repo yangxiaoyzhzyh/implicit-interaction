@@ -86,6 +86,9 @@ scripts/summarize_mixpca.py        ★ 生成主表
 
 `*.err` 为空文件（运行无异常），归档时不保留。
 
+**`sd` 一律为样本标准差（ddof=1，2 次重复）**：`agg_*_mixpca_*.json` 与 `summary.csv`
+里的 sd 已从早期的总体口径（×√2）换算过来，与补材的声明一致。
+
 ## 复现
 
 ```bash

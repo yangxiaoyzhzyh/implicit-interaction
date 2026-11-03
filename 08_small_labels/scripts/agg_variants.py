@@ -159,7 +159,7 @@ def run_fixed(X, y, tr, va, te, ratio, n_rep=2):
         with torch.no_grad():
             pred = m(t_of(Zt)).numpy() * ysd + ymu
         rs.append(np.corrcoef(pred, y[te])[0, 1])
-    return (float(np.mean(rs)), float(np.std(rs))) if rs else (np.nan, np.nan)
+    return (float(np.mean(rs)), float(np.std(rs, ddof=1))) if rs else (np.nan, np.nan)
 
 
 def run_attn(T, M, W, y, tr, va, te, ratio, n_rep=2):
@@ -185,7 +185,7 @@ def run_attn(T, M, W, y, tr, va, te, ratio, n_rep=2):
         with torch.no_grad():
             pred = m(t_of(Z[te]), t_of(M[te]), t_of(W[te])).numpy() * ysd + ymu
         rs.append(np.corrcoef(pred, y[te])[0, 1])
-    return (float(np.mean(rs)), float(np.std(rs))) if rs else (np.nan, np.nan)
+    return (float(np.mean(rs)), float(np.std(rs, ddof=1))) if rs else (np.nan, np.nan)
 
 
 VARIANTS = ['sum', 'mean', 'concat', 'attn']
