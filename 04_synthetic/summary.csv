@@ -1,9 +1,9 @@
 family,lambda,K,model,R2,source
-add_pair,0.0,3,v(im),0.9997,synth_add_pair.csv
-add_pair,0.0,3,v(ex),0.9844,synth_add_pair.csv
-add_pair,0.0,5,v(im),0.9996,synth_add_pair.csv
-add_pair,0.0,5,v(ex),0.9337,synth_add_pair.csv
-add_pair,0.0,10,v(im),0.9994,synth_add_pair.csv
-add_pair,0.0,10,v(ex),0.8525,synth_add_pair.csv
-add_pair,0.0,20,v(im),0.9988,synth_add_pair.csv
-add_pair,0.0,20,v(ex),0.7978,synth_add_pair.csv
+add_pair,0.0,3,v(ex),0.9847,runs/synth_*_s<seed>.csv
+add_pair,0.0,3,v(im),0.9996,runs/synth_*_s<seed>.csv
+add_pair,0.0,5,v(ex),0.9341,runs/synth_*_s<seed>.csv
+add_pair,0.0,5,v(im),0.9994,runs/synth_*_s<seed>.csv
+add_pair,0.0,10,v(ex),0.8556,runs/synth_*_s<seed>.csv
+add_pair,0.0,10,v(im),0.9990,runs/synth_*_s<seed>.csv
+add_pair,0.0,20,v(ex),0.8062,runs/synth_*_s<seed>.csv
+add_pair,0.0,20,v(im),0.9983,runs/synth_*_s<seed>.csv

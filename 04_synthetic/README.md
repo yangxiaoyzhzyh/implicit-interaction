@@ -51,13 +51,17 @@ v(im) 在全区间保持 0.998 以上（它只需学一个逐元素映射再线�
 
 | 文件 | 内容 |
 |---|---|
-| `runs/synth_add_pair.csv` | λ=0，4 个 K → 承担正文 Table 2 |
-| `summary.csv` | 8 行 = λ=0 的 add_pair，4 个 K × 2 个模型 |
+| `runs/synth_add_pair_s{42,43,44}.csv` | **正文 Table 2 的原始数据**：逐 seed、4 个 K |
+| `runs/synth_add_pair_3seeds_summary.csv` | **Table 2 的均值与标准差**（n−1），4 个 K × 2 个模型 |
+| `runs/synth_add_pair.csv` | 上面三个 seed 文件拼接成的长表（12 行，含 `seed` 列） |
+| `summary.csv` | 8 行 = λ=0 的 add_pair，4 个 K × 2 个模型（三 seed 均值） |
 
 ## 重跑命令
 
 ```bash
-python scripts/synth_routes.py --families add_pair --lambdas 0.0 \
-       --seeds 42 43 44 --epochs 300 --out ../runs/synth_add_pair.csv
+for s in 42 43 44; do
+  python scripts/synth_routes.py --families add_pair --lambdas 0.0 \
+         --seeds $s --epochs 300 --out ../runs/synth_add_pair_s$s.csv
+done
 python scripts/collect_synth.py        # → summary.csv
 ```
