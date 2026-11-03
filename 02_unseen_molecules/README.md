@@ -9,14 +9,11 @@
 
 本轴没有专属脚本——`vim.py` / `vex.py` / `additive.py` / `frozen.py` 都在 `../scripts/`，
 用 `--split-file ../splits/<task>_unseen.npz` 指向本轴的划分即可。
-唯一留在本目录的是 **`scripts/sisson.py`**：它的指标是 AUC，标度与其余任务不同，
-必须单独跑、单独报告。
 
 | 脚本 | 建模 | 本轴用法 |
 |---|---|---|
 | `../scripts/vim.py` | v(im) | `--split-file ../splits/<task>_unseen.npz`（早停默认开启） |
 | `../scripts/vex.py` | v(ex) | 同上 |
-| `scripts/sisson.py` | 气味混合物 74 类分类 | 独立脚本、独立标度 |
 
 **本轴的任务集比组分数轴小**：
 

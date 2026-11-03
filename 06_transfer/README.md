@@ -1,18 +1,24 @@
-# 06_transfer — 编码器作为可迁移资产
+# 06_transfer — 编码器训练与缓存特征
 
-编码器在**单任务全部数据**上训练一次，之后冻结，只训一个小读出。检验两件事：
-(a) 能不能用别的任务的编码器（留一任务）；(b) 标签很少时是否优于通用描述符。
+本目录只保留「编码器」这一可迁移资产：八个任务各训练一个编码器，并把逐分子向量
+缓存下来，供 `08_small_labels` 直接复用。正文的 Table 3 与 table S7 全部由 08 产出，
+因此原先的留一读出、1%/5% 小样本与可加基线三组下游实验**并未进入正文**，已从归档移除。
 
 ## 结构
 
 ```
 06_transfer/
-├── scripts/   18 个脚本（训练 / 留一读出 / 小样本 / 可加基线 / 编码器缓存）
-├── ckpt/      8 个编码器权重（每个 4.7 MB）
-├── runs/      3 个结果 JSON（原始产出）
-├── logs/      6 个运行日志
-└── summary.csv  归一后的总表（120 行）
+├── scripts/
+│   ├── train_all_permol.py    八个任务的编码器训练
+│   ├── train_task_permol.py   单任务训练（train_all 逐个调用它）
+│   ├── encoder.py             GIN×3 + TFM×2 + mean pooling（被 08 引用）
+│   ├── fp_matrix.py           ECFP4 / MACCS / RDKit2D 指纹（被 08 引用）
+│   ├── cache_encoders.py      逐分子向量缓存
+│   └── out/encoder_cache.npz  3540 分子 × 256（25 MB）
+└── ckpt/                      8 个编码器权重（每个 4.7 MB）
 ```
+
+**没有实验日志与结果表**：本目录不产出正文数字，只产出权重与缓存。
 
 ## 编码器训练
 
@@ -27,26 +33,24 @@
 
 权重里含 `state_dict` 与配置，可直接被下游读出复用——这是「编码器当资产」的实际含义。
 
-## 三组下游实验
+## 被谁使用
 
-| 脚本 | 做什么 | 覆盖 |
-|---|---|---|
-| `leave_one_task_out.py` | 留一任务：8 个编码器轮流留一个，用其余 7 个拼接 + 线性读出 | **8 任务完整** |
-| `mlp_small_data.py` + `runs/mlp_small_data.json` | 1% / 5% 标签下的 **MLP** 读出（运行记录见 `logs/mlp_ionic.log`） | **8 个任务全覆盖** |
-| `additive_baseline.py` | 线性可加基线（闭式，无 seed） | **8 任务完整** |
+| 使用者 | 依赖 |
+|---|---|
+| `08_small_labels/scripts/agg_100bin_mixpca.py` | `fp_matrix.py`，以及 `scripts/out/encoder_cache.npz` |
+| `08_small_labels/scripts/agg_100bin_xgb.py`（已移除） | 同上 |
+| 任何想重跑 08 的读者 | `ckpt/*.pt` 或 `encoder_cache.npz` |
 
-## 待办
-
-2. **`he` / `heat_vap` 键名对照**：`he` = 混合焓（= `miscible`）、
-   `heat_vap` = 汽化焓（= `miscible_hvap`），跨目录引用时按 `common/spec.py` 对照。
+因此 `ckpt/`、`encoder.py`、`fp_matrix.py`、`cache_encoders.py` 与缓存文件**不可删**。
 
 ## 重跑命令
 
 ```bash
 python scripts/train_all_permol.py --root <CheMixHub 根> --out ckpt/   # 8 个编码器
 python scripts/cache_encoders.py                                      # 3540 分子 × 256
-python scripts/leave_one_task_out.py                                  # 留一任务
-python scripts/mlp_small_data.py --out ../runs/mlp_small_data.json    # 1%/5% 小样本
-python scripts/additive_baseline.py                                   # 可加基线
-python scripts/collect_transfer.py                                    # 汇总
 ```
+
+## 待办
+
+1. **`he` / `heat_vap` 键名对照**：`he` = 混合焓（= `miscible`）、
+   `heat_vap` = 汽化焓（= `miscible_hvap`），跨目录引用时按 `common/spec.py` 对照。
