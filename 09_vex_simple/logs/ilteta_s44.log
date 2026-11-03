@@ -1,0 +1,18 @@
+--- ilteta: 读划分 ilteta_composition.npz (train 59685 / test 16307)
+    seed 44 ep   0 loss 0.2983
+    seed 44 ep  20 loss 0.0205
+    seed 44 ep  40 loss 0.0135
+    seed 44 ep  60 loss 0.0089
+    seed 44 ep  80 loss 0.0080
+    seed 44 ep 100 loss 0.0066
+    seed 44 ep 120 loss 0.0057
+    seed 44 ep 140 loss 0.0049
+    seed 44 ep 160 loss 0.0045
+    seed 44 ep 180 loss 0.0043
+    seed 44 ep 199 loss 0.0042
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  >> seed 44 | test R +0.8320 R2 +0.6907 MAE 0.4307 | 1229188 params
+  ilteta 总用时 6562s
+
+ilteta: R = 0.8320 ± nan（写出 /root/autodl-tmp/runs_vsimple/ilteta_s44.csv）

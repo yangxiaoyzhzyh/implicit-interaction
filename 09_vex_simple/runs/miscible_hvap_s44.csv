@@ -1,0 +1,2 @@
+task,seed,test_R,test_R2,MAE,n_train,n_test
+miscible_hvap,44,0.9747,0.8848,0.5559,3580,26481

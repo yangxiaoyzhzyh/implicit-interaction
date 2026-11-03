@@ -1,0 +1,18 @@
+--- miscible: 读划分 miscible_composition.npz (train 3580 / test 26481)
+    seed 43 ep   0 loss 0.9594
+    seed 43 ep  20 loss 0.1185
+    seed 43 ep  40 loss 0.0701
+    seed 43 ep  60 loss 0.0553
+    seed 43 ep  80 loss 0.0544
+    seed 43 ep 100 loss 0.0415
+    seed 43 ep 120 loss 0.0401
+    seed 43 ep 140 loss 0.0362
+    seed 43 ep 160 loss 0.0347
+    seed 43 ep 180 loss 0.0333
+    seed 43 ep 199 loss 0.0330
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  >> seed 43 | test R +0.7766 R2 +0.5804 MAE 0.4357 | 1228420 params
+  miscible 总用时 414s
+
+miscible: R = 0.7766 ± nan（写出 /root/autodl-tmp/runs_vsimple/miscible_s43.csv）

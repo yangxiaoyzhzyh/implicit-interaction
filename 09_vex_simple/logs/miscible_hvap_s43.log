@@ -1,0 +1,18 @@
+--- miscible_hvap: 读划分 miscible_hvap_composition.npz (train 3580 / test 26481)
+    seed 43 ep   0 loss 0.8856
+    seed 43 ep  20 loss 0.0213
+    seed 43 ep  40 loss 0.0141
+    seed 43 ep  60 loss 0.0090
+    seed 43 ep  80 loss 0.0075
+    seed 43 ep 100 loss 0.0058
+    seed 43 ep 120 loss 0.0052
+    seed 43 ep 140 loss 0.0045
+    seed 43 ep 160 loss 0.0044
+    seed 43 ep 180 loss 0.0040
+    seed 43 ep 199 loss 0.0038
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  >> seed 43 | test R +0.9827 R2 +0.9279 MAE 0.4803 | 1228420 params
+  miscible_hvap 总用时 377s
+
+miscible_hvap: R = 0.9827 ± nan（写出 /root/autodl-tmp/runs_vsimple/miscible_hvap_s43.csv）

@@ -1,0 +1,18 @@
+[mon] all 行 684，有效 684（跳过 0），组分图 416 个
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+    fold 1 ep   0 loss 0.9803 valR -0.2352 (best -0.2352@0)
+    fold 1 ep  10 loss 0.3708 valR +0.8229 (best +0.8229@10)
+    fold 1 ep  20 loss 0.1327 valR +0.8939 (best +0.8939@20)
+    fold 1 ep  30 loss 0.0753 valR +0.9111 (best +0.9111@30)
+    fold 1 ep  40 loss 0.0731 valR +0.9111 (best +0.9173@35)
+    fold 1 ep  50 loss 0.0702 valR +0.9172 (best +0.9221@49)
+    fold 1 ep  60 loss 0.0497 valR +0.9231 (best +0.9231@60)
+    fold 1 ep  70 loss 0.0510 valR +0.9244 (best +0.9244@70)
+    fold 1 ep  80 loss 0.0497 valR +0.9182 (best +0.9256@72)
+    fold 1 ep  90 loss 0.0504 valR +0.9237 (best +0.9262@88)
+    fold 1 ep 100 loss 0.0427 valR +0.9221 (best +0.9262@88)
+  >> mon fold 1 | test R +0.8935 MAE 4.5458 | best_ep 88 | 50s | 2217604 pars
+
+mon 5-fold: R = 0.8935 ± nan
+写出 /root/autodl-tmp/runs_vex_cur/mon_f1.csv

@@ -1,0 +1,2 @@
+task,seed,test_R,test_R2,MAE,n_train,n_test
+nist,44,0.6927,0.1693,0.9258,29563,209637

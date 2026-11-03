@@ -26,6 +26,7 @@
 | `../scripts/vex.py` | v(ex)：跨组分注意力 | 同上（`--model vex` 由脚本固定） |
 | `../scripts/additive.py` | 线性可加基线（每组分一个系数，**ridge α=1e-2**，无 seed） | `--task <task> --split-file ...` |
 | `../scripts/frozen.py` | 冻结编码器臂（RDKit 2D 217 维） | `--task <task> --split-file ...` |
+| `scripts/split_statistics.py` | 正文两处体系统计（IlT κ 含水比例、SPE κ 大分子组分占比），产出 `runs/split_statistics.csv` | `--data-base <chemidata 根>` |
 
 四个臂读同一份 `splits/<task>_composition.npz`，因此比较是严格可控的。
 `frozen.py` 回答“增益来自表示还是来自聚合形式”，`additive.py` 提供可加性参照线。
@@ -63,6 +64,10 @@
 
 四臂齐全、各 3 seed、summary 已生成，**可直接引用**。
 
-**SPE κ 的处置**：其组分轴划分把固态聚合物电解质与液态电解液分开，测的是跨体系迁移
-而非组分数外推，**不进入本轴的比较**（详见补充材料 S6）。数值仍保留在 `runs/` 里，
-以便读者核对，但不应进入正文表格与图。
+**SPE κ 的处置**：其组分轴划分在改变组分数的同时也改变了体系（固态聚合物电解质 →
+液态电解液），因此这一行**保留在正文 Table 1 中但单独说明**：绝对分数不可比，
+两路线在同一划分内的差距可比（放宽训练上限那次见 Table S6 与 `runs_k3/`）。
+
+**IlT κ / SPE κ 的体系统计**（正文引用的 94% / 80% / 5,397 / 24,688 / 40% 与
+93% / 30% / 7% / 70%）由 `scripts/split_statistics.py` 在同一份划分上重算，
+结果落在 `runs/split_statistics.csv`。

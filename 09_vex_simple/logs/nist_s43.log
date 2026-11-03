@@ -1,0 +1,18 @@
+--- nist: 读划分 nist_composition.npz (train 29563 / test 209637)
+    seed 43 ep   0 loss 0.3957
+    seed 43 ep  20 loss 0.0375
+    seed 43 ep  40 loss 0.0330
+    seed 43 ep  60 loss 0.0311
+    seed 43 ep  80 loss 0.0302
+    seed 43 ep 100 loss 0.0292
+    seed 43 ep 120 loss 0.0287
+    seed 43 ep 140 loss 0.0283
+    seed 43 ep 160 loss 0.0281
+    seed 43 ep 180 loss 0.0278
+    seed 43 ep 199 loss 0.0278
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  >> seed 43 | test R +0.6578 R2 +0.0125 MAE 1.1667 | 1228932 params
+  nist 总用时 3456s
+
+nist: R = 0.6578 ± nan（写出 /root/autodl-tmp/runs_vsimple/nist_s43.csv）

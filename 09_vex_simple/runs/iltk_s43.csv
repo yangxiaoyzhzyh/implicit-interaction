@@ -1,0 +1,2 @@
+task,seed,test_R,test_R2,MAE,n_train,n_test
+iltk,43,0.7564,0.5163,1.5551,24688,16216

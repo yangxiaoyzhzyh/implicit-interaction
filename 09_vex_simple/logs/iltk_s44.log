@@ -1,0 +1,18 @@
+--- iltk: 读划分 iltk_composition.npz (train 24688 / test 16216)
+    seed 44 ep   0 loss 0.5559
+    seed 44 ep  20 loss 0.0676
+    seed 44 ep  40 loss 0.0521
+    seed 44 ep  60 loss 0.0459
+    seed 44 ep  80 loss 0.0413
+    seed 44 ep 100 loss 0.0361
+    seed 44 ep 120 loss 0.0361
+    seed 44 ep 140 loss 0.0321
+    seed 44 ep 160 loss 0.0306
+    seed 44 ep 180 loss 0.0292
+    seed 44 ep 199 loss 0.0291
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  >> seed 44 | test R +0.7528 R2 +0.5121 MAE 1.5328 | 1229188 params
+  iltk 总用时 3909s
+
+iltk: R = 0.7528 ± nan（写出 /root/autodl-tmp/runs_vsimple/iltk_s44.csv）

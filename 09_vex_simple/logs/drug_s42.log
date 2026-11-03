@@ -1,0 +1,18 @@
+--- drug: 读划分 drug_composition.npz (train 2490 / test 24223)
+    seed 42 ep   0 loss 0.9458
+    seed 42 ep  20 loss 0.0304
+    seed 42 ep  40 loss 0.0177
+    seed 42 ep  60 loss 0.0119
+    seed 42 ep  80 loss 0.0092
+    seed 42 ep 100 loss 0.0080
+    seed 42 ep 120 loss 0.0084
+    seed 42 ep 140 loss 0.0069
+    seed 42 ep 160 loss 0.0058
+    seed 42 ep 180 loss 0.0061
+    seed 42 ep 199 loss 0.0059
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  >> seed 42 | test R +0.6416 R2 +0.2069 MAE 0.6448 | 1228676 params
+  drug 总用时 432s
+
+drug: R = 0.6416 ± nan（写出 /root/autodl-tmp/runs_vsimple/drug_s42.csv）

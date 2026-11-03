@@ -1,0 +1,2 @@
+task,seed,test_R,test_R2,MAE,n_train,n_test
+miscible_density,43,0.941,0.5724,0.0516,3580,26481

@@ -33,19 +33,22 @@ encoder that training shapes.
 | `common/` | engine, task registry, encoder, molecule-carving generator | — |
 | `scripts/` | modelling scripts, split generation, table collection | — |
 | `splits/` | `*.npz` index files shared by all arms; `splits/logs/` is their generation log | — |
-| `01_composition/` | component-count extrapolation (`scripts/run_k3.sh` is the relaxed-ceiling run) | Table 1, Section S3 |
-| `02_unseen_molecules/` | component-identity extrapolation, with the Sisson carving script | Section S1 |
-| `03_target_value/` | target-value (extreme) extrapolation | Section S2 |
-| `04_synthetic/` | synthetic additive and interaction families | Table 2, Section S4.2 |
-| `05_cross_domain/` | portfolio volatility and document sets | Section S7 |
-| `06_transfer/` | eight encoder checkpoints and the leave-one-out readout | Section S8 |
-| `07_indistribution/` | official five-fold random CV | Section S6 |
-| `08_small_labels/` | the hundred-label comparison | Section S8 |
+| `01_composition/` | component-count extrapolation (`scripts/run_k3.sh` is the relaxed-ceiling run) | Table 1; Sections S2 (task list) and S6 (relaxed ceiling) |
+| `02_unseen_molecules/` | component-identity extrapolation, with the Sisson carving script | Section S4 |
+| `03_target_value/` | target-value (extreme) extrapolation | Section S5 |
+| `04_synthetic/` | synthetic additive and interaction families | Table 2 |
+| `05_cross_domain/` | portfolio volatility and document sets | Sections S8--S10 |
+| `06_transfer/` | eight encoder checkpoints and the leave-one-out readout | Fig. 4 |
+| `07_indistribution/` | official five-fold random CV | Section S3 |
+| `08_small_labels/` | the hundred-label comparison | Table 3; Section S7 |
+| `09_vex_simple/` | parameter-matched whole-graph variant | Section S1 |
 | `docs/archive_notes_zh.md` | working notes in Chinese: protocol table, task registry, which axes each task supports | — |
 
-Each extrapolation directory has the same three layers: `summary.csv` (the normalised table),
-`runs/` (raw rows written by the scripts), and `logs/` and `ckpt/` (outputs and weights).
-Directories are numbered contiguously, and each maps to one table or supplementary section.
+Each extrapolation directory has the same layers: `summary.csv` (the normalised table),
+`runs/` (raw rows written by the scripts), `logs/` (per-run logs) and, where weights are kept,
+`ckpt/`. `09_vex_simple/` writes one CSV per task and seed into `runs/` and the aggregated
+table into `results/`. Directories are numbered contiguously, and each maps to one table or
+supplementary section.
 
 Two further analyses are **not** part of this archive because the manuscript does not use
 them: a synthetic scan over the strength of a nonlinear term, and a water-removal study of the

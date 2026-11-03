@@ -1,0 +1,19 @@
+[ionic_visc] Viscosity 行 75992（与官方 fold 索引一一对应），摩尔分数长度不符 0 行，组分图 699 个
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+    fold 0 ep   0 loss 0.3334 valR +0.9210 (best +0.9210@0)
+    fold 0 ep  10 loss 0.0292 valR +0.9880 (best +0.9894@7)
+    fold 0 ep  20 loss 0.0283 valR +0.9925 (best +0.9938@19)
+    fold 0 ep  30 loss 0.0167 valR +0.9943 (best +0.9943@30)
+    fold 0 ep  40 loss 0.0133 valR +0.9950 (best +0.9954@36)
+    fold 0 ep  50 loss 0.0107 valR +0.9955 (best +0.9955@50)
+    fold 0 ep  60 loss 0.0097 valR +0.9955 (best +0.9957@51)
+    fold 0 ep  70 loss 0.0095 valR +0.9962 (best +0.9962@70)
+    fold 0 ep  80 loss 0.0083 valR +0.9961 (best +0.9962@70)
+    fold 0 ep  90 loss 0.0078 valR +0.9964 (best +0.9964@90)
+    fold 0 ep 100 loss 0.0072 valR +0.9962 (best +0.9964@90)
+    fold 0 ep 110 loss 0.0068 valR +0.9963 (best +0.9964@90)
+  >> ionic_visc fold 0 | test R +0.9973 MAE 0.0877 | best_ep 90 | 7927s | 2218372 pars
+
+ionic_visc 5-fold: R = 0.9973 ± nan
+写出 /root/autodl-tmp/runs_vex_cur/ionic_visc_f0.csv

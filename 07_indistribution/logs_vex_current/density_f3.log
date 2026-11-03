@@ -1,0 +1,20 @@
+[density] Density 行 30061，有效 30061（跳过 0），组分图 81 个
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+    fold 3 ep   0 loss 0.2548 valR +0.9788 (best +0.9788@0)
+    fold 3 ep  10 loss 0.0125 valR +0.9974 (best +0.9981@9)
+    fold 3 ep  20 loss 0.0094 valR +0.9981 (best +0.9985@19)
+    fold 3 ep  30 loss 0.0081 valR +0.9983 (best +0.9987@25)
+    fold 3 ep  40 loss 0.0072 valR +0.9986 (best +0.9988@36)
+    fold 3 ep  50 loss 0.0062 valR +0.9988 (best +0.9988@50)
+    fold 3 ep  60 loss 0.0052 valR +0.9988 (best +0.9989@57)
+    fold 3 ep  70 loss 0.0047 valR +0.9988 (best +0.9989@57)
+    fold 3 ep  80 loss 0.0041 valR +0.9989 (best +0.9989@74)
+    fold 3 ep  90 loss 0.0037 valR +0.9990 (best +0.9990@90)
+    fold 3 ep 100 loss 0.0035 valR +0.9988 (best +0.9990@90)
+    fold 3 ep 110 loss 0.0033 valR +0.9988 (best +0.9990@109)
+    fold 3 ep 120 loss 0.0032 valR +0.9990 (best +0.9990@109)
+  >> density fold 3 | test R +0.9991 MAE 0.0040 | best_ep 109 | 1677s | 2217604 pars
+
+density 5-fold: R = 0.9991 ± nan
+写出 /root/autodl-tmp/runs_vex_cur/density_f3.csv

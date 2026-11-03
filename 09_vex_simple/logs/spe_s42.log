@@ -1,0 +1,18 @@
+--- spe: 读划分 spe_composition.npz (train 8944 / test 2406)
+    seed 42 ep   0 loss 0.8499
+    seed 42 ep  20 loss 0.1069
+    seed 42 ep  40 loss 0.0878
+    seed 42 ep  60 loss 0.0721
+    seed 42 ep  80 loss 0.0652
+    seed 42 ep 100 loss 0.0616
+    seed 42 ep 120 loss 0.0570
+    seed 42 ep 140 loss 0.0535
+    seed 42 ep 160 loss 0.0518
+    seed 42 ep 180 loss 0.0500
+    seed 42 ep 199 loss 0.0489
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+  >> seed 42 | test R +0.3848 R2 -3.4176 MAE 1.8292 | 1228676 params
+  spe 总用时 4630s
+
+spe: R = 0.3848 ± nan（写出 /root/autodl-tmp/runs_vsimple/spe_s42.csv）

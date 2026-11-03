@@ -1,0 +1,23 @@
+[ionic_cond] Electrical conductivity 行 40904（与官方 fold 索引一一对应），摩尔分数长度不符 0 行，组分图 479 个
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+    fold 4 ep   0 loss 0.4758 valR +0.8783 (best +0.8783@0)
+    fold 4 ep  10 loss 0.0859 valR +0.9609 (best +0.9610@9)
+    fold 4 ep  20 loss 0.0739 valR +0.9668 (best +0.9668@20)
+    fold 4 ep  30 loss 0.0691 valR +0.9677 (best +0.9693@29)
+    fold 4 ep  40 loss 0.0649 valR +0.9702 (best +0.9705@35)
+    fold 4 ep  50 loss 0.0624 valR +0.9717 (best +0.9717@50)
+    fold 4 ep  60 loss 0.0603 valR +0.9717 (best +0.9720@57)
+    fold 4 ep  70 loss 0.0566 valR +0.9722 (best +0.9731@69)
+    fold 4 ep  80 loss 0.0565 valR +0.9743 (best +0.9743@80)
+    fold 4 ep  90 loss 0.0535 valR +0.9735 (best +0.9744@81)
+    fold 4 ep 100 loss 0.0520 valR +0.9744 (best +0.9750@97)
+    fold 4 ep 110 loss 0.0509 valR +0.9752 (best +0.9755@106)
+    fold 4 ep 120 loss 0.0503 valR +0.9743 (best +0.9757@118)
+    fold 4 ep 130 loss 0.0495 valR +0.9758 (best +0.9759@125)
+    fold 4 ep 140 loss 0.0490 valR +0.9760 (best +0.9766@136)
+    fold 4 ep 150 loss 0.0479 valR +0.9761 (best +0.9766@136)
+  >> ionic_cond fold 4 | test R +0.9738 MAE 0.3713 | best_ep 136 | 6354s | 2218372 pars
+
+ionic_cond 5-fold: R = 0.9738 ± nan
+写出 /root/autodl-tmp/runs_vex_cur/ionic_cond_f4.csv

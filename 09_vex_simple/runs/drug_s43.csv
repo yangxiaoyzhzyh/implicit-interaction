@@ -1,0 +1,2 @@
+task,seed,test_R,test_R2,MAE,n_train,n_test
+drug,43,0.5842,-0.5922,0.9541,2490,24223

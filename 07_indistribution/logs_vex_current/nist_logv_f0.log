@@ -1,0 +1,28 @@
+[nist_logv] all 行 239200，有效 239200（跳过 0），组分图 1644 个
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+    fold 0 ep   0 loss 0.2081 valR +0.9558 (best +0.9558@0)
+    fold 0 ep  10 loss 0.0337 valR +0.9868 (best +0.9868@10)
+    fold 0 ep  20 loss 0.0207 valR +0.9917 (best +0.9917@20)
+    fold 0 ep  30 loss 0.0173 valR +0.9912 (best +0.9930@29)
+    fold 0 ep  40 loss 0.0187 valR +0.9939 (best +0.9939@40)
+    fold 0 ep  50 loss 0.0156 valR +0.9910 (best +0.9940@45)
+    fold 0 ep  60 loss 0.0137 valR +0.9945 (best +0.9946@59)
+    fold 0 ep  70 loss 0.0125 valR +0.9950 (best +0.9950@70)
+    fold 0 ep  80 loss 0.0117 valR +0.9957 (best +0.9957@80)
+    fold 0 ep  90 loss 0.0110 valR +0.9958 (best +0.9959@89)
+    fold 0 ep 100 loss 0.0107 valR +0.9962 (best +0.9962@100)
+    fold 0 ep 110 loss 0.0101 valR +0.9961 (best +0.9964@109)
+    fold 0 ep 120 loss 0.0096 valR +0.9962 (best +0.9964@118)
+    fold 0 ep 130 loss 0.0092 valR +0.9967 (best +0.9967@130)
+    fold 0 ep 140 loss 0.0088 valR +0.9967 (best +0.9967@134)
+    fold 0 ep 150 loss 0.0087 valR +0.9967 (best +0.9969@147)
+    fold 0 ep 160 loss 0.0085 valR +0.9969 (best +0.9970@159)
+    fold 0 ep 170 loss 0.0083 valR +0.9969 (best +0.9970@165)
+    fold 0 ep 180 loss 0.0082 valR +0.9970 (best +0.9970@176)
+    fold 0 ep 190 loss 0.0082 valR +0.9970 (best +0.9970@190)
+    fold 0 ep 199 loss 0.0081 valR +0.9970 (best +0.9970@190)
+  >> nist_logv fold 0 | test R +0.9960 MAE 0.0572 | best_ep 190 | 23076s | 2218116 pars
+
+nist_logv 5-fold: R = 0.9960 ± nan
+写出 /root/autodl-tmp/runs_vex_cur/nist_logv_f0.csv

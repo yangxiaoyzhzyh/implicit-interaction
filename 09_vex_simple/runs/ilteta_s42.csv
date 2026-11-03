@@ -1,0 +1,2 @@
+task,seed,test_R,test_R2,MAE,n_train,n_test
+ilteta,42,0.8405,0.7004,0.4594,59685,16307

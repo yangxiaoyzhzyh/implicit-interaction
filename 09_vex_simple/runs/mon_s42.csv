@@ -1,0 +1,2 @@
+task,seed,test_R,test_R2,MAE,n_train,n_test
+mon,42,0.6537,0.3492,6.3691,386,298

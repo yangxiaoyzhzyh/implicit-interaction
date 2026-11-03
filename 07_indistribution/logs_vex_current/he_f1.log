@@ -1,0 +1,23 @@
+[he] Enthalpy of mixing 行 30061，有效 30061（跳过 0），组分图 81 个
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+    fold 1 ep   0 loss 0.5355 valR +0.7885 (best +0.7885@0)
+    fold 1 ep  10 loss 0.0823 valR +0.9649 (best +0.9651@9)
+    fold 1 ep  20 loss 0.0691 valR +0.9684 (best +0.9714@19)
+    fold 1 ep  30 loss 0.0640 valR +0.9714 (best +0.9718@29)
+    fold 1 ep  40 loss 0.0567 valR +0.9721 (best +0.9728@39)
+    fold 1 ep  50 loss 0.0549 valR +0.9735 (best +0.9737@47)
+    fold 1 ep  60 loss 0.0528 valR +0.9737 (best +0.9746@59)
+    fold 1 ep  70 loss 0.0501 valR +0.9731 (best +0.9746@59)
+    fold 1 ep  80 loss 0.0480 valR +0.9748 (best +0.9749@78)
+    fold 1 ep  90 loss 0.0459 valR +0.9743 (best +0.9749@78)
+    fold 1 ep 100 loss 0.0447 valR +0.9754 (best +0.9754@97)
+    fold 1 ep 110 loss 0.0432 valR +0.9756 (best +0.9756@110)
+    fold 1 ep 120 loss 0.0407 valR +0.9754 (best +0.9757@115)
+    fold 1 ep 130 loss 0.0405 valR +0.9751 (best +0.9757@115)
+    fold 1 ep 140 loss 0.0377 valR +0.9754 (best +0.9760@135)
+    fold 1 ep 150 loss 0.0365 valR +0.9759 (best +0.9760@135)
+  >> he fold 1 | test R +0.9774 MAE 0.1588 | best_ep 135 | 2678s | 2217604 pars
+
+he 5-fold: R = 0.9774 ± nan
+写出 /root/autodl-tmp/runs_vex_cur/he_f1.csv

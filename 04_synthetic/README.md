@@ -1,6 +1,6 @@
 # 04_synthetic — 合成任务（机理验证）
 
-元素从 $\mathcal{N}(0,I_8)$ 抽、组成从 Dirichlet 抽，生成函数**由我们指定**，
+元素从 $\mathcal{N}(0,I_8)$ 抽、组成由均匀随机数归一化得到（$w_k=u_k/\sum_j u_j$，$u_k\sim U(0,1)$，**不是 Dirichlet**），生成函数**由我们指定**，
 因此可以把“组分数”与“交互强度”分开、把“未见组分”彻底排除。
 
 ## 脚本
@@ -47,11 +47,14 @@ v(im) 在全区间保持 0.998 以上（它只需学一个逐元素映射再线�
 训练 $K\in\{1,2\}$，测试 $K\in\{3,5,10,20\}$；5,000 训练 / 2,000 测试；
 3 seed（42/43/44）；300 epoch；参数规模 30,241 / 30,145（差 0.3%）。
 
-## 唯一例外：S10.2 的二阶通道用 λ=2
+## 已移除：二阶通道用 λ=2（该节已从补材删除）
 
-补充材料 S10.2 论证的是“给 v(im) 加一条二阶聚合通道能否补上缺的项”，那里**必须有一个
-交互项**才有的可补，因此单独保留一次 λ=2 的运行（`synth_second_order.py`，
-λ=2 / 3 seed / 150 epoch，与论文表 S23 同设置）：
+旧稿补材曾有一节论证“给 v(im) 加一条二阶聚合通道能否补上缺的项”，那一节**已随正文
+改写删除**（只排除一种高阶形式，无法排除所有高阶聚合）。因此 `synth_second_order.py`
+及其 λ=2 的结果、日志**已移出本归档**，存放在
+`paper_v3/_backup/removed_20261103/repro_v2/04_synthetic/`，需要时取回即可。
+
+下表仅保留当时的数值备查，**正文与补充材料均不再引用**：
 
 | K | v(im) | +二阶通道 | +归一化二阶 | v(ex) |
 |---:|---:|---:|---:|---:|
@@ -67,16 +70,14 @@ v(im) 在全区间保持 0.998 以上（它只需学一个逐元素映射再线�
 
 | 文件 | 内容 |
 |---|---|
-| `runs/synth_add_pair.csv` | λ=0，4 个 K → 承担 S5 的论证 |
-| `runs/synth_second_order_lam2.csv` | λ=2，4 个 K × 4 个模型 → 承担 S10.2 |
-| `summary.csv` | 24 行（8 + 16） |
+| `runs/synth_add_pair.csv` | λ=0，4 个 K → 承担正文 Table 2 |
+| ~~`runs/synth_second_order_lam2.csv`~~ | λ=2 已移出归档（见上），正文不引用 |
+| `summary.csv` | 8 行 = λ=0 的 add_pair，4 个 K × 2 个模型 |
 
 ## 重跑命令
 
 ```bash
 python scripts/synth_routes.py --families add_pair --lambdas 0.0 \
        --seeds 42 43 44 --epochs 300 --out ../runs/synth_add_pair.csv
-python scripts/synth_second_order.py --lam 2.0 --seeds 42 43 --epochs 150 \
-       --out ../runs/synth_second_order_lam2.csv
 python scripts/collect_synth.py        # → summary.csv
 ```

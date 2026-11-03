@@ -1,0 +1,16 @@
+[logv] all 行 34374（与官方 fold 索引一一对应），摩尔分数长度不符 2910 行，组分图 1628 个
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+    fold 1 ep   0 loss 0.4182 valR +0.9035 (best +0.9035@0)
+    fold 1 ep  10 loss 0.0535 valR +0.9839 (best +0.9839@10)
+    fold 1 ep  20 loss 0.0380 valR +0.9887 (best +0.9887@20)
+    fold 1 ep  30 loss 0.0269 valR +0.9900 (best +0.9911@28)
+    fold 1 ep  40 loss 0.0226 valR +0.9908 (best +0.9911@28)
+    fold 1 ep  50 loss 0.0191 valR +0.9919 (best +0.9924@45)
+    fold 1 ep  60 loss 0.0159 valR +0.9909 (best +0.9925@53)
+    fold 1 ep  70 loss 0.0154 valR +0.9925 (best +0.9929@63)
+    fold 1 ep  80 loss 0.0129 valR +0.9927 (best +0.9929@63)
+  >> logv fold 1 | test R +0.9887 MAE 0.0314 | best_ep 63 | 2055s | 2217860 pars
+
+logv 5-fold: R = 0.9887 ± nan
+写出 /root/autodl-tmp/runs_vex_cur/logv_f1.csv

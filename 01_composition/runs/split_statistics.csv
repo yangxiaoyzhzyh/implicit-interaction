@@ -1,0 +1,15 @@
+dataset,quantity,value,unit
+IlT κ,rows train,24688.0,rows
+IlT κ,rows test,16216.0,rows
+IlT κ,test rows with water,15189.0,rows
+IlT κ,test share aqueous,93.7,%
+IlT κ,test share water > 0.99,79.6,%
+IlT κ,train rows water > 0.99,5397.0,rows
+IlT κ,train share water > 0.99,21.9,%
+IlT κ,train share aqueous,40.4,%
+SPE κ,rows train,8944.0,rows
+SPE κ,rows test,2406.0,rows
+SPE κ,train share with a large component,93.3,%
+SPE κ,test share with a large component,30.4,%
+SPE κ,train share without one,6.7,%
+SPE κ,test share without one,69.6,%

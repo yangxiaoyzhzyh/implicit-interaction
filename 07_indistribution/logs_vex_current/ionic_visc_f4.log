@@ -1,0 +1,28 @@
+[ionic_visc] Viscosity 行 75992（与官方 fold 索引一一对应），摩尔分数长度不符 0 行，组分图 699 个
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+    fold 4 ep   0 loss 0.3317 valR +0.9230 (best +0.9230@0)
+    fold 4 ep  10 loss 0.0299 valR +0.9877 (best +0.9877@10)
+    fold 4 ep  20 loss 0.0213 valR +0.9902 (best +0.9908@19)
+    fold 4 ep  30 loss 0.0141 valR +0.9942 (best +0.9942@30)
+    fold 4 ep  40 loss 0.0140 valR +0.9942 (best +0.9942@33)
+    fold 4 ep  50 loss 0.0109 valR +0.9957 (best +0.9957@50)
+    fold 4 ep  60 loss 0.0095 valR +0.9960 (best +0.9960@52)
+    fold 4 ep  70 loss 0.0102 valR +0.9952 (best +0.9962@64)
+    fold 4 ep  80 loss 0.0080 valR +0.9962 (best +0.9966@76)
+    fold 4 ep  90 loss 0.0070 valR +0.9966 (best +0.9968@89)
+    fold 4 ep 100 loss 0.0068 valR +0.9969 (best +0.9970@95)
+    fold 4 ep 110 loss 0.0064 valR +0.9970 (best +0.9971@109)
+    fold 4 ep 120 loss 0.0061 valR +0.9970 (best +0.9972@115)
+    fold 4 ep 130 loss 0.0057 valR +0.9974 (best +0.9974@130)
+    fold 4 ep 140 loss 0.0054 valR +0.9974 (best +0.9974@138)
+    fold 4 ep 150 loss 0.0052 valR +0.9975 (best +0.9975@150)
+    fold 4 ep 160 loss 0.0051 valR +0.9975 (best +0.9976@159)
+    fold 4 ep 170 loss 0.0050 valR +0.9976 (best +0.9976@168)
+    fold 4 ep 180 loss 0.0049 valR +0.9976 (best +0.9976@178)
+    fold 4 ep 190 loss 0.0049 valR +0.9976 (best +0.9976@183)
+    fold 4 ep 199 loss 0.0048 valR +0.9976 (best +0.9976@183)
+  >> ionic_visc fold 4 | test R +0.9969 MAE 0.0737 | best_ep 183 | 8379s | 2218372 pars
+
+ionic_visc 5-fold: R = 0.9969 ± nan
+写出 /root/autodl-tmp/runs_vex_cur/ionic_visc_f4.csv

@@ -1,0 +1,20 @@
+[heat_vap] Heat of vaporization 行 30061，有效 30061（跳过 0），组分图 81 个
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:408: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. (Triggered internally at ../aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(output, src_key_padding_mask.logical_not(), mask_check=False)
+    fold 1 ep   0 loss 0.2736 valR +0.9672 (best +0.9672@0)
+    fold 1 ep  10 loss 0.0142 valR +0.9975 (best +0.9980@8)
+    fold 1 ep  20 loss 0.0109 valR +0.9978 (best +0.9984@19)
+    fold 1 ep  30 loss 0.0098 valR +0.9985 (best +0.9988@26)
+    fold 1 ep  40 loss 0.0069 valR +0.9985 (best +0.9989@36)
+    fold 1 ep  50 loss 0.0057 valR +0.9986 (best +0.9990@46)
+    fold 1 ep  60 loss 0.0052 valR +0.9989 (best +0.9990@58)
+    fold 1 ep  70 loss 0.0045 valR +0.9989 (best +0.9991@66)
+    fold 1 ep  80 loss 0.0041 valR +0.9990 (best +0.9992@78)
+    fold 1 ep  90 loss 0.0038 valR +0.9992 (best +0.9992@84)
+    fold 1 ep 100 loss 0.0034 valR +0.9994 (best +0.9994@100)
+    fold 1 ep 110 loss 0.0029 valR +0.9993 (best +0.9995@108)
+    fold 1 ep 120 loss 0.0028 valR +0.9994 (best +0.9995@108)
+  >> heat_vap fold 1 | test R +0.9994 MAE 0.0772 | best_ep 108 | 1654s | 2217604 pars
+
+heat_vap 5-fold: R = 0.9994 ± nan
+写出 /root/autodl-tmp/runs_vex_cur/heat_vap_f1.csv

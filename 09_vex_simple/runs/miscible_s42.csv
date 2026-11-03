@@ -1,0 +1,2 @@
+task,seed,test_R,test_R2,MAE,n_train,n_test
+miscible,42,0.7205,0.5065,0.465,3580,26481
