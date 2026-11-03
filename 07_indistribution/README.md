@@ -33,7 +33,7 @@
 
 两臂现在共享全部协议（同一份官方 fold、同一早停规则、同一 lr/batch/warmup），
 唯一差别是模型结构：v(ex) 在逐组分编码之后多一层跨组分 transformer + CLS
-（2,217,604 vs 1,228,420 参数）。旧 `scripts/train_5fold_vex.py`（AtomFormer 整图版）
+（2.22 M vs 1.23 M 参数）。旧 `scripts/train_5fold_vex.py`（AtomFormer 整图版）
 保留但不再用于正文——它的数值正是补材 Table S3 中的 **v(ex)-simple** 一列。
 
 ## 结果
