@@ -36,6 +36,11 @@
 （2.22 M vs 1.23 M 参数）。旧 `scripts/train_5fold_vex.py`（AtomFormer 整图版）
 保留但不再用于正文——它的数值正是补材 Table S3 中的 **v(ex)-simple** 一列。
 
+> **特征维度**：两个 5-fold 脚本（`train_5fold_vim.py`、`train_5fold_vex.py`）现已改用
+> 正文的 44 维原子特征词表。归档中的 **v(im)** 与 **v(ex)-simple** 两列数值由早期的
+> 31 维版本产生，重跑会在末位有差异；`train_5fold_vex_current.py` 自始即为 44 维，
+> 与 Table S3 的 **v(ex)** 列完全对应。
+
 ## 结果
 
 | 任务 | v(im) | v(ex) | 官方最强 | v(im) 差 | v(ex) 差 |

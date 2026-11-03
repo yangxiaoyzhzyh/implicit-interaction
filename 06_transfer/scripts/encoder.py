@@ -41,12 +41,12 @@ class GINConv(torch.nn.Module):
 class Encoder(torch.nn.Module):
     """Shared backbone for the chemical tasks; `atom_embed` returns per-atom vectors.
 
-    pad_from: input feature width (CheMixHub models use 32 = 31 + mole fraction;
+    pad_from: input feature width (CheMixHub models use 45 = 44 + 1 constant column;
                odor models use 31, no mole fraction)
     normalize: L2-normalise the pooled vector (cosine-head geometry, odor models)
     """
 
-    def __init__(self, dim=256, nhead=4, pad_from=32, normalize=False):
+    def __init__(self, dim=256, nhead=4, pad_from=45, normalize=False):
         super().__init__()
         self.pad_from = pad_from
         self.normalize = normalize
@@ -75,14 +75,14 @@ class Encoder(torch.nn.Module):
         return v
 
 
-TARGET_ELEMENTS = [6, 7, 8, 9, 16, 17, 35, 53]
+TARGET_ELEMENTS = [3, 5, 6, 7, 8, 9, 11, 12, 13, 15, 16, 17, 19, 20, 30, 33, 35, 53]
 CHIRAL_TAGS = [Chem.ChiralType.CHI_TETRAHEDRAL_CW,
                Chem.ChiralType.CHI_TETRAHEDRAL_CCW]
 _gc = {}
 
 
 def mol_to_graph(smi):
-    """31 atom features + edge index; cached per SMILES."""
+    """44 atom features + edge index; cached per SMILES."""
     mol = Chem.MolFromSmiles(smi)
     if mol is None:
         return None
@@ -93,8 +93,8 @@ def mol_to_graph(smi):
     for a in mol.GetAtoms():
         f = [1 if a.GetAtomicNum() == x else 0 for x in TARGET_ELEMENTS]
         f += [1 if a.GetChiralTag() == x else 0 for x in CHIRAL_TAGS]
-        deg = min(a.GetDegree(), 5)
-        f += [1.0 if deg == i else 0.0 for i in range(6)]
+        deg = min(a.GetDegree(), 8)
+        f += [1.0 if deg == i else 0.0 for i in range(9)]
         h = min(a.GetTotalNumHs(), 4)
         f += [1.0 if h == i else 0.0 for i in range(5)]
         f += [1.0 if a.GetHybridization() == hyb else 0.0 for hyb in HYBRIDS]
@@ -103,7 +103,7 @@ def mol_to_graph(smi):
         f += [1.0 if fc < 0 else 0.0, 1.0 if fc == 0 else 0.0,
               1.0 if fc > 0 else 0.0]
         f += [1.0 if a.IsInRing() else 0.0]
-        nf.append(f[:31])
+        nf.append(f[:44])
     ei = []
     for b in mol.GetBonds():
         i, j = b.GetBeginAtomIdx(), b.GetEndAtomIdx()

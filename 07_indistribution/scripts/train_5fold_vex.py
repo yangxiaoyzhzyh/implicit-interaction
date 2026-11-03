@@ -4,7 +4,6 @@
 来自 paper_v2/experiments/scripts/whole_mixture/train_task.py。
 本目录 runs/vex_5fold.csv 的数值由这批运行产生，但**本次未重跑**：
 数值取自上一篇文章（AtomFormer）已发表结果，见 README。
-"""
 
 实验 1 — CheMixHub 8 tasks, official 5-fold（论文/补材的 in-distribution anchors，补材 S1 表 S2）
 路线 v(ex)
@@ -51,7 +50,7 @@ CHEMIX_ROOT = os.path.abspath(os.path.join(
     os.path.dirname(os.path.abspath(__file__)), '..', 'literature',
     'CheMixHub', 'datasets'))
 
-TARGET_ELEMENTS = [6, 7, 8, 9, 16, 17, 35, 53]
+TARGET_ELEMENTS = [3, 5, 6, 7, 8, 9, 11, 12, 13, 15, 16, 17, 19, 20, 30, 33, 35, 53]
 CHIRAL_TAGS = [Chem.ChiralType.CHI_TETRAHEDRAL_CW,
                Chem.ChiralType.CHI_TETRAHEDRAL_CCW]
 
@@ -117,14 +116,14 @@ class GINConv(nn.Module):
 
 
 class Model(nn.Module):
-    """v2 同款：32 维原子特征(31 化学 + 摩尔分数)，pooling 后 concat 条件标量。"""
+    """v2 同款：45 维原子特征(44 化学 + 摩尔分数)，pooling 后 concat 条件标量。"""
 
     def __init__(self, dim=256, nhead=4, n_layers=2, dropout=0.1,
                  variant='full', n_cond=0):
         super().__init__()
         self.variant = variant
         self.n_cond = n_cond
-        self.pad = nn.ZeroPad2d((0, 64 - 32, 0, 0))
+        self.pad = nn.ZeroPad2d((0, 64 - 45, 0, 0))
         self.convs = nn.ModuleList([GINConv(64) for _ in range(3)])
         self.proj = nn.Linear(64, dim)
         if variant != 'gin_only':
@@ -165,7 +164,7 @@ _gc = {}
 
 
 def mol_to_graph(smi):
-    """31 维原子特征：元素8+手性1+度6+氢5+杂化5+芳香1+电荷3+成环1。"""
+    """44 维原子特征：元素18+手性2+度9+氢5+杂化5+芳香1+电荷3+成环1。"""
     mol = Chem.MolFromSmiles(smi)
     if mol is None:
         return None
@@ -176,8 +175,8 @@ def mol_to_graph(smi):
     for a in mol.GetAtoms():
         f = [1 if a.GetAtomicNum() == x else 0 for x in TARGET_ELEMENTS]
         f += [1 if a.GetChiralTag() == x else 0 for x in CHIRAL_TAGS]
-        deg = min(a.GetDegree(), 5)
-        f += [1.0 if deg == i else 0.0 for i in range(6)]
+        deg = min(a.GetDegree(), 8)
+        f += [1.0 if deg == i else 0.0 for i in range(9)]
         h = min(a.GetTotalNumHs(), 4)
         f += [1.0 if h == i else 0.0 for i in range(5)]
         f += [1.0 if a.GetHybridization() == hyb else 0.0
@@ -187,7 +186,7 @@ def mol_to_graph(smi):
         f += [1.0 if fc < 0 else 0.0, 1.0 if fc == 0 else 0.0,
               1.0 if fc > 0 else 0.0]
         f += [1.0 if a.IsInRing() else 0.0]
-        nf.append(f[:31])
+        nf.append(f[:44])
     ei = []
     for b in mol.GetBonds():
         i, j = b.GetBeginAtomIdx(), b.GetEndAtomIdx()
@@ -211,7 +210,7 @@ def build_sample(cmp_ids, mol_fracs, cmp_smiles):
         g = _gc[smi]
         if g is None:
             return None
-        x = torch.tensor(g['x']).float()[:, :31]
+        x = torch.tensor(g['x']).float()[:, :44]
         mf = torch.full((x.size(0), 1), mol_fracs[ci], dtype=torch.float32)
         ax.append(torch.cat([x, mf], dim=1))
         aei.append(torch.tensor(g['ei']) + off)
