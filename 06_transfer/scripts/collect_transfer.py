@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 """collect_transfer.py —— 把迁移实验的 JSON 归一成 summary.csv
 
-输入（本目录 runs/）:
+输入（本目录 runs/，共 3 个）:
   leave_one_out.json      8 任务留一线性读出
-  mlp_small_data.json     1%/5% 标签下的 MLP 读出
-  mlp_ionic.json          离子任务的 1%/5% MLP
+  mlp_small_data.json     1%/5% 标签下的 MLP 读出（含离子任务）
   additive_baseline.json  线性可加基线
 
 输出:

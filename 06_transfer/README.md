@@ -7,11 +7,11 @@
 
 ```
 06_transfer/
-├── scripts/   9 个脚本（训练 / 留一读出 / 小样本 / 可加基线 / 编码器缓存）
+├── scripts/   18 个脚本（训练 / 留一读出 / 小样本 / 可加基线 / 编码器缓存）
 ├── ckpt/      8 个编码器权重（每个 4.7 MB）
-├── runs/      5 个结果 JSON（原始产出）
+├── runs/      3 个结果 JSON（原始产出）
 ├── logs/      6 个运行日志
-└── summary.csv  归一后的总表（116 行）
+└── summary.csv  归一后的总表（120 行）
 ```
 
 ## 编码器训练
@@ -32,7 +32,7 @@
 | 脚本 | 做什么 | 覆盖 |
 |---|---|---|
 | `leave_one_task_out.py` | 留一任务：8 个编码器轮流留一个，用其余 7 个拼接 + 线性读出 | **8 任务完整** |
-| `mlp_small_data.py` + `mlp_ionic.json` | 1% / 5% 标签下的 **MLP** 读出 | `mon`、`ionic_cond`、`ionic_visc` |
+| `mlp_small_data.py` + `runs/mlp_small_data.json` | 1% / 5% 标签下的 **MLP** 读出（运行记录见 `logs/mlp_ionic.log`） | **8 个任务全覆盖** |
 | `additive_baseline.py` | 线性可加基线（闭式，无 seed） | **8 任务完整** |
 
 ## 待办
