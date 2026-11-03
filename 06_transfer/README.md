@@ -13,6 +13,9 @@
 │   ├── train_task_permol.py   单任务训练（train_all 逐个调用它）
 │   ├── encoder.py             GIN×3 + TFM×2 + mean pooling（被 08 引用）
 │   ├── fp_matrix.py           ECFP4 / MACCS / RDKit2D 指纹（被 08 引用）
+│   ├── leave_one_task_out.py  任务表 `TASKS`、`load_task`、`CKPT`/`load_model`、
+│   │                          `mol_vectors`——**共有 08 与 cache_encoders 复用**；
+│   │                          它自身的留一读出实验不在正文，结果已移除
 │   ├── cache_encoders.py      逐分子向量缓存
 │   └── out/encoder_cache.npz  3540 分子 × 256（25 MB）
 └── ckpt/                      8 个编码器权重（每个 4.7 MB）
@@ -37,11 +40,14 @@
 
 | 使用者 | 依赖 |
 |---|---|
-| `08_small_labels/scripts/agg_100bin_mixpca.py` | `fp_matrix.py`，以及 `scripts/out/encoder_cache.npz` |
-| `08_small_labels/scripts/agg_100bin_xgb.py`（已移除） | 同上 |
+| `08_small_labels/scripts/agg_100bin_mixpca.py` | `from leave_one_task_out import TASKS, load_task`；`fp_matrix.py`；`out/encoder_cache.npz` |
+| `08_small_labels/scripts/agg_variants.py` | 同上 |
+| `scripts/cache_encoders.py` | `from leave_one_task_out import CKPT, load_model, mol_vectors, DS, TASKS`；`fp_matrix.py`（`eval_encoders` 只是历史兜底，主路径不会触发） |
 | 任何想重跑 08 的读者 | `ckpt/*.pt` 或 `encoder_cache.npz` |
 
-因此 `ckpt/`、`encoder.py`、`fp_matrix.py`、`cache_encoders.py` 与缓存文件**不可删**。
+因此 `ckpt/`、`encoder.py`、`fp_matrix.py`、`leave_one_task_out.py`、`cache_encoders.py`
+与缓存文件**不可删**——删掉 `leave_one_task_out.py` 会让 08 的主结果脚本与
+`cache_encoders.py` **直接 import 失败**。
 
 ## 重跑命令
 

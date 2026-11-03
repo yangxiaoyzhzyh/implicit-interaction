@@ -95,6 +95,7 @@ python agg_100bin_mixpca.py --readout xgb --reps 2
 python summarize_mixpca.py                           # → runs/agg_100bin_mixpca_best.csv
 ```
 
-依赖：`06_transfer/scripts/out/encoder_cache.npz`（七个编码器的逐分子向量）与
+依赖：`06_transfer/scripts/leave_one_task_out.py`（`TASKS` 与 `load_task`）、
+`06_transfer/scripts/out/encoder_cache.npz`（七个编码器的逐分子向量）与
 `06_transfer/scripts/fp_matrix.py`（指纹）。本目录脚本通过 `sys.path` 引用它们，
 不复制缓存。
