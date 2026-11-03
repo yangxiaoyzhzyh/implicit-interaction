@@ -1,5 +1,4 @@
 task,fold,seed,variant,combine,dim,epochs,patience,n_params,best_ep,val_r,test_r,test_mae
-mon,0,42,full,wmean,256,2,20,1228420,1,-0.0999,-0.0673,12.9018
 mon,0,42,full,wmean,256,200,20,1228420,46,0.9324,0.8651,5.0319
 mon,1,42,full,wmean,256,200,20,1228420,19,0.9474,0.8745,5.2464
 mon,2,42,full,wmean,256,200,20,1228420,47,0.9042,0.9164,3.9332
