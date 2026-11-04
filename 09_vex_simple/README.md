@@ -98,7 +98,8 @@ python vsimple.py --data-base /path/to/chemidata \
 ## 与当前流水线的差异（引用时必须注明）
 
 - 本目录**不调用** `common/engine.py`，模型、训练循环、数据装配各自独立；
-  与 `01_composition` 只共享**划分文件**（npz）与原始数据。
+  与 `01_composition` 只共享**同一份划分**（由 `make_splits.py --split composition` 生成后共用）
+与原始数据。
 - 模型构造顺序与初始化 RNG 流和 `engine.py` 不同，同一 seed 不保证逐位复现。
 
 ## 复现命令（服务器上实际使用的）

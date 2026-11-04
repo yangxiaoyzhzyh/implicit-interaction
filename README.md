@@ -33,9 +33,9 @@ encoder that training shapes.
 |---|---|---|
 | `common/` | engine, task registry, encoder, molecule-carving generator | — |
 | `scripts/` | modelling scripts, split generation, table collection | — |
-| `splits/` | `*.npz` index files shared by all arms; `splits/logs/` is their generation log | — |
+| `splits/` | no `*.npz` are shipped: `make_splits.py` writes them from your own data root and all arms then share that one index; `splits/logs/` keeps the generation log | — |
 | `01_composition/` | component-count extrapolation (`scripts/run_k3.sh` is the relaxed-ceiling run) | Table 1; Sections S2 (task list) and S6 (relaxed ceiling) |
-| `02_unseen_molecules/` | component-identity extrapolation, with the Sisson carving script | Section S4 |
+| `02_unseen_molecules/` | component-identity extrapolation | Section S4 |
 | `03_target_value/` | target-value (extreme) extrapolation | Section S5 |
 | `04_synthetic/` | synthetic additive and interaction families | Table 2 |
 | `05_cross_domain/` | portfolio volatility and document sets | Sections S8--S10 |
