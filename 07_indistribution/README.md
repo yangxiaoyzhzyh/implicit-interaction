@@ -16,7 +16,7 @@
 │   ├── vex_5fold_current.csv        **40 行 = 8 任务 × 5 折，正文所用**
 │   ├── vex_5fold.csv                旧 AtomFormer 结果（40 行），仅留档
 │   └── baselines.csv                8 行官方最强基线（CheMixHub Table 2 / Table 8）
-├── logs_vex_current/                40 个 v(ex) 逐折日志（本次重跑）
+├── logs_vex_current/                12 个 v(ex) 日志：7 个任务各一份（5 折合一）+ nist_logv 的 5 份逐折（沿用旧运行）
 ├── logs/                            8 个旧 v(ex) 逐折日志（留档）
 └── summary.csv                      16 行 = 8 任务 × 2 路线（v(ex) 行已换新值）
 ```
