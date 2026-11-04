@@ -28,7 +28,7 @@
 ## 数据
 
 `runs/` 内是 10 任务 × 2 路线、每项 3 seed（20 个文件、60 行），`summary.csv` 归一为 20 行。
-原始凭证保留为 `yext_identity_raw.csv`（60 行，脚本原始输出）。
+逐 seed 的原始输出就在 `runs/*_target.csv` 里（每行含 `seed`、`n_train`、`n_test`），无额外的拼接副本。
 
 这批数据出自 `run_carved.py --split-by y`，与 `common/engine.py` **同源**，因此可直接引用：
 
