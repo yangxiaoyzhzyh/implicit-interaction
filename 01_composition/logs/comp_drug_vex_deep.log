@@ -1,0 +1,90 @@
+  读划分文件 drug_composition.npz: train 2490 / val 0 / test 24223
+tag=drug task=drug model=vex | train 2490 / test 24223 | feat 44 | cuda
+  fit 2490 / val 0
+  seed 42 ep   0 loss 0.9062 val R (no-val)
+  seed 42 ep  10 loss 0.0848 val R (no-val)
+  seed 42 ep  20 loss 0.0407 val R (no-val)
+  seed 42 ep  30 loss 0.0305 val R (no-val)
+  seed 42 ep  40 loss 0.0237 val R (no-val)
+  seed 42 ep  50 loss 0.0213 val R (no-val)
+  seed 42 ep  60 loss 0.0169 val R (no-val)
+  seed 42 ep  70 loss 0.0162 val R (no-val)
+  seed 42 ep  80 loss 0.0144 val R (no-val)
+  seed 42 ep  90 loss 0.0127 val R (no-val)
+  seed 42 ep 100 loss 0.0128 val R (no-val)
+  seed 42 ep 110 loss 0.0113 val R (no-val)
+  seed 42 ep 120 loss 0.0111 val R (no-val)
+  seed 42 ep 130 loss 0.0102 val R (no-val)
+  seed 42 ep 140 loss 0.0094 val R (no-val)
+  seed 42 ep 150 loss 0.0087 val R (no-val)
+  seed 42 ep 160 loss 0.0093 val R (no-val)
+  seed 42 ep 170 loss 0.0093 val R (no-val)
+  seed 42 ep 180 loss 0.0083 val R (no-val)
+  seed 42 ep 190 loss 0.0083 val R (no-val)
+  seed 42 ep 199 loss 0.0087 val R (no-val)
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  >> seed 42 knee None best ep (final) | val R (no-val) | test R +0.5830 R2 -0.7098 MAE 1.0133
+     pred mean -0.546 vs true +0.240
+       K=3       n=24223  R +0.5830  MAE 1.0133
+       seen      n=18259  R +0.6790  MAE 0.9282
+       unseen    n= 5964  R +0.1763  MAE 1.2739
+     wrote drug_vex_composition.csv
+       K=3 (n=24223) R +0.5830
+  seed 43 ep   0 loss 0.9581 val R (no-val)
+  seed 43 ep  10 loss 0.0872 val R (no-val)
+  seed 43 ep  20 loss 0.0410 val R (no-val)
+  seed 43 ep  30 loss 0.0301 val R (no-val)
+  seed 43 ep  40 loss 0.0243 val R (no-val)
+  seed 43 ep  50 loss 0.0222 val R (no-val)
+  seed 43 ep  60 loss 0.0178 val R (no-val)
+  seed 43 ep  70 loss 0.0151 val R (no-val)
+  seed 43 ep  80 loss 0.0142 val R (no-val)
+  seed 43 ep  90 loss 0.0135 val R (no-val)
+  seed 43 ep 100 loss 0.0130 val R (no-val)
+  seed 43 ep 110 loss 0.0112 val R (no-val)
+  seed 43 ep 120 loss 0.0098 val R (no-val)
+  seed 43 ep 130 loss 0.0098 val R (no-val)
+  seed 43 ep 140 loss 0.0097 val R (no-val)
+  seed 43 ep 150 loss 0.0091 val R (no-val)
+  seed 43 ep 160 loss 0.0090 val R (no-val)
+  seed 43 ep 170 loss 0.0088 val R (no-val)
+  seed 43 ep 180 loss 0.0084 val R (no-val)
+  seed 43 ep 190 loss 0.0085 val R (no-val)
+  seed 43 ep 199 loss 0.0083 val R (no-val)
+  >> seed 43 knee None best ep (final) | val R (no-val) | test R +0.5723 R2 -0.8434 MAE 1.0317
+     pred mean -0.548 vs true +0.240
+       K=3       n=24223  R +0.5723  MAE 1.0317
+       seen      n=18259  R +0.6921  MAE 0.8965
+       unseen    n= 5964  R +0.0994  MAE 1.4454
+     wrote drug_vex_composition.csv
+       K=3 (n=24223) R +0.5723
+  seed 44 ep   0 loss 0.9371 val R (no-val)
+  seed 44 ep  10 loss 0.0873 val R (no-val)
+  seed 44 ep  20 loss 0.0464 val R (no-val)
+  seed 44 ep  30 loss 0.0352 val R (no-val)
+  seed 44 ep  40 loss 0.0219 val R (no-val)
+  seed 44 ep  50 loss 0.0203 val R (no-val)
+  seed 44 ep  60 loss 0.0200 val R (no-val)
+  seed 44 ep  70 loss 0.0153 val R (no-val)
+  seed 44 ep  80 loss 0.0158 val R (no-val)
+  seed 44 ep  90 loss 0.0141 val R (no-val)
+  seed 44 ep 100 loss 0.0115 val R (no-val)
+  seed 44 ep 110 loss 0.0122 val R (no-val)
+  seed 44 ep 120 loss 0.0125 val R (no-val)
+  seed 44 ep 130 loss 0.0103 val R (no-val)
+  seed 44 ep 140 loss 0.0096 val R (no-val)
+  seed 44 ep 150 loss 0.0088 val R (no-val)
+  seed 44 ep 160 loss 0.0094 val R (no-val)
+  seed 44 ep 170 loss 0.0092 val R (no-val)
+  seed 44 ep 180 loss 0.0092 val R (no-val)
+  seed 44 ep 190 loss 0.0091 val R (no-val)
+  seed 44 ep 199 loss 0.0086 val R (no-val)
+  >> seed 44 knee None best ep (final) | val R (no-val) | test R +0.5418 R2 -0.6948 MAE 0.9924
+     pred mean -0.466 vs true +0.240
+       K=3       n=24223  R +0.5418  MAE 0.9924
+       seen      n=18259  R +0.6663  MAE 0.8763
+       unseen    n= 5964  R +0.0552  MAE 1.3478
+     wrote drug_vex_composition.csv
+       K=3 (n=24223) R +0.5418
+总用时 890s

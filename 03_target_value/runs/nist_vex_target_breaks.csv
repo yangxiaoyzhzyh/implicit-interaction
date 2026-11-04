@@ -1,0 +1,13 @@
+task,model,split,seed,group_type,group,n,R,MAE
+nist,vex,split_y,42,K,K=1,7916,0.9185,1.9467
+nist,vex,split_y,42,K,K=2,39856,0.9183,1.9536
+nist,vex,split_y,42,subset,seen,39583,0.9308,1.6687
+nist,vex,split_y,42,subset,unseen,8189,0.7829,3.3238
+nist,vex,split_y,43,K,K=1,7916,0.9167,1.9957
+nist,vex,split_y,43,K,K=2,39856,0.9171,2.0037
+nist,vex,split_y,43,subset,seen,39583,0.9292,1.7084
+nist,vex,split_y,43,subset,unseen,8189,0.7865,3.4234
+nist,vex,split_y,44,K,K=1,7916,0.9440,1.9411
+nist,vex,split_y,44,K,K=2,39856,0.9307,1.9717
+nist,vex,split_y,44,subset,seen,39583,0.9434,1.6828
+nist,vex,split_y,44,subset,unseen,8189,0.8218,3.3385

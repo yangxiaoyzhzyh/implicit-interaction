@@ -1,0 +1,40 @@
+  按 y 分位划分: 训练 [-0.210, 0.270] (17190 条) / 测试 <-0.338 或 >0.584 (6869 条)
+tag=logv task=logv model=vex | train 17190 / test 6869 | feat 44 | cuda
+  fit 16590 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.8121 val R +0.7179
+  seed 42 ep  10 loss 0.1346 val R +0.9479
+  >> seed 42 knee 15 best ep 15 | val R +0.9528 | test R +0.9105 R2 +0.3581 MAE 0.4601
+     pred mean +0.011 vs true +0.261
+       K=1       n=  843  R +0.8974  MAE 0.5382
+       K=2       n= 6026  R +0.9148  MAE 0.4491
+       seen      n= 5959  R +0.9157  MAE 0.4425
+       unseen    n=  910  R +0.8747  MAE 0.5755
+     wrote logv_vex_split_y.csv
+       K=1 (n= 843) R +0.8974
+       K=2 (n=6026) R +0.9148
+  seed 43 ep   0 loss 0.8381 val R +0.6462
+  seed 43 ep  10 loss 0.1352 val R +0.9491
+  seed 43 ep  20 loss 0.0920 val R +0.9616
+  >> seed 43 knee 20 best ep 18 | val R +0.9618 | test R +0.9114 R2 +0.3899 MAE 0.4511
+     pred mean +0.029 vs true +0.261
+       K=1       n=  843  R +0.8939  MAE 0.5341
+       K=2       n= 6026  R +0.9167  MAE 0.4395
+       seen      n= 5959  R +0.9169  MAE 0.4332
+       unseen    n=  910  R +0.8764  MAE 0.5682
+     wrote logv_vex_split_y.csv
+       K=1 (n= 843) R +0.8939
+       K=2 (n=6026) R +0.9167
+  seed 44 ep   0 loss 0.8062 val R +0.7230
+  seed 44 ep  10 loss 0.1345 val R +0.9469
+  >> seed 44 knee 17 best ep 17 | val R +0.9568 | test R +0.9095 R2 +0.3776 MAE 0.4612
+     pred mean +0.036 vs true +0.261
+       K=1       n=  843  R +0.8776  MAE 0.5465
+       K=2       n= 6026  R +0.9169  MAE 0.4493
+       seen      n= 5959  R +0.9142  MAE 0.4445
+       unseen    n=  910  R +0.8777  MAE 0.5707
+     wrote logv_vex_split_y.csv
+       K=1 (n= 843) R +0.8776
+       K=2 (n=6026) R +0.9169
+总用时 246s

@@ -1,0 +1,10 @@
+task,model,split,seed,group_type,group,n,R,MAE
+drug,vex,composition,42,K,K=3,24223,0.5830,1.0133
+drug,vex,composition,42,subset,seen,18259,0.6790,0.9282
+drug,vex,composition,42,subset,unseen,5964,0.1763,1.2739
+drug,vex,composition,43,K,K=3,24223,0.5723,1.0317
+drug,vex,composition,43,subset,seen,18259,0.6921,0.8965
+drug,vex,composition,43,subset,unseen,5964,0.0994,1.4454
+drug,vex,composition,44,K,K=3,24223,0.5418,0.9924
+drug,vex,composition,44,subset,seen,18259,0.6663,0.8763
+drug,vex,composition,44,subset,unseen,5964,0.0552,1.3478

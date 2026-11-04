@@ -1,0 +1,54 @@
+  按 y 分位划分: 训练 [9.904, 12.681] (15031 条) / 测试 <9.066 或 >14.730 (6012 条)
+tag=miscible_hvap task=miscible_hvap model=vex | train 15031 / test 6012 | feat 44 | cuda
+  fit 14431 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.6770 val R +0.7813
+  seed 42 ep  10 loss 0.0667 val R +0.9885
+  >> seed 42 knee 17 best ep 15 | val R +0.9928 | test R +0.9205 R2 +0.3901 MAE 2.7790
+     pred mean +11.294 vs true +12.877
+       K=2       n= 1377  R +0.8581  MAE 3.9374
+       K=3       n= 2907  R +0.9360  MAE 2.8373
+       K=4       n=  840  R +0.9747  MAE 2.0165
+       K=5       n=  888  R +0.9879  MAE 1.5132
+       K=5-10    n=  888  R +0.9879  MAE 1.5132
+       seen      n= 5902  R +0.9199  MAE 2.7502
+       unseen    n=  110  R +0.3517  MAE 4.3234
+     wrote miscible_hvap_vex_split_y.csv
+       K=2 (n=1377) R +0.8581
+       K=3 (n=2907) R +0.9360
+       K=4 (n= 840) R +0.9747
+       K=5 (n= 888) R +0.9879
+  seed 43 ep   0 loss 0.7645 val R +0.7397
+  seed 43 ep  10 loss 0.0604 val R +0.9870
+  >> seed 43 knee 11 best ep 11 | val R +0.9887 | test R +0.9228 R2 +0.3832 MAE 2.8136
+     pred mean +11.295 vs true +12.877
+       K=2       n= 1377  R +0.8623  MAE 3.9655
+       K=3       n= 2907  R +0.9379  MAE 2.8747
+       K=4       n=  840  R +0.9756  MAE 2.0522
+       K=5       n=  888  R +0.9884  MAE 1.5475
+       K=5-10    n=  888  R +0.9884  MAE 1.5475
+       seen      n= 5902  R +0.9222  MAE 2.7846
+       unseen    n=  110  R +0.7114  MAE 4.3690
+     wrote miscible_hvap_vex_split_y.csv
+       K=2 (n=1377) R +0.8623
+       K=3 (n=2907) R +0.9379
+       K=4 (n= 840) R +0.9756
+       K=5 (n= 888) R +0.9884
+  seed 44 ep   0 loss 0.6793 val R +0.7761
+  seed 44 ep  10 loss 0.0622 val R +0.9913
+  >> seed 44 knee 14 best ep 10 | val R +0.9913 | test R +0.9225 R2 +0.3906 MAE 2.7600
+     pred mean +11.254 vs true +12.877
+       K=2       n= 1377  R +0.8618  MAE 3.9275
+       K=3       n= 2907  R +0.9376  MAE 2.8200
+       K=4       n=  840  R +0.9758  MAE 1.9940
+       K=5       n=  888  R +0.9885  MAE 1.4776
+       K=5-10    n=  888  R +0.9885  MAE 1.4776
+       seen      n= 5902  R +0.9219  MAE 2.7295
+       unseen    n=  110  R +0.5700  MAE 4.3934
+     wrote miscible_hvap_vex_split_y.csv
+       K=2 (n=1377) R +0.8618
+       K=3 (n=2907) R +0.9376
+       K=4 (n= 840) R +0.9758
+       K=5 (n= 888) R +0.9885
+总用时 247s

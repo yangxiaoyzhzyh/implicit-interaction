@@ -1,0 +1,46 @@
+[mon] all 行 684（与官方 fold 索引一一对应），摩尔分数长度不符 0 行，组分图 416 个
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+    fold 0 ep   0 loss 1.0047 valR +0.1082 (best +0.1082@0)
+    fold 0 ep  10 loss 0.3690 valR +0.6966 (best +0.6966@10)
+    fold 0 ep  20 loss 0.1346 valR +0.8619 (best +0.8711@18)
+    fold 0 ep  30 loss 0.0990 valR +0.8635 (best +0.8738@29)
+    fold 0 ep  40 loss 0.0786 valR +0.8774 (best +0.8774@40)
+    fold 0 ep  50 loss 0.0668 valR +0.8815 (best +0.8890@48)
+    fold 0 ep  60 loss 0.0733 valR +0.8867 (best +0.8966@57)
+    fold 0 ep  70 loss 0.0472 valR +0.8852 (best +0.8966@57)
+  >> mon fold 0 | test R +0.8918 MAE 5.1124 | best_ep 57 | 35s | 2283396 pars
+    fold 1 ep   0 loss 1.0004 valR +0.0680 (best +0.0680@0)
+    fold 1 ep  10 loss 0.3936 valR +0.7889 (best +0.7889@10)
+    fold 1 ep  20 loss 0.1331 valR +0.8663 (best +0.8790@19)
+    fold 1 ep  30 loss 0.1051 valR +0.8807 (best +0.8929@23)
+    fold 1 ep  40 loss 0.0671 valR +0.8934 (best +0.9027@35)
+    fold 1 ep  50 loss 0.0759 valR +0.9044 (best +0.9171@47)
+    fold 1 ep  60 loss 0.0565 valR +0.9078 (best +0.9171@47)
+  >> mon fold 1 | test R +0.8783 MAE 5.6355 | best_ep 47 | 31s | 2283396 pars
+    fold 2 ep   0 loss 1.0008 valR +0.3088 (best +0.3088@0)
+    fold 2 ep  10 loss 0.3814 valR +0.6981 (best +0.6981@10)
+    fold 2 ep  20 loss 0.1503 valR +0.8548 (best +0.8548@20)
+    fold 2 ep  30 loss 0.0953 valR +0.8547 (best +0.8596@26)
+    fold 2 ep  40 loss 0.0605 valR +0.8610 (best +0.8650@32)
+    fold 2 ep  50 loss 0.0546 valR +0.8695 (best +0.8702@44)
+    fold 2 ep  60 loss 0.0528 valR +0.8598 (best +0.8764@52)
+    fold 2 ep  70 loss 0.0418 valR +0.8744 (best +0.8764@52)
+  >> mon fold 2 | test R +0.8885 MAE 4.6882 | best_ep 52 | 33s | 2283396 pars
+    fold 3 ep   0 loss 0.9927 valR -0.0677 (best -0.0677@0)
+    fold 3 ep  10 loss 0.3504 valR +0.6155 (best +0.6155@10)
+    fold 3 ep  20 loss 0.1751 valR +0.8146 (best +0.8146@20)
+    fold 3 ep  30 loss 0.0967 valR +0.8786 (best +0.8786@30)
+    fold 3 ep  40 loss 0.0841 valR +0.8851 (best +0.8901@37)
+    fold 3 ep  50 loss 0.0754 valR +0.8805 (best +0.8957@46)
+    fold 3 ep  60 loss 0.0709 valR +0.8785 (best +0.8966@54)
+    fold 3 ep  70 loss 0.0694 valR +0.8931 (best +0.8966@54)
+  >> mon fold 3 | test R +0.9057 MAE 4.5645 | best_ep 54 | 33s | 2283396 pars
+    fold 4 ep   0 loss 1.0019 valR +0.0259 (best +0.0259@0)
+    fold 4 ep  10 loss 0.3899 valR +0.6534 (best +0.6534@10)
+    fold 4 ep  20 loss 0.1453 valR +0.8664 (best +0.8705@17)
+    fold 4 ep  30 loss 0.0900 valR +0.8546 (best +0.8705@17)
+  >> mon fold 4 | test R +0.8166 MAE 6.1618 | best_ep 17 | 17s | 2283396 pars
+
+mon 5-fold: R = 0.8762 ± 0.0347
+写出 /root/autodl-tmp/runs_deep_mon5fold/vex_mon_deep.csv

@@ -1,0 +1,10 @@
+task,model,split,seed,group_type,group,n,R,MAE
+logv,vex,unseen,42,K,K=1,1450,0.8984,0.1450
+logv,vex,unseen,42,K,K=2,8011,0.8421,0.1282
+logv,vex,unseen,42,subset,unseen,9461,0.8563,0.1308
+logv,vex,unseen,43,K,K=1,1450,0.8958,0.1512
+logv,vex,unseen,43,K,K=2,8011,0.8456,0.1316
+logv,vex,unseen,43,subset,unseen,9461,0.8585,0.1346
+logv,vex,unseen,44,K,K=1,1450,0.8668,0.1644
+logv,vex,unseen,44,K,K=2,8011,0.8307,0.1262
+logv,vex,unseen,44,subset,unseen,9461,0.8397,0.1320

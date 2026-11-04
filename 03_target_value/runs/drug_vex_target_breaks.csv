@@ -1,0 +1,13 @@
+task,model,split,seed,group_type,group,n,R,MAE
+drug,vex,split_y,42,K,K=2,789,0.8192,1.5904
+drug,vex,split_y,42,K,K=3,4553,0.8632,1.3224
+drug,vex,split_y,42,subset,seen,3956,0.8665,1.2527
+drug,vex,split_y,42,subset,unseen,1386,0.8048,1.6739
+drug,vex,split_y,43,K,K=2,789,0.8392,1.5610
+drug,vex,split_y,43,K,K=3,4553,0.8584,1.3410
+drug,vex,split_y,43,subset,seen,3956,0.8632,1.2789
+drug,vex,split_y,43,subset,unseen,1386,0.7712,1.6433
+drug,vex,split_y,44,K,K=2,789,0.6703,1.7140
+drug,vex,split_y,44,K,K=3,4553,0.6925,1.4306
+drug,vex,split_y,44,subset,seen,3956,0.8201,1.3116
+drug,vex,split_y,44,subset,unseen,1386,0.2678,1.9315

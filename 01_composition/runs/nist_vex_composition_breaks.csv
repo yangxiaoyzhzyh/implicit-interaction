@@ -1,0 +1,10 @@
+task,model,split,seed,group_type,group,n,R,MAE
+nist,vex,composition,42,K,K=2,209637,0.7092,0.6684
+nist,vex,composition,42,subset,seen,175591,0.7713,0.5556
+nist,vex,composition,42,subset,unseen,34046,0.5091,1.2498
+nist,vex,composition,43,K,K=2,209637,0.7666,0.5891
+nist,vex,composition,43,subset,seen,175591,0.7842,0.5523
+nist,vex,composition,43,subset,unseen,34046,0.7156,0.7789
+nist,vex,composition,44,K,K=2,209637,0.7293,0.6477
+nist,vex,composition,44,subset,seen,175591,0.7377,0.6146
+nist,vex,composition,44,subset,unseen,34046,0.7081,0.8183

@@ -1,0 +1,39 @@
+  按 y 分位划分: 训练 [-0.424, 1.007] (13358 条) / 测试 <-1.240 或 >1.477 (5342 条)
+tag=drug task=drug model=vex | train 13358 / test 5342 | feat 44 | cuda
+  fit 12758 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.9225 val R +0.3709
+  seed 42 ep  10 loss 0.4642 val R +0.7282
+  >> seed 42 knee 12 best ep 12 | val R +0.7282 | test R +0.8507 R2 +0.3409 MAE 1.3620
+     pred mean +0.272 vs true -0.103
+       K=2       n=  789  R +0.8192  MAE 1.5904
+       K=3       n= 4553  R +0.8632  MAE 1.3224
+       seen      n= 3956  R +0.8665  MAE 1.2527
+       unseen    n= 1386  R +0.8048  MAE 1.6739
+     wrote drug_vex_split_y.csv
+       K=2 (n= 789) R +0.8192
+       K=3 (n=4553) R +0.8632
+  seed 43 ep   0 loss 0.9148 val R +0.4766
+  seed 43 ep  10 loss 0.4716 val R +0.7266
+  >> seed 43 knee 15 best ep 13 | val R +0.7404 | test R +0.8490 R2 +0.3427 MAE 1.3735
+     pred mean +0.233 vs true -0.103
+       K=2       n=  789  R +0.8392  MAE 1.5610
+       K=3       n= 4553  R +0.8584  MAE 1.3410
+       seen      n= 3956  R +0.8632  MAE 1.2789
+       unseen    n= 1386  R +0.7712  MAE 1.6433
+     wrote drug_vex_split_y.csv
+       K=2 (n= 789) R +0.8392
+       K=3 (n=4553) R +0.8584
+  seed 44 ep   0 loss 0.9317 val R +0.4091
+  seed 44 ep  10 loss 0.4651 val R +0.7244
+  >> seed 44 knee 16 best ep 16 | val R +0.7422 | test R +0.6780 R2 +0.2191 MAE 1.4724
+     pred mean +0.299 vs true -0.103
+       K=2       n=  789  R +0.6703  MAE 1.7140
+       K=3       n= 4553  R +0.6925  MAE 1.4306
+       seen      n= 3956  R +0.8201  MAE 1.3116
+       unseen    n= 1386  R +0.2678  MAE 1.9315
+     wrote drug_vex_split_y.csv
+       K=2 (n= 789) R +0.6703
+       K=3 (n=4553) R +0.6925
+总用时 353s

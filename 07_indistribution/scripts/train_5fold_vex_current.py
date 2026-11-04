@@ -41,6 +41,7 @@ from engine import Vex, mol_to_graph  # noqa: E402
 
 RDLogger.DisableLog('rdApp.*')
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
+HEAD = 'shallow'   # v(ex) 读出深度；由 --vex-head 覆盖
 
 TASK_CONFIG = {
     'mon': dict(dir='MON', csv='processed_MON.csv', prop=None, conds=[],
@@ -204,7 +205,8 @@ def run_fold(key, fold, items, graphs, ys, conds, data_root, cfg, epochs,
 
     torch.manual_seed(seed)
     np.random.seed(seed)
-    model = Vex(dim=256, nhead=4, ncond=conds.shape[1]).to(DEVICE)
+    model = Vex(dim=256, nhead=4, ncond=conds.shape[1],
+                head=HEAD).to(DEVICE)
     n_par = sum(p.numel() for p in model.parameters())
     opt = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=wd)
     sch = torch.optim.lr_scheduler.CosineAnnealingLR(
@@ -267,7 +269,11 @@ def main():
     ap.add_argument('--batch', type=int, default=128)
     ap.add_argument('--seed', type=int, default=42)
     ap.add_argument('--out', default=None)
+    ap.add_argument('--vex-head', choices=['shallow', 'deep'], default='shallow',
+                    help="v(ex) 读出深度：shallow=归档默认，deep=与 v(im) 同构")
     args = ap.parse_args()
+    global HEAD
+    HEAD = args.vex_head
 
     items, graphs, ys, conds = load_task(args.task, args.data_root)
     cfg = TASK_CONFIG[args.task]

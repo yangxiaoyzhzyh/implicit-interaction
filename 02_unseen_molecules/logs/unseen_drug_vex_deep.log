@@ -1,0 +1,36 @@
+  读划分文件 drug_unseen.npz: train 4438 / val 600 / test 3652
+tag=drug task=drug model=vex | train 4438 / test 3652 | feat 44 | cuda
+  fit 4438 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.8964 val R +0.4929
+  seed 42 ep  10 loss 0.1425 val R +0.9179
+  >> seed 42 knee 12 best ep 12 | val R +0.9221 | test R +0.2110 R2 -0.1831 MAE 0.8635
+     pred mean +0.241 vs true +0.504
+       K=2       n=  575  R +0.2803  MAE 0.9805
+       K=3       n= 3077  R +0.1584  MAE 0.8416
+       unseen    n= 3652  R +0.2110  MAE 0.8635
+     wrote drug_vex_unseen.csv
+       K=2 (n= 575) R +0.2803
+       K=3 (n=3077) R +0.1584
+  seed 43 ep   0 loss 0.8887 val R +0.6276
+  seed 43 ep  10 loss 0.1426 val R +0.9215
+  >> seed 43 knee 13 best ep 12 | val R +0.9224 | test R +0.1229 R2 -0.3902 MAE 0.8770
+     pred mean +0.619 vs true +0.504
+       K=2       n=  575  R +0.3051  MAE 1.0252
+       K=3       n= 3077  R +0.0045  MAE 0.8493
+       unseen    n= 3652  R +0.1229  MAE 0.8770
+     wrote drug_vex_unseen.csv
+       K=2 (n= 575) R +0.3051
+       K=3 (n=3077) R +0.0045
+  seed 44 ep   0 loss 0.8657 val R +0.5496
+  seed 44 ep  10 loss 0.1470 val R +0.9164
+  >> seed 44 knee 14 best ep 12 | val R +0.9229 | test R +0.3168 R2 +0.0500 MAE 0.7096
+     pred mean +0.600 vs true +0.504
+       K=2       n=  575  R +0.2921  MAE 0.9181
+       K=3       n= 3077  R +0.2974  MAE 0.6706
+       unseen    n= 3652  R +0.3168  MAE 0.7096
+     wrote drug_vex_unseen.csv
+       K=2 (n= 575) R +0.2921
+       K=3 (n=3077) R +0.2974
+总用时 127s

@@ -1,0 +1,36 @@
+  读划分文件 iltk_unseen.npz: train 5460 / val 600 / test 7564
+tag=iltk task=iltk model=vex | train 5460 / test 7564 | feat 44 | cuda
+  fit 5460 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.7258 val R +0.8425
+  seed 42 ep  10 loss 0.0463 val R +0.9481
+  >> seed 42 knee 13 best ep 11 | val R +0.9486 | test R +0.4698 R2 +0.1554 MAE 1.4135
+     pred mean -1.459 vs true -1.066
+       K=2       n= 6551  R +0.3907  MAE 1.4548
+       K=3       n= 1013  R +0.1845  MAE 1.1464
+       unseen    n= 7564  R +0.4698  MAE 1.4135
+     wrote iltk_vex_unseen.csv
+       K=2 (n=6551) R +0.3907
+       K=3 (n=1013) R +0.1845
+  seed 43 ep   0 loss 0.6315 val R +0.8950
+  seed 43 ep  10 loss 0.0487 val R +0.9540
+  >> seed 43 knee 14 best ep 12 | val R +0.9604 | test R +0.5619 R2 -0.3976 MAE 1.8510
+     pred mean -2.554 vs true -1.066
+       K=2       n= 6551  R +0.5410  MAE 1.8551
+       K=3       n= 1013  R +0.1628  MAE 1.8246
+       unseen    n= 7564  R +0.5619  MAE 1.8510
+     wrote iltk_vex_unseen.csv
+       K=2 (n=6551) R +0.5410
+       K=3 (n=1013) R +0.1628
+  seed 44 ep   0 loss 0.7585 val R +0.8066
+  seed 44 ep  10 loss 0.0441 val R +0.9442
+  >> seed 44 knee 17 best ep 15 | val R +0.9667 | test R +0.4008 R2 +0.1401 MAE 1.4243
+     pred mean -0.760 vs true -1.066
+       K=2       n= 6551  R +0.3397  MAE 1.4178
+       K=3       n= 1013  R -0.1058  MAE 1.4660
+       unseen    n= 7564  R +0.4008  MAE 1.4243
+     wrote iltk_vex_unseen.csv
+       K=2 (n=6551) R +0.3397
+       K=3 (n=1013) R -0.1058
+总用时 166s

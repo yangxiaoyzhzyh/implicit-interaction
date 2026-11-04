@@ -1,0 +1,102 @@
+  读划分文件 miscible_composition.npz: train 3133 / val 447 / test 26481
+tag=miscible task=miscible model=vex | train 3133 / test 26481 | feat 44 | cuda
+  fit 3580 / val 0
+  seed 42 ep   0 loss 0.9446 val R (no-val)
+  seed 42 ep  10 loss 0.2076 val R (no-val)
+  seed 42 ep  20 loss 0.1361 val R (no-val)
+  seed 42 ep  30 loss 0.1109 val R (no-val)
+  seed 42 ep  40 loss 0.0994 val R (no-val)
+  seed 42 ep  50 loss 0.0851 val R (no-val)
+  seed 42 ep  60 loss 0.0725 val R (no-val)
+  seed 42 ep  70 loss 0.0686 val R (no-val)
+  seed 42 ep  80 loss 0.0633 val R (no-val)
+  seed 42 ep  90 loss 0.0625 val R (no-val)
+  seed 42 ep 100 loss 0.0577 val R (no-val)
+  seed 42 ep 110 loss 0.0558 val R (no-val)
+  seed 42 ep 120 loss 0.0587 val R (no-val)
+  seed 42 ep 130 loss 0.0538 val R (no-val)
+  seed 42 ep 140 loss 0.0491 val R (no-val)
+  seed 42 ep 150 loss 0.0499 val R (no-val)
+  seed 42 ep 160 loss 0.0476 val R (no-val)
+  seed 42 ep 170 loss 0.0469 val R (no-val)
+  seed 42 ep 180 loss 0.0456 val R (no-val)
+  seed 42 ep 190 loss 0.0466 val R (no-val)
+  seed 42 ep 199 loss 0.0466 val R (no-val)
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  >> seed 42 knee None best ep (final) | val R (no-val) | test R +0.8452 R2 +0.6843 MAE 0.3589
+     pred mean +0.421 vs true +0.277
+       K=3       n=10720  R +0.8714  MAE 0.3388
+       K=4       n= 6122  R +0.8258  MAE 0.3931
+       K=5       n= 9639  R +0.7938  MAE 0.3594
+       K=5-10    n= 9639  R +0.7938  MAE 0.3594
+       seen      n=26481  R +0.8452  MAE 0.3589
+     wrote miscible_vex_composition.csv
+       K=3 (n=10720) R +0.8714
+       K=4 (n=6122) R +0.8258
+       K=5 (n=9639) R +0.7938
+  seed 43 ep   0 loss 0.9624 val R (no-val)
+  seed 43 ep  10 loss 0.2135 val R (no-val)
+  seed 43 ep  20 loss 0.1340 val R (no-val)
+  seed 43 ep  30 loss 0.1028 val R (no-val)
+  seed 43 ep  40 loss 0.0928 val R (no-val)
+  seed 43 ep  50 loss 0.0817 val R (no-val)
+  seed 43 ep  60 loss 0.0731 val R (no-val)
+  seed 43 ep  70 loss 0.0690 val R (no-val)
+  seed 43 ep  80 loss 0.0607 val R (no-val)
+  seed 43 ep  90 loss 0.0579 val R (no-val)
+  seed 43 ep 100 loss 0.0574 val R (no-val)
+  seed 43 ep 110 loss 0.0535 val R (no-val)
+  seed 43 ep 120 loss 0.0535 val R (no-val)
+  seed 43 ep 130 loss 0.0491 val R (no-val)
+  seed 43 ep 140 loss 0.0486 val R (no-val)
+  seed 43 ep 150 loss 0.0465 val R (no-val)
+  seed 43 ep 160 loss 0.0461 val R (no-val)
+  seed 43 ep 170 loss 0.0481 val R (no-val)
+  seed 43 ep 180 loss 0.0474 val R (no-val)
+  seed 43 ep 190 loss 0.0457 val R (no-val)
+  seed 43 ep 199 loss 0.0454 val R (no-val)
+  >> seed 43 knee None best ep (final) | val R (no-val) | test R +0.8464 R2 +0.7062 MAE 0.3572
+     pred mean +0.184 vs true +0.277
+       K=3       n=10720  R +0.8702  MAE 0.3471
+       K=4       n= 6122  R +0.8307  MAE 0.3746
+       K=5       n= 9639  R +0.8070  MAE 0.3575
+       K=5-10    n= 9639  R +0.8070  MAE 0.3575
+       seen      n=26481  R +0.8464  MAE 0.3572
+     wrote miscible_vex_composition.csv
+       K=3 (n=10720) R +0.8702
+       K=4 (n=6122) R +0.8307
+       K=5 (n=9639) R +0.8070
+  seed 44 ep   0 loss 0.9215 val R (no-val)
+  seed 44 ep  10 loss 0.2132 val R (no-val)
+  seed 44 ep  20 loss 0.1349 val R (no-val)
+  seed 44 ep  30 loss 0.1082 val R (no-val)
+  seed 44 ep  40 loss 0.0836 val R (no-val)
+  seed 44 ep  50 loss 0.0763 val R (no-val)
+  seed 44 ep  60 loss 0.0692 val R (no-val)
+  seed 44 ep  70 loss 0.0653 val R (no-val)
+  seed 44 ep  80 loss 0.0644 val R (no-val)
+  seed 44 ep  90 loss 0.0558 val R (no-val)
+  seed 44 ep 100 loss 0.0569 val R (no-val)
+  seed 44 ep 110 loss 0.0570 val R (no-val)
+  seed 44 ep 120 loss 0.0529 val R (no-val)
+  seed 44 ep 130 loss 0.0510 val R (no-val)
+  seed 44 ep 140 loss 0.0494 val R (no-val)
+  seed 44 ep 150 loss 0.0482 val R (no-val)
+  seed 44 ep 160 loss 0.0466 val R (no-val)
+  seed 44 ep 170 loss 0.0454 val R (no-val)
+  seed 44 ep 180 loss 0.0499 val R (no-val)
+  seed 44 ep 190 loss 0.0456 val R (no-val)
+  seed 44 ep 199 loss 0.0456 val R (no-val)
+  >> seed 44 knee None best ep (final) | val R (no-val) | test R +0.8270 R2 +0.6503 MAE 0.3451
+     pred mean +0.447 vs true +0.277
+       K=3       n=10720  R +0.8562  MAE 0.3460
+       K=4       n= 6122  R +0.7981  MAE 0.3720
+       K=5       n= 9639  R +0.7782  MAE 0.3271
+       K=5-10    n= 9639  R +0.7782  MAE 0.3271
+       seen      n=26481  R +0.8270  MAE 0.3451
+     wrote miscible_vex_composition.csv
+       K=3 (n=10720) R +0.8562
+       K=4 (n=6122) R +0.7981
+       K=5 (n=9639) R +0.7782
+总用时 588s

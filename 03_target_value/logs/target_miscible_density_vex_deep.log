@@ -1,0 +1,51 @@
+  按 y 分位划分: 训练 [0.876, 1.000] (15031 条) / 测试 <0.835 或 >1.069 (6012 条)
+tag=miscible_density task=miscible_density model=vex | train 15031 / test 6012 | feat 44 | cuda
+  fit 14431 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.6177 val R +0.7853
+  seed 42 ep  10 loss 0.0596 val R +0.9873
+  >> seed 42 knee 11 best ep 6 | val R +0.9880 | test R +0.9451 R2 +0.5221 MAE 0.1003
+     pred mean +0.938 vs true +0.979
+       K=2       n= 1273  R +0.9130  MAE 0.1247
+       K=3       n= 2987  R +0.9563  MAE 0.1068
+       K=4       n=  921  R +0.9871  MAE 0.0762
+       K=5       n=  831  R +0.9936  MAE 0.0661
+       K=5-10    n=  831  R +0.9936  MAE 0.0661
+       seen      n= 6012  R +0.9451  MAE 0.1003
+     wrote miscible_density_vex_split_y.csv
+       K=2 (n=1273) R +0.9130
+       K=3 (n=2987) R +0.9563
+       K=4 (n= 921) R +0.9871
+       K=5 (n= 831) R +0.9936
+  seed 43 ep   0 loss 0.6680 val R +0.7628
+  seed 43 ep  10 loss 0.0572 val R +0.9885
+  >> seed 43 knee 13 best ep 11 | val R +0.9893 | test R +0.9452 R2 +0.5387 MAE 0.0967
+     pred mean +0.936 vs true +0.979
+       K=2       n= 1273  R +0.9129  MAE 0.1213
+       K=3       n= 2987  R +0.9563  MAE 0.1034
+       K=4       n=  921  R +0.9869  MAE 0.0726
+       K=5       n=  831  R +0.9936  MAE 0.0620
+       K=5-10    n=  831  R +0.9936  MAE 0.0620
+       seen      n= 6012  R +0.9452  MAE 0.0967
+     wrote miscible_density_vex_split_y.csv
+       K=2 (n=1273) R +0.9129
+       K=3 (n=2987) R +0.9563
+       K=4 (n= 921) R +0.9869
+       K=5 (n= 831) R +0.9936
+  seed 44 ep   0 loss 0.6855 val R +0.7582
+  seed 44 ep  10 loss 0.0574 val R +0.9875
+  >> seed 44 knee 11 best ep 9 | val R +0.9896 | test R +0.9458 R2 +0.5416 MAE 0.0973
+     pred mean +0.938 vs true +0.979
+       K=2       n= 1273  R +0.9149  MAE 0.1217
+       K=3       n= 2987  R +0.9565  MAE 0.1040
+       K=4       n=  921  R +0.9881  MAE 0.0731
+       K=5       n=  831  R +0.9941  MAE 0.0629
+       K=5-10    n=  831  R +0.9941  MAE 0.0629
+       seen      n= 6012  R +0.9458  MAE 0.0973
+     wrote miscible_density_vex_split_y.csv
+       K=2 (n=1273) R +0.9149
+       K=3 (n=2987) R +0.9565
+       K=4 (n= 921) R +0.9881
+       K=5 (n= 831) R +0.9941
+总用时 271s

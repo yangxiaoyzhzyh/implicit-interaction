@@ -1,0 +1,16 @@
+task,model,split,seed,group_type,group,n,R,MAE
+miscible_hvap,vex,composition,42,K,K=3,10720,0.9863,0.3735
+miscible_hvap,vex,composition,42,K,K=4,6122,0.9643,0.4208
+miscible_hvap,vex,composition,42,K,K=5,9639,0.9488,0.4189
+miscible_hvap,vex,composition,42,Kbin,K=5-10,9639,0.9488,0.4189
+miscible_hvap,vex,composition,42,subset,seen,26481,0.9766,0.4010
+miscible_hvap,vex,composition,43,K,K=3,10720,0.9869,0.3615
+miscible_hvap,vex,composition,43,K,K=4,6122,0.9625,0.4018
+miscible_hvap,vex,composition,43,K,K=5,9639,0.9488,0.3797
+miscible_hvap,vex,composition,43,Kbin,K=5-10,9639,0.9488,0.3797
+miscible_hvap,vex,composition,43,subset,seen,26481,0.9770,0.3775
+miscible_hvap,vex,composition,44,K,K=3,10720,0.9877,0.3387
+miscible_hvap,vex,composition,44,K,K=4,6122,0.9626,0.3908
+miscible_hvap,vex,composition,44,K,K=5,9639,0.9462,0.3756
+miscible_hvap,vex,composition,44,Kbin,K=5-10,9639,0.9462,0.3756
+miscible_hvap,vex,composition,44,subset,seen,26481,0.9770,0.3642

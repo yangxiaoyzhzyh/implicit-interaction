@@ -1,0 +1,16 @@
+task,model,split,seed,group_type,group,n,R,MAE
+miscible_density,vex,composition,42,K,K=3,10720,0.9817,0.0166
+miscible_density,vex,composition,42,K,K=4,6122,0.9279,0.0258
+miscible_density,vex,composition,42,K,K=5,9639,0.8915,0.0299
+miscible_density,vex,composition,42,Kbin,K=5-10,9639,0.8915,0.0299
+miscible_density,vex,composition,42,subset,seen,26481,0.9506,0.0236
+miscible_density,vex,composition,43,K,K=3,10720,0.9807,0.0171
+miscible_density,vex,composition,43,K,K=4,6122,0.9169,0.0273
+miscible_density,vex,composition,43,K,K=5,9639,0.8647,0.0333
+miscible_density,vex,composition,43,Kbin,K=5-10,9639,0.8647,0.0333
+miscible_density,vex,composition,43,subset,seen,26481,0.9402,0.0253
+miscible_density,vex,composition,44,K,K=3,10720,0.9787,0.0175
+miscible_density,vex,composition,44,K,K=4,6122,0.8960,0.0318
+miscible_density,vex,composition,44,K,K=5,9639,0.8234,0.0422
+miscible_density,vex,composition,44,Kbin,K=5-10,9639,0.8234,0.0422
+miscible_density,vex,composition,44,subset,seen,26481,0.9164,0.0298

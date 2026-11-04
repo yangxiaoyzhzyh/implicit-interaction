@@ -1,0 +1,42 @@
+  按 y 分位划分: 训练 [-6.509, -3.275] (38014 条) / 测试 <-7.138 或 >-2.017 (15185 条)
+tag=ilteta task=ilteta model=vex | train 38014 / test 15185 | feat 44 | cuda
+  fit 37414 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.5111 val R +0.8787
+  seed 42 ep  10 loss 0.0553 val R +0.9805
+  seed 42 ep  20 loss 0.0360 val R +0.9884
+  >> seed 42 knee 24 best ep 21 | val R +0.9901 | test R +0.9250 R2 +0.6998 MAE 1.4738
+     pred mean -4.639 vs true -4.165
+       K=2       n=10584  R +0.9439  MAE 1.5173
+       K=3       n= 4601  R +0.7401  MAE 1.3737
+       seen      n= 8889  R +0.9272  MAE 1.4756
+       unseen    n= 6296  R +0.9120  MAE 1.4712
+     wrote ilteta_vex_split_y.csv
+       K=2 (n=10584) R +0.9439
+       K=3 (n=4601) R +0.7401
+  seed 43 ep   0 loss 0.5389 val R +0.8775
+  seed 43 ep  10 loss 0.0551 val R +0.9821
+  >> seed 43 knee 15 best ep 13 | val R +0.9828 | test R +0.9270 R2 +0.6719 MAE 1.5628
+     pred mean -4.716 vs true -4.165
+       K=2       n=10584  R +0.9460  MAE 1.6332
+       K=3       n= 4601  R +0.7448  MAE 1.4007
+       seen      n= 8889  R +0.9277  MAE 1.5950
+       unseen    n= 6296  R +0.9165  MAE 1.5173
+     wrote ilteta_vex_split_y.csv
+       K=2 (n=10584) R +0.9460
+       K=3 (n=4601) R +0.7448
+  seed 44 ep   0 loss 0.5511 val R +0.8687
+  seed 44 ep  10 loss 0.0576 val R +0.9828
+  seed 44 ep  20 loss 0.0382 val R +0.9875
+  seed 44 ep  30 loss 0.0277 val R +0.9915
+  >> seed 44 knee 32 best ep 30 | val R +0.9915 | test R +0.9166 R2 +0.6935 MAE 1.4712
+     pred mean -4.643 vs true -4.165
+       K=2       n=10584  R +0.9398  MAE 1.4992
+       K=3       n= 4601  R +0.7002  MAE 1.4067
+       seen      n= 8889  R +0.9206  MAE 1.4799
+       unseen    n= 6296  R +0.9001  MAE 1.4588
+     wrote ilteta_vex_split_y.csv
+       K=2 (n=10584) R +0.9398
+       K=3 (n=4601) R +0.7002
+总用时 830s

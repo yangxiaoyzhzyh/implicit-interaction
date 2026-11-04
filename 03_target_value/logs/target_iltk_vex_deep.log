@@ -1,0 +1,40 @@
+  按 y 分位划分: 训练 [-3.442, 0.299] (20457 条) / 测试 <-5.133 或 >1.134 (8180 条)
+tag=iltk task=iltk model=vex | train 20457 / test 8180 | feat 44 | cuda
+  fit 19857 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.5341 val R +0.7927
+  seed 42 ep  10 loss 0.1415 val R +0.9299
+  seed 42 ep  20 loss 0.1180 val R +0.9452
+  >> seed 42 knee 26 best ep 26 | val R +0.9471 | test R +0.5302 R2 +0.2197 MAE 3.4206
+     pred mean -1.651 vs true -1.654
+       K=2       n= 4408  R +0.5609  MAE 2.6061
+       K=3       n= 3772  R +0.3888  MAE 4.3724
+       seen      n= 4199  R +0.6477  MAE 2.4659
+       unseen    n= 3981  R +0.4222  MAE 4.4275
+     wrote iltk_vex_split_y.csv
+       K=2 (n=4408) R +0.5609
+       K=3 (n=3772) R +0.3888
+  seed 43 ep   0 loss 0.5215 val R +0.7851
+  seed 43 ep  10 loss 0.1394 val R +0.9389
+  >> seed 43 knee 16 best ep 14 | val R +0.9441 | test R +0.5928 R2 +0.2553 MAE 3.3785
+     pred mean -1.539 vs true -1.654
+       K=2       n= 4408  R +0.5521  MAE 2.5376
+       K=3       n= 3772  R +0.6223  MAE 4.3611
+       seen      n= 4199  R +0.6238  MAE 2.4042
+       unseen    n= 3981  R +0.6676  MAE 4.4060
+     wrote iltk_vex_split_y.csv
+       K=2 (n=4408) R +0.5521
+       K=3 (n=3772) R +0.6223
+  seed 44 ep   0 loss 0.5250 val R +0.7938
+  seed 44 ep  10 loss 0.1438 val R +0.9259
+  >> seed 44 knee 17 best ep 15 | val R +0.9405 | test R +0.5154 R2 +0.2018 MAE 3.4886
+     pred mean -1.497 vs true -1.654
+       K=2       n= 4408  R +0.5988  MAE 2.5537
+       K=3       n= 3772  R +0.2855  MAE 4.5812
+       seen      n= 4199  R +0.6644  MAE 2.4513
+       unseen    n= 3981  R +0.3436  MAE 4.5827
+     wrote iltk_vex_split_y.csv
+       K=2 (n=4408) R +0.5988
+       K=3 (n=3772) R +0.2855
+总用时 374s

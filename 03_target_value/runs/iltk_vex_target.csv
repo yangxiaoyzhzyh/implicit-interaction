@@ -1,4 +1,4 @@
 task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
-iltk,vex,target,42,25,23,0.9457,0.5018,0.2147,3.3223,,
-iltk,vex,target,43,15,14,0.9376,0.5423,0.2344,3.3243,,
-iltk,vex,target,44,21,18,0.9458,0.4386,0.1744,3.424,,
+iltk,vex,split_y,42,26,26,0.9471,0.5302,0.2197,3.4206,19857,8180
+iltk,vex,split_y,43,16,14,0.9441,0.5928,0.2553,3.3785,19857,8180
+iltk,vex,split_y,44,17,15,0.9405,0.5154,0.2018,3.4886,19857,8180

@@ -1,0 +1,10 @@
+task,model,split,seed,group_type,group,n,R,MAE
+iltk,vex,unseen,42,K,K=2,6551,0.3907,1.4548
+iltk,vex,unseen,42,K,K=3,1013,0.1845,1.1464
+iltk,vex,unseen,42,subset,unseen,7564,0.4698,1.4135
+iltk,vex,unseen,43,K,K=2,6551,0.5410,1.8551
+iltk,vex,unseen,43,K,K=3,1013,0.1628,1.8246
+iltk,vex,unseen,43,subset,unseen,7564,0.5619,1.8510
+iltk,vex,unseen,44,K,K=2,6551,0.3397,1.4178
+iltk,vex,unseen,44,K,K=3,1013,-0.1058,1.4660
+iltk,vex,unseen,44,subset,unseen,7564,0.4008,1.4243

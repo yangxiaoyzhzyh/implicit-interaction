@@ -1,0 +1,39 @@
+  按 y 分位划分: 训练 [-7.187, -5.612] (119662 条) / 测试 <-7.562 或 >-3.809 (47772 条)
+tag=nist task=nist model=vex | train 119662 / test 47772 | feat 44 | cuda
+  fit 119062 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.4933 val R +0.8545
+  seed 42 ep  10 loss 0.0738 val R +0.9709
+  >> seed 42 knee 13 best ep 11 | val R +0.9727 | test R +0.9169 R2 +0.2116 MAE 1.9524
+     pred mean -6.411 vs true -5.133
+       K=1       n= 7916  R +0.9185  MAE 1.9467
+       K=2       n=39856  R +0.9183  MAE 1.9536
+       seen      n=39583  R +0.9308  MAE 1.6687
+       unseen    n= 8189  R +0.7829  MAE 3.3238
+     wrote nist_vex_split_y.csv
+       K=1 (n=7916) R +0.9185
+       K=2 (n=39856) R +0.9183
+  seed 43 ep   0 loss 0.4725 val R +0.8658
+  seed 43 ep  10 loss 0.0757 val R +0.9537
+  >> seed 43 knee 11 best ep 7 | val R +0.9643 | test R +0.9155 R2 +0.1701 MAE 2.0024
+     pred mean -6.465 vs true -5.133
+       K=1       n= 7916  R +0.9167  MAE 1.9957
+       K=2       n=39856  R +0.9171  MAE 2.0037
+       seen      n=39583  R +0.9292  MAE 1.7084
+       unseen    n= 8189  R +0.7865  MAE 3.4234
+     wrote nist_vex_split_y.csv
+       K=1 (n=7916) R +0.9167
+       K=2 (n=39856) R +0.9171
+  seed 44 ep   0 loss 0.4845 val R +0.8551
+  seed 44 ep  10 loss 0.0752 val R +0.9702
+  >> seed 44 knee 13 best ep 9 | val R +0.9720 | test R +0.9319 R2 +0.2006 MAE 1.9666
+     pred mean -6.436 vs true -5.133
+       K=1       n= 7916  R +0.9440  MAE 1.9411
+       K=2       n=39856  R +0.9307  MAE 1.9717
+       seen      n=39583  R +0.9434  MAE 1.6828
+       unseen    n= 8189  R +0.8218  MAE 3.3385
+     wrote nist_vex_split_y.csv
+       K=1 (n=7916) R +0.9440
+       K=2 (n=39856) R +0.9307
+总用时 1544s

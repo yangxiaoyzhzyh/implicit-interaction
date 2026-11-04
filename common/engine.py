@@ -105,7 +105,7 @@ class Vim(nn.Module):
 
 
 class Vex(nn.Module):
-    def __init__(self, dim=256, nhead=4, ncond=0):
+    def __init__(self, dim=256, nhead=4, ncond=0, head='deep'):
         super().__init__()
         self.enc = Enc(dim, nhead)
         self.w_proj = nn.Linear(1, dim)
@@ -114,8 +114,16 @@ class Vex(nn.Module):
                                            dim_feedforward=2 * dim,
                                            batch_first=True, dropout=0.1)
         self.mix_tfm = nn.TransformerEncoder(layer, 2)
-        self.head = nn.Sequential(nn.Linear(dim + ncond, dim), nn.ReLU(),
-                                  nn.Linear(dim, 1))
+        # head='shallow'：归档的 2 层读出（少一层 + 无 dropout）
+        # head='deep'   ：与 Vim.reg 完全同构（Linear→ReLU→Dropout→Linear→ReLU→Linear）
+        if head == 'deep':
+            self.head = nn.Sequential(nn.Linear(dim + ncond, dim), nn.ReLU(),
+                                      nn.Dropout(0.1),
+                                      nn.Linear(dim, dim), nn.ReLU(),
+                                      nn.Linear(dim, 1))
+        else:
+            self.head = nn.Sequential(nn.Linear(dim + ncond, dim), nn.ReLU(),
+                                      nn.Linear(dim, 1))
 
     def forward(self, z, ws, mix_ids, n_mix, cond):
         B = n_mix
@@ -204,6 +212,9 @@ def main():
     ap.add_argument('--y-test', type=float, nargs=2, default=[0.10, 0.90],
                     help='--split-by y 时，测试侧取两端各自的这个分位之外')
     ap.add_argument('--model', choices=['vim', 'vex'], default='vim')
+    ap.add_argument('--vex-head', choices=['shallow', 'deep'], default='deep',
+                    help='v(ex) 读出深度：deep=正文默认（3 层 + dropout，与 v(im) 同构），'
+                         'shallow=早期 2 层（仅用于对照）')
     ap.add_argument('--epochs', type=int, default=200)
     ap.add_argument('--seeds', type=int, nargs='+', default=[42])
     ap.add_argument('--batch', type=int, default=128)
@@ -386,7 +397,11 @@ def main():
         torch.manual_seed(seed)
         np.random.seed(seed)
         cls_ = Vim if args.model == 'vim' else Vex
-        model = cls_(dim=256, nhead=4, ncond=ncond).to(DEVICE)
+        if cls_ is Vex:
+            model = cls_(dim=256, nhead=4, ncond=ncond,
+                         head=args.vex_head).to(DEVICE)
+        else:
+            model = cls_(dim=256, nhead=4, ncond=ncond).to(DEVICE)
         opt = torch.optim.Adam(model.parameters(), lr=args.lr,
                                weight_decay=1e-6)
         sch = torch.optim.lr_scheduler.CosineAnnealingLR(

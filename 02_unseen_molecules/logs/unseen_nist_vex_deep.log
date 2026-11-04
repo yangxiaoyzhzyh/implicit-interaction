@@ -1,0 +1,36 @@
+  读划分文件 nist_unseen.npz: train 67808 / val 600 / test 68277
+tag=nist task=nist model=vex | train 67808 / test 68277 | feat 44 | cuda
+  fit 67808 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.2408 val R +0.9397
+  seed 42 ep  10 loss 0.0261 val R +0.9936
+  >> seed 42 knee 14 best ep 12 | val R +0.9948 | test R +0.6878 R2 -0.2591 MAE 1.2066
+     pred mean -6.892 vs true -6.093
+       K=1       n=14117  R +0.8139  MAE 0.7656
+       K=2       n=54160  R +0.6667  MAE 1.3216
+       unseen    n=68277  R +0.6878  MAE 1.2066
+     wrote nist_vex_unseen.csv
+       K=1 (n=14117) R +0.8139
+       K=2 (n=54160) R +0.6667
+  seed 43 ep   0 loss 0.2420 val R +0.9326
+  seed 43 ep  10 loss 0.0264 val R +0.9922
+  >> seed 43 knee 16 best ep 14 | val R +0.9945 | test R +0.6359 R2 +0.0171 MAE 1.0024
+     pred mean -5.438 vs true -6.093
+       K=1       n=14117  R +0.8057  MAE 0.7410
+       K=2       n=54160  R +0.5854  MAE 1.0705
+       unseen    n=68277  R +0.6359  MAE 1.0024
+     wrote nist_vex_unseen.csv
+       K=1 (n=14117) R +0.8057
+       K=2 (n=54160) R +0.5854
+  seed 44 ep   0 loss 0.2458 val R +0.9303
+  seed 44 ep  10 loss 0.0278 val R +0.9936
+  >> seed 44 knee 15 best ep 13 | val R +0.9948 | test R +0.7405 R2 +0.4150 MAE 0.8153
+     pred mean -5.614 vs true -6.093
+       K=1       n=14117  R +0.8348  MAE 0.6306
+       K=2       n=54160  R +0.7116  MAE 0.8635
+       unseen    n=68277  R +0.7405  MAE 0.8153
+     wrote nist_vex_unseen.csv
+       K=1 (n=14117) R +0.8348
+       K=2 (n=54160) R +0.7116
+总用时 1820s

@@ -1,0 +1,64 @@
+  按 y 分位划分: 训练 [-5.932, -3.168] (5674 条) / 测试 <-7.393 或 >-2.325 (2270 条)
+tag=spe task=spe model=vex | train 5674 / test 2270 | feat 44 | cuda
+  fit 5074 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.9604 val R +0.3211
+  seed 42 ep  10 loss 0.4481 val R +0.7546
+  seed 42 ep  20 loss 0.3514 val R +0.8068
+  >> seed 42 knee 27 best ep 25 | val R +0.8240 | test R +0.9536 R2 +0.4742 MAE 2.2267
+     pred mean -4.510 vs true -5.384
+       K=1       n=   91  R +0.5137  MAE 2.8297
+       K=2       n= 1282  R +0.9068  MAE 2.7890
+       K=3       n=  588  R +0.9281  MAE 1.3861
+       K=4       n=  201  R +0.3258  MAE 1.2730
+       K=5       n=  108  R +0.6645  MAE 1.3960
+       K=5-10    n=  108  R +0.6645  MAE 1.3960
+       seen      n= 2113  R +0.9534  MAE 2.2763
+       unseen    n=  157  R +0.8334  MAE 1.5587
+     wrote spe_vex_split_y.csv
+       K=1 (n=  91) R +0.5137
+       K=2 (n=1282) R +0.9068
+       K=3 (n= 588) R +0.9281
+       K=4 (n= 201) R +0.3258
+       K=5 (n= 108) R +0.6645
+  seed 43 ep   0 loss 0.9340 val R +0.3927
+  seed 43 ep  10 loss 0.4557 val R +0.7377
+  seed 43 ep  20 loss 0.3470 val R +0.8145
+  seed 43 ep  30 loss 0.3063 val R +0.8431
+  >> seed 43 knee 30 best ep 30 | val R +0.8431 | test R +0.9512 R2 +0.5032 MAE 2.1486
+     pred mean -4.536 vs true -5.384
+       K=1       n=   91  R +0.5790  MAE 2.5852
+       K=2       n= 1282  R +0.8934  MAE 2.7335
+       K=3       n=  588  R +0.9676  MAE 1.2990
+       K=4       n=  201  R +0.6139  MAE 1.1809
+       K=5       n=  108  R +0.9198  MAE 1.2644
+       K=5-10    n=  108  R +0.9198  MAE 1.2644
+       seen      n= 2113  R +0.9573  MAE 2.1832
+       unseen    n=  157  R +0.6392  MAE 1.6838
+     wrote spe_vex_split_y.csv
+       K=1 (n=  91) R +0.5790
+       K=2 (n=1282) R +0.8934
+       K=3 (n= 588) R +0.9676
+       K=4 (n= 201) R +0.6139
+       K=5 (n= 108) R +0.9198
+  seed 44 ep   0 loss 0.9370 val R +0.3454
+  seed 44 ep  10 loss 0.4551 val R +0.7369
+  seed 44 ep  20 loss 0.3516 val R +0.8027
+  >> seed 44 knee 24 best ep 24 | val R +0.8199 | test R +0.9495 R2 +0.4760 MAE 2.2283
+     pred mean -4.553 vs true -5.384
+       K=1       n=   91  R +0.5624  MAE 2.7702
+       K=2       n= 1282  R +0.8909  MAE 2.7845
+       K=3       n=  588  R +0.9520  MAE 1.3972
+       K=4       n=  201  R +0.5254  MAE 1.2809
+       K=5       n=  108  R +0.9133  MAE 1.4578
+       K=5-10    n=  108  R +0.9133  MAE 1.4578
+       seen      n= 2113  R +0.9526  MAE 2.2635
+       unseen    n=  157  R +0.6632  MAE 1.7549
+     wrote spe_vex_split_y.csv
+       K=1 (n=  91) R +0.5624
+       K=2 (n=1282) R +0.8909
+       K=3 (n= 588) R +0.9520
+       K=4 (n= 201) R +0.5254
+       K=5 (n= 108) R +0.9133
+总用时 779s

@@ -1,0 +1,37 @@
+  读划分文件 ilteta_unseen.npz: train 15587 / val 600 / test 15443
+tag=ilteta task=ilteta model=vex | train 15587 / test 15443 | feat 44 | cuda
+  fit 15587 / val 600
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.5541 val R +0.8859
+  seed 42 ep  10 loss 0.0294 val R +0.9925
+  >> seed 42 knee 19 best ep 17 | val R +0.9954 | test R +0.7167 R2 +0.3208 MAE 1.1439
+     pred mean -3.525 vs true -4.385
+       K=2       n=14442  R +0.7389  MAE 1.0701
+       K=3       n= 1001  R +0.3959  MAE 2.2083
+       unseen    n=15443  R +0.7167  MAE 1.1439
+     wrote ilteta_vex_unseen.csv
+       K=2 (n=14442) R +0.7389
+       K=3 (n=1001) R +0.3959
+  seed 43 ep   0 loss 0.5725 val R +0.8907
+  seed 43 ep  10 loss 0.0316 val R +0.9915
+  seed 43 ep  20 loss 0.0192 val R +0.9950
+  >> seed 43 knee 24 best ep 23 | val R +0.9960 | test R +0.7021 R2 +0.2412 MAE 1.2057
+     pred mean -3.408 vs true -4.385
+       K=2       n=14442  R +0.7174  MAE 1.1345
+       K=3       n= 1001  R +0.5677  MAE 2.2322
+       unseen    n=15443  R +0.7021  MAE 1.2057
+     wrote ilteta_vex_unseen.csv
+       K=2 (n=14442) R +0.7174
+       K=3 (n=1001) R +0.5677
+  seed 44 ep   0 loss 0.6128 val R +0.8764
+  seed 44 ep  10 loss 0.0301 val R +0.9922
+  >> seed 44 knee 14 best ep 14 | val R +0.9931 | test R +0.3751 R2 -0.4169 MAE 1.5552
+     pred mean -3.126 vs true -4.385
+       K=2       n=14442  R +0.4166  MAE 1.4542
+       K=3       n= 1001  R -0.2299  MAE 3.0118
+       unseen    n=15443  R +0.3751  MAE 1.5552
+     wrote ilteta_vex_unseen.csv
+       K=2 (n=14442) R +0.4166
+       K=3 (n=1001) R -0.2299
+总用时 568s

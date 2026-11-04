@@ -1,4 +1,4 @@
 task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
-miscible,vex,target,42,15,13,0.808,0.8236,0.1498,1.3892,,
-miscible,vex,target,43,14,12,0.8087,0.8011,0.1344,1.398,,
-miscible,vex,target,44,15,13,0.8074,0.8085,0.1447,1.3883,,
+miscible,vex,split_y,42,14,12,0.8081,0.8094,0.1356,1.4062,14431,6012
+miscible,vex,split_y,43,14,12,0.7930,0.8226,0.1352,1.4051,14431,6012
+miscible,vex,split_y,44,13,13,0.8007,0.8132,0.1365,1.4045,14431,6012

@@ -1,0 +1,51 @@
+  读划分文件 spe_unseen.npz: train 3004 / val 429 / test 2651
+tag=spe task=spe model=vex | train 3004 / test 2651 | feat 44 | cuda
+  fit 3004 / val 429
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.8294 val R +0.5865
+  seed 42 ep  10 loss 0.2189 val R +0.9091
+  seed 42 ep  20 loss 0.1400 val R +0.9423
+  >> seed 42 knee 26 best ep 26 | val R +0.9489 | test R +0.3131 R2 -0.2135 MAE 1.5370
+     pred mean -5.240 vs true -5.024
+       K=1       n=  222  R +0.7105  MAE 0.7680
+       K=2       n= 2091  R +0.2491  MAE 1.5462
+       K=3       n=  322  R +0.4608  MAE 2.0407
+       K=4       n=   16  R +0.9855  MAE 0.8702
+       unseen    n= 2651  R +0.3131  MAE 1.5370
+     wrote spe_vex_unseen.csv
+       K=1 (n= 222) R +0.7105
+       K=2 (n=2091) R +0.2491
+       K=3 (n= 322) R +0.4608
+       K=4 (n=  16) R +0.9855
+  seed 43 ep   0 loss 0.8643 val R +0.5797
+  seed 43 ep  10 loss 0.2033 val R +0.9161
+  seed 43 ep  20 loss 0.1378 val R +0.9429
+  >> seed 43 knee 22 best ep 22 | val R +0.9449 | test R +0.3817 R2 -0.0574 MAE 1.5048
+     pred mean -5.376 vs true -5.024
+       K=1       n=  222  R +0.7444  MAE 0.7344
+       K=2       n= 2091  R +0.4147  MAE 1.3856
+       K=3       n=  322  R +0.3894  MAE 2.7674
+       K=4       n=   16  R +0.9874  MAE 2.3741
+       unseen    n= 2651  R +0.3817  MAE 1.5048
+     wrote spe_vex_unseen.csv
+       K=1 (n= 222) R +0.7444
+       K=2 (n=2091) R +0.4147
+       K=3 (n= 322) R +0.3894
+       K=4 (n=  16) R +0.9874
+  seed 44 ep   0 loss 0.8449 val R +0.5727
+  seed 44 ep  10 loss 0.2268 val R +0.9013
+  seed 44 ep  20 loss 0.1449 val R +0.9355
+  >> seed 44 knee 20 best ep 17 | val R +0.9387 | test R +0.2384 R2 -0.2320 MAE 1.5917
+     pred mean -5.586 vs true -5.024
+       K=1       n=  222  R +0.7008  MAE 0.9188
+       K=2       n= 2091  R +0.2453  MAE 1.4436
+       K=3       n=  322  R +0.3820  MAE 2.9314
+       K=4       n=   16  R +0.9821  MAE 3.3181
+       unseen    n= 2651  R +0.2384  MAE 1.5917
+     wrote spe_vex_unseen.csv
+       K=1 (n= 222) R +0.7008
+       K=2 (n=2091) R +0.2453
+       K=3 (n= 322) R +0.3820
+       K=4 (n=  16) R +0.9821
+总用时 593s

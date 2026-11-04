@@ -11,7 +11,7 @@ ionic_visc,v(ex),0.9969,0.0007,0.083,0.0123,5,runs/vex_5fold_current.csv
 ionic_visc,v(im),0.9834,0.0032,0.1242,0.0086,5,runs/vim_5fold.csv
 logv,v(ex),0.9917,0.0019,0.027,0.004,5,runs/vex_5fold_current.csv
 logv,v(im),0.9606,0.0046,0.0394,0.0029,5,runs/vim_5fold.csv
-mon,v(ex),0.8743,0.0226,5.1562,0.3967,5,runs/vex_5fold_current.csv
+mon,v(ex),0.8762,0.0347,5.2325,0.6676,5,runs/vex_5fold_current.csv
 mon,v(im),0.8994,0.0303,4.3301,0.6717,5,runs/vim_5fold.csv
 nist_logv,v(ex),0.9956,0.001,0.062,0.0081,5,runs/vex_5fold_current.csv
 nist_logv,v(im),0.994,0.0006,0.0785,0.0027,5,runs/vim_5fold.csv
