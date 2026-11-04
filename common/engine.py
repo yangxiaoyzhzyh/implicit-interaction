@@ -33,7 +33,7 @@ from rdkit import Chem, RDLogger
 from torch_geometric.utils import scatter, to_dense_batch
 
 RDLogger.DisableLog('rdApp.*')
-sys.path.insert(0, __file__.rsplit('\\', 1)[0])
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from spec import spec_of, load_records  # noqa: E402
 from encoder import Encoder  # noqa: E402
 

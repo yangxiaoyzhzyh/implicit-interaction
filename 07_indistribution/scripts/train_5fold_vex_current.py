@@ -11,7 +11,7 @@
 
 用法（在 repro_v2 上一级目录运行）：
   python 07_indistribution/scripts/train_5fold_vex_current.py \
-      --data-root /root/autodl-fs/chemixhub/datasets \
+      --data-root <CheMixHub datasets 目录> \
       --task ionic_cond --folds 0 1 2 3 4 --out runs_vex_cur/ionic_cond.csv
 """
 import argparse
