@@ -16,8 +16,8 @@
 │   ├── vex_5fold_current.csv        **40 行 = 8 任务 × 5 折，正文所用**
 │   ├── vex_5fold.csv                旧 AtomFormer 结果（40 行），仅留档
 │   └── baselines.csv                8 行官方最强基线（CheMixHub Table 2 / Table 8）
-├── logs_vex_current/                12 个 v(ex) 日志：7 个任务各一份（5 折合一）+ nist_logv 的 5 份逐折（沿用旧运行）
-├── logs/                            8 个旧 v(ex) 逐折日志（留档）
+├── logs_vex_current/                7 个 v(ex) 日志，每个任务一份（5 折合一）
+├── logs/                            8 个 AtomFormer（v(ex)-simple）逐折日志
 └── summary.csv                      16 行 = 8 任务 × 2 路线（v(ex) 行已换新值）
 ```
 
@@ -35,11 +35,6 @@
 唯一差别是模型结构：v(ex) 在逐组分编码之后多一层跨组分 transformer + CLS
 （2.28 M vs 1.23 M 参数）。旧 `scripts/train_5fold_vex.py`（AtomFormer 整图版）
 保留但不再用于正文——它的数值正是补材 Table S3 中的 **v(ex)-simple** 一列。
-
-> **特征维度**：两个 5-fold 脚本（`train_5fold_vim.py`、`train_5fold_vex.py`）现已改用
-> 正文的 44 维原子特征词表。归档中的 **v(im)** 与 **v(ex)-simple** 两列数值由早期的
-> 31 维版本产生，重跑会在末位有差异；`train_5fold_vex_current.py` 自始即为 44 维，
-> 与 Table S3 的 **v(ex)** 列完全对应。
 
 ## 结果
 

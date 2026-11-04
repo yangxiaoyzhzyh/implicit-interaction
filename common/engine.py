@@ -114,16 +114,12 @@ class Vex(nn.Module):
                                            dim_feedforward=2 * dim,
                                            batch_first=True, dropout=0.1)
         self.mix_tfm = nn.TransformerEncoder(layer, 2)
-        # head='shallow'：归档的 2 层读出（少一层 + 无 dropout）
-        # head='deep'   ：与 Vim.reg 完全同构（Linear→ReLU→Dropout→Linear→ReLU→Linear）
-        if head == 'deep':
-            self.head = nn.Sequential(nn.Linear(dim + ncond, dim), nn.ReLU(),
-                                      nn.Dropout(0.1),
-                                      nn.Linear(dim, dim), nn.ReLU(),
-                                      nn.Linear(dim, 1))
-        else:
-            self.head = nn.Sequential(nn.Linear(dim + ncond, dim), nn.ReLU(),
-                                      nn.Linear(dim, 1))
+        # 读出与 Vim.reg 完全同构：Linear→ReLU→Dropout→Linear→ReLU→Linear
+        assert head == 'deep'
+        self.head = nn.Sequential(nn.Linear(dim + ncond, dim), nn.ReLU(),
+                                  nn.Dropout(0.1),
+                                  nn.Linear(dim, dim), nn.ReLU(),
+                                  nn.Linear(dim, 1))
 
     def forward(self, z, ws, mix_ids, n_mix, cond):
         B = n_mix
@@ -212,9 +208,8 @@ def main():
     ap.add_argument('--y-test', type=float, nargs=2, default=[0.10, 0.90],
                     help='--split-by y 时，测试侧取两端各自的这个分位之外')
     ap.add_argument('--model', choices=['vim', 'vex'], default='vim')
-    ap.add_argument('--vex-head', choices=['shallow', 'deep'], default='deep',
-                    help='v(ex) 读出深度：deep=正文默认（3 层 + dropout，与 v(im) 同构），'
-                         'shallow=早期 2 层（仅用于对照）')
+    ap.add_argument('--vex-head', choices=['deep'], default='deep',
+                    help='v(ex) 读出：deep=与 v(im) 同构（3 层 + dropout）')
     ap.add_argument('--epochs', type=int, default=200)
     ap.add_argument('--seeds', type=int, nargs='+', default=[42])
     ap.add_argument('--batch', type=int, default=128)
