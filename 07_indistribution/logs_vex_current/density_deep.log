@@ -1,0 +1,49 @@
+[density] Density 行 30061（与官方 fold 索引一一对应），摩尔分数长度不符 0 行，组分图 81 个
+/root/miniconda3/lib/python3.12/site-packages/torch/nn/modules/transformer.py:529: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at /pytorch/aten/src/ATen/NestedTensorImpl.cpp:178.)
+  output = torch._nested_tensor_from_mask(
+    fold 0 ep   0 loss 0.2994 valR +0.9790 (best +0.9790@0)
+    fold 0 ep  10 loss 0.0146 valR +0.9983 (best +0.9983@10)
+    fold 0 ep  20 loss 0.0110 valR +0.9982 (best +0.9985@19)
+    fold 0 ep  30 loss 0.0095 valR +0.9986 (best +0.9986@30)
+    fold 0 ep  40 loss 0.0080 valR +0.9987 (best +0.9988@39)
+    fold 0 ep  50 loss 0.0070 valR +0.9985 (best +0.9988@39)
+    fold 0 ep  60 loss 0.0055 valR +0.9985 (best +0.9990@52)
+    fold 0 ep  70 loss 0.0052 valR +0.9988 (best +0.9990@62)
+    fold 0 ep  80 loss 0.0050 valR +0.9987 (best +0.9990@76)
+    fold 0 ep  90 loss 0.0046 valR +0.9985 (best +0.9990@76)
+  >> density fold 0 | test R +0.9990 MAE 0.0063 | best_ep 76 | 776s | 2283396 pars
+    fold 1 ep   0 loss 0.2986 valR +0.9845 (best +0.9845@0)
+    fold 1 ep  10 loss 0.0144 valR +0.9984 (best +0.9984@10)
+    fold 1 ep  20 loss 0.0107 valR +0.9981 (best +0.9984@13)
+    fold 1 ep  30 loss 0.0094 valR +0.9983 (best +0.9987@26)
+    fold 1 ep  40 loss 0.0082 valR +0.9985 (best +0.9987@26)
+    fold 1 ep  50 loss 0.0070 valR +0.9986 (best +0.9988@49)
+    fold 1 ep  60 loss 0.0058 valR +0.9986 (best +0.9988@49)
+  >> density fold 1 | test R +0.9989 MAE 0.0067 | best_ep 49 | 546s | 2283396 pars
+    fold 2 ep   0 loss 0.3007 valR +0.9715 (best +0.9715@0)
+    fold 2 ep  10 loss 0.0148 valR +0.9981 (best +0.9982@9)
+    fold 2 ep  20 loss 0.0109 valR +0.9986 (best +0.9986@20)
+    fold 2 ep  30 loss 0.0089 valR +0.9985 (best +0.9987@29)
+    fold 2 ep  40 loss 0.0072 valR +0.9986 (best +0.9988@33)
+    fold 2 ep  50 loss 0.0065 valR +0.9984 (best +0.9989@47)
+    fold 2 ep  60 loss 0.0056 valR +0.9987 (best +0.9989@54)
+    fold 2 ep  70 loss 0.0051 valR +0.9986 (best +0.9989@54)
+  >> density fold 2 | test R +0.9989 MAE 0.0063 | best_ep 54 | 581s | 2283396 pars
+    fold 3 ep   0 loss 0.3092 valR +0.9772 (best +0.9772@0)
+    fold 3 ep  10 loss 0.0149 valR +0.9978 (best +0.9983@9)
+    fold 3 ep  20 loss 0.0115 valR +0.9980 (best +0.9985@19)
+    fold 3 ep  30 loss 0.0088 valR +0.9985 (best +0.9985@19)
+    fold 3 ep  40 loss 0.0074 valR +0.9978 (best +0.9987@39)
+    fold 3 ep  50 loss 0.0066 valR +0.9980 (best +0.9987@39)
+    fold 3 ep  60 loss 0.0059 valR +0.9988 (best +0.9988@57)
+    fold 3 ep  70 loss 0.0053 valR +0.9983 (best +0.9988@69)
+    fold 3 ep  80 loss 0.0050 valR +0.9987 (best +0.9988@69)
+  >> density fold 3 | test R +0.9989 MAE 0.0059 | best_ep 69 | 698s | 2283396 pars
+    fold 4 ep   0 loss 0.3011 valR +0.9811 (best +0.9811@0)
+    fold 4 ep  10 loss 0.0153 valR +0.9977 (best +0.9984@9)
+    fold 4 ep  20 loss 0.0119 valR +0.9985 (best +0.9987@18)
+    fold 4 ep  30 loss 0.0102 valR +0.9979 (best +0.9987@18)
+  >> density fold 4 | test R +0.9986 MAE 0.0040 | best_ep 18 | 311s | 2283396 pars
+
+density 5-fold: R = 0.9989 ± 0.0002
+写出 /root/autodl-tmp/runs_deep_5fold/density_deep.csv
