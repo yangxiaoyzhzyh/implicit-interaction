@@ -30,5 +30,6 @@
 
 ## 数据现状
 
-6 个任务 × 2 路线 × 3 seed 已齐，划分在 `../splits/*_unseen.npz`，**可直接引用**。
+6 个任务 × 2 路线 × 3 seed 已齐。数据取自 CheMixHub（归档不附数据副本），
+划分用 `python ../scripts/make_splits.py --task <task> --split unseen --data-base <数据根>` 现场生成。
 
