@@ -7,7 +7,7 @@
         <task>_vec  (3540, 256) 该任务编码器的分子向量
         ecfp4       (3540, 2048) ECFP4 指纹
 
-用途：leave_one_task_out 与后续 MLP 实验都读这个缓存，
+用途：leave_one_task_out 与 08 的读出实验都读这个缓存，
       避免每次重新跑 GNN 前向（每次约 2–3 分钟）。
 
 用法：

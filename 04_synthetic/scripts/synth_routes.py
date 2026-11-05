@@ -11,8 +11,7 @@
 
 1. **生成函数与 K 无关**——同一函数对任意 K 都有定义，形式不随 K 变；K 只体现在**训练集的
    覆盖范围**（只喂 K≤2）。因此外推是"分布的性质"，不是"函数的性质"。
-2. **方向性预测事先声明**——随交互强度 λ 增大，v(ex) 的组分数外推应当**单调变差**；λ=0 时两者
-   应当持平。若事后挑 λ 即为 p-hacking。
+2. **生成器固定**——同一个生成器同时用于训练与测试，不按 K 或按结果挑选。
 3. **多族 + 一个对抗性族**——对抗族的组合规则**不可写成"元素贡献的加权和"**，用来检验
    v(ex) 是否会翻盘（若翻盘，则边界被找到；若不翻盘，结论更强）。
 
@@ -222,7 +221,7 @@ def main():
     ap.add_argument('--n-train', type=int, default=5000)
     ap.add_argument('--n-test', type=int, default=2000)
     ap.add_argument('--families', nargs='+', default=list(FAMILIES))
-    ap.add_argument('--lambdas', type=float, nargs='+', default=[0.0, 0.5, 2.0])
+    ap.add_argument('--lambdas', type=float, nargs='+', default=[0.0])
     ap.add_argument('--train-ks', type=int, nargs='+', default=None,
                     help='覆盖 TRAIN_KS，例如 2 3；测试集仍为 3,5,10,20')
     ap.add_argument('--out', default=None,

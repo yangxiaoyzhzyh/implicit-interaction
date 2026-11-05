@@ -539,7 +539,6 @@ def main():
                                       '%.6f' % p[i], '%.6f' % yt[i]])
                 print('     wrote', os.path.basename(pdst), flush=True)
 
-            # ---- 权重：后续可做注意力/表示分析，不必重训 ----
             if args.save_ckpt:
                 os.makedirs(args.save_ckpt, exist_ok=True)
                 cdst = os.path.join(args.save_ckpt, '%s_%s_%s_s%d.pt'

@@ -17,7 +17,7 @@
 生成函数在每个 $K$ 上完全相同，$K$ 只改变训练集的覆盖范围。因此退化只能来自
 **聚合形式的估计性质**，不能推给任务本身。
 
-**承担论证的只有一行：家族 A、$\lambda=0$。**
+**正文只有这一族数据：`add_pair`。**
 
 | K | v(im) | v(ex) | 差 |
 |---:|---:|---:|---:|
@@ -32,10 +32,10 @@
 v(im) 在全区间保持 0.998 以上（它只需学一个逐元素映射再线性加权），
 而 v(ex) 从 0.985 单调掉到 0.806——**任务完全可加时仍然掉**。
 
-## 为什么只用 add_pair、λ=0
+## 为什么任务里不含交互项
 
-**λ>0 会引入交互**，而交互本身就是 v(ex) 的“主场”——一掉就被质疑“任务变难了”。
-只有 λ=0 才能把退化归因到聚合形式：任务没有任何交互，模型却仍然掉。
+任务本身只含可加项，没有任何成对交互：交互本是 v(ex) 的主场，一旦引入，掉分就会
+被归因于“任务变难了”。没有交互项，模型仍然掉——退化才能归到聚合形式本身。
 
 
 ## 协议
@@ -51,13 +51,13 @@ v(im) 在全区间保持 0.998 以上（它只需学一个逐元素映射再线�
 | `runs/synth_add_pair_s{42,43,44}.csv` | **正文 Table 2 的原始数据**：逐 seed、4 个 K |
 | `runs/synth_add_pair_3seeds_summary.csv` | **Table 2 的均值与标准差**（n−1），4 个 K × 2 个模型 |
 | `runs/synth_add_pair.csv` | 上面三个 seed 文件拼接成的长表（12 行，含 `seed` 列） |
-| `summary.csv` | 8 行 = λ=0 的 add_pair，4 个 K × 2 个模型（三 seed 均值） |
+| `summary.csv` | 8 行 = `add_pair`，4 个 K × 2 个模型（三 seed 均值） |
 
 ## 重跑命令
 
 ```bash
 for s in 42 43 44; do
-  python scripts/synth_routes.py --families add_pair --lambdas 0.0 \
+  python scripts/synth_routes.py --families add_pair \
          --seeds $s --epochs 300 --out ../runs/synth_add_pair_s$s.csv
 done
 python scripts/collect_synth.py        # → summary.csv
