@@ -39,10 +39,11 @@ encoder that training shapes.
 | `03_target_value/` | target-value (extreme) extrapolation | Section S5 |
 | `04_synthetic/` | synthetic additive and interaction families | Table 2 |
 | `05_cross_domain/` | portfolio volatility and document sets | Sections S8--S10 |
-| `06_transfer/` | eight encoder checkpoints and the leave-one-out readout | Fig. 4 |
+| `06_transfer/` | eight encoder checkpoints and the leave-one-out readout | Fig. 5 |
 | `07_indistribution/` | official five-fold random CV | Section S3 |
 | `08_small_labels/` | the hundred-label comparison | Table 3; Section S7 |
 | `09_vex_simple/` | parameter-matched whole-graph variant | Section S1 |
+| `figures/` | the four data figures as PDF and PNG, plus `make_figures.py` | Figs. 2--5 |
 | `docs/archive_notes_zh.md` | working notes in Chinese: protocol table, task registry, which axes each task supports | — |
 
 Each extrapolation directory has the same layers: `summary.csv` (the normalised table),
