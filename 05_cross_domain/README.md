@@ -32,7 +32,7 @@
 | `runs/multidoc_set_results.csv` | 主导主题标签（`set`），k∈{5,10,20}，两条路线 v(p)/v(w) |
 | `runs/multidoc_set_homo_results.csv` | 同质判定标签（`homo`），k∈{5,20,60}，两条路线 v(p)/v(w) |
 | `runs/portfolio_vol_results.csv` | 3 折 × 2 seed × K∈{5,10} 的 R²，含 v(p)/v(w) |
-| `logs/multidoc_full.log`、`logs/portfolio_vol.log` | 运行日志 |
+| `logs/multidoc_full.log` | 文档集合实验的运行日志 |
 
 `run_multidoc_set.py` 首次运行时会从 20 Newsgroups 语料重建所需的 BGE-M3 嵌入缓存
 （`multidoc_emb_20ng.npz`，18,846 文档 × 1024）；组合实验读同一批资产价格序列。

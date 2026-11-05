@@ -12,7 +12,7 @@
 
 任务：给定组合（K 个资产 + 权重 w，w 是**输入**而非决策变量）→ 预测持有期已实现波动率。
 加性基准：Σ wᵢσᵢ（加权平均波动率，"分散化之前"）。
-切分：训练 K ≤ 3 → 测试 K ∈ {5, 10, 20}；**多折时序切分**（expanding window），
+切分：训练 K ≤ 3 → 测试 K ∈ {5, 10}；**多折时序切分**（expanding window），
       每折独立标准化并留一个持有期的 gap，避免标签窗口跨折泄漏。
 
 ⚠ 为什么不用单次 70/30：实测后 30% 落在单一低波动 regime 里，测试段标签方差仅为训练段的
@@ -208,8 +208,8 @@ def main():
     Xtr_all, Wtr_all, Mtr_all, Ytr_all, Atr_all, Ttr = build_all(
         P, (1, 2, 3), args.n_comb, rng, maxk=3)
     Xte_all, Wte_all, Mte_all, Yte_all, Ate_all, Tte = build_all(
-        P, (5, 10, 20), args.n_comb, rng, maxk=20)
-    print(f'样本池：训练 K≤3 = {len(Ytr_all)} | 测试 K∈{{5,10,20}} = {len(Yte_all)}',
+        P, (5, 10), args.n_comb, rng, maxk=10)
+    print(f'样本池：训练 K≤3 = {len(Ytr_all)} | 测试 K∈{{5,10}} = {len(Yte_all)}',
           flush=True)
 
     D = Xtr_all.shape[-1]
@@ -251,7 +251,7 @@ def main():
               f'(y_train std={Ytr.std():.3f}, y_test std={Yte.std():.3f}) ---', flush=True)
         print('  加性基准 Σwᵢσᵢ: ' +
               ' | '.join(f'K={k} R²={r2(a_pred[Kte == k], Yte_n[Kte == k]):+.3f}'
-                         for k in (5, 10, 20)), flush=True)
+                         for k in (5, 10)), flush=True)
         for name, build in (('v(im)', Vp), ('v(ex)', Vw)):
             for seed in args.seeds:
                 torch.manual_seed(seed)
@@ -275,7 +275,7 @@ def main():
                     p = m(torch.tensor(Xte).to(dev), torch.tensor(Wte).to(dev),
                           torch.tensor(Mte).to(dev)).cpu().numpy()
                 line = f'  {name} seed{seed}:'
-                for k in (5, 10, 20):
+                for k in (5, 10):
                     v = r2(p[Kte == k], Yte_n[Kte == k])
                     line += f'  K={k} R²={v:+.3f}'
                     rows.append((fi, name, seed, k, v))
@@ -284,7 +284,7 @@ def main():
     print(f'\n=== 汇总（跨折 × 跨 seed 均值）===')
     print(f'{"K":>4}{"v(im)":>10}{"v(ex)":>10}{"gap":>10}')
     summ = []
-    for k in (5, 10, 20):
+    for k in (5, 10):
         a = np.mean([r[4] for r in rows if r[1] == 'v(im)' and r[3] == k])
         b = np.mean([r[4] for r in rows if r[1] == 'v(ex)' and r[3] == k])
         print(f'{k:>4}{a:>10.3f}{b:>10.3f}{a - b:>10.3f}')
