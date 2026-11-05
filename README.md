@@ -8,6 +8,9 @@ This repository contains the **code, logs and result tables only**; the manuscri
 supplementary materials are not included, and the underlying datasets are not redistributed
 here (they are read from the CheMixHub collection by path).
 
+Every file kept here either produces a number reported in the paper, or documents how such a
+number was produced. Working notes are not part of the archive.
+
 ## What the experiments are about
 
 A many-body system is a group of components combined at some composition, whose property
@@ -44,7 +47,7 @@ encoder that training shapes.
 | `08_small_labels/` | the hundred-label comparison | Table 3; Section S7 |
 | `09_vex_simple/` | parameter-matched whole-graph variant | Section S1 |
 | `figures/` | the four data figures as PDF and PNG, plus `make_figures.py` | Figs. 2--5 |
-| `docs/archive_notes_zh.md` | working notes in Chinese: protocol table, task registry, which axes each task supports | — |
+
 
 Each extrapolation directory has the same layers: `summary.csv` (the normalised table),
 `runs/` (raw rows written by the scripts), `logs/` (per-run logs) and, where weights are kept,
@@ -86,8 +89,9 @@ unstable out of sample. Pass `--plain` to reproduce the unregularised numbers.
 
 Protocol: 200 epochs, batch 128, Adam (lr 1e-4, weight decay 1e-6), three-epoch linear warmup,
 cosine annealing, targets standardised with training statistics, seeds 42/43/44. Early stopping
-is off for component-count extrapolation and on (knee rule) for the other two axes; the reasons
-are recorded in `docs/archive_notes_zh.md`.
+is off for component-count extrapolation, because holding out a validation fold would cost one
+whole component-count step, and on (knee rule) for the other two axes, where the validation set
+is carved from the training side and the test values stay out of it.
 
 ## Requirements
 
