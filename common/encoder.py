@@ -6,10 +6,8 @@ GIN×3(64) → Linear(64,256) → TFM×2(256, nhead 4) → 逐分子 mean poolin
 
 `GINConv`, `Encoder`, `mol_to_graph` and `DEVICE` are the backbone behind every reported
 extrapolation run: a GIN over the molecular graph followed by a transformer inside the
-component (see the supplementary materials, M1). They were previously defined inside
-`probe_transfer_matrix.py`, which also carried an exploratory transfer-matrix probe that the
-paper does not report; that probe has been moved out of the released package, and the shared
-pieces live here so the experiment scripts import a single definition.
+component (see the supplementary materials, M1). They are defined here so that every
+experiment script imports a single copy.
 """
 import csv
 import os

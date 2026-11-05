@@ -10,11 +10,11 @@
 ├── scripts/
 │   ├── train_5fold_vim.py           v(im)：本次运行（paper_v2 的 train_task_permol.py）
 │   ├── train_5fold_vex_current.py   v(ex)：本次重跑，用 common/engine.py 的 Vex
-│   └── train_5fold_vex.py           旧 AtomFormer 整图版（= v(ex)-simple），留档
+│   └── train_5fold_vex.py           AtomFormer 整图版（= v(ex)-simple）
 ├── runs/
 │   ├── vim_5fold.csv                40 行 = 8 任务 × 5 折
 │   ├── vex_5fold_current.csv        **40 行 = 8 任务 × 5 折，正文所用**
-│   ├── vex_5fold.csv                旧 AtomFormer 结果（40 行），仅留档
+│   ├── vex_5fold.csv                AtomFormer（v(ex)-simple）结果，40 行
 │   ├── baselines.csv                8 行官方最强基线（CheMixHub Table 2 / Table 8）
 │   └── baselines_table8.csv         原文 table 8 全表（8 模型 × 11 任务，Pearson ρ 及其 sd）
 ├── logs_vex_current/                7 个 v(ex) 日志，每个任务一份（5 折合一）
@@ -30,12 +30,12 @@
 |---|---|---|
 | v(im) | `runs/vim_5fold.csv` | 200 epochs + `patience=20` 早停（官方 val），`best_ep` 落在 19–60 |
 | **v(ex)** | **本次重跑**：`scripts/train_5fold_vex_current.py` → `runs/vex_5fold_current.csv`，逐折日志 `logs_vex_current/` | 同上：200 epochs + patience 20，官方 val 早停 |
-| v(ex)，旧 | `runs/vex_5fold.csv`（上一篇文章 AtomFormer 已发表结果） | 40 epochs 固定；**仅留档**，已由上一行取代 |
+| v(ex)-simple | `runs/vex_5fold.csv`（AtomFormer 整图版，上一篇文章的结果） | 40 epochs 固定 |
 
 两臂现在共享全部协议（同一份官方 fold、同一早停规则、同一 lr/batch/warmup），
 唯一差别是模型结构：v(ex) 在逐组分编码之后多一层跨组分 transformer + CLS
-（2.28 M vs 1.23 M 参数）。旧 `scripts/train_5fold_vex.py`（AtomFormer 整图版）
-保留但不再用于正文——它的数值正是补材 Table S3 中的 **v(ex)-simple** 一列。
+（2.28 M vs 1.23 M 参数）。`scripts/train_5fold_vex.py`（AtomFormer 整图版）
+产出补材 Table S3 的 **v(ex)-simple** 一列。
 
 ## 结果
 

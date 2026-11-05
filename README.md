@@ -4,9 +4,8 @@ Code, logs and result tables for the paper
 
 > **Interaction without an interaction module: a fixed first-order aggregate for many-body property prediction**
 
-This repository contains the **code, logs and result tables only**; the manuscript and its
-supplementary materials are not included, and the underlying datasets are not redistributed
-here (they are read from the CheMixHub collection by path).
+This repository contains the **code, logs and result tables**; the datasets themselves are
+read from the CheMixHub collection by path.
 
 Every file kept here either produces a number reported in the paper, or documents how such a
 number was produced. Working notes are not part of the archive.
