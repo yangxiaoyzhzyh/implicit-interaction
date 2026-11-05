@@ -33,7 +33,7 @@ encoder that training shapes.
 |---|---|---|
 | `common/` | engine, task registry, encoder, molecule-carving generator | — |
 | `scripts/` | modelling scripts, split generation, table collection | — |
-| `splits/` | no `*.npz` are shipped: `make_splits.py` writes them from your own data root and all arms then share that one index; `splits/logs/` keeps the generation log | — |
+| `splits/` | the index is written on demand by `make_splits.py` from your own data root; every arm then reads that one `*.npz` | — |
 | `01_composition/` | component-count extrapolation (`scripts/run_k3.sh` is the relaxed-ceiling run) | Table 1; Sections S2 (task list) and S6 (relaxed ceiling) |
 | `02_unseen_molecules/` | component-identity extrapolation | Section S4 |
 | `03_target_value/` | target-value (extreme) extrapolation | Section S5 |

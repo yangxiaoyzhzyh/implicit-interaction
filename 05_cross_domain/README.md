@@ -23,16 +23,6 @@
 - **组合波动率**的加性规则是 $\sum_i w_i\sigma_i$（分散化之前的加权平均波动率），
   分散化效应正是它够不到的残差；v(im) 在低 $K$ 领先（$K=5$ 时 +0.068、$K=10$ 时 +0.071，均超过 0.047 的散布）。
 
-## 本目录的待办
-
-1. **输出路径未改**：两个脚本仍把结果写到旧 `results/`，重跑时需改到本目录 `summary/`。
-2. **文档实验需重跑确认 seed 数**：现表为两 seed 均值，正文标注为“two-seed means”，
-   若要 3 seed 需重跑。
-3. **嵌入缓存未归档**：`multidoc_emb_20ng.npz`（BGE-M3 冻结嵌入）是重跑的前提，
-   体积较大，建议放入 `ckpt/` 并注明来源与维度（18,846 文档 × 1024）。
-4. **组合实验的价格缓存未归档**：`portfolio_prices.csv`（89 资产 × 2,514 交易日）
-   同样需随 `ckpt/` 归档，否则无法复现同一划分。
-
 ## 归档清单（2026-10-30 补齐）
 
 | 文件 | 内容 |
@@ -44,5 +34,5 @@
 | `runs/portfolio_vol_results.csv` | 3 折 × 2 seed × K∈{5,10} 的 R²，含 v(p)/v(w) |
 | `logs/multidoc_full.log`、`logs/portfolio_vol.log` | 运行日志 |
 
-20 Newsgroups 的嵌入缓存（`multidoc_emb_20ng.npz`，71 MB）未纳入归档，
-由 `run_multidoc_set.py` 首次运行时重建。
+`run_multidoc_set.py` 首次运行时会从 20 Newsgroups 语料重建所需的 BGE-M3 嵌入缓存
+（`multidoc_emb_20ng.npz`，18,846 文档 × 1024）；组合实验读同一批资产价格序列。

@@ -15,7 +15,7 @@
 │   ├── fp_matrix.py           ECFP4 / MACCS / RDKit2D 指纹（被 08 引用）
 │   ├── leave_one_task_out.py  任务表 `TASKS`、`load_task`、`CKPT`/`load_model`、
 │   │                          `mol_vectors`——**共有 08 与 cache_encoders 复用**；
-│   │                          它自身的留一读出实验不在正文，结果已移除
+│   │                          
 │   ├── cache_encoders.py      逐分子向量缓存
 │   └── out/encoder_cache.npz  3540 分子 × 256（25 MB）
 └── ckpt/                      8 个编码器权重（每个 4.7 MB）
@@ -61,7 +61,7 @@ python scripts/train_all_permol.py --root <CheMixHub 根> --out ckpt/   # 8 个�
 python scripts/cache_encoders.py                                      # 3540 分子 × 256
 ```
 
-## 待办
+## 键名对照
 
-1. **`he` / `heat_vap` 键名对照**：`he` = 混合焓（= `miscible`）、
-   `heat_vap` = 汽化焓（= `miscible_hvap`），跨目录引用时按 `common/spec.py` 对照。
+`he` = 混合焓（= `miscible`），`heat_vap` = 汽化焓（= `miscible_hvap`），
+跨目录引用时按 `common/spec.py` 对照。

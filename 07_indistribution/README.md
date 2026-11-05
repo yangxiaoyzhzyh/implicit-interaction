@@ -88,7 +88,7 @@ v(ex)-simple 的五折均值（`atomformer_rho`）与**样本标准差**（`atom
    前者对应补材 Table S3 的 v(ex)-simple 列。
 4. **无 checkpoint**：两套脚本都是训练—评估—丢弃权重，`ckpt/` 为空。
 
-## 待办
+## 键名对照
 
-1. `he` 与 `heat_vap` 的任务键命名与其它目录（`miscible` / `miscible_hvap`）不同，
-   跨目录引用时需对照 `common/spec.py`。
+`he` 与 `heat_vap` 的任务键命名与其它目录（`miscible` / `miscible_hvap`）不同，
+跨目录引用时对照 `common/spec.py`。
