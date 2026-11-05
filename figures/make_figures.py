@@ -211,12 +211,12 @@ def fig_c():
 # --------------------------------------------------------------------------- #
 # SPE kappa: original split and the relaxed-ceiling run (Supplementary Table S4)
 SPE = {'subsets': ['default', 'raised ceiling'],
-       'v(im)': [0.733, 0.911], 'v(im)_sd': [0.034, 0.023],
-       'v(ex)': [0.756, 0.868], 'v(ex)_sd': [0.068, 0.022]}
+       'v(im)': [0.733, 0.911], 'v(im)_sd': [0.041, 0.023],
+       'v(ex)': [0.781, 0.867], 'v(ex)_sd': [0.054, 0.018]}
 
 # IlT kappa: component-count split vs official five-fold random split
-ILTK = [('v(im)', C_IM, 0.732, 0.016, 0.929, 0.005),
-        ('v(ex)', C_EX, 0.829, 0.046, 0.975, 0.001)]
+ILTK = [('v(im)', C_IM, 0.732, 0.020, 0.929, 0.006),
+        ('v(ex)', C_EX, 0.793, 0.044, 0.974, 0.001)]
 
 
 def fig_d():
