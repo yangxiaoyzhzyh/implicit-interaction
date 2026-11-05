@@ -1,0 +1,48 @@
+  按 y 分位划分: 训练 [73.000, 90.000] (350 条) / 测试 <61.000 或 >96.420 (137 条)
+tag=mon task=mon model=vim | train 350 / test 137 | feat 44 | cuda
+  fit 286 / val 64
+C:\软件\WorkBuddyProject\target_vim_bundle\env\Lib\site-packages\torch\nn\modules\transformer.py:508: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\NestedTensorImpl.cpp:182.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 1.0340 val R -0.2474
+  seed 42 ep  10 loss 0.5513 val R +0.5021
+  >> seed 42 knee 17 best ep 14 | val R +0.6011 | test R +0.7929 R2 +0.1101 MAE 26.3138
+     pred mean +82.570 vs true +72.117
+       K=1       n=  109  R +0.7616  MAE 26.6548
+       K=2       n=   16  R +0.9225  MAE 26.6883
+       K=3       n=   10  R +0.9786  MAE 24.5154
+       K=11-40   n=    1  R +0.0000  MAE 8.4504
+       seen      n=   69  R +0.8911  MAE 25.9220
+       unseen    n=   68  R +0.6828  MAE 26.7115
+     wrote mon_vim_split_y.csv
+       K=1 (n= 109) R +0.7616
+       K=2 (n=  16) R +0.9225
+       K=3 (n=  10) R +0.9786
+  seed 43 ep   0 loss 1.0228 val R +0.2906
+  seed 43 ep  10 loss 0.5394 val R +0.5949
+  >> seed 43 knee 16 best ep 16 | val R +0.6014 | test R +0.8286 R2 +0.1772 MAE 25.4856
+     pred mean +81.325 vs true +72.117
+       K=1       n=  109  R +0.8092  MAE 25.7482
+       K=2       n=   16  R +0.9257  MAE 26.0923
+       K=3       n=   10  R +0.9804  MAE 24.0302
+       K=11-40   n=    1  R +0.0000  MAE 8.3677
+       seen      n=   69  R +0.9079  MAE 25.2584
+       unseen    n=   68  R +0.7497  MAE 25.7162
+     wrote mon_vim_split_y.csv
+       K=1 (n= 109) R +0.8092
+       K=2 (n=  16) R +0.9257
+       K=3 (n=  10) R +0.9804
+  seed 44 ep   0 loss 1.0304 val R +0.3701
+  seed 44 ep  10 loss 0.6494 val R +0.5656
+  >> seed 44 knee 16 best ep 14 | val R +0.6086 | test R +0.6847 R2 +0.0722 MAE 27.4717
+     pred mean +81.124 vs true +72.117
+       K=1       n=  109  R +0.6408  MAE 27.9508
+       K=2       n=   16  R +0.9160  MAE 27.2531
+       K=3       n=   10  R +0.9797  MAE 25.1688
+       K=11-40   n=    1  R +0.0000  MAE 9.6042
+       seen      n=   69  R +0.8889  MAE 26.7497
+       unseen    n=   68  R +0.4683  MAE 28.2043
+     wrote mon_vim_split_y.csv
+       K=1 (n= 109) R +0.6408
+       K=2 (n=  16) R +0.9160
+       K=3 (n=  10) R +0.9797
+总用时 24s

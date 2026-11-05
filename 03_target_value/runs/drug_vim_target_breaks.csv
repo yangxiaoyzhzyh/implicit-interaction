@@ -1,0 +1,13 @@
+task,model,split,seed,group_type,group,n,R,MAE
+drug,vim,split_y,42,K,K=2,789,0.7825,1.6014
+drug,vim,split_y,42,K,K=3,4553,0.7979,1.4097
+drug,vim,split_y,42,subset,seen,3956,0.8405,1.3237
+drug,vim,split_y,42,subset,unseen,1386,0.6497,1.7642
+drug,vim,split_y,43,K,K=2,789,0.7865,1.5725
+drug,vim,split_y,43,K,K=3,4553,0.7995,1.4039
+drug,vim,split_y,43,subset,seen,3956,0.8380,1.3073
+drug,vim,split_y,43,subset,unseen,1386,0.6216,1.7755
+drug,vim,split_y,44,K,K=2,789,0.7449,1.6297
+drug,vim,split_y,44,K,K=3,4553,0.7835,1.4129
+drug,vim,split_y,44,subset,seen,3956,0.7946,1.3359
+drug,vim,split_y,44,subset,unseen,1386,0.7268,1.7559

@@ -1,0 +1,39 @@
+  按 y 分位划分: 训练 [-3.442, 0.299] (20457 条) / 测试 <-5.133 或 >1.134 (8180 条)
+tag=iltk task=iltk model=vim | train 20457 / test 8180 | feat 44 | cuda
+  fit 19857 / val 600
+C:\软件\WorkBuddyProject\target_vim_bundle\env\Lib\site-packages\torch\nn\modules\transformer.py:508: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\NestedTensorImpl.cpp:182.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.6598 val R +0.6719
+  seed 42 ep  10 loss 0.3625 val R +0.8182
+  >> seed 42 knee 14 best ep 14 | val R +0.8236 | test R +0.5981 R2 +0.2230 MAE 3.7139
+     pred mean -1.400 vs true -1.654
+       K=2       n= 4408  R +0.4917  MAE 2.8504
+       K=3       n= 3772  R +0.8072  MAE 4.7231
+       seen      n= 4199  R +0.5662  MAE 2.7576
+       unseen    n= 3981  R +0.6736  MAE 4.7227
+     wrote iltk_vim_split_y.csv
+       K=2 (n=4408) R +0.4917
+       K=3 (n=3772) R +0.8072
+  seed 43 ep   0 loss 0.6602 val R +0.6577
+  seed 43 ep  10 loss 0.3676 val R +0.8157
+  >> seed 43 knee 19 best ep 18 | val R +0.8291 | test R +0.5864 R2 +0.2181 MAE 3.6896
+     pred mean -1.368 vs true -1.654
+       K=2       n= 4408  R +0.5080  MAE 2.7791
+       K=3       n= 3772  R +0.7807  MAE 4.7537
+       seen      n= 4199  R +0.5895  MAE 2.6735
+       unseen    n= 3981  R +0.6385  MAE 4.7614
+     wrote iltk_vim_split_y.csv
+       K=2 (n=4408) R +0.5080
+       K=3 (n=3772) R +0.7807
+  seed 44 ep   0 loss 0.6581 val R +0.6590
+  seed 44 ep  10 loss 0.3674 val R +0.8130
+  >> seed 44 knee 13 best ep 12 | val R +0.8157 | test R +0.5890 R2 +0.2151 MAE 3.7403
+     pred mean -1.451 vs true -1.654
+       K=2       n= 4408  R +0.4786  MAE 2.9030
+       K=3       n= 3772  R +0.8214  MAE 4.7188
+       seen      n= 4199  R +0.5503  MAE 2.8105
+       unseen    n= 3981  R +0.6808  MAE 4.7210
+     wrote iltk_vim_split_y.csv
+       K=2 (n=4408) R +0.4786
+       K=3 (n=3772) R +0.8214
+总用时 948s

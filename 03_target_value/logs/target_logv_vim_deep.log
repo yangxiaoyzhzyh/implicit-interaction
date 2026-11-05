@@ -1,0 +1,39 @@
+  按 y 分位划分: 训练 [-0.210, 0.270] (17190 条) / 测试 <-0.338 或 >0.584 (6869 条)
+tag=logv task=logv model=vim | train 17190 / test 6869 | feat 44 | cuda
+  fit 16590 / val 600
+C:\软件\WorkBuddyProject\target_vim_bundle\env\Lib\site-packages\torch\nn\modules\transformer.py:508: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\NestedTensorImpl.cpp:182.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.7423 val R +0.7308
+  seed 42 ep  10 loss 0.1398 val R +0.9461
+  >> seed 42 knee 16 best ep 16 | val R +0.9518 | test R +0.9175 R2 +0.4427 MAE 0.4250
+     pred mean +0.034 vs true +0.261
+       K=1       n=  843  R +0.9100  MAE 0.4788
+       K=2       n= 6026  R +0.9193  MAE 0.4175
+       seen      n= 5959  R +0.9239  MAE 0.4082
+       unseen    n=  910  R +0.8737  MAE 0.5346
+     wrote logv_vim_split_y.csv
+       K=1 (n= 843) R +0.9100
+       K=2 (n=6026) R +0.9193
+  seed 43 ep   0 loss 0.7885 val R +0.6791
+  seed 43 ep  10 loss 0.1389 val R +0.9447
+  >> seed 43 knee 13 best ep 13 | val R +0.9493 | test R +0.9224 R2 +0.4776 MAE 0.4123
+     pred mean +0.046 vs true +0.261
+       K=1       n=  843  R +0.9119  MAE 0.4708
+       K=2       n= 6026  R +0.9248  MAE 0.4041
+       seen      n= 5959  R +0.9297  MAE 0.3943
+       unseen    n=  910  R +0.8753  MAE 0.5303
+     wrote logv_vim_split_y.csv
+       K=1 (n= 843) R +0.9119
+       K=2 (n=6026) R +0.9248
+  seed 44 ep   0 loss 0.7414 val R +0.7474
+  seed 44 ep  10 loss 0.1411 val R +0.9505
+  >> seed 44 knee 15 best ep 15 | val R +0.9561 | test R +0.9096 R2 +0.4570 MAE 0.4173
+     pred mean +0.040 vs true +0.261
+       K=1       n=  843  R +0.9012  MAE 0.4715
+       K=2       n= 6026  R +0.9118  MAE 0.4098
+       seen      n= 5959  R +0.9177  MAE 0.3993
+       unseen    n=  910  R +0.8557  MAE 0.5357
+     wrote logv_vim_split_y.csv
+       K=1 (n= 843) R +0.9012
+       K=2 (n=6026) R +0.9118
+总用时 514s

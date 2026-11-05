@@ -1,0 +1,42 @@
+  按 y 分位划分: 训练 [-6.509, -3.275] (38014 条) / 测试 <-7.138 或 >-2.017 (15185 条)
+tag=ilteta task=ilteta model=vim | train 38014 / test 15185 | feat 44 | cuda
+  fit 37414 / val 600
+C:\软件\WorkBuddyProject\target_vim_bundle\env\Lib\site-packages\torch\nn\modules\transformer.py:508: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\NestedTensorImpl.cpp:182.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.4548 val R +0.8624
+  seed 42 ep  10 loss 0.0558 val R +0.9785
+  seed 42 ep  20 loss 0.0379 val R +0.9829
+  >> seed 42 knee 20 best ep 19 | val R +0.9834 | test R +0.9253 R2 +0.7251 MAE 1.2580
+     pred mean -4.832 vs true -4.165
+       K=2       n=10584  R +0.9451  MAE 1.3767
+       K=3       n= 4601  R +0.7379  MAE 0.9849
+       seen      n= 8889  R +0.9253  MAE 1.3343
+       unseen    n= 6296  R +0.9139  MAE 1.1503
+     wrote ilteta_vim_split_y.csv
+       K=2 (n=10584) R +0.9451
+       K=3 (n=4601) R +0.7379
+  seed 43 ep   0 loss 0.4549 val R +0.8509
+  seed 43 ep  10 loss 0.0561 val R +0.9780
+  seed 43 ep  20 loss 0.0401 val R +0.9832
+  >> seed 43 knee 23 best ep 23 | val R +0.9858 | test R +0.9308 R2 +0.7436 MAE 1.2224
+     pred mean -4.785 vs true -4.165
+       K=2       n=10584  R +0.9499  MAE 1.3055
+       K=3       n= 4601  R +0.7555  MAE 1.0313
+       seen      n= 8889  R +0.9289  MAE 1.2902
+       unseen    n= 6296  R +0.9230  MAE 1.1267
+     wrote ilteta_vim_split_y.csv
+       K=2 (n=10584) R +0.9499
+       K=3 (n=4601) R +0.7555
+  seed 44 ep   0 loss 0.4602 val R +0.8542
+  seed 44 ep  10 loss 0.0585 val R +0.9773
+  seed 44 ep  20 loss 0.0388 val R +0.9847
+  >> seed 44 knee 26 best ep 24 | val R +0.9871 | test R +0.9326 R2 +0.7379 MAE 1.3009
+     pred mean -4.714 vs true -4.165
+       K=2       n=10584  R +0.9518  MAE 1.3648
+       K=3       n= 4601  R +0.7604  MAE 1.1540
+       seen      n= 8889  R +0.9327  MAE 1.3669
+       unseen    n= 6296  R +0.9215  MAE 1.2077
+     wrote ilteta_vim_split_y.csv
+       K=2 (n=10584) R +0.9518
+       K=3 (n=4601) R +0.7604
+总用时 2223s

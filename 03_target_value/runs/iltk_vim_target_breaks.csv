@@ -1,0 +1,13 @@
+task,model,split,seed,group_type,group,n,R,MAE
+iltk,vim,split_y,42,K,K=2,4408,0.4917,2.8504
+iltk,vim,split_y,42,K,K=3,3772,0.8072,4.7231
+iltk,vim,split_y,42,subset,seen,4199,0.5662,2.7576
+iltk,vim,split_y,42,subset,unseen,3981,0.6736,4.7227
+iltk,vim,split_y,43,K,K=2,4408,0.5080,2.7791
+iltk,vim,split_y,43,K,K=3,3772,0.7807,4.7537
+iltk,vim,split_y,43,subset,seen,4199,0.5895,2.6735
+iltk,vim,split_y,43,subset,unseen,3981,0.6385,4.7614
+iltk,vim,split_y,44,K,K=2,4408,0.4786,2.9030
+iltk,vim,split_y,44,K,K=3,3772,0.8214,4.7188
+iltk,vim,split_y,44,subset,seen,4199,0.5503,2.8105
+iltk,vim,split_y,44,subset,unseen,3981,0.6808,4.7210

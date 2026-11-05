@@ -1,4 +1,4 @@
 task,model,split,seed,knee,best_ep,val_R,test_R,test_R2,MAE,n_train,n_test
-miscible,vim,target,42,19,17,0.8114,0.8251,0.1906,1.3303,,
-miscible,vim,target,43,18,14,0.8088,0.8021,0.1604,1.3606,,
-miscible,vim,target,44,16,14,0.8004,0.8079,0.1791,1.3498,,
+miscible,vim,split_y,42,17,17,0.8073,0.8303,0.1939,1.3293,14431,6012
+miscible,vim,split_y,43,16,14,0.8069,0.7958,0.1548,1.3650,14431,6012
+miscible,vim,split_y,44,16,15,0.7965,0.8154,0.1761,1.3452,14431,6012

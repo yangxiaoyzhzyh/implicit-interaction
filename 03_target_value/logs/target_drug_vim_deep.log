@@ -1,0 +1,39 @@
+  按 y 分位划分: 训练 [-0.424, 1.007] (13358 条) / 测试 <-1.240 或 >1.477 (5342 条)
+tag=drug task=drug model=vim | train 13358 / test 5342 | feat 44 | cuda
+  fit 12758 / val 600
+C:\软件\WorkBuddyProject\target_vim_bundle\env\Lib\site-packages\torch\nn\modules\transformer.py:508: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\NestedTensorImpl.cpp:182.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.9299 val R +0.3478
+  seed 42 ep  10 loss 0.4624 val R +0.7267
+  >> seed 42 knee 12 best ep 11 | val R +0.7329 | test R +0.7916 R2 +0.2746 MAE 1.4380
+     pred mean +0.259 vs true -0.103
+       K=2       n=  789  R +0.7825  MAE 1.6014
+       K=3       n= 4553  R +0.7979  MAE 1.4097
+       seen      n= 3956  R +0.8405  MAE 1.3237
+       unseen    n= 1386  R +0.6497  MAE 1.7642
+     wrote drug_vim_split_y.csv
+       K=2 (n= 789) R +0.7825
+       K=3 (n=4553) R +0.7979
+  seed 43 ep   0 loss 0.9218 val R +0.4240
+  seed 43 ep  10 loss 0.4759 val R +0.7225
+  >> seed 43 knee 13 best ep 13 | val R +0.7385 | test R +0.7939 R2 +0.2923 MAE 1.4288
+     pred mean +0.210 vs true -0.103
+       K=2       n=  789  R +0.7865  MAE 1.5725
+       K=3       n= 4553  R +0.7995  MAE 1.4039
+       seen      n= 3956  R +0.8380  MAE 1.3073
+       unseen    n= 1386  R +0.6216  MAE 1.7755
+     wrote drug_vim_split_y.csv
+       K=2 (n= 789) R +0.7865
+       K=3 (n=4553) R +0.7995
+  seed 44 ep   0 loss 0.9226 val R +0.3779
+  seed 44 ep  10 loss 0.4653 val R +0.7228
+  >> seed 44 knee 14 best ep 14 | val R +0.7391 | test R +0.7740 R2 +0.2614 MAE 1.4449
+     pred mean +0.281 vs true -0.103
+       K=2       n=  789  R +0.7449  MAE 1.6297
+       K=3       n= 4553  R +0.7835  MAE 1.4129
+       seen      n= 3956  R +0.7946  MAE 1.3359
+       unseen    n= 1386  R +0.7268  MAE 1.7559
+     wrote drug_vim_split_y.csv
+       K=2 (n= 789) R +0.7449
+       K=3 (n=4553) R +0.7835
+总用时 575s

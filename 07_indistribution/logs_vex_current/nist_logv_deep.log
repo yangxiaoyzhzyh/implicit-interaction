@@ -1,0 +1,138 @@
+===== nist_logv_fold0.log =====
+[nist_logv] all 行 239200（与官方 fold 索引一一对应），摩尔分数长度不符 0 行，组分图 1644 个
+C:\软件\WorkBuddyProject\nist_logv_bundle\env\Lib\site-packages\torch\nn\modules\transformer.py:508: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\NestedTensorImpl.cpp:182.)
+  output = torch._nested_tensor_from_mask(
+    fold 0 ep   0 loss 0.2161 valR +0.9570 (best +0.9570@0)
+    fold 0 ep  10 loss 0.0335 valR +0.9865 (best +0.9865@10)
+    fold 0 ep  20 loss 0.0233 valR +0.9909 (best +0.9909@20)
+    fold 0 ep  30 loss 0.0188 valR +0.9931 (best +0.9931@30)
+    fold 0 ep  40 loss 0.0194 valR +0.9932 (best +0.9938@38)
+    fold 0 ep  50 loss 0.0153 valR +0.9943 (best +0.9946@48)
+    fold 0 ep  60 loss 0.0148 valR +0.9902 (best +0.9950@59)
+    fold 0 ep  70 loss 0.0127 valR +0.9954 (best +0.9954@70)
+    fold 0 ep  80 loss 0.0120 valR +0.9955 (best +0.9956@77)
+    fold 0 ep  90 loss 0.0114 valR +0.9955 (best +0.9961@88)
+    fold 0 ep 100 loss 0.0108 valR +0.9960 (best +0.9961@88)
+    fold 0 ep 110 loss 0.0107 valR +0.9961 (best +0.9964@107)
+    fold 0 ep 120 loss 0.0100 valR +0.9965 (best +0.9967@119)
+    fold 0 ep 130 loss 0.0096 valR +0.9966 (best +0.9967@119)
+    fold 0 ep 140 loss 0.0092 valR +0.9968 (best +0.9969@137)
+    fold 0 ep 150 loss 0.0088 valR +0.9968 (best +0.9969@137)
+    fold 0 ep 160 loss 0.0087 valR +0.9970 (best +0.9970@156)
+    fold 0 ep 170 loss 0.0085 valR +0.9970 (best +0.9970@156)
+    fold 0 ep 180 loss 0.0084 valR +0.9970 (best +0.9970@174)
+    fold 0 ep 190 loss 0.0084 valR +0.9970 (best +0.9971@186)
+    fold 0 ep 199 loss 0.0085 valR +0.9970 (best +0.9971@186)
+  >> nist_logv fold 0 | test R +0.9958 MAE 0.0936 | best_ep 186 | 16895s | 2283908 pars
+
+nist_logv 5-fold: R = 0.9958 ± nan
+写出 output/out/nist_logv_fold0.csv
+
+===== nist_logv_fold1.log =====
+[nist_logv] all 行 239200（与官方 fold 索引一一对应），摩尔分数长度不符 0 行，组分图 1644 个
+C:\软件\WorkBuddyProject\nist_logv_bundle\env\Lib\site-packages\torch\nn\modules\transformer.py:508: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\NestedTensorImpl.cpp:182.)
+  output = torch._nested_tensor_from_mask(
+    fold 1 ep   0 loss 0.2174 valR +0.9561 (best +0.9561@0)
+    fold 1 ep  10 loss 0.0340 valR +0.9851 (best +0.9851@10)
+    fold 1 ep  20 loss 0.0219 valR +0.9898 (best +0.9901@17)
+    fold 1 ep  30 loss 0.0174 valR +0.9922 (best +0.9922@30)
+    fold 1 ep  40 loss 0.0159 valR +0.9921 (best +0.9923@34)
+    fold 1 ep  50 loss 0.0142 valR +0.9921 (best +0.9932@48)
+    fold 1 ep  60 loss 0.0137 valR +0.9927 (best +0.9935@59)
+    fold 1 ep  70 loss 0.0118 valR +0.9936 (best +0.9936@70)
+    fold 1 ep  80 loss 0.0126 valR +0.9927 (best +0.9936@74)
+    fold 1 ep  90 loss 0.0105 valR +0.9941 (best +0.9943@89)
+    fold 1 ep 100 loss 0.0100 valR +0.9944 (best +0.9945@95)
+    fold 1 ep 110 loss 0.0095 valR +0.9943 (best +0.9947@107)
+    fold 1 ep 120 loss 0.0092 valR +0.9946 (best +0.9947@118)
+    fold 1 ep 130 loss 0.0087 valR +0.9948 (best +0.9948@130)
+    fold 1 ep 140 loss 0.0082 valR +0.9947 (best +0.9949@135)
+    fold 1 ep 150 loss 0.0080 valR +0.9949 (best +0.9950@146)
+    fold 1 ep 160 loss 0.0078 valR +0.9949 (best +0.9950@146)
+  >> nist_logv fold 1 | test R +0.9952 MAE 0.0971 | best_ep 146 | 15330s | 2283908 pars
+
+nist_logv 5-fold: R = 0.9952 ± nan
+写出 output/out/nist_logv_fold1.csv
+
+===== nist_logv_fold2.log =====
+[nist_logv] all 行 239200（与官方 fold 索引一一对应），摩尔分数长度不符 0 行，组分图 1644 个
+C:\软件\WorkBuddyProject\nist_logv_bundle\env\Lib\site-packages\torch\nn\modules\transformer.py:508: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\NestedTensorImpl.cpp:182.)
+  output = torch._nested_tensor_from_mask(
+    fold 2 ep   0 loss 0.2164 valR +0.9545 (best +0.9545@0)
+    fold 2 ep  10 loss 0.0365 valR +0.9805 (best +0.9860@9)
+    fold 2 ep  20 loss 0.0235 valR +0.9867 (best +0.9904@19)
+    fold 2 ep  30 loss 0.0223 valR +0.9898 (best +0.9921@27)
+    fold 2 ep  40 loss 0.0176 valR +0.9923 (best +0.9927@34)
+    fold 2 ep  50 loss 0.0170 valR +0.9917 (best +0.9939@49)
+    fold 2 ep  60 loss 0.0142 valR +0.9942 (best +0.9945@59)
+    fold 2 ep  70 loss 0.0130 valR +0.9944 (best +0.9945@59)
+    fold 2 ep  80 loss 0.0129 valR +0.9934 (best +0.9950@78)
+    fold 2 ep  90 loss 0.0116 valR +0.9946 (best +0.9953@87)
+    fold 2 ep 100 loss 0.0113 valR +0.9952 (best +0.9953@99)
+    fold 2 ep 110 loss 0.0108 valR +0.9954 (best +0.9954@107)
+    fold 2 ep 120 loss 0.0104 valR +0.9955 (best +0.9956@116)
+    fold 2 ep 130 loss 0.0096 valR +0.9955 (best +0.9957@123)
+    fold 2 ep 140 loss 0.0095 valR +0.9957 (best +0.9957@140)
+    fold 2 ep 150 loss 0.0092 valR +0.9957 (best +0.9958@147)
+    fold 2 ep 160 loss 0.0089 valR +0.9958 (best +0.9958@156)
+    fold 2 ep 170 loss 0.0088 valR +0.9958 (best +0.9959@167)
+    fold 2 ep 180 loss 0.0087 valR +0.9959 (best +0.9959@174)
+    fold 2 ep 190 loss 0.0086 valR +0.9959 (best +0.9959@174)
+  >> nist_logv fold 2 | test R +0.9967 MAE 0.0928 | best_ep 174 | 16738s | 2283908 pars
+
+nist_logv 5-fold: R = 0.9967 ± nan
+写出 output/out/nist_logv_fold2.csv
+
+===== nist_logv_fold3.log =====
+[nist_logv] all 行 239200（与官方 fold 索引一一对应），摩尔分数长度不符 0 行，组分图 1644 个
+C:\软件\WorkBuddyProject\nist_logv_bundle\env\Lib\site-packages\torch\nn\modules\transformer.py:508: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\NestedTensorImpl.cpp:182.)
+  output = torch._nested_tensor_from_mask(
+    fold 3 ep   0 loss 0.2179 valR +0.9534 (best +0.9534@0)
+    fold 3 ep  10 loss 0.0354 valR +0.9856 (best +0.9857@8)
+    fold 3 ep  20 loss 0.0267 valR +0.9906 (best +0.9915@16)
+    fold 3 ep  30 loss 0.0198 valR +0.9944 (best +0.9944@30)
+    fold 3 ep  40 loss 0.0161 valR +0.9948 (best +0.9948@40)
+    fold 3 ep  50 loss 0.0151 valR +0.9941 (best +0.9958@45)
+    fold 3 ep  60 loss 0.0134 valR +0.9958 (best +0.9963@59)
+    fold 3 ep  70 loss 0.0129 valR +0.9968 (best +0.9968@70)
+    fold 3 ep  80 loss 0.0126 valR +0.9955 (best +0.9968@70)
+    fold 3 ep  90 loss 0.0114 valR +0.9971 (best +0.9971@90)
+    fold 3 ep 100 loss 0.0106 valR +0.9964 (best +0.9971@90)
+    fold 3 ep 110 loss 0.0102 valR +0.9971 (best +0.9974@106)
+    fold 3 ep 120 loss 0.0094 valR +0.9973 (best +0.9974@119)
+    fold 3 ep 130 loss 0.0092 valR +0.9973 (best +0.9975@128)
+    fold 3 ep 140 loss 0.0090 valR +0.9976 (best +0.9976@140)
+    fold 3 ep 150 loss 0.0084 valR +0.9977 (best +0.9977@145)
+    fold 3 ep 160 loss 0.0083 valR +0.9977 (best +0.9978@155)
+    fold 3 ep 170 loss 0.0081 valR +0.9978 (best +0.9978@167)
+    fold 3 ep 180 loss 0.0081 valR +0.9978 (best +0.9978@178)
+    fold 3 ep 190 loss 0.0080 valR +0.9978 (best +0.9978@190)
+    fold 3 ep 199 loss 0.0080 valR +0.9978 (best +0.9978@191)
+  >> nist_logv fold 3 | test R +0.9952 MAE 0.0951 | best_ep 191 | 16856s | 2283908 pars
+
+nist_logv 5-fold: R = 0.9952 ± nan
+写出 output/out/nist_logv_fold3.csv
+
+===== nist_logv_fold4.log =====
+[nist_logv] all 行 239200（与官方 fold 索引一一对应），摩尔分数长度不符 0 行，组分图 1644 个
+C:\软件\WorkBuddyProject\nist_logv_bundle\env\Lib\site-packages\torch\nn\modules\transformer.py:508: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\NestedTensorImpl.cpp:182.)
+  output = torch._nested_tensor_from_mask(
+    fold 4 ep   0 loss 0.2133 valR +0.9511 (best +0.9511@0)
+    fold 4 ep  10 loss 0.0327 valR +0.9862 (best +0.9862@10)
+    fold 4 ep  20 loss 0.0277 valR +0.9904 (best +0.9904@20)
+    fold 4 ep  30 loss 0.0186 valR +0.9911 (best +0.9919@28)
+    fold 4 ep  40 loss 0.0152 valR +0.9929 (best +0.9930@39)
+    fold 4 ep  50 loss 0.0143 valR +0.9925 (best +0.9935@46)
+    fold 4 ep  60 loss 0.0130 valR +0.9932 (best +0.9938@59)
+    fold 4 ep  70 loss 0.0126 valR +0.9926 (best +0.9941@63)
+    fold 4 ep  80 loss 0.0112 valR +0.9942 (best +0.9944@75)
+    fold 4 ep  90 loss 0.0105 valR +0.9946 (best +0.9946@90)
+    fold 4 ep 100 loss 0.0100 valR +0.9950 (best +0.9951@99)
+    fold 4 ep 110 loss 0.0092 valR +0.9950 (best +0.9951@99)
+    fold 4 ep 120 loss 0.0088 valR +0.9952 (best +0.9955@119)
+    fold 4 ep 130 loss 0.0083 valR +0.9952 (best +0.9955@119)
+  >> nist_logv fold 4 | test R +0.9945 MAE 0.0961 | best_ep 119 | 13473s | 2283908 pars
+
+nist_logv 5-fold: R = 0.9945 ± nan
+写出 output/out/nist_logv_fold4.csv
+

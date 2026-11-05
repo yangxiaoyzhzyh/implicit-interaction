@@ -1,0 +1,41 @@
+  按 y 分位划分: 训练 [-7.187, -5.612] (119662 条) / 测试 <-7.562 或 >-3.809 (47772 条)
+tag=nist task=nist model=vim | train 119662 / test 47772 | feat 44 | cuda
+  fit 119062 / val 600
+C:\软件\WorkBuddyProject\target_vim_bundle\env\Lib\site-packages\torch\nn\modules\transformer.py:508: UserWarning: The PyTorch API of nested tensors is in prototype stage and will change in the near future. We recommend specifying layout=torch.jagged when constructing a nested tensor, as this layout receives active development, has better operator coverage, and works with torch.compile. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\NestedTensorImpl.cpp:182.)
+  output = torch._nested_tensor_from_mask(
+  seed 42 ep   0 loss 0.5191 val R +0.8190
+  seed 42 ep  10 loss 0.0740 val R +0.9665
+  >> seed 42 knee 19 best ep 17 | val R +0.9796 | test R +0.8836 R2 +0.1366 MAE 2.0218
+     pred mean -6.517 vs true -5.133
+       K=1       n= 7916  R +0.8953  MAE 1.9814
+       K=2       n=39856  R +0.8818  MAE 2.0298
+       seen      n=39583  R +0.9056  MAE 1.7127
+       unseen    n= 8189  R +0.6815  MAE 3.5156
+     wrote nist_vim_split_y.csv
+       K=1 (n=7916) R +0.8953
+       K=2 (n=39856) R +0.8818
+  seed 43 ep   0 loss 0.5057 val R +0.8036
+  seed 43 ep  10 loss 0.0736 val R +0.9669
+  >> seed 43 knee 17 best ep 17 | val R +0.9754 | test R +0.8716 R2 +0.1333 MAE 2.0430
+     pred mean -6.484 vs true -5.133
+       K=1       n= 7916  R +0.8654  MAE 1.9927
+       K=2       n=39856  R +0.8729  MAE 2.0530
+       seen      n=39583  R +0.8956  MAE 1.7350
+       unseen    n= 8189  R +0.6729  MAE 3.5321
+     wrote nist_vim_split_y.csv
+       K=1 (n=7916) R +0.8654
+       K=2 (n=39856) R +0.8729
+  seed 44 ep   0 loss 0.5064 val R +0.8367
+  seed 44 ep  10 loss 0.0722 val R +0.9701
+  seed 44 ep  20 loss 0.0497 val R +0.9799
+  seed 44 ep  30 loss 0.0397 val R +0.9853
+  >> seed 44 knee 33 best ep 31 | val R +0.9854 | test R +0.8485 R2 +0.1306 MAE 2.0340
+     pred mean -6.501 vs true -5.133
+       K=1       n= 7916  R +0.8334  MAE 2.0173
+       K=2       n=39856  R +0.8523  MAE 2.0373
+       seen      n=39583  R +0.8812  MAE 1.7152
+       unseen    n= 8189  R +0.5978  MAE 3.5746
+     wrote nist_vim_split_y.csv
+       K=1 (n=7916) R +0.8334
+       K=2 (n=39856) R +0.8523
+总用时 4333s
