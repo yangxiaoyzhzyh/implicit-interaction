@@ -1,7 +1,7 @@
 task,atomformer_rho,atomformer_sd,best_rho,best_rho_method,best_mae,best_mae_method
-density,0.9986,0.0001,0.999,GNN+DeepSets,0.003,GNN+DeepSets
-he,0.9719,0.0029,0.976,MolT5+DeepSets,0.157,MolT5+Attention
-heat_vap,0.9988,0.0001,0.999,MolT5+DeepSets,0.071,MolT5+DeepSets
+density,0.9986,0.0001,0.999,GNN+Deepsets,0.003,GNN+Deepsets
+he,0.9719,0.0029,0.976,MolT5+Deepsets,0.157,MolT5+Attention
+heat_vap,0.9988,0.0001,0.999,MolT5+Deepsets,0.071,MolT5+Deepsets
 logv,0.9842,0.0006,0.991,MolT5+Attention,0.03,MolT5+Attention
 nist_logv,0.9935,0.0007,0.995,RDKit+Attention,0.055,RDKit+XGBoost
 ionic_cond,0.9725,0.0013,0.997,MolT5/RDKit+XGBoost,0.071,MolT5+XGBoost
