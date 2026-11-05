@@ -9,11 +9,10 @@
 
 - v(im)：MLP( Σ wᵢ·MLP_doc(embᵢ) )       文档之间**无交互**
 - v(ex)：MLP( Attn({MLP_doc(embᵢ)}) )     文档之间有注意力
-- 加性基准：(1/k)Σ embᵢ → 分类器          （"平均文档嵌入"，最自然的朴素基线）
 
 切分：训练 k ∈ {1,2} → 测试 k ∈ {5,10,20}。
 
-为在 CPU 上跑得动：文档嵌入用冻结的 MiniLM 预先算好并缓存，训练只在小向量上进行
+为在 CPU 上跑得动：文档嵌入用冻结的 BGE-M3 预先算好并缓存，训练只在小向量上进行
 （MLP_doc 仍是可训练的，即"可塑编码器"这一角色保留）。
 
 用法：
@@ -185,30 +184,7 @@ def make_models(D, torch, nn, n_out=N_CLASS):
             h = self.enc(h, src_key_padding_mask=pad)
             return self.head(h[:, 0])
 
-    class Additive(nn.Module):
-        """加性基准：(1/k)Σ embᵢ → 线性分类器。"""
-        def __init__(self):
-            super().__init__()
-            self.fc = nn.Linear(D, n_out)
-
-        def forward(self, X, W, M):
-            m = M.unsqueeze(-1).float()
-            z = (X * m).sum(1) / m.sum(1).clamp(min=1)
-            return self.fc(z)
-
-    class VpSmall(nn.Module):
-        """v(im) 的小容量版本：用于检验"参数多反而差"是否为过拟合。"""
-        def __init__(self, hid=32):
-            super().__init__()
-            self.E = nn.Sequential(nn.Linear(D, hid), nn.ReLU(), nn.Linear(hid, hid), nn.ReLU())
-            self.head = nn.Sequential(nn.Linear(hid, n_out))
-
-        def forward(self, X, W, M):
-            z = self.E(X)
-            z = (z * W.unsqueeze(-1)).sum(1)
-            return self.head(z)
-
-    return Vp, Vw, Additive, VpSmall
+    return Vp, Vw
 
 
 def main():
@@ -249,15 +225,15 @@ def main():
                               task=args.task)[:4]
 
     dev = 'cpu'
-    Vp, Vw, Additive, VpSmall = make_models(D, torch, nn, n_out)
-    for nm, cls in (('v(im)', Vp), ('v(im)-small', VpSmall), ('v(ex)', Vw), ('加性基准', Additive)):
+    Vp, Vw = make_models(D, torch, nn, n_out)
+    for nm, cls in (('v(im)', Vp), ('v(ex)', Vw)):
         print(f'  {nm} params = {sum(p.numel() for p in cls().parameters())}', flush=True)
 
     def acc(logits, y):
         return float((logits.argmax(1) == torch.tensor(y)).float().mean())
 
     rows = []
-    for name, build in (('加性基准', Additive), ('v(im)', Vp), ('v(im)-small', VpSmall), ('v(ex)', Vw)):
+    for name, build in (('v(im)', Vp), ('v(ex)', Vw)):
         for seed in args.seeds:
             torch.manual_seed(seed)
             m = build()
@@ -284,7 +260,7 @@ def main():
             print(line, flush=True)
 
     print('\n=== 汇总（跨 seed 均值）===')
-    names = ['加性基准', 'v(im)', 'v(im)-small', 'v(ex)']
+    names = ['v(im)', 'v(ex)']
     print(f'{"k":>4}' + ''.join(f'{n:>13}' for n in names))
     for k in args.test_ks:
         f = lambda nm: np.mean([r[3] for r in rows if r[0] == nm and r[2] == k])
