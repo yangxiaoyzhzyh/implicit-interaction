@@ -9,7 +9,7 @@ C  repro_v2/08_small_labels/summary.csv       (Table 3; mixpca grid only)
 D  IlT kappa per-regime scores transcribed from the 12_iltk_dry runs, and
    SPE kappa from Supplementary Table S4 (see DATA_FIG_D).
 
-    python make_figures.py            # writes FigureA-D .pdf and .png
+    python make_figures.py            # writes Figure2-5 .pdf and .png (same numbering as the paper)
 """
 import csv
 import os
@@ -112,7 +112,7 @@ def fig_a():
                     mew=1.6)]
     ax.legend(h, ['v(im)', 'v(ex)', 'additive'], loc='lower right',
               handletextpad=0.5, borderaxespad=0.4, labelspacing=0.3)
-    save(fig, 'Figure1')
+    save(fig, 'Figure2')
 
 
 # --------------------------------------------------------------------------- #
@@ -156,7 +156,7 @@ def fig_b():
     clean(ax, 'y')
     ax.legend(loc='lower left', handletextpad=0.5, labelspacing=0.3,
               handlelength=1.6)
-    save(fig, 'Figure3')
+    save(fig, 'Figure4')
 
 
 # --------------------------------------------------------------------------- #
@@ -203,7 +203,7 @@ def fig_c():
          plt.Line2D([], [], marker='o', ls='none', color=C_IM, ms=3.4)]
     ax.legend(h, ['best descriptor', 'borrowed encoders'], loc='upper left',
               handletextpad=0.5, labelspacing=0.3, borderaxespad=0.3)
-    save(fig, 'Figure4')
+    save(fig, 'Figure5')
 
 
 # --------------------------------------------------------------------------- #
@@ -242,7 +242,6 @@ def fig_d():
     ax.set_xlabel(r'SPE $\kappa$', labelpad=3)
     ax.set_ylabel('Pearson $R$')
     clean(ax, 'y')
-    ax.set_title('a  raising the training ceiling', loc='left')
     h = [plt.Rectangle((0, 0), 1, 1, color=C_IM),
          plt.Rectangle((0, 0), 1, 1, color=C_EX)]
     ax.legend(h, ['v(im)', 'v(ex)'], loc='upper left', handlelength=1.0,
@@ -269,14 +268,13 @@ def fig_d():
     ax2.set_ylim(0, 1.16)
     ax2.set_xlabel(r'IlT $\kappa$', labelpad=3)
     clean(ax2, 'y')
-    ax2.set_title('b  coverage restored on the same task', loc='left')
     h2 = [plt.Rectangle((0, 0), 1, 1, facecolor='white', edgecolor='#555555',
                         hatch='///', linewidth=0.5),
           plt.Rectangle((0, 0), 1, 1, facecolor='#555555', edgecolor='none')]
     ax2.legend(h2, ['component split', 'five-fold'], loc='upper center',
                ncol=2, handlelength=1.0, handletextpad=0.35,
                columnspacing=1.2, borderaxespad=0.15)
-    save(fig, 'Figure2')
+    save(fig, 'Figure3')
 
 
 if __name__ == '__main__':

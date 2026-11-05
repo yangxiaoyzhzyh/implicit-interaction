@@ -90,8 +90,8 @@ encoder side down by aggregation.
 **`09_vex_simple/`** — the variant holds the parameter count equal to v(im) (1.23 million each);
 `results/vsimple_composition_44d.csv` is the nine-task, three-seed table of Section S1.
 
-**`figures/`** — `make_figures.py` writes `Figure1`--`Figure4`, which are Figs. 2--5 of the
-paper: the script numbers them in drawing order, one lower than the published numbering.
+**`figures/`** — `make_figures.py` writes `Figure2`--`Figure5` as PDF and PNG, one per data
+figure, under the same numbers as the captions.
 
 ## Reproducing a table
 
