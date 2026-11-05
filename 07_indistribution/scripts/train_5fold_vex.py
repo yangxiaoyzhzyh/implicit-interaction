@@ -1,26 +1,12 @@
 # -*- coding: utf-8 -*-
-"""train_5fold_vex.py — 官方 5-fold 随机 CV，v(ex) 路线（AtomFormer）
+"""train_5fold_vex.py — 官方五折随机 CV，AtomFormer 整图版（= v(ex)-simple）
 
-来自 paper_v2/experiments/scripts/whole_mixture/train_task.py。
-本目录 runs/vex_5fold.csv 的数值由这批运行产生，但**本次未重跑**：
-数值取自上一篇文章（AtomFormer）已发表结果，见 README。
-
-实验 1 — CheMixHub 8 tasks, official 5-fold（论文/补材的 in-distribution anchors，补材 S1 表 S2）
-路线 v(ex)
-产出 logs/chemixhub_5fold_whole/（逐折 R 与均值；该臂只落日志，无结果 CSV）
-配套 per_molecule/train_task_permol.py（v(im) 臂）
-v(ex)（GIN×3 + TFM×2 + MLP）在 CheMixHub 多个混合物理化性质任务上的统一训练/评估。
-
-从 v(ex) 臂的 MON 脚本泛化而来，改动：
-- 多任务配置 TASK_CONFIG：CSV 文件名、property 筛选、条件列、split 目录。
-- 条件标量（温度/压力/频率）在 masked-mean pooling 之后 concat 进 regressor
-  （图级上下文，非 per-component），regressor 输入维自适应。
-- split indices 语义：先按 property 筛选子集，再对子集用 indices 划分（官方 load_data 逻辑）。
+数值即 runs/vex_5fold.csv，对应补材 Table S3 的 v(ex)-simple 列（上一篇文章已发表的结果）。
+模型为 GIN×3 + TFM×2 + 逐分子池化 + MLP，条件标量在池化之后拼进读出。
 
 用法:
-    python train_task.py --task mon
-    python train_task.py --task logv --folds 0 1 2 3 4
-    python train_task.py --task ionic_visc
+    python train_5fold_vex.py --task mon
+    python train_5fold_vex.py --task logv --folds 0 1 2 3 4
 """
 import argparse
 import os

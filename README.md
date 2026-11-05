@@ -36,28 +36,62 @@ encoder that training shapes.
 | `common/` | engine, task registry, encoder, molecule-carving generator | — |
 | `scripts/` | modelling scripts, split generation, table collection | — |
 | `splits/` | the index is written on demand by `make_splits.py` from your own data root; every arm then reads that one `*.npz` | — |
-| `01_composition/` | component-count extrapolation (`scripts/run_k3.sh` is the relaxed-ceiling run) | Table 1; Sections S2 (task list) and S6 (relaxed ceiling) |
-| `02_unseen_molecules/` | component-identity extrapolation | Section S4 |
-| `03_target_value/` | target-value (extreme) extrapolation | Section S5 |
-| `04_synthetic/` | synthetic additive and interaction families | Table 2 |
+| `01_composition/` | component-count extrapolation (nine tasks, four arms) | Table 1; Sections S2, S6 |
+| `02_unseen_molecules/` | component-identity extrapolation (six tasks) | Section S4 |
+| `03_target_value/` | target-value (extreme) extrapolation (ten tasks) | Section S5 |
+| `04_synthetic/` | synthetic exactly-additive target | Table 2 |
 | `05_cross_domain/` | portfolio volatility and document sets | Sections S8--S10 |
-| `06_transfer/` | eight encoder checkpoints and the leave-one-out readout | Fig. 5 |
-| `07_indistribution/` | official five-fold random CV | Section S3 |
-| `08_small_labels/` | the hundred-label comparison | Table 3; Section S7 |
+| `06_transfer/` | eight per-task encoder checkpoints and their vector cache | feeds `08` |
+| `07_indistribution/` | official five-fold random CV, eight tasks | Section S3 |
+| `08_small_labels/` | hundred-label comparison of encoders and descriptors | Table 3; Section S7 |
 | `09_vex_simple/` | parameter-matched whole-graph variant | Section S1 |
 | `figures/` | the four data figures as PDF and PNG, plus `make_figures.py` | Figs. 2--5 |
 
-
 Each extrapolation directory has the same layers: `summary.csv` (the normalised table),
-`runs/` (raw rows written by the scripts), `logs/` (per-run logs) and, where weights are kept,
-`ckpt/`. `09_vex_simple/` writes one CSV per task and seed into `runs/` and the aggregated
-table into `results/`. Directories are numbered contiguously, and each maps to one table or
-supplementary section.
+`runs/` (raw rows as the scripts write them) and `logs/` (one log per run). `09_vex_simple/`
+writes one CSV per task and seed into `runs/` and the aggregated table into `results/`.
 
-The dataset statistics quoted in the text — solvent fractions for IlT κ and molar-mass
-fractions for SPE κ — are reproduced independently by
-`01_composition/scripts/split_statistics.py`, which writes
-`01_composition/runs/split_statistics.csv` from the same split files used by the models.
+## Notes that are not obvious from the file names
+
+**`01_composition/`** — the nine tasks are `drug`, `spe`, `iltk`, `ilteta`, `nist`, `miscible`,
+`miscible_hvap`, `miscible_density`, `mon`; `logv` is absent because its mixtures are at most
+binary, so training on $K\le2$ leaves no test rows. This axis uses no validation set and no
+early stopping. The additive arm is ridge ($\alpha=10^{-2}$) rather than plain least squares:
+mole fractions sum to one, so the component columns are collinear with the intercept, and the
+unregularised solution diverges where one solvent carries almost all the weight — it changes
+only the two IlT tasks (IlT $\kappa$ $-0.133\to+0.737$, IlT $\eta$ $0.007\to+0.818$) and moves
+the rest by $\le 0.013$; `scripts/additive.py --plain` reproduces the unregularised numbers.
+`scripts/run_k3.sh` produces the relaxed-ceiling row of Table S6 (`runs_k3/`), and
+`scripts/split_statistics.py` writes `runs/split_statistics.csv`, the source of the solvent and
+molar-mass fractions quoted in the text.
+
+**`02_unseen_molecules/`** — six tasks; the three `miscible*` tasks are absent because they hold
+only 81 unique molecules, too few for a partition that keeps the component-count distribution
+aligned on both sides.
+
+**`03_target_value/`** — both arms are produced by the engine's own threshold split
+(`--split-by y --y-train 0.25 0.75 --y-test 0.10 0.90`), not from a stored `*.npz`; the two
+arms therefore share one partition by construction.
+
+**`06_transfer/`** — the encoders here are trained on **31** atom features (`pad_from=32`), not
+the 44-feature vocabulary of the main pipeline (`common/engine.py` uses `pad_from=45`); the
+shipped `ckpt/*.pt` and `scripts/out/encoder_cache.npz` belong to that 31-feature variant and
+are what `08_small_labels/` reads. Training uses each task's full data, 100 epochs, seed 42.
+
+**`07_indistribution/`** — three result files, one per arm: `runs/vim_5fold.csv` (v(im)),
+`runs/vex_5fold_current.csv` (v(ex), the column reported in Table S3) and `runs/vex_5fold.csv`
+(the AtomFormer whole-graph model, which is the v(ex)-simple column of Table S3).
+`runs/baselines*.csv` hold the published benchmark values these are compared against.
+
+**`08_small_labels/`** — `summary.csv` is the full grid, 192 rows = 2 protocols × 4 feature sets
+× 3 aggregations × 8 tasks; Table 3 reports the best cell per task and Section S7 breaks the
+encoder side down by aggregation.
+
+**`09_vex_simple/`** — the variant holds the parameter count equal to v(im) (1.23 million each);
+`results/vsimple_composition_44d.csv` is the nine-task, three-seed table of Section S1.
+
+**`figures/`** — `make_figures.py` writes `Figure1`--`Figure4`, which are Figs. 2--5 of the
+paper: the script numbers them in drawing order, one lower than the published numbering.
 
 ## Reproducing a table
 
@@ -81,16 +115,14 @@ python scripts/frozen.py   --task iltk --split-file splits/iltk_composition.npz 
 python scripts/collect_summary.py --dir 01_composition
 ```
 
-The additive baseline is fitted by ridge regression (`alpha=1e-2`) rather than plain least
-squares: the mole fractions sum to one, so the component columns are collinear with the
-intercept, and where a solvent carries most of the weight the unregularised solution is
-unstable out of sample. Pass `--plain` to reproduce the unregularised numbers.
+The other axes differ only in the split: `--split unseen` for component identity, and
+`--split-by y` on the engine for the target-value axis (no split file). Early stopping is off
+for component-count extrapolation, because holding out a validation fold would cost one whole
+component-count step, and on (knee rule) for the other two, where the validation set is carved
+from the training side and the test values stay out of it.
 
 Protocol: 200 epochs, batch 128, Adam (lr 1e-4, weight decay 1e-6), three-epoch linear warmup,
-cosine annealing, targets standardised with training statistics, seeds 42/43/44. Early stopping
-is off for component-count extrapolation, because holding out a validation fold would cost one
-whole component-count step, and on (knee rule) for the other two axes, where the validation set
-is carved from the training side and the test values stay out of it.
+cosine annealing, targets standardised with training statistics, seeds 42/43/44.
 
 ## Requirements
 
