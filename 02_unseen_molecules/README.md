@@ -17,9 +17,9 @@
 
 **本轴的任务集比组分数轴小**：
 
-| 可用（7 个） | 不可用 |
+| 可用（6 个） | 不可用 |
 |---|---|
-| `nist` 1,644 分子、`logv` 1,628、`ilteta` 699、`iltk` 479、`mon` 416、`spe` 268、`drug` 169 | `miscible` / `miscible_density` / `miscible_hvap`：各只有 **81 个唯一分子** |
+| `nist` 1,644 分子、`logv` 1,628、`ilteta` 699、`iltk` 479、`spe` 268、`drug` 169 | `miscible` / `miscible_density` / `miscible_hvap`：各只有 **81 个唯一分子** |
 
 81 个分子二分切割后每侧约 40 个，无法在保持组分数分布对齐的前提下得到可信划分。
 旧归档里这三个任务在本轴上有数值（ΔHmix 0.13），是分子数不足的产物，不应引用。

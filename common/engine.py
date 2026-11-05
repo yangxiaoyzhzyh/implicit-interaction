@@ -1,24 +1,9 @@
 # -*- coding: utf-8 -*-
 """engine.py —— 唯一训练/评估引擎（四条路线共用）
 
-来源: paper_v2/experiments/scripts/per_molecule/run_carved.py
-改动: (1) 任务注册表改为 common/spec.py；
-      (2) 新增 --split-file，直接读 make_splits.py 产出的 npz，
-          保证 v(im)/v(ex)/additive/frozen 四臂用的是同一份索引。
-
---split-file 优先于 --split-by；两者都没给时会报错提示。
+任务注册表在 common/spec.py。--split-file 直接读 make_splits.py 产出的 npz，
+四条路线用的是同一份索引；--split-file 优先于 --split-by，两者都没给时报错。
 早停: 默认开启（knee）；--no-early-stop 关闭。
-"""
-"""run_carved.py — 在"分子完全不重叠"的划分上比较 v(im) 与 v(ex)
-
-划分来自 make_carved_split.py：
-    train: 全部组分在 A 侧
-    test : 全部组分在 B 侧      （两侧分子集合不相交，ω = 1）
-两侧 K 分布接近，所以组合轴不是变量，差异只来自"分子是否见过"。
-
-用法
-----
-  python run_carved.py --data-base <root> --tag ilvis --model vim --seeds 42
 """
 import argparse
 import os
