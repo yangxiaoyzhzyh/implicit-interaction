@@ -11,12 +11,11 @@
 **不做** ρ 分层、**不做**解析解对照（那些属于"深入探究交互强度"，超范围）。
 
 任务：给定组合（K 个资产 + 权重 w，w 是**输入**而非决策变量）→ 预测持有期已实现波动率。
-加性基准：Σ wᵢσᵢ（加权平均波动率，"分散化之前"）。
 切分：训练 K ≤ 3 → 测试 K ∈ {5, 10}；**多折时序切分**（expanding window），
       每折独立标准化并留一个持有期的 gap，避免标签窗口跨折泄漏。
 
 ⚠ 为什么不用单次 70/30：实测后 30% 落在单一低波动 regime 里，测试段标签方差仅为训练段的
-1/5（std 0.013 vs 0.071），R² 会被数学性地压塌（加性基准 R² = −29）。多折能让各折 regime 不同。
+1/5（std 0.013 vs 0.071），R² 会被数学性地压塌。多折能让各折 regime 不同。
 
 数据：Yahoo chart API（走代理 127.0.0.1:7897），缓存到 results/portfolio_prices.csv。
 
@@ -110,11 +109,11 @@ def build_all(P, ks, n_comb, rng, step=STEP, maxk=None):
     """一次性生成全部样本并附时间索引（供多折时序切分）。
 
     特征窗口 [t-WIN_FEAT, t) 不含未来；标签窗口 [t, t+WIN_HOLD)。
-    返回 X[n,k,d], W[n,k], M[n,k], Y[n], A[n], Tidx[n]。
+    返回 X[n,k,d], W[n,k], M[n,k], Y[n], Tidx[n]。
     """
     R = np.diff(np.log(P), axis=0)
     T, N = R.shape
-    Xs, Ws, Ms, Ys, As, Ts = [], [], [], [], [], []
+    Xs, Ws, Ms, Ys, Ts = [], [], [], [], []
     maxk = maxk or max(ks)
     for t in range(WIN_FEAT, T - WIN_HOLD, step):
         hist = R[t - WIN_FEAT:t]
@@ -134,11 +133,9 @@ def build_all(P, ks, n_comb, rng, step=STEP, maxk=None):
             M = np.zeros(maxk, dtype=bool)
             X[:k], W[:k], M[:k] = fmat[idx], w, True
             Xs.append(X); Ws.append(W); Ms.append(M); Ys.append(y)
-            As.append(float((w * sd[idx]).sum()))
             Ts.append(t)
     return (np.stack(Xs), np.stack(Ws), np.stack(Ms),
-            np.array(Ys, dtype=np.float32), np.array(As, dtype=np.float32),
-            np.array(Ts))
+            np.array(Ys, dtype=np.float32), np.array(Ts))
 
 
 def make_models(D, torch, nn):
@@ -205,9 +202,9 @@ def main():
     print(f'载入 {P.shape[0]} 天 × {P.shape[1]} 个资产', flush=True)
     rng = np.random.default_rng(0)
 
-    Xtr_all, Wtr_all, Mtr_all, Ytr_all, Atr_all, Ttr = build_all(
+    Xtr_all, Wtr_all, Mtr_all, Ytr_all, Ttr = build_all(
         P, (1, 2, 3), args.n_comb, rng, maxk=3)
-    Xte_all, Wte_all, Mte_all, Yte_all, Ate_all, Tte = build_all(
+    Xte_all, Wte_all, Mte_all, Yte_all, Tte = build_all(
         P, (5, 10), args.n_comb, rng, maxk=10)
     print(f'样本池：训练 K≤3 = {len(Ytr_all)} | 测试 K∈{{5,10}} = {len(Yte_all)}',
           flush=True)
@@ -229,10 +226,8 @@ def main():
         te = (Tte >= edges[fi - 1]) & (Tte < cut)
         if tr.sum() < 500 or te.sum() < 50:
             continue
-        Xtr, Wtr, Mtr, Ytr, Atr = (Xtr_all[tr], Wtr_all[tr], Mtr_all[tr],
-                                   Ytr_all[tr], Atr_all[tr])
-        Xte, Wte, Mte, Yte, Ate, Kte = (Xte_all[te], Wte_all[te], Mte_all[te],
-                                        Yte_all[te], Ate_all[te], Tte[te])
+        Xtr, Wtr, Mtr, Ytr = Xtr_all[tr], Wtr_all[tr], Mtr_all[tr], Ytr_all[tr]
+        Xte, Wte, Mte, Yte = Xte_all[te], Wte_all[te], Mte_all[te], Yte_all[te]
         Kte = np.array([int(Mte[i].sum()) for i in range(len(Mte))])
 
         # 该折独立标准化（只用该折训练段统计量）
@@ -243,15 +238,9 @@ def main():
         ym, ysd = Ytr.mean(), Ytr.std()
         Ytr_n, Yte_n = (Ytr - ym) / ysd, (Yte - ym) / ysd
 
-        A = np.stack([Atr, np.ones_like(Atr)], 1)
-        coef = np.linalg.lstsq(A, Ytr_n, rcond=None)[0]
-        a_pred = np.stack([Ate, np.ones_like(Ate)], 1) @ coef
 
         print(f'\n--- 折 {fi}: 训练 {int(tr.sum())} | 测试 {int(te.sum())} '
               f'(y_train std={Ytr.std():.3f}, y_test std={Yte.std():.3f}) ---', flush=True)
-        print('  加性基准 Σwᵢσᵢ: ' +
-              ' | '.join(f'K={k} R²={r2(a_pred[Kte == k], Yte_n[Kte == k]):+.3f}'
-                         for k in (5, 10)), flush=True)
         for name, build in (('v(im)', Vp), ('v(ex)', Vw)):
             for seed in args.seeds:
                 torch.manual_seed(seed)
