@@ -1,0 +1,77 @@
+{
+  "title": "Reproduction archive for: Interaction without an interaction module: a fixed first-order aggregate for many-body property prediction",
+  "description": "<p>Code, training logs and result tables behind every figure and table of the paper <em>Interaction without an interaction module: a fixed first-order aggregate for many-body property prediction</em>.</p><p>Third-party datasets are not redistributed: the repository reads them from the CheMixHub collection by path and documents where each is obtained. For every table the repository names the script that produces it, the result file it writes, and the log it leaves.</p>",
+  "creators": [
+    {
+      "name": "Yang, Xiao",
+      "orcid": "0000-0002-0159-1434",
+      "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+    },
+    {
+      "name": "Song, Guanghao",
+      "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+    },
+    {
+      "name": "Li, Feiyu",
+      "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+    },
+    {
+      "name": "Xu, Zihan",
+      "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+    },
+    {
+      "name": "Yang, Yanan",
+      "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+    },
+    {
+      "name": "He, Baojiang",
+      "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+    },
+    {
+      "name": "Ji, Lingbo",
+      "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+    },
+    {
+      "name": "Huo, Xiankuan",
+      "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+    },
+    {
+      "name": "Hu, Jun",
+      "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+    },
+    {
+      "name": "Qu, Zhan",
+      "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+    }
+  ],
+  "keywords": [
+    "chemical mixtures",
+    "many-body systems",
+    "ideal mixture",
+    "first-order aggregation",
+    "composition extrapolation",
+    "mixture property prediction",
+    "representation learning"
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "version": "1.0.0",
+  "publication_date": "2026-11-06",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "10.26434/chemrxiv.15010330/v7",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "publication-preprint"
+    },
+    {
+      "identifier": "https://github.com/yangxiaoyzhzyh/implicit-interaction",
+      "relation": "isIdenticalTo",
+      "scheme": "url",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "Release v1.0.0 corresponds to the version submitted for review."
+}

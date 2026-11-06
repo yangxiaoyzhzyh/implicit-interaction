@@ -1,0 +1,83 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below, together with the paper."
+type: software
+title: "Reproduction archive for: Interaction without an interaction module: a fixed first-order aggregate for many-body property prediction"
+abstract: >-
+  Code, training logs and result tables behind every figure and table of the paper.
+  Third-party datasets are not redistributed; the repository reads them from the
+  CheMixHub collection and documents where each is obtained.
+authors:
+  - family-names: Yang
+    given-names: Xiao
+    orcid: "https://orcid.org/0000-0002-0159-1434"
+    affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+    email: yangxiao_ztri@foxmail.com
+  - family-names: Song
+    given-names: Guanghao
+    affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+  - family-names: Li
+    given-names: Feiyu
+    affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+  - family-names: Xu
+    given-names: Zihan
+    affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+  - family-names: Yang
+    given-names: Yanan
+    affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+  - family-names: He
+    given-names: Baojiang
+    affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+  - family-names: Ji
+    given-names: Lingbo
+    affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+  - family-names: Huo
+    given-names: Xiankuan
+    affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+  - family-names: Hu
+    given-names: Jun
+    affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+  - family-names: Qu
+    given-names: Zhan
+    affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+repository-code: "https://github.com/yangxiaoyzhzyh/implicit-interaction"
+url: "https://github.com/yangxiaoyzhzyh/implicit-interaction"
+license: MIT
+version: 1.0.0
+date-released: 2026-11-06
+keywords:
+  - chemical mixtures
+  - many-body systems
+  - ideal mixture
+  - first-order aggregation
+  - composition extrapolation
+  - mixture property prediction
+  - representation learning
+references:
+  - type: generic
+    title: "Interaction without an interaction module: a fixed first-order aggregate for many-body property prediction"
+    authors:
+      - family-names: Yang
+        given-names: Xiao
+        orcid: "https://orcid.org/0000-0002-0159-1434"
+      - family-names: Song
+        given-names: Guanghao
+      - family-names: Li
+        given-names: Feiyu
+      - family-names: Xu
+        given-names: Zihan
+      - family-names: Yang
+        given-names: Yanan
+      - family-names: He
+        given-names: Baojiang
+      - family-names: Ji
+        given-names: Lingbo
+      - family-names: Huo
+        given-names: Xiankuan
+      - family-names: Hu
+        given-names: Jun
+      - family-names: Qu
+        given-names: Zhan
+    year: 2026
+    doi: "10.26434/chemrxiv.15010330/v7"
+    url: "https://doi.org/10.26434/chemrxiv.15010330/v7"
+    notes: "Preprint (ChemRxiv), version 7."
