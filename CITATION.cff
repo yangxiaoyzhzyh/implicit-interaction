@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below, together with the paper."
 type: software
-title: "Reproduction archive for: Interaction without an interaction module: a fixed first-order aggregate for many-body property prediction"
+title: "Interaction without an interaction module"
 abstract: >-
   Code, training logs and result tables behind every figure and table of the paper.
   Third-party datasets are not redistributed; the repository reads them from the
@@ -19,25 +19,25 @@ authors:
     given-names: Feiyu
     affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
   - family-names: Xu
+    given-names: Xiujuan
+    affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+  - family-names: Xu
     given-names: Zihan
     affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
   - family-names: Yang
-    given-names: Yanan
+    given-names: Weiping
     affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
   - family-names: He
     given-names: Baojiang
+    affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+  - family-names: Zeng
+    given-names: Shitong
     affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
   - family-names: Ji
     given-names: Lingbo
     affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
   - family-names: Huo
     given-names: Xiankuan
-    affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
-  - family-names: Hu
-    given-names: Jun
-    affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
-  - family-names: Qu
-    given-names: Zhan
     affiliation: "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
 repository-code: "https://github.com/yangxiaoyzhzyh/implicit-interaction"
 url: "https://github.com/yangxiaoyzhzyh/implicit-interaction"
@@ -54,7 +54,7 @@ keywords:
   - representation learning
 references:
   - type: generic
-    title: "Interaction without an interaction module: a fixed first-order aggregate for many-body property prediction"
+    title: "Interaction without an interaction module"
     authors:
       - family-names: Yang
         given-names: Xiao
@@ -64,19 +64,19 @@ references:
       - family-names: Li
         given-names: Feiyu
       - family-names: Xu
+        given-names: Xiujuan
+      - family-names: Xu
         given-names: Zihan
       - family-names: Yang
-        given-names: Yanan
+        given-names: Weiping
       - family-names: He
         given-names: Baojiang
+      - family-names: Zeng
+        given-names: Shitong
       - family-names: Ji
         given-names: Lingbo
       - family-names: Huo
         given-names: Xiankuan
-      - family-names: Hu
-        given-names: Jun
-      - family-names: Qu
-        given-names: Zhan
     year: 2026
     doi: "10.26434/chemrxiv.15010330/v7"
     url: "https://doi.org/10.26434/chemrxiv.15010330/v7"

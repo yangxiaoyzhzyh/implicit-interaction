@@ -2,7 +2,7 @@
 
 Code, logs and result tables for the paper
 
-> **Interaction without an interaction module: a fixed first-order aggregate for many-body property prediction**
+> **Interaction without an interaction module**
 
 This repository contains the **code, logs and result tables**; the datasets themselves are
 read from the CheMixHub collection by path.

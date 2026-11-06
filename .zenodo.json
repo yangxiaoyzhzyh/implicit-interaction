@@ -1,6 +1,6 @@
 {
-  "title": "Reproduction archive for: Interaction without an interaction module: a fixed first-order aggregate for many-body property prediction",
-  "description": "<p>Code, training logs and result tables behind every figure and table of the paper <em>Interaction without an interaction module: a fixed first-order aggregate for many-body property prediction</em>.</p><p>Third-party datasets are not redistributed: the repository reads them from the CheMixHub collection by path and documents where each is obtained. For every table the repository names the script that produces it, the result file it writes, and the log it leaves.</p>",
+  "title": "Interaction without an interaction module",
+  "description": "<p>Code, training logs and result tables behind every figure and table of the paper <em>Interaction without an interaction module</em>.</p><p>Third-party datasets are not redistributed: the repository reads them from the CheMixHub collection by path and documents where each is obtained. For every table the repository names the script that produces it, the result file it writes, and the log it leaves.</p>",
   "creators": [
     {
       "name": "Yang, Xiao",
@@ -16,15 +16,23 @@
       "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
     },
     {
+      "name": "Xu, Xiujuan",
+      "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+    },
+    {
       "name": "Xu, Zihan",
       "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
     },
     {
-      "name": "Yang, Yanan",
+      "name": "Yang, Weiping",
       "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
     },
     {
       "name": "He, Baojiang",
+      "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
+    },
+    {
+      "name": "Zeng, Shitong",
       "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
     },
     {
@@ -33,14 +41,6 @@
     },
     {
       "name": "Huo, Xiankuan",
-      "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
-    },
-    {
-      "name": "Hu, Jun",
-      "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
-    },
-    {
-      "name": "Qu, Zhan",
       "affiliation": "Xinqiao Flavors & Fragrances (Zhengzhou) Co., Ltd., Zhengzhou, China"
     }
   ],
