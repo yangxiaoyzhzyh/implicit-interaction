@@ -91,7 +91,8 @@ encoder side down by aggregation.
 `results/vsimple_composition_44d.csv` is the nine-task, three-seed table of Section S1.
 
 **`figures/`** — `make_figures.py` writes `Figure2`--`Figure5` as PDF and PNG, one per data
-figure, under the same numbers as the captions.
+figure, under the same numbers as the captions. Editable vector versions are supplied
+alongside each figure as SVG (text left as text) and EPS (Type 42 fonts).
 
 ## Reproducing a table
 
