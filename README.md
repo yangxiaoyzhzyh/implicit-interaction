@@ -39,7 +39,7 @@ encoder that training shapes.
 | `01_composition/` | component-count extrapolation (nine tasks, four arms) | Table 1; Sections S2, S6 |
 | `02_unseen_molecules/` | component-identity extrapolation (six tasks) | Section S4 |
 | `03_target_value/` | target-value (extreme) extrapolation (ten tasks) | Section S5 |
-| `04_synthetic/` | synthetic exactly-additive target, plus the label-noise sweep | Table 2; Tables S11--S12 |
+| `04_synthetic/` | synthetic exactly-additive target, the label-noise sweep and the aggregation-order sweep | Table 2; Tables S11--S13 |
 | `05_cross_domain/` | portfolio volatility and document sets | Sections S8--S10 |
 | `06_transfer/` | eight per-task encoder checkpoints and their vector cache | feeds `08` |
 | `07_indistribution/` | official five-fold random CV, eight tasks | Section S3 |
@@ -104,6 +104,8 @@ seed pairs of Table S11. Nothing in this directory is needed to reproduce the ma
 **`04_synthetic/scripts/synth_noise.py`** — the label-noise sweep of Table S12; it reuses the
 same additive generator and writes `runs/synth_noise.csv`. The aggregation used for the
 `linear` rows is available as `--agg linear` (weight $\alpha\propto\epsilon+w\,s$, both learnt).
+
+**`04_synthetic/scripts/synth_order.py`** — the aggregation-order sweep of Table S13; the same embedding and readout, with the weight taken as the mole fraction, learnt linearly, or learnt with a quadratic term. Writes `runs/synth_order.csv` (three seeds).
 
 ## Reproducing a table
 
