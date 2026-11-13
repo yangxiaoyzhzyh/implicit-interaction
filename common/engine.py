@@ -90,7 +90,8 @@ class Vim(nn.Module):
 
 
 class Vex(nn.Module):
-    def __init__(self, dim=256, nhead=4, ncond=0, head='deep'):
+    def __init__(self, dim=256, nhead=4, ncond=0, head='deep',
+                 agg='cls', eps0=0.1):
         super().__init__()
         self.enc = Enc(dim, nhead)
         self.w_proj = nn.Linear(1, dim)
@@ -105,6 +106,12 @@ class Vex(nn.Module):
                                   nn.Dropout(0.1),
                                   nn.Linear(dim, dim), nn.ReLU(),
                                   nn.Linear(dim, 1))
+        self.agg = agg
+        if agg == 'linear':
+            self.score = nn.Sequential(nn.Linear(dim, dim), nn.ReLU(),
+                                       nn.Linear(dim, 1))
+            self.eps_raw = nn.Parameter(
+                torch.tensor(float(np.log(np.expm1(eps0)))))
 
     def forward(self, z, ws, mix_ids, n_mix, cond):
         B = n_mix
@@ -133,7 +140,33 @@ class Vex(nn.Module):
         msk = msk.view(B, K + 1)
         msk[:, 0] = True
 
-        out = self.mix_tfm(pad, src_key_padding_mask=~msk)
+        if getattr(self, 'capture_attn', False):
+            # 手动展开编码层，取 CLS 对各组分的注意力（eval 模式下 dropout 为恒等）
+            x, ws_layers = pad, []
+            for layer in self.mix_tfm.layers:
+                a, w = layer.self_attn(x, x, x, need_weights=True,
+                                       average_attn_weights=True,
+                                       key_padding_mask=~msk)
+                x = layer.norm1(x + layer.dropout1(a))
+                f = layer.linear2(layer.dropout(layer.activation(layer.linear1(x))))
+                x = layer.norm2(x + layer.dropout2(f))
+                ws_layers.append(w)
+            self.last_attn = ws_layers          # list of [B, K+1, K+1]
+            self.last_msk = msk
+            out = x
+        else:
+            out = self.mix_tfm(pad, src_key_padding_mask=~msk)
+        if self.agg == 'linear':
+            wpad = torch.zeros(B * (K + 1), device=z.device, dtype=z.dtype)
+            wpad[flat] = ws[order]
+            wpad = wpad.view(B, K + 1)[:, 1:]
+            hc = out[:, 1:]
+            u = torch.nn.functional.softplus(self.score(hc)).squeeze(-1)
+            eps = torch.nn.functional.softplus(self.eps_raw)
+            num = (eps + wpad * u) * msk[:, 1:]
+            alpha = num / num.clamp_min(1e-9).sum(-1, keepdim=True)
+            zz = (alpha.unsqueeze(-1) * hc).sum(1)
+            return self.head(torch.cat([zz, cond], 1)).squeeze(-1)
         return self.head(torch.cat([out[:, 0], cond], 1)).squeeze(-1)
 
 
@@ -193,6 +226,9 @@ def main():
     ap.add_argument('--y-test', type=float, nargs=2, default=[0.10, 0.90],
                     help='--split-by y 时，测试侧取两端各自的这个分位之外')
     ap.add_argument('--model', choices=['vim', 'vex'], default='vim')
+    ap.add_argument('--agg', choices=['cls', 'linear'], default='cls',
+                    help='v(ex) 的聚合方式：cls 读 CLS；linear 用 (eps+w*s) 加权')
+    ap.add_argument('--eps0', type=float, default=0.1)
     ap.add_argument('--vex-head', choices=['deep'], default='deep',
                     help='v(ex) 读出：deep=与 v(im) 同构（3 层 + dropout）')
     ap.add_argument('--epochs', type=int, default=200)
@@ -202,10 +238,18 @@ def main():
     ap.add_argument('--no-early-stop', action='store_true')
     ap.add_argument('--save-ckpt', default=None,
                     help='权重目录；每个 seed 存一个 .pt（权重 + 配置 + 逐行预测）')
+    ap.add_argument('--save-attn-all', action='store_true',
+                    help='v(ex)：把每层注意力分别存成 *_attn_test.npz / *_attn_train.npz')
+    ap.add_argument('--save-emb', action='store_true',
+                    help='存测试集的逐组分向量 z（两臂通用）：<ckpt>_emb.npz')
+    ap.add_argument('--save-attn', action='store_true',
+                    help='v(ex) 专用：把 CLS 对各组分的注意力存成 <ckpt>_attn.npz')
     ap.add_argument('--save-preds', action='store_true',
                     help='把逐行预测写进 <tag>_<model>_<split>_preds.csv；'
                          '之后任何分组（K 分档、seen/unseen）都能离线重算，无需重训')
     args = ap.parse_args()
+    # 划分标签：npz 分支稍后会覆盖；--split-by 路径原本没有赋值
+    stag = args.split_by or 'custom'
 
     va_rows = None
     if args.split_file:
@@ -343,6 +387,8 @@ def main():
 
     ym, ysd = float(ys[itr].mean()), float(ys[itr].std())
 
+    _stash = {}
+
     def fwd(idx, model, train=False):
         gs, mids, ws, cs_ = [], [], [], []
         for j, mi in enumerate(idx):
@@ -365,6 +411,9 @@ def main():
         z = model.enc(xs, ei, b)
         midx = torch.tensor(mids, device=DEVICE)
         wts = torch.tensor(ws, dtype=torch.float32, device=DEVICE)
+        _stash['z'] = z.detach().cpu()
+        _stash['mids'] = midx.detach().cpu().numpy()
+        _stash['wts'] = wts.detach().cpu().numpy()
         out = model(z, wts, midx, len(idx), cond_t)
         if not train:
             return out.detach().cpu().numpy() * ysd + ym
@@ -378,8 +427,10 @@ def main():
         np.random.seed(seed)
         cls_ = Vim if args.model == 'vim' else Vex
         if cls_ is Vex:
-            model = cls_(dim=256, nhead=4, ncond=ncond,
-                         head=args.vex_head).to(DEVICE)
+            kw = dict(dim=256, nhead=4, ncond=ncond)
+            if args.model == 'vex':
+                kw.update(head=args.vex_head, agg=args.agg, eps0=args.eps0)
+            model = cls_(**kw).to(DEVICE)
         else:
             model = cls_(dim=256, nhead=4, ncond=ncond).to(DEVICE)
         opt = torch.optim.Adam(model.parameters(), lr=args.lr,
@@ -544,6 +595,59 @@ def main():
                     'pred': p, 'true': yt,
                 }, cdst)
                 print('     wrote', os.path.basename(cdst), flush=True)
+        if args.save_attn or args.save_emb:
+            odir = args.save_ckpt or args.out or '.'
+            os.makedirs(odir, exist_ok=True)
+            stem = os.path.join(odir, '%s_%s_%s_s%d'
+                                % (args.tag, args.model, stag, seed))
+            if (args.save_attn or args.save_attn_all) and args.model == 'vex':
+                targets = ([('test', ite), ('train', fit_idx)] if args.save_attn_all
+                           else [('', ite)])
+                for split_name, split_idx in targets:
+                    model.capture_attn = True
+                    l0_rows, l1_rows, cids_out, k_out, row_out = [], [], [], [], []
+                    with torch.no_grad():
+                        for i in range(0, len(split_idx), 256):
+                            chunk = split_idx[i:i + 256]
+                            fwd(chunk, model)
+                            a0 = model.last_attn[0].cpu().numpy()
+                            a1 = model.last_attn[1].cpu().numpy()
+                            for j, mi in enumerate(chunk):
+                                ks = len(meta[mi]['cids'])
+                                l0_rows.append(a0[j, 0, 1:ks + 1])
+                                l1_rows.append(a1[j, 0, 1:ks + 1])
+                                k_out.append(ks)
+                                cids_out.append(list(meta[mi]['cids']))
+                                row_out.append(int(rows[mi]))
+                    model.capture_attn = False
+                    suffix = ('_attn_' + split_name) if split_name else '_attn'
+                    np.savez(stem + suffix + '.npz',
+                             attn_l0=np.array(l0_rows, dtype=object),
+                             attn_l1=np.array(l1_rows, dtype=object),
+                             cids=np.array(cids_out, dtype=object),
+                             k=np.array(k_out), row=np.array(row_out))
+                    print('     wrote', os.path.basename(stem + suffix + '.npz'), flush=True)
+            if args.save_emb:
+                uniq = {}
+                with torch.no_grad():
+                    for i in range(0, len(ite), 256):
+                        chunk = ite[i:i + 256]
+                        fwd(chunk, model)
+                        zz = _stash['z'].numpy()
+                        mm = _stash['mids']
+                        seen = {}
+                        for k in range(len(zz)):
+                            j = int(mm[k])
+                            keep = [c for c in meta[chunk[j]]['cids']
+                                    if graphs.get(c) is not None]
+                            o = seen.get(j, 0)
+                            seen[j] = o + 1
+                            uniq[int(keep[o])] = zz[k]
+                np.savez(stem + '_emb.npz',
+                         emb=np.array(list(uniq.values()), dtype=np.float32),
+                         cid=np.array(list(uniq.keys())),
+                         model=np.array(args.model))
+                print('     wrote', os.path.basename(stem + '_emb.npz'), flush=True)
         for k in sorted(set(kk.tolist())):
             m = kk == k
             if m.sum() < 10:
