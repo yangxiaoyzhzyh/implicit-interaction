@@ -40,11 +40,11 @@ encoder that training shapes.
 | `02_unseen_molecules/` | component-identity extrapolation (six tasks) | Section S4 |
 | `03_target_value/` | target-value (extreme) extrapolation (ten tasks) | Section S5 |
 | `04_synthetic/` | synthetic exactly-additive target, plus the label-noise and aggregation-order sweeps | Table 2; Tables S9--S10 |
+| `05_seed_stability/` | twenty seeds of both arms on MON, two on SPE, and a finite-pool synthetic scan; `scripts/stability_table.py` and `scripts/pool_scan.py` rebuild the tables | Table S8, Table S11 |
 | `06_transfer/` | eight per-task encoder checkpoints and their vector cache | feeds `08` |
 | `07_indistribution/` | official five-fold random CV, eight tasks | Section S3 |
 | `08_small_labels/` | hundred-label comparison of encoders and descriptors | Table 3; Section S7 |
 | `09_vex_simple/` | parameter-matched whole-graph variant | Section S1 |
-| `05_seed_stability/` | twenty seeds of both arms on MON, two on SPE, and a finite-pool synthetic scan; `scripts/stability_table.py` and `scripts/pool_scan.py` rebuild the tables | Table S8, Table S11 |
 | `figures/` | the four data figures as PDF and PNG, plus `make_figures.py` | Figs. 2--5 |
 
 Each extrapolation directory has the same layers: `summary.csv` (the normalised table),
