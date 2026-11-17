@@ -44,7 +44,7 @@ encoder that training shapes.
 | `07_indistribution/` | official five-fold random CV, eight tasks | Section S3 |
 | `08_small_labels/` | hundred-label comparison of encoders and descriptors | Table 3; Section S7 |
 | `09_vex_simple/` | parameter-matched whole-graph variant | Section S1 |
-| `10_seed_stability/` | twenty seeds of both arms on MON, two on SPE, and a finite-pool synthetic scan; `scripts/stability_table.py` and `scripts/pool_scan.py` rebuild the tables | Table S8, Table S11 |
+| `05_seed_stability/` | twenty seeds of both arms on MON, two on SPE, and a finite-pool synthetic scan; `scripts/stability_table.py` and `scripts/pool_scan.py` rebuild the tables | Table S8, Table S11 |
 | `figures/` | the four data figures as PDF and PNG, plus `make_figures.py` | Figs. 2--5 |
 
 Each extrapolation directory has the same layers: `summary.csv` (the normalised table),
@@ -93,14 +93,14 @@ encoder side down by aggregation.
 **`figures/`** — `make_figures.py` writes `Figure2`--`Figure5` as PDF and PNG, one per data
 figure, under the same numbers as the captions.
 
-**`10_seed_stability/`** — the engine writes the CLS attention over component tokens
+**`05_seed_stability/`** — the engine writes the CLS attention over component tokens
 (`--save-attn`, `--save-attn-all` also dumps the training mixtures) and one encoding per
 unique component (`--save-emb`); `scripts/compare_seeds.py` turns those files into the
 per-seed-pair table. `runs/summary_seeds.csv` holds the twenty test $R$ values per arm
 (`v(im)` 0.913 $\pm$ 0.022, `v(ex)` 0.833 $\pm$ 0.027) and `runs/pair_summary.csv` the 190
 seed pairs of Table S8. Nothing in this directory is needed to reproduce the main tables.
 
-   `attn/` holds the CLS attention of the four runs that table S8 uses (MON seeds 42 and 61, SPE seeds 42 and 44), so the table can be rebuilt without retraining: `python 10_seed_stability/scripts/stability_table.py --out 10_seed_stability/runs/stability_table.csv`.
+   `attn/` holds the CLS attention of the four runs that table S8 uses (MON seeds 42 and 61, SPE seeds 42 and 44), so the table can be rebuilt without retraining: `python 05_seed_stability/scripts/stability_table.py --out 05_seed_stability/runs/stability_table.csv`.
 
    `scripts/pool_scan.py` is the finite-pool synthetic scan of table S11: a fixed pool of components, mixtures of one and two components in training, and the number of training mixtures set by the mean number of appearances per component. `runs/pool_scan_100.csv` holds the 100-component block; `scripts/pool100.sh` runs the sweep.
 

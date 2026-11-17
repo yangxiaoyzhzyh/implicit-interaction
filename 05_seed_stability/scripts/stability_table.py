@@ -12,9 +12,9 @@ Both the last encoder layer and the rollout over both layers are reported.
 
 Usage
 -----
-    python 10_seed_stability/scripts/stability_table.py \
-        --attn-dir 10_seed_stability/attn \
-        --out 10_seed_stability/runs/stability_table.csv
+    python 05_seed_stability/scripts/stability_table.py \
+        --attn-dir 05_seed_stability/attn \
+        --out 05_seed_stability/runs/stability_table.csv
 
 The attention files come from `--save-attn-all`, which writes
 `<tag>_<model>_<split_label>_s<seed>_attn_{train,test}.npz`.
@@ -70,7 +70,7 @@ def compare(a, b, tol=0.05):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--attn-dir', default='10_seed_stability/attn')
+    ap.add_argument('--attn-dir', default='05_seed_stability/attn')
     ap.add_argument('--pairs', nargs='+', default=['mon:42:61', 'spe:42:44'],
                     help='task:seedA:seedB')
     ap.add_argument('--out', default=None)
