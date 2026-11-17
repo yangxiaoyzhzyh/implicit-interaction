@@ -39,13 +39,12 @@ encoder that training shapes.
 | `01_composition/` | component-count extrapolation (nine tasks, four arms) | Table 1; Sections S2, S6 |
 | `02_unseen_molecules/` | component-identity extrapolation (six tasks) | Section S4 |
 | `03_target_value/` | target-value (extreme) extrapolation (ten tasks) | Section S5 |
-| `04_synthetic/` | synthetic exactly-additive target, plus the label-noise sweep | Table 2; Tables S11--S12 |
-| `05_cross_domain/` | portfolio volatility and document sets | Sections S8--S10 |
+| `04_synthetic/` | synthetic exactly-additive target, plus the label-noise and aggregation-order sweeps | Table 2; Tables S9--S10 |
 | `06_transfer/` | eight per-task encoder checkpoints and their vector cache | feeds `08` |
 | `07_indistribution/` | official five-fold random CV, eight tasks | Section S3 |
 | `08_small_labels/` | hundred-label comparison of encoders and descriptors | Table 3; Section S7 |
 | `09_vex_simple/` | parameter-matched whole-graph variant | Section S1 |
-| `10_seed_stability/` | twenty seeds of both arms on MON, two on SPE, and a finite-pool synthetic scan; `scripts/stability_table.py` and `scripts/pool_scan.py` rebuild the tables | Tables S11, S14 |
+| `10_seed_stability/` | twenty seeds of both arms on MON, two on SPE, and a finite-pool synthetic scan; `scripts/stability_table.py` and `scripts/pool_scan.py` rebuild the tables | Table S8, Table S11 |
 | `figures/` | the four data figures as PDF and PNG, plus `make_figures.py` | Figs. 2--5 |
 
 Each extrapolation directory has the same layers: `summary.csv` (the normalised table),
@@ -99,13 +98,13 @@ figure, under the same numbers as the captions.
 unique component (`--save-emb`); `scripts/compare_seeds.py` turns those files into the
 per-seed-pair table. `runs/summary_seeds.csv` holds the twenty test $R$ values per arm
 (`v(im)` 0.913 $\pm$ 0.022, `v(ex)` 0.833 $\pm$ 0.027) and `runs/pair_summary.csv` the 190
-seed pairs of Table S11. Nothing in this directory is needed to reproduce the main tables.
+seed pairs of Table S8. Nothing in this directory is needed to reproduce the main tables.
 
-   `attn/` holds the CLS attention of the four runs that table S11 uses (MON seeds 42 and 61, SPE seeds 42 and 44), so the table can be rebuilt without retraining: `python 10_seed_stability/scripts/stability_table.py --out 10_seed_stability/runs/stability_table.csv`.
+   `attn/` holds the CLS attention of the four runs that table S8 uses (MON seeds 42 and 61, SPE seeds 42 and 44), so the table can be rebuilt without retraining: `python 10_seed_stability/scripts/stability_table.py --out 10_seed_stability/runs/stability_table.csv`.
 
-   `scripts/pool_scan.py` is the finite-pool synthetic scan of table S14: a fixed pool of components, mixtures of one and two components in training, and the number of training mixtures set by the mean number of appearances per component. `runs/pool_scan_100.csv` holds the 100-component block; `scripts/pool100.sh` runs the sweep.
+   `scripts/pool_scan.py` is the finite-pool synthetic scan of table S11: a fixed pool of components, mixtures of one and two components in training, and the number of training mixtures set by the mean number of appearances per component. `runs/pool_scan_100.csv` holds the 100-component block; `scripts/pool100.sh` runs the sweep.
 
-**`04_synthetic/scripts/synth_noise.py`** — the label-noise sweep of Table S12; it reuses the
+**`04_synthetic/scripts/synth_noise.py`** — the label-noise sweep of Table S9; it reuses the
 same additive generator and writes `runs/synth_noise.csv`. The aggregation used for the
 `linear` rows is available as `--agg linear` (weight $\alpha\propto\epsilon+w\,s$, both learnt).
 
