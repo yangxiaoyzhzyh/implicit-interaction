@@ -45,7 +45,7 @@ encoder that training shapes.
 | `07_indistribution/` | official five-fold random CV, eight tasks | Section S3 |
 | `08_small_labels/` | hundred-label comparison of encoders and descriptors | Table 3; Section S7 |
 | `09_vex_simple/` | parameter-matched whole-graph variant | Section S1 |
-| `10_seed_stability/` | twenty seeds of both arms on MON and two on SPE, with the CLS attention stored (`attn/`) and the table rebuilt by `scripts/stability_table.py` | Table S11 |
+| `10_seed_stability/` | twenty seeds of both arms on MON, two on SPE, and a finite-pool synthetic scan; `scripts/stability_table.py` and `scripts/pool_scan.py` rebuild the tables | Tables S11, S14 |
 | `figures/` | the four data figures as PDF and PNG, plus `make_figures.py` | Figs. 2--5 |
 
 Each extrapolation directory has the same layers: `summary.csv` (the normalised table),
@@ -102,6 +102,8 @@ per-seed-pair table. `runs/summary_seeds.csv` holds the twenty test $R$ values p
 seed pairs of Table S11. Nothing in this directory is needed to reproduce the main tables.
 
    `attn/` holds the CLS attention of the four runs that table S11 uses (MON seeds 42 and 61, SPE seeds 42 and 44), so the table can be rebuilt without retraining: `python 10_seed_stability/scripts/stability_table.py --out 10_seed_stability/runs/stability_table.csv`.
+
+   `scripts/pool_scan.py` is the finite-pool synthetic scan of table S14: a fixed pool of components, mixtures of one and two components in training, and the number of training mixtures set by the mean number of appearances per component. `runs/pool_scan_100.csv` holds the 100-component block; `scripts/pool100.sh` runs the sweep.
 
 **`04_synthetic/scripts/synth_noise.py`** — the label-noise sweep of Table S12; it reuses the
 same additive generator and writes `runs/synth_noise.csv`. The aggregation used for the
