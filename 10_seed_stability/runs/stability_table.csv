@@ -1,0 +1,5 @@
+task,split,seeds,n_clear_lead,flip_last_pct,flip_rollout_pct
+mon,train,42/61,46,19.6,19.6
+mon,test,42/61,211,16.6,16.6
+spe,train,42/44,7097,10.5,10.6
+spe,test,42/44,1872,20.7,20.7
