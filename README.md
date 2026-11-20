@@ -63,7 +63,10 @@ only the two IlT tasks (IlT $\kappa$ $-0.133\to+0.737$, IlT $\eta$ $0.007\to+0.8
 the rest by $\le 0.013$; `scripts/additive.py --plain` reproduces the unregularised numbers.
 `scripts/run_k3.sh` produces the relaxed-ceiling row of Table S6 (`runs_k3/`), and
 `scripts/split_statistics.py` writes `runs/split_statistics.csv`, the source of the solvent and
-molar-mass fractions quoted in the text.
+molar-mass fractions quoted in the text, and `scripts/regime_slopes.py` writes
+`runs/regime_slopes.csv`, the exponents and levels of Table S12: it regresses the property on
+$\log_{10}w_{\text{salt}}$ inside each of the two regimes the failing tasks are split into, and
+compares the SPE groups at a matched salt fraction.
 
 **`02_unseen_molecules/`** — six tasks; the three `miscible*` tasks are absent because they hold
 only 81 unique molecules, too few for a partition that keeps the component-count distribution

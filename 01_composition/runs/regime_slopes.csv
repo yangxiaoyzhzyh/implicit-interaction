@@ -1,0 +1,5 @@
+task,regime,n,exponent,r2,level,matched_gap_small_minus_polymer
+iltk,dilute,20279,1.282,0.332,-2.611,
+iltk,concentrated,20120,0.611,0.113,-0.488,
+spek,small molecules,2339,0.454,0.112,-2.624,2.56
+spek,polymers,7574,0.527,0.020,-5.160,
